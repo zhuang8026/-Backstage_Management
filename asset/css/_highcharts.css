@@ -1,0 +1,13 @@
+/* ----- highcharts -----*/
+
+text.highcharts-credits{
+    display: none;
+}
+
+.dataTables_wrapper .dataTables_filter input {
+    border: 1px solid #4E4F97;
+    border-radius: 5px;
+}
+select {
+    background-color: #fff;
+}
