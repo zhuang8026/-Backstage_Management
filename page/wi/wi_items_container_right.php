@@ -71,7 +71,7 @@
                         </span>
                     </td>
                     <td><?= $arr[$i]['itemId']; ?></td>
-                    <td><?= $arr[$i]['itemName']; ?></td>
+                    <td class="itemName<?= $arr[$i]['itemId']; ?>"><?= $arr[$i]['itemName']; ?></td>
                     <!-- 图片 -->
                     <td>
                         <?php if($arr[$i]['itemImg'] !== NULL): ?>
@@ -92,7 +92,15 @@
                     <td><?= $arr[$i]['updated_at']; ?></td>
                     <td>
                         <a href="#editEmployeeModal" class="edit" data-toggle="modal">
-                            <i class="material-icons" data-toggle="tooltip" title="Edit">&#xE254;</i>
+                            <i class="material-icons" data-toggle="tooltip" title="Edit" onClick="data_text(<?= $arr[$i]['itemId']; ?>)">&#xE254;</i>
+                            <script>
+                                function data_text(id){
+                                    alert($('.itemName'+id).eq(0).html());
+                                    // $('.itemName1').eq(0).html();
+                                    // console.log($('.itemName'+id));
+                                    $('#fun_name').val( $('.itemName'+id).eq(0).html() )
+                                };
+                            </script>
                         </a>
                         <a href="#deleteEmployeeModal" class="delete" data-toggle="modal">
                             <i class="material-icons" data-toggle="tooltip" title="Delete">&#xE872;</i>
