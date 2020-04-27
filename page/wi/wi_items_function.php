@@ -3,27 +3,47 @@
     <div id="addEmployeeModal" class="modal fade">
         <div class="modal-dialog">
             <div class="modal-content">
-                <form>
+                <form name="myForm" method="POST" action="../../api/insert_api.php" enctype="multipart/form-data">
                     <div class="modal-header">
                         <h4 class="modal-title">Add ?</h4>
                         <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
                     </div>
                     <div class="modal-body">
                         <div class="form-group">
-                        <label>Name</label>
-                        <input type="text" class="form-control" required>
+                            <label>itemName</label>
+                            <input type="text" class="form-control" required name="itemName" value="">
                         </div>
                         <div class="form-group">
-                        <label>Email</label>
-                        <input type="email" class="form-control" required>
+                            <label>Email</label>
+                            <input type="email" class="form-control" required name="name1" value="">
                         </div>
                         <div class="form-group">
-                        <label>Address</label>
-                        <textarea class="form-control" required></textarea>
+                            <label>Email</label>
+                            <input type="email" class="form-control" required name="name1" value="">
                         </div>
                         <div class="form-group">
-                        <label>Phone</label>
-                        <input type="text" class="form-control" required>
+                            <label>Email</label>
+                            <input type="email" class="form-control" required name="name1" value="">
+                        </div>
+                        <div class="form-group">
+                            <label>Email</label>
+                            <input type="email" class="form-control" required name="name1" value="">
+                        </div>
+                        <div class="form-group">
+                            <label>Email</label>
+                            <input type="email" class="form-control" required name="name1" value="">
+                        </div>
+                        <div class="form-group">
+                            <label>Email</label>
+                            <input type="email" class="form-control" required name="name1" value="">
+                        </div>
+                        <div class="form-group">
+                            <label>Address</label>
+                            <textarea class="form-control" required name="name2" value=""></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label>Phone</label>
+                            <input type="text" class="form-control" required name="name3" value="" maxlength="10">
                         </div>
                     </div>
                     <div class="modal-footer">

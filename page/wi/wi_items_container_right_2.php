@@ -27,36 +27,25 @@
                             <label for="selectAll"></label>
                         </span>
                     </th>
-                    <th>Id</th>
+                    <th>number</th>
+                    <th>庫存量</th>
+                    <th>銷售量</th>
                     <th>Name</th>
-                    <th>Image</th>
-                    <th>Color</th>
-                    <th>Brand</th>
-                    <th>Type</th>
-                    <th>Price</th>
-                    <th>Quantity</th>
-                    <th>Star</th>
-                    <th>sales</th>
-                    <!-- <th>CategoryId</th> -->
-                    <!-- <th>Content</th> -->
-                    <th>created_at</th>
-                    <th>updated_at</th>
-                    <th>Function</th>
-                    
+                    <th>Email</th>
+                    <th>Address</th>
+                    <th>Phone</th>
+                    <th>Actions</th>
                 </tr>
             </thead>
             <tbody>
                 <?php 
                     $sql = "SELECT `itemId`,`itemName`, `itemImg`, `colorid`,`itemsbrand`, `itemstype`, 
-                            `itemPrice`, `itemQty`, `itemsstar`, `itemsales`, `itemCategoryId`, `itemscontent`, `created_at`, `updated_at`
+                            `itemPrice`, `itemQty`, `itemsstar`, `itemCategoryId`, `itemscontent`, `created_at`, `updated_at`
                             FROM `items` 
                             ORDER BY `itemId` ASC";
                     $stmt = $pdo->prepare($sql);
                     $stmt->execute(); 
 
-                    // echo "<pre>";
-                    // print_r( $stmt->fetchAll(PDO::FETCH_ASSOC));
-                    // exit();
                     
                     if($stmt->rowCount() > 0):
                         $arr = $stmt->fetchAll(PDO::FETCH_ASSOC); 
@@ -70,26 +59,13 @@
                             <label for="checkbox1"></label>
                         </span>
                     </td>
-                    <td><?= $arr[$i]['itemId']; ?></td>
-                    <td><?= $arr[$i]['itemName']; ?></td>
-                    <!-- 图片 -->
-                    <td>
-                        <?php if($arr[$i]['itemImg'] !== NULL): ?>
-                            <img src="../../asset/file_img/<?= $arr[$i]['itemImg'];?>">
-                            <?/*= $arr[$i]['studentImg']; */?>
-                        <?php endif; ?>
-                    </td>
-                    <td><?= $arr[$i]['colorid']; ?></td>
-                    <td><?= $arr[$i]['itemsbrand']; ?></td>
-                    <td><?= $arr[$i]['itemstype']; ?></td>
-                    <td><?= $arr[$i]['itemPrice']; ?></td>
-                    <td><?= $arr[$i]['itemQty']; ?></td>
-                    <td><?= $arr[$i]['itemsstar']; ?></td>
-                    <td><?= $arr[$i]['itemsales']; ?></td>
-                    <!-- <td><?/*= $arr[$i]['itemCategoryId']; */?></td> -->
-                    <!-- <td><?/*= $arr[$i]['itemscontent']; */?></td> -->
-                    <td><?= $arr[$i]['created_at']; ?></td>
-                    <td><?= $arr[$i]['updated_at']; ?></td>
+                    <td>1</td>
+                    <td>50</td>
+                    <td>500</td>
+                    <td>Thomas Hardy</td>
+                    <td>thomashardy@mail.com</td>
+                    <td>89 Chiaroscuro Rd, Portland, USA</td>
+                    <td>(171) 555-2222</td>
                     <td>
                         <a href="#editEmployeeModal" class="edit" data-toggle="modal">
                             <i class="material-icons" data-toggle="tooltip" title="Edit">&#xE254;</i>
