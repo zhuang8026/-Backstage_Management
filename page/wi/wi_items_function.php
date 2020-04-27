@@ -3,7 +3,7 @@
     <div id="addEmployeeModal" class="modal fade">
         <div class="modal-dialog">
             <div class="modal-content">
-                <form name="myForm" method="POST" action="../../api/insert_api.php" enctype="multipart/form-data">
+                <form name="myForm" method="POST" action="../../api/add_api.php" enctype="multipart/form-data">
                     <div class="modal-header">
                         <h4 class="modal-title">Add ?</h4>
                         <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
@@ -11,40 +11,41 @@
                     <div class="modal-body">
                         <div class="form-group">
                             <label>itemName</label>
-                            <input type="text" class="form-control" required name="itemName" value="">
+                            <input type="text" class="form-control" required name="itemName" value="" placeholder="商品名稱">
                         </div>
                         <div class="form-group">
-                            <label>Email</label>
-                            <input type="email" class="form-control" required name="name1" value="">
+                            <label>itemImg</label>
+                            <input type="file" class="form-control" required name="itemImg" value="" placeholder="商品圖片">
                         </div>
                         <div class="form-group">
-                            <label>Email</label>
-                            <input type="email" class="form-control" required name="name1" value="">
+                            <label>colorid</label>
+                            <input type="text" class="form-control" required name="colorid" value="" placeholder="商品顏色">
                         </div>
                         <div class="form-group">
-                            <label>Email</label>
-                            <input type="email" class="form-control" required name="name1" value="">
+                            <label>itemsbrand</label>
+                            <input type="text" class="form-control" required name="itemsbrand" value="" placeholder="商品品牌">
                         </div>
                         <div class="form-group">
-                            <label>Email</label>
-                            <input type="email" class="form-control" required name="name1" value="">
+                            <label>itemstype</label>
+                            <input type="text" class="form-control" required name="itemstype" value="" placeholder="商品類型">
                         </div>
                         <div class="form-group">
-                            <label>Email</label>
-                            <input type="email" class="form-control" required name="name1" value="">
+                            <label>itemPrice</label>
+                            <input type="text" class="form-control" required name="itemPrice" value="" placeholder="商品價格">
                         </div>
                         <div class="form-group">
-                            <label>Email</label>
-                            <input type="email" class="form-control" required name="name1" value="">
+                            <label>itemQty</label>
+                            <input type="text" class="form-control" required name="itemQty" value="" placeholder="商品數量">
                         </div>
+                        
                         <div class="form-group">
-                            <label>Address</label>
-                            <textarea class="form-control" required name="name2" value=""></textarea>
+                            <label>itemscontent</label>
+                            <textarea class="form-control" required name="itemscontent" value="" placeholder="商品備註"></textarea>
                         </div>
-                        <div class="form-group">
-                            <label>Phone</label>
+                        <!-- <div class="form-group">
+                            <label>itemsstar</label>
                             <input type="text" class="form-control" required name="name3" value="" maxlength="10">
-                        </div>
+                        </div> -->
                     </div>
                     <div class="modal-footer">
                         <input type="button" class="btn btn-default" data-dismiss="modal" value="Cancel">
