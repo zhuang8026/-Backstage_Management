@@ -60,17 +60,17 @@
     <div id="editEmployeeModal" class="modal fade">
         <div class="modal-dialog">
             <div class="modal-content">
-                <form>
+                <form name="updateForm" enctype="multipart/form-data" method="POST" action="update.php">
                     <div class="modal-header">
                         <h4 class="modal-title">Edit ?</h4>
                         <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
                     </div>
                     <div class="modal-body">
                         <div class="form-group">
-                            <label>Name</label>
-                            <input type="text" class="form-control" required name="fun_name" id="fun_name">
+                            <label>itemName</label>
+                            <input type="text" class="form-control" required name="itemName" id="itemName" value="" placeholder="商品名稱">
                         </div>
-                        <div class="form-group">
+                        <!-- <div class="form-group">
                             <label>Email</label>
                             <input type="email" class="form-control" required>
                         </div>
@@ -81,13 +81,14 @@
                         <div class="form-group">
                             <label>Phone</label>
                             <input type="text" class="form-control" required>
-                        </div>
+                        </div> -->
                     </div>
                     <div class="modal-footer">
                         <input type="button" class="btn btn-default" data-dismiss="modal" value="Cancel">
-                        <input type="submit" class="btn btn-info" value="Save">
+                        <input type="submit" class="btn btn-info" id="btn_submit" value="Save">
                     </div>
-                    <input type="text" id="test_btn" value="<?php  ?>">
+                    <!-- <input type="hidden" name="itemId" value="<?/*= (int)$_GET['itemId']; */?>"> -->
+                    <input type="hidden" name="itemId" value="1">
                 </form>
             </div>
         </div>

@@ -1,8 +1,12 @@
 <div class="table-wrapper">
         <div class="table-title">
             <div class="row">
-                <div class="col-sm-6">
+                <div class="col-sm-6 user_btn">
                     <h2><b>歡迎回來！<?= $_SESSION['username'] ?></b></h2>
+                    <button>
+                        <i class="fas fa-sign-out-alt"></i>
+                        <a href="../../api/logout_api.php?logout=1">logout</a>
+                    </button>
                 </div>
                 
                 <!-- 刪除 與 新增 -->
@@ -92,14 +96,9 @@
                     <td><?= $arr[$i]['updated_at']; ?></td>
                     <td>
                         <a href="#editEmployeeModal" class="edit" data-toggle="modal">
-                            <i class="material-icons" data-toggle="tooltip" title="Edit" onClick="data_text(<?= $arr[$i]['itemId']; ?>)">&#xE254;</i>
+                        <i class="material-icons" data-toggle="tooltip" title="Edit" onClick="data_text(<?= $arr[$i]['itemId']; ?>)">&#xE254;</i>
                             <script>
-                                function data_text(id){
-                                    alert($('.itemName'+id).eq(0).html());
-                                    // $('.itemName1').eq(0).html();
-                                    // console.log($('.itemName'+id));
-                                    $('#fun_name').val( $('.itemName'+id).eq(0).html() )
-                                };
+                                
                             </script>
                         </a>
                         <a href="#deleteEmployeeModal" class="delete" data-toggle="modal">
@@ -113,5 +112,4 @@
             </tbody>
         </table>
     </div>
-    
 </div>

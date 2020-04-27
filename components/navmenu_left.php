@@ -37,9 +37,9 @@
                         <a href="#"><i class="fas fa-store"></i> 產品管理 <span class="arrow"></span></a>
                     </li>
                     <ul class="sub-menu collapse" id="items">
-                        <li>New New 1</li>
-                        <li>New New 2</li>
-                        <li>New New 3</li>
+                        <li>
+                            <a href="../wi/wi_items_index.php">產品分析</a>
+                        </li>
                     </ul>
 
                     <li data-toggle="collapse" data-target="#order" class="collapsed">

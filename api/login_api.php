@@ -53,13 +53,13 @@ if( isset($_POST['username']) && isset($_POST['pwd']) ){
     if( $pdo_stmt->rowCount() > 0 ){   
         $_SESSION['username'] = $_POST['username'];
         $_SESSION['password'] = $_POST['pwd'];
-        header("Refresh: 3; url=../page/wi/wi_items_index.php");
+        header("Refresh: 1; url=../page/wi/wi_items_index.php");
         echo "<img src='../asset/img/sgin.gif'><span>{$_SESSION['username']} is \"{$_POST['identity']}\". Sign in suceesfully. Wait a moment 3s ...</span>";
     } else {
-        // header("Refresh: 3; url=./login.php");
+        header("Refresh: 1; url=./login.php");
         echo "<img src='../asset/img/fail.gif'><span>Login failed. Wait a moment 3s ...</span>";
     }
 } else {
-    // header("Refresh: 3; url=./login.php");
+    header("Refresh: 1; url=./login.php");
     echo "<img src='../asset/img/fail.gif'><span>Login failed. Wait a moment 3s ...</span>";
 }

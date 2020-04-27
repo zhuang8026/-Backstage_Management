@@ -73,7 +73,7 @@ function createHighcharts(data) {
     
     Highcharts.chart("chart", {
         title: {
-            text: "產品資料圖"
+            text: "產品分析圖"
         },
         subtitle: {
             text: "產品訊息顯示"
@@ -90,7 +90,7 @@ function createHighcharts(data) {
             {
                 // first yaxis
                 title: {
-                    text: "庫存量"
+                    text: "庫存量 / 評分數"
                 }
             },
             {
@@ -113,6 +113,15 @@ function createHighcharts(data) {
                 }
             },
             {
+                name: "評分數",
+                color: "#4E4F97",
+                type: "column", //column spline
+                data: data[8],
+                tooltip: {
+                    valueSuffix: "/分"
+                }
+            },
+            {
                 name: "銷售量",
                 color: "#FF404E",
                 type: "spline", //column spline
@@ -122,6 +131,7 @@ function createHighcharts(data) {
                     valueSuffix: "/個"
                 }
             }
+            
         ],
         tooltip: {
             shared: true
