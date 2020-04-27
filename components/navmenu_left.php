@@ -9,9 +9,10 @@
                         <a href="#"><i class="fas fa-user-friends"></i> 買家管理 <span class="arrow"></span></a>
                     </li>
                     <ul class="sub-menu collapse" id="products">
-                        <li class="active">New New 1</li>
-                        <li>New New 2</li>
-                        <li>New New 3</li>
+                        <li class="active">
+                            <a href="../k_member/k_member_index.php">會員列表</a>
+                        </li>
+                        
                     </ul>
 
                     <li data-toggle="collapse" data-target="#service" class="collapsed">
