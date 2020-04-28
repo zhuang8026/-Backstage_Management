@@ -17,7 +17,7 @@
             <!-- 總登入 & 登出 -->
             <div class="login-form" id="app">
                 <!-- 登入 -->
-                <form class="sign-in-htm" name="managerForm" method="post" action="./api/w_login_api.php">
+                <form class="sign-in-htm" name="managerForm" method="post" action="./api/login_api.php">
                     <input type="radio" id="r1" name="identity" value="user"/>
                     <label for="r1"><span class="iconId"></span>User</label>
                     <input type="radio" id="r2" name="identity" value="admin"/>
