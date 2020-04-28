@@ -27,32 +27,44 @@
 
 function getTableData(table) {
     // 這邊 增加 陣列
-    const dataArray = [],
-        countryArray = [],
-        populationArray = [],
-        densityArray = [],
-        sellerArray = [],
-        nameArray = [];
+    const dataArray =[], 
+        IdArray = [],
+        NameArray = [],
+        ImageArray = [],
+        ColorArray = [],
+        BrandArray = [],
+        TypeArray = [],
+        PriceArray = [],
+        QuantityArray = [],
+        StarArray = [],
+        SalesArray = [];
 
     // loop table rows
     // 將 陣列 放入 table 
     table.rows({ search: "applied" }).every(function() {
         const data = this.data();
-        countryArray.push(data[0]);
-        populationArray.push(parseInt(data[1].replace(/\,/g, "")));
-        densityArray.push(parseInt(data[2].replace(/\,/g, "")));
-        sellerArray.push(parseInt(data[3].replace(/\,/g, "")));
-        nameArray.push(data[4]);
+        IdArray.push(parseInt(data[1].replace(/\,/g, "")));
+        NameArray.push(data[2]);
+        ImageArray.push(data[3]);
+        ColorArray.push(parseInt(data[4].replace(/\,/g, "")));
+        BrandArray.push(data[5]);
+        TypeArray.push(data[6]);
+        PriceArray.push(parseInt(data[7].replace(/\,/g, "")));
+        QuantityArray.push(parseInt(data[8].replace(/\,/g, "")));
+        StarArray.push(parseInt(data[9].replace(/\,/g, "")));
+        SalesArray.push(parseInt(data[10].replace(/\,/g, "")));
     });
+
 
     // store all data in dataArray
     // 將 table 的 陣列 push 到 dataArray 並 返回值 
-    dataArray.push(countryArray, populationArray, densityArray, sellerArray, nameArray);
+    dataArray.push(IdArray, NameArray, ImageArray, ColorArray, BrandArray, TypeArray, PriceArray, QuantityArray,StarArray,SalesArray);
 
     return dataArray;
 }
 
 function createHighcharts(data) {
+    console.log(data)
     Highcharts.setOptions({
         lang: {
             thousandsSep: ","
@@ -61,14 +73,14 @@ function createHighcharts(data) {
     
     Highcharts.chart("chart", {
         title: {
-            text: "產品資料圖"
+            text: "產品分析圖"
         },
         subtitle: {
             text: "產品訊息顯示"
         },
         xAxis: [
         {
-            categories: data[4],
+            categories: data[1],
             labels: {
                 rotation: -45
             }
@@ -78,7 +90,7 @@ function createHighcharts(data) {
             {
                 // first yaxis
                 title: {
-                    text: "庫存量"
+                    text: "庫存量 / 評分數"
                 }
             },
             {
@@ -94,22 +106,32 @@ function createHighcharts(data) {
             {
                 name: "庫存量",
                 color: "#211E55",
-                type: "column", //column spline
-                data: data[2],
+                type: "spline", //column spline
+                data: data[7],
                 tooltip: {
                     valueSuffix: "/個"
                 }
             },
             {
+                name: "評分數",
+                color: "#4E4F97",
+                type: "column", //column spline
+                data: data[8],
+                tooltip: {
+                    valueSuffix: "/分"
+                }
+            },
+            {
                 name: "銷售量",
                 color: "#FF404E",
-                type: "column", //column spline
-                data: data[3],
+                type: "spline", //column spline
+                data: data[9],
                 yAxis: 1,
                 tooltip: {
                     valueSuffix: "/個"
                 }
             }
+            
         ],
         tooltip: {
             shared: true
@@ -123,7 +145,7 @@ function createHighcharts(data) {
         },
         noData: {
             style: {
-                fontSize: "16px"
+                fontSize: "14px"
             }
         }
     });
