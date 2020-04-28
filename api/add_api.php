@@ -33,6 +33,8 @@ if( $_FILES["itemImg"]["error"] === 0 ) {
         echo json_encode($objResponse, JSON_UNESCAPED_UNICODE);
         exit();
     }
+}else {
+    $itemImg = "";
 }
 // exit();
 

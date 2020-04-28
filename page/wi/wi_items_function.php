@@ -15,7 +15,7 @@
                         </div>
                         <div class="form-group">
                             <label>itemImg</label>
-                            <input type="file" class="form-control" required name="itemImg" value="" placeholder="商品圖片">
+                            <input type="file" class="form-control" name="itemImg" value="" placeholder="商品圖片">
                         </div>
                         <div class="form-group">
                             <label>colorid</label>
@@ -60,35 +60,49 @@
     <div id="editEmployeeModal" class="modal fade">
         <div class="modal-dialog">
             <div class="modal-content">
-                <form name="updateForm" enctype="multipart/form-data" method="POST" action="update.php">
+                <form name="updateForm" enctype="multipart/form-data" method="POST" action="../../api/updateEdit.php">
                     <div class="modal-header">
                         <h4 class="modal-title">Edit ?</h4>
                         <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
                     </div>
+
                     <div class="modal-body">
                         <div class="form-group">
                             <label>itemName</label>
-                            <input type="text" class="form-control" required name="itemName" id="itemName" value="" placeholder="商品名稱">
-                        </div>
-                        <!-- <div class="form-group">
-                            <label>Email</label>
-                            <input type="email" class="form-control" required>
+                            <input type="text" class="form-control" name="itemName" value="" placeholder="商品名稱" id="itemName">
                         </div>
                         <div class="form-group">
-                            <label>Address</label>
-                            <textarea class="form-control" required></textarea>
+                            <label>itemImg</label>
+                            <input type="file" class="form-control" name="itemImg" value="" placeholder="商品圖片" id="itemImg">
                         </div>
                         <div class="form-group">
-                            <label>Phone</label>
-                            <input type="text" class="form-control" required>
-                        </div> -->
+                            <label>colorid</label>
+                            <input type="text" class="form-control" name="colorid" value="" placeholder="商品顏色" id="colorid">
+                        </div>
+                        <div class="form-group">
+                            <label>itemsbrand</label>
+                            <input type="text" class="form-control" name="itemsbrand" value="" placeholder="商品品牌" id="itemsbrand">
+                        </div>
+                        <div class="form-group">
+                            <label>itemstype</label>
+                            <input type="text" class="form-control" name="itemstype" value="" placeholder="商品類型" id="itemstype">
+                        </div>
+                        <div class="form-group">
+                            <label>itemPrice</label>
+                            <input type="text" class="form-control" name="itemPrice" value="" placeholder="商品價格" id="itemPrice">
+                        </div>
+                        <div class="form-group">
+                            <label>itemQty</label>
+                            <input type="text" class="form-control" name="itemQty" value="" placeholder="商品數量" id="itemQty">
+                        </div>
                     </div>
+
                     <div class="modal-footer">
                         <input type="button" class="btn btn-default" data-dismiss="modal" value="Cancel">
                         <input type="submit" class="btn btn-info" id="btn_submit" value="Save">
                     </div>
                     <!-- <input type="hidden" name="itemId" value="<?/*= (int)$_GET['itemId']; */?>"> -->
-                    <input type="hidden" name="itemId" value="1">
+                    <input type="text" name="itemId_input" id="itemId_input" value="">
                 </form>
             </div>
         </div>

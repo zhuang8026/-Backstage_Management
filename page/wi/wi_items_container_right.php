@@ -50,6 +50,7 @@
                 </tr>
             </thead>
             <tbody>
+                <!-- 模板 start-->
                 <?php 
                     $sql = "SELECT `itemId`,`itemName`, `itemImg`, `colorid`,`itemsbrand`, `itemstype`, 
                             `itemPrice`, `itemQty`, `itemsstar`, `itemsales`, `itemCategoryId`, `itemscontent`, `created_at`, `updated_at`
@@ -66,11 +67,10 @@
                         $arr = $stmt->fetchAll(PDO::FETCH_ASSOC); 
                         for($i = 0; $i < count($arr); $i++):
                 ?>
-                <!-- 模板 start-->
                 <tr>
                     <td>
                         <span class="custom-checkbox">
-                            <input type="checkbox" id="checkbox1" name="options[]" value="1">
+                            <input type="checkbox" id="checkbox1" name="options[]" value="<?= $arr[$i]['itemId']; ?>">
                             <label for="checkbox1"></label>
                         </span>
                     </td>
@@ -78,9 +78,10 @@
                     <td class="itemName<?= $arr[$i]['itemId']; ?>"><?= $arr[$i]['itemName']; ?></td>
                     <!-- 图片 -->
                     <td>
-                        <?php if($arr[$i]['itemImg'] !== NULL): ?>
+                        <?php if($arr[$i]['itemImg'] !== ""): ?>
                             <img src="../../asset/file_img/<?= $arr[$i]['itemImg'];?>">
-                            <?/*= $arr[$i]['studentImg']; */?>
+                        <?php else: ?>
+                            <img src="../../asset/img/404.png">
                         <?php endif; ?>
                     </td>
                     <td><?= $arr[$i]['colorid']; ?></td>
@@ -103,9 +104,9 @@
                         </a>
                     </td>
                 </tr>
-                <!-- 模板 end-->
                 <?php endfor;?>
                 <?php endif;?>
+                <!-- 模板 end-->
             </tbody>
         </table>
     </div>
