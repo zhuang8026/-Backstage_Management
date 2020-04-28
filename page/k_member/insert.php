@@ -15,7 +15,7 @@ $sql = "INSERT INTO `users`
 if( $_FILES["userlogo"]["error"] === 0 ) {
     //為上傳檔案命名
     $studentImg = date("YmdHis");//時間
-    
+
     //找出副檔名
     $extension = pathinfo($_FILES["userlogo"]["name"], PATHINFO_EXTENSION);
   
