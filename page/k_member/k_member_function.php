@@ -46,6 +46,11 @@
                             <label>Address</label>
                             <textarea  name="address" id="address" value="" maxlength="50" class="form-control" required></textarea>
                         </div>
+                        <div class="form-group">
+                            <select name="isActivated" id="isActivated" class="form-control">
+                            <option value="0" class="form-control" selected>未開通</option>
+                            <option value="1" class="form-control">開通</option>
+                        </div>
                     </div>
                     <div class="modal-footer">
                         <input type="button" class="btn btn-default" data-dismiss="modal" value="Cancel">

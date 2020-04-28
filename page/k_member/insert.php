@@ -9,8 +9,8 @@ require_once('../../db.inc.php');
 
 //SQL 敘述
 $sql = "INSERT INTO `users` 
-        (`username`, `pwd`, `name`, `gender`, `userlogo`, `phoneNumber`, `card`,`birthday`,`address`) 
-        VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)";
+        (`username`, `pwd`, `name`, `gender`, `userlogo`, `phoneNumber`, `card`,`birthday`,`address`,`isActivated`) 
+        VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?,?)";
 
 if( $_FILES["userlogo"]["error"] === 0 ) {
     //為上傳檔案命名
@@ -39,7 +39,7 @@ if( $_FILES["userlogo"]["error"] === 0 ) {
         $_POST['card'],
         $_POST['birthday'],
         $_POST['address'],
-        
+        $_POST['isActivated']
     ];
     
     $pdo_stmt = $pdo->prepare($sql);

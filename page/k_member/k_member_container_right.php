@@ -37,14 +37,17 @@
                         <th>信用卡號碼</th>
                         <th>出生年月日</th>
                         <th>地址</th>
+                        <th>開通狀況</th>
                         <th>編輯刪除</th>
                     </tr>
                 </thead>
                 <tbody>
                     <?php
                     $sql = "SELECT `id`, `username`, `pwd`,
-                    `name`, `gender`,`userlogo`, `phoneNumber`,`card`,`birthday`,`address`
-                            FROM `users` 
+                            `name`, `gender`,`userlogo`, `phoneNumber`,`card`,`birthday`,`address`,
+                            IF(`isActivated`= 0,'未開通','開通') AS `isActivated`
+                            FROM `users`
+                            WHERE `isActivated` = 0 
                             ORDER BY `id` ASC";
                     $stmt = $pdo->prepare($sql);
                     $stmt->execute();
@@ -69,6 +72,7 @@
                         <td><?php echo $arr[$i]['card']; ?></td>
                         <td><?php echo $arr[$i]['birthday']; ?></td>
                         <td><?php echo $arr[$i]['address']; ?></td>
+                        <td><?php echo $arr[$i]['isActivated']; ?></td>
                         <td>
                             <a href="./k_member_edit.php?editId=<?php echo $arr[$i]['id']; ?>" class="edit" data-toggle="modal">
                                 <i class="material-icons" data-toggle="tooltip" title="Edit">&#xE254;</i>

@@ -8,7 +8,7 @@ require_once('../../db.inc.php');
             <?php
     //SQL 敘述
         $sql = "SELECT `id`, `username`, `pwd`, `name`, `gender`,`userlogo`,
-                        `phoneNumber`, `card`, `birthday`,`address`
+                        `phoneNumber`, `card`, `birthday`,`address`,`isActivated`
             FROM `users` 
             WHERE `id` = ?";
     //設定繫結值
@@ -61,6 +61,14 @@ require_once('../../db.inc.php');
                         <div class="form-group">
                             <label>地址</label>
                             <input type="text" class="form-control" name="address" value="<?php echo $arr['address']; ?>" maxlength="10" />
+                        </div>
+                        <div class="form-group">
+                            <label>性別</label>
+                            <select name="gender" class="form-control">
+                                <option value="<?php echo $arr['isActivated']; ?>" selected><?php echo $arr['isActivated']; ?></option>
+                                <option value="0">0</option>
+                                <option value="1">1</option>
+                            </select>
                         </div>
                         <div class="form-group">
                             <label>使用者頭像</label>
