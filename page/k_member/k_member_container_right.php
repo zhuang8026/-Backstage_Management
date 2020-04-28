@@ -53,10 +53,9 @@
                     if($stmt->rowCount() > 0) {
                         $arr = $stmt->fetchAll(PDO::FETCH_ASSOC);
                         for($i = 0; $i < count($arr); $i++) {
-                            $thespecificid = $arr[$i]['id']; 
-                            $thespecificidtoed = $thespecificid;
                     ?>
                     <tr>
+                        <?php require_once('./k_member_function.php'); ?>
                         <td>
                             <input type="checkbox" name="chk[]" value="<?php echo $arr[$i]['id']; ?>" />
                         </td>
