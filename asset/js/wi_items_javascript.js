@@ -180,3 +180,12 @@ function init() {
     setTableEvents(table);
 }
 init();
+
+
+// click
+function data_text(id){
+    console.log($('.itemName'+id).eq(0).html());
+    // $('.itemName1').eq(0).html();
+    // console.log($('.itemName'+id));
+    $('#itemName').val( $('.itemName'+id).eq(0).html() )
+};
