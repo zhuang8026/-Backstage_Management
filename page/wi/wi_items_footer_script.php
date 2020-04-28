@@ -18,26 +18,26 @@
             $('#itemName').val( $('.itemName'+id).eq(0).html() )
         };
         
-        $(".modal-footer input#btn_submit").on("click", function(){
-            $.ajax({
-                method: "PSOT",
-                url: "../../api/update_api.php",
-                dataType: "json",
-                data: { 
-                    name: $("input[name='itemName']").val(),
-                    // itemId: $("input#itemId[type='hidden']").val(), 
-                    // content: $("textarea[name='content']").val(), 
-                    // rating: $("input[name='rating']").val()
-                }
-            })
-            .done(function( json ) {
-                alert(json.info);
+        // $(".modal-footer input#btn_submit").on("click", function(){
+        //     $.ajax({
+        //         method: "PSOT",
+        //         url: "../../api/update_api.php",
+        //         dataType: "json",
+        //         data: { 
+        //             name: $("input[name='itemName']").val(),
+        //             // itemId: $("input#itemId[type='hidden']").val(), 
+        //             // content: $("textarea[name='content']").val(), 
+        //             // rating: $("input[name='rating']").val()
+        //         }
+        //     })
+        //     .done(function( json ) {
+        //         alert(json.info);
                 
-            })
-            .fail(function( jqXHR, textStatus ) {
-                alert( "Request failed: " + textStatus );
-            });
-        });
+        //     })
+        //     .fail(function( jqXHR, textStatus ) {
+        //         alert( "Request failed: " + textStatus );
+        //     });
+        // });
         
     </script>
 </body>
