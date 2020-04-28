@@ -18,7 +18,7 @@ if( $_FILES["userlogo"]["error"] === 0 ) {
     
     //找出副檔名
     $extension = pathinfo($_FILES["userlogo"]["name"], PATHINFO_EXTENSION);
-
+  
     //建立完整名稱
     $imgFileName = $studentImg.".".$extension;
 
