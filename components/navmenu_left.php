@@ -18,9 +18,9 @@
                         <a href="#"><i class="fas fa-users"></i> 賣家管理 <span class="arrow"></span></a>
                     </li>  
                     <ul class="sub-menu collapse" id="service">
-                        <li>New Service 1</li>
-                        <li>New Service 2</li>
-                        <li>New Service 3</li>
+                        <li>
+                            <a href="../alice_seller/alice_seller_index.php">賣家列表</a>
+                        </li>
                     </ul>
 
                     <li data-toggle="collapse" data-target="#store" class="collapsed">
