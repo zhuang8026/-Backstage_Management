@@ -5,15 +5,6 @@ require_once('../checkSession.php');
 //引用資料庫連線
 require_once('../db.inc.php');
 
-/**
- * 注意：
- * 
- * 因為要判斷更新時檔案有無上傳，
- * 所以要先對前面/其它的欄位先進行 SQL 語法字串連接，
- * 再針對圖片上傳的情況，給予對應的 SQL 字串和資料繫結設定。
- * 
- */
-
 // echo "<pre>";
 // print_r($_FILES);
 // echo "</pre>";
@@ -26,19 +17,19 @@ $sql = "UPDATE `items`
 
 // 先對其它欄位進行資料繫結設定
 $arrParam = [
-    $_POST['itemName']
+    $_POST['itemName_d']
 ];
 
-echo "<pre>";
-print_r($arrParam);
+// echo "<pre>";
+// print_r($arrParam);
 
 //SQL 結尾
 $sql.= "WHERE `itemId` = ? ";
 $arrParam[] = (int)$_POST['itemId_input'];
 
-echo "<pre>";
-print_r($_POST['itemId_input']);
-print_r($arrParam);
+// echo "<pre>";
+// print_r($_POST['itemId_input']);
+// print_r($arrParam);
 // exit();
 
 $stmt = $pdo->prepare($sql);

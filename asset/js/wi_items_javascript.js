@@ -182,15 +182,19 @@ function init() {
 init();
 
 
-// click
+// jq --- william
 function data_text(id){
     console.log($('.itemName'+id).eq(0).html());
-    // console.log($('.itemName'+id).eq(0));
-    // $('.itemName1').eq(0).html();
-    // console.log($('.itemName'+id));
-    $('#itemName').val( $('.itemName'+id).eq(0).html() );
+    $('input#itemName_d').val( $('.itemName'+id).eq(0).html() );
     $('#itemId_input').val(id);
 };
 
-
-
+// js --- william
+// function data_text(id){
+//     console.log(id);
+//     console.log(document.getElementsByClassName('itemName'+id))
+//     console.log(document.getElementsByClassName('itemName'+id)[0].innerHTML);
+//     console.log(document.querySelectorAll("input#itemName_d")[0]);
+//     let a = document.getElementsByClassName('itemName'+id)[0].innerHTML;
+//     document.querySelectorAll("input#itemName_d")[0].value = a;
+// }

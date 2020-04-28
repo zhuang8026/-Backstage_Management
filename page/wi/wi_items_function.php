@@ -69,31 +69,31 @@
                     <div class="modal-body">
                         <div class="form-group">
                             <label>itemName</label>
-                            <input type="text" class="form-control" name="itemName" value="" placeholder="商品名稱" id="itemName">
+                            <input type="text" class="form-control" name="itemName_d" value="" placeholder="商品名稱" id="itemName_d">
                         </div>
                         <div class="form-group">
                             <label>itemImg</label>
-                            <input type="file" class="form-control" name="itemImg" value="" placeholder="商品圖片" id="itemImg">
+                            <input type="file" class="form-control" name="itemImg_d" value="" placeholder="商品圖片" id="itemImg_d">
                         </div>
                         <div class="form-group">
                             <label>colorid</label>
-                            <input type="text" class="form-control" name="colorid" value="" placeholder="商品顏色" id="colorid">
+                            <input type="text" class="form-control" name="colorid_d" value="" placeholder="商品顏色" id="colorid_d">
                         </div>
                         <div class="form-group">
                             <label>itemsbrand</label>
-                            <input type="text" class="form-control" name="itemsbrand" value="" placeholder="商品品牌" id="itemsbrand">
+                            <input type="text" class="form-control" name="itemsbrand_d" value="" placeholder="商品品牌" id="itemsbrand_d">
                         </div>
                         <div class="form-group">
                             <label>itemstype</label>
-                            <input type="text" class="form-control" name="itemstype" value="" placeholder="商品類型" id="itemstype">
+                            <input type="text" class="form-control" name="itemstype_d" value="" placeholder="商品類型" id="itemstype_d">
                         </div>
                         <div class="form-group">
                             <label>itemPrice</label>
-                            <input type="text" class="form-control" name="itemPrice" value="" placeholder="商品價格" id="itemPrice">
+                            <input type="text" class="form-control" name="itemPrice_d" value="" placeholder="商品價格" id="itemPrice_d">
                         </div>
                         <div class="form-group">
                             <label>itemQty</label>
-                            <input type="text" class="form-control" name="itemQty" value="" placeholder="商品數量" id="itemQty">
+                            <input type="text" class="form-control" name="itemQty_d" value="" placeholder="商品數量" id="itemQty_d">
                         </div>
                     </div>
 
