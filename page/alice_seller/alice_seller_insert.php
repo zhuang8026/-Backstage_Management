@@ -9,22 +9,22 @@ require_once('../../db.inc.php');
 
 //SQL 敘述
 $sql = "INSERT INTO `users` 
-        (`username`, `pwd`, `name`, `gender`, `userlogo`,`phoneNumber`,`card`,`birthday`,`address`,`isActivated`) 
+        (`username`, `pwd`, `name`, `gender`, `userlogo`, `phoneNumber`, `card`,`birthday`,`address`,`isActivated`) 
         VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?,?)";
 
 if( $_FILES["userlogo"]["error"] === 0 ) {
     //為上傳檔案命名
     $studentImg = date("YmdHis");//時間
-
+    
     //找出副檔名
     $extension = pathinfo($_FILES["userlogo"]["name"], PATHINFO_EXTENSION);
-  
+
     //建立完整名稱
     $imgFileName = $studentImg.".".$extension;
 
     //若上傳成功，則將上傳檔案從暫存資料夾，移動到指定的資料夾或路徑
     if( !move_uploaded_file($_FILES["userlogo"]["tmp_name"], "./files/".$imgFileName) ) {
-        header("Refresh: 3; url=./k_member_index.php");
+        header("Refresh: 3; url=./alice_seller_index.php");
         echo "圖片上傳失敗";
         exit();
     }
@@ -44,15 +44,17 @@ if( $_FILES["userlogo"]["error"] === 0 ) {
     
     $pdo_stmt = $pdo->prepare($sql);
     $pdo_stmt->execute($arr);
+    // print_r($sql);
+    // exit();
     if($pdo_stmt->rowCount() === 1) {
-        header("Refresh: 3; url=./k_member_index.php");
+        header("Refresh: 3; url=./alice_seller_index.php");
         echo "新增成功";
     } else {
-        header("Refresh: 3; url=./k_member_index.php");
+        header("Refresh: 3; url=./alice_seller_index.php");
         echo "新增失敗";
     }
 }else{
-    header("Refresh: 3; url=./k_member_index.php");
+    header("Refresh: 3; url=./alice_seller_index.php");
         echo "請夾帶圖片";
 }
 

@@ -19,9 +19,9 @@
                         <a href="#"><i class="fas fa-users"></i> 賣家管理 <span class="arrow"></span></a>
                     </li>  
                     <ul class="sub-menu collapse" id="service">
-                        <li>New Service 1</li>
-                        <li>New Service 2</li>
-                        <li>New Service 3</li>
+                        <li>
+                            <a href="../alice_seller/alice_seller_index.php">賣家列表</a>
+                        </li>
                     </ul>
 
                     <li data-toggle="collapse" data-target="#store" class="collapsed">
@@ -46,9 +46,7 @@
                         <a href="#"><i class="fas fa-store"></i> 訂單管理 <span class="arrow"></span></a>
                     </li>
                     <ul class="sub-menu collapse" id="order">
-                        <li>New New 1</li>
-                        <li>New New 2</li>
-                        <li>New New 3</li>
+                        <li><a href="../hong/orders_index.php">訂單</a></li>                       
                     </ul>
 
                     <li data-toggle="collapse" data-target="#market" class="collapsed">
