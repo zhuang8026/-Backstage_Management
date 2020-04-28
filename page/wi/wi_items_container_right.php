@@ -54,7 +54,7 @@
                     $sql = "SELECT `itemId`,`itemName`, `itemImg`, `colorid`,`itemsbrand`, `itemstype`, 
                             `itemPrice`, `itemQty`, `itemsstar`, `itemsales`, `itemCategoryId`, `itemscontent`, `created_at`, `updated_at`
                             FROM `items` 
-                            ORDER BY `itemId` ASC";
+                            ORDER BY `itemId` DESC";
                     $stmt = $pdo->prepare($sql);
                     $stmt->execute(); 
 

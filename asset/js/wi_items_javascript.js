@@ -1,5 +1,5 @@
  // 全選功能
- $(document).ready(function(){
+$(document).ready(function(){
     // Activate tooltip
     $('[data-toggle="tooltip"]').tooltip();
     
@@ -24,7 +24,7 @@
 
 });
 
-
+// chart.js
 function getTableData(table) {
     // 這邊 增加 陣列
     const dataArray =[], 
@@ -62,7 +62,7 @@ function getTableData(table) {
 
     return dataArray;
 }
-
+// chart.js
 function createHighcharts(data) {
     console.log(data)
     Highcharts.setOptions({
@@ -150,7 +150,7 @@ function createHighcharts(data) {
         }
     });
 }
-
+// chart.js
 function setTableEvents(table) {
     // listen for page clicks
     table.on("page", () => {
