@@ -28,9 +28,7 @@
                         <a href="#"><i class="fas fa-store"></i> 賣場管理 <span class="arrow"></span></a>
                     </li>
                     <ul class="sub-menu collapse" id="store">
-                        <li>New New 1</li>
-                        <li>New New 2</li>
-                        <li>New New 3</li>
+                        <li><a href="../yiyang/shopper.php">賣場管理</a></li>
                     </ul>
 
                     <li data-toggle="collapse" data-target="#items" class="collapsed">
