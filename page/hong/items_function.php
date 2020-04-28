@@ -3,49 +3,28 @@
     <div id="addEmployeeModal" class="modal fade">
         <div class="modal-dialog">
             <div class="modal-content">
-                <form name="myForm" method="POST" action="../../api/add_api.php" enctype="multipart/form-data">
+                <form>
                     <div class="modal-header">
                         <h4 class="modal-title">Add ?</h4>
                         <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
                     </div>
                     <div class="modal-body">
                         <div class="form-group">
-                            <label>itemName</label>
-                            <input type="text" class="form-control" required name="itemName" value="" placeholder="商品名稱">
+                        <label>Name</label>
+                        <input type="text" class="form-control" required>
                         </div>
                         <div class="form-group">
-                            <label>itemImg</label>
-                            <input type="file" class="form-control" required name="itemImg" value="" placeholder="商品圖片">
+                        <label>Email</label>
+                        <input type="email" class="form-control" required>
                         </div>
                         <div class="form-group">
-                            <label>colorid</label>
-                            <input type="text" class="form-control" required name="colorid" value="" placeholder="商品顏色">
+                        <label>Address</label>
+                        <textarea class="form-control" required></textarea>
                         </div>
                         <div class="form-group">
-                            <label>itemsbrand</label>
-                            <input type="text" class="form-control" required name="itemsbrand" value="" placeholder="商品品牌">
+                        <label>Phone</label>
+                        <input type="text" class="form-control" required>
                         </div>
-                        <div class="form-group">
-                            <label>itemstype</label>
-                            <input type="text" class="form-control" required name="itemstype" value="" placeholder="商品類型">
-                        </div>
-                        <div class="form-group">
-                            <label>itemPrice</label>
-                            <input type="text" class="form-control" required name="itemPrice" value="" placeholder="商品價格">
-                        </div>
-                        <div class="form-group">
-                            <label>itemQty</label>
-                            <input type="text" class="form-control" required name="itemQty" value="" placeholder="商品數量">
-                        </div>
-                        
-                        <div class="form-group">
-                            <label>itemscontent</label>
-                            <textarea class="form-control" required name="itemscontent" value="" placeholder="商品備註"></textarea>
-                        </div>
-                        <!-- <div class="form-group">
-                            <label>itemsstar</label>
-                            <input type="text" class="form-control" required name="name3" value="" maxlength="10">
-                        </div> -->
                     </div>
                     <div class="modal-footer">
                         <input type="button" class="btn btn-default" data-dismiss="modal" value="Cancel">
@@ -60,17 +39,17 @@
     <div id="editEmployeeModal" class="modal fade">
         <div class="modal-dialog">
             <div class="modal-content">
-                <form name="updateForm" enctype="multipart/form-data" method="POST" action="update.php">
+                <form>
                     <div class="modal-header">
                         <h4 class="modal-title">Edit ?</h4>
                         <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
                     </div>
                     <div class="modal-body">
                         <div class="form-group">
-                            <label>itemName</label>
-                            <input type="text" class="form-control" required name="itemName" id="itemName" value="" placeholder="商品名稱">
+                            <label>Name</label>
+                            <input type="text" class="form-control" required>
                         </div>
-                        <!-- <div class="form-group">
+                        <div class="form-group">
                             <label>Email</label>
                             <input type="email" class="form-control" required>
                         </div>
@@ -81,14 +60,12 @@
                         <div class="form-group">
                             <label>Phone</label>
                             <input type="text" class="form-control" required>
-                        </div> -->
+                        </div>
                     </div>
                     <div class="modal-footer">
                         <input type="button" class="btn btn-default" data-dismiss="modal" value="Cancel">
-                        <input type="submit" class="btn btn-info" id="btn_submit" value="Save">
+                        <input type="submit" class="btn btn-info" value="Save">
                     </div>
-                    <!-- <input type="hidden" name="itemId" value="<?/*= (int)$_GET['itemId']; */?>"> -->
-                    <input type="hidden" name="itemId" value="1">
                 </form>
             </div>
         </div>

@@ -3,53 +3,58 @@
     <div id="addEmployeeModal" class="modal fade">
         <div class="modal-dialog">
             <div class="modal-content">
-                <form name="myForm" method="POST" action="../../api/add_api.php" enctype="multipart/form-data">
+                <form method="POST" action="./insert.php" enctype="multipart/form-data">
                     <div class="modal-header">
                         <h4 class="modal-title">Add ?</h4>
                         <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
                     </div>
                     <div class="modal-body">
                         <div class="form-group">
-                            <label>itemName</label>
-                            <input type="text" class="form-control" required name="itemName" value="" placeholder="商品名稱">
+                            <label>Username</label>
+                            <input type="text" name="username" id="username" class="form-control" required>
                         </div>
                         <div class="form-group">
-                            <label>itemImg</label>
-                            <input type="file" class="form-control" required name="itemImg" value="" placeholder="商品圖片">
+                            <label >password</label>
+                            <input type="text" name="pwd" id="pwd" class="form-control" required>
                         </div>
                         <div class="form-group">
-                            <label>colorid</label>
-                            <input type="text" class="form-control" required name="colorid" value="" placeholder="商品顏色">
+                            <label>Name</label>
+                            <input type="text" name="name" id="name" class="form-control" required>
                         </div>
                         <div class="form-group">
-                            <label>itemsbrand</label>
-                            <input type="text" class="form-control" required name="itemsbrand" value="" placeholder="商品品牌">
+                            <select name="gender" id="gender" class="form-control">
+                            <option value="男" class="form-control" selected>男</option>
+                            <option value="女" class="form-control">女</option>
                         </div>
                         <div class="form-group">
-                            <label>itemstype</label>
-                            <input type="text" class="form-control" required name="itemstype" value="" placeholder="商品類型">
+                            <label>Image</label>
+                            <input type="file" name="userlogo" class="form-control" required>
                         </div>
                         <div class="form-group">
-                            <label>itemPrice</label>
-                            <input type="text" class="form-control" required name="itemPrice" value="" placeholder="商品價格">
+                            <label>Phone</label>
+                            <input type="text" name="phoneNumber" id="phoneNumber" value="" maxlength="10" class="form-control" required>
                         </div>
                         <div class="form-group">
-                            <label>itemQty</label>
-                            <input type="text" class="form-control" required name="itemQty" value="" placeholder="商品數量">
+                            <label>Card</label>
+                            <input type="text" name="card" id="card" value="" class="form-control" required>
                         </div>
-                        
                         <div class="form-group">
-                            <label>itemscontent</label>
-                            <textarea class="form-control" required name="itemscontent" value="" placeholder="商品備註"></textarea>
+                            <label>Birthday</label>
+                            <input type="date" name="birthday" value="" class="form-control" required>
                         </div>
-                        <!-- <div class="form-group">
-                            <label>itemsstar</label>
-                            <input type="text" class="form-control" required name="name3" value="" maxlength="10">
-                        </div> -->
+                        <div class="form-group">
+                            <label>Address</label>
+                            <textarea  name="address" id="address" value="" maxlength="50" class="form-control" required></textarea>
+                        </div>
+                        <div class="form-group">
+                            <select name="isActivated" id="isActivated" class="form-control">
+                            <option value="0" class="form-control" selected>未開通</option>
+                            <option value="1" class="form-control">開通</option>
+                        </div>
                     </div>
                     <div class="modal-footer">
                         <input type="button" class="btn btn-default" data-dismiss="modal" value="Cancel">
-                        <input type="submit" class="btn btn-success" value="Add">
+                        <input type="submit" class="btn btn-success" value="新增">
                     </div>
                 </form>
             </div>
@@ -57,20 +62,35 @@
     </div>
 
     <!-- 修改 -->
-    <div id="editEmployeeModal" class="modal fade">
+    <!-- <div id="editEmployeeModal" class="modal fade">
         <div class="modal-dialog">
             <div class="modal-content">
-                <form name="updateForm" enctype="multipart/form-data" method="POST" action="update.php">
+            <?php
+    //SQL 敘述
+        $sql = "SELECT `id`, `username`, `pwd`, `name`, `gender`,`userlogo`,
+                        `phoneNumber`, `card`, `birthday`,`address`
+            FROM `users` 
+            WHERE `id` = ?";
+    //設定繫結值
+    $arrParam = [(int)$_GET['editId']];
+    //查詢
+    $stmt = $pdo->prepare($sql);
+    $stmt->execute($arrParam);
+        if($stmt->rowCount() > 0){
+            $arr = $stmt->fetchAll(PDO::FETCH_ASSOC)[0];
+        }
+    ?>
+                <form method="POST" action="./updateEdit.php">
                     <div class="modal-header">
                         <h4 class="modal-title">Edit ?</h4>
                         <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
                     </div>
                     <div class="modal-body">
                         <div class="form-group">
-                            <label>itemName</label>
-                            <input type="text" class="form-control" required name="itemName" id="itemName" value="" placeholder="商品名稱">
+                            <label>Name</label>
+                            <input type="text" class="form-control" required>
                         </div>
-                        <!-- <div class="form-group">
+                        <div class="form-group">
                             <label>Email</label>
                             <input type="email" class="form-control" required>
                         </div>
@@ -81,24 +101,23 @@
                         <div class="form-group">
                             <label>Phone</label>
                             <input type="text" class="form-control" required>
-                        </div> -->
+                        </div>
                     </div>
                     <div class="modal-footer">
                         <input type="button" class="btn btn-default" data-dismiss="modal" value="Cancel">
-                        <input type="submit" class="btn btn-info" id="btn_submit" value="Save">
+                        <input type="submit" class="btn btn-info" value="Save">
                     </div>
-                    <!-- <input type="hidden" name="itemId" value="<?/*= (int)$_GET['itemId']; */?>"> -->
-                    <input type="hidden" name="itemId" value="1">
                 </form>
+                <input type="hidden" name="editId" value="<?php echo (int)$_GET['editId']; ?>">
             </div>
         </div>
-    </div>
+    </div> -->
 
     <!-- 刪除 -->
     <div id="deleteEmployeeModal" class="modal fade">
         <div class="modal-dialog">
             <div class="modal-content">
-                <form>
+                <form method="POST" action="./delete.php" enctype="multipart/form-data">
                     <div class="modal-header">
                         <h4 class="modal-title">Delete ？</h4>
                         <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>

@@ -9,18 +9,19 @@
                         <a href="#"><i class="fas fa-user-friends"></i> 買家管理 <span class="arrow"></span></a>
                     </li>
                     <ul class="sub-menu collapse" id="products">
-                        <li class="active">New New 1</li>
-                        <li>New New 2</li>
-                        <li>New New 3</li>
+                        <li class="active">
+                            <a href="../k_member/k_member_index.php">會員列表</a>
+                        </li>
+                        
                     </ul>
 
                     <li data-toggle="collapse" data-target="#service" class="collapsed">
                         <a href="#"><i class="fas fa-users"></i> 賣家管理 <span class="arrow"></span></a>
                     </li>  
                     <ul class="sub-menu collapse" id="service">
-                        <li>New Service 1</li>
-                        <li>New Service 2</li>
-                        <li>New Service 3</li>
+                        <li>
+                            <a href="../alice_seller/alice_seller_index.php">賣家列表</a>
+                        </li>
                     </ul>
 
                     <li data-toggle="collapse" data-target="#store" class="collapsed">
@@ -34,18 +35,16 @@
                         <a href="#"><i class="fas fa-store"></i> 產品管理 <span class="arrow"></span></a>
                     </li>
                     <ul class="sub-menu collapse" id="items">
-                        <li>New New 1</li>
-                        <li>New New 2</li>
-                        <li>New New 3</li>
+                        <li>
+                            <a href="../wi/wi_items_index.php">產品分析</a>
+                        </li>
                     </ul>
 
                     <li data-toggle="collapse" data-target="#order" class="collapsed">
                         <a href="#"><i class="fas fa-store"></i> 訂單管理 <span class="arrow"></span></a>
                     </li>
                     <ul class="sub-menu collapse" id="order">
-                        <li>New New 1</li>
-                        <li>New New 2</li>
-                        <li>New New 3</li>
+                        <li><a href="../hong/orders_index.php">訂單</a></li>                       
                     </ul>
 
                     <li data-toggle="collapse" data-target="#market" class="collapsed">
