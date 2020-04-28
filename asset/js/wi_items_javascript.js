@@ -167,7 +167,7 @@ function setTableEvents(table) {
         }
     });
 }
-
+// chart.js
 let draw = false;
 function init() {
     // initialize DataTables
