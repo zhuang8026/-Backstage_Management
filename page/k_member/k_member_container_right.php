@@ -53,6 +53,8 @@
                     if($stmt->rowCount() > 0) {
                         $arr = $stmt->fetchAll(PDO::FETCH_ASSOC);
                         for($i = 0; $i < count($arr); $i++) {
+                            $thespecificid = $arr[$i]['id']; 
+                            $thespecificidtoed = $thespecificid;
                     ?>
                     <tr>
                         <td>

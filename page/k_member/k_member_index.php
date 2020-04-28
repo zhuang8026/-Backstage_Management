@@ -1,5 +1,6 @@
 <?php 
     // session_start();
+    $thespecificidtoed;
     require_once('../../db.inc.php');
     require_once('../../checkSession.php');
     require_once('./k_member_head.php');
