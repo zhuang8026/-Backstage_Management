@@ -11,7 +11,7 @@ function Edit_click(id){
     console.log($('img#itemImg_d_img').attr('src', $img_name) );
     $('#itemId_input').val(id); // hiiden id
     $('input#itemName_d').val( $('.itemName'+id).eq(0).html() );        // itemName
-    $('img#itemImg_d_img').attr('src', $img_name);                              // itemImg
+    $('img#itemImg_d_img').attr('src', $img_name);                      // itemImg
     $('input#colorid_d').val( $('.colorid'+id).eq(0).html() );          // colorid
     $('input#itemsbrand_d').val( $('.itemsbrand'+id).eq(0).html() );    // itemsbrand
     $('input#itemstype_d').val( $('.itemstype'+id).eq(0).html() );      // itemstype
