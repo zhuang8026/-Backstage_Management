@@ -67,12 +67,32 @@
                     </div>
 
                     <div class="modal-body">
+                        <?php
+                            // //SQL 敘述
+                            // $sql = "SELECT `itemImg`
+                            //         FROM `items` 
+                            //         WHERE `itemId` = ?";
+
+                            // //設定繫結值
+                            // $arrParam = [
+                            //     (int)$_POST['itemId_input']
+                            // ];
+
+                            // //查詢
+                            // $stmt = $pdo->prepare($sql);
+                            // $stmt->execute($arrParam);
+                            // $arr = $stmt->fetchAll(PDO::FETCH_ASSOC)[0]; // 多个 array[0][]
+  
+
+                            // if(count($arr) > 0):
+                        ?>
                         <div class="form-group">
                             <label>itemName</label>
                             <input type="text" class="form-control" name="itemName_d" value="" placeholder="商品名稱" id="itemName_d">
                         </div>
                         <div class="form-group">
                             <label>itemImg</label>
+                            <img id="itemImg_d_img" src=""/>
                             <input type="file" class="form-control" name="itemImg_d" value="" placeholder="商品圖片" id="itemImg_d">
                         </div>
                         <div class="form-group">
@@ -95,6 +115,10 @@
                             <label>itemQty</label>
                             <input type="text" class="form-control" name="itemQty_d" value="" placeholder="商品數量" id="itemQty_d">
                         </div>
+
+                        <?php 
+                        // endif;
+                         ?>
                     </div>
 
                     <div class="modal-footer">

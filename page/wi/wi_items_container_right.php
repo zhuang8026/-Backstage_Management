@@ -77,7 +77,7 @@
                     <td><?= $arr[$i]['itemId']; ?></td>
                     <td class="itemName<?= $arr[$i]['itemId']; ?>"><?= $arr[$i]['itemName']; ?></td>
                     <!-- 图片 -->
-                    <td>
+                    <td class="itemImg<?= $arr[$i]['itemId']; ?>">
                         <?php if($arr[$i]['itemImg'] !== ""): ?>
                             <img src="../../asset/file_img/<?= $arr[$i]['itemImg'];?>">
                         <?php else: ?>
