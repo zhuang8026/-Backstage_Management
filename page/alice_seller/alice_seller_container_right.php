@@ -47,7 +47,7 @@
                             `userlogo`, `phoneNumber`,`card`,`birthday`,`address`,
                     IF(`isActivated` = 1,'開通','未開通') AS `isActivated`
                     FROM `users`
-                    -- WHERE `isActivated` = 1 
+                    WHERE `isActivated` = 1 
                     ORDER BY `id` ASC";
             $stmt = $pdo->prepare($sql);
             $stmt->execute();
