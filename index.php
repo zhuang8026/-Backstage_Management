@@ -48,7 +48,7 @@
                 </form>
 
                 <!-- 註冊 -->
-                <!-- <form class="sign-up-htm" name="managerForm" method="POST" action="#">
+                <form class="sign-up-htm" name="managerForm" method="POST" action="#">
                     <div class="group">
                         <label for="user" class="label">Username</label>
                         <input id="user" type="text" class="input">
@@ -72,7 +72,7 @@
                         <div class="foot-lnk">
                             <label for="tab-1">Already Member?</a>
                     </div>
-                </form> -->
+                </form>
             </div>
         </div>
     </div>
