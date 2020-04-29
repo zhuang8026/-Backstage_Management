@@ -203,7 +203,7 @@ function data_text(id){
     $('input#itemQty_d').val( $('.itemQty'+id).eq(0).html() );          // itemQty
 };
 
-// JAVASCRIPT --- william
+// JAVASCRIPT --- william --- 修改
 // function data_text(id){
 //     console.log(id);
 //     console.log(document.getElementsByClassName('itemName'+id)[0])
