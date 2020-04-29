@@ -1,7 +1,7 @@
 <div class="table-wrapper">
             <div class="table-title">
                 <div class="row">
-                    <div class="col-sm-6">
+                    <div class="col-sm-6 user_btn">
                         <h2><b>歡迎回來！<?= $_SESSION['username'] ?></b></h2>
                         <button>
                             <i class="fas fa-sign-out-alt"></i>
