@@ -85,9 +85,6 @@ $sql.= "WHERE `itemId` = 1 ";
 $stmt = $pdo->prepare($sql);
 $stmt->execute($arrParam);
 
-print_r($stmt);
-// exit();
-
 if( $stmt->rowCount()> 0 ){
     // header("Refresh: 3; url=./edit.php?itemId={$_POST['itemId']}");
     $objResponse['success'] = true;

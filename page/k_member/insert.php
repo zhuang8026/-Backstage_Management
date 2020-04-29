@@ -9,7 +9,7 @@ require_once('../../db.inc.php');
 
 //SQL 敘述
 $sql = "INSERT INTO `users` 
-        (`username`, `pwd`, `name`, `gender`, `userlogo`, `phoneNumber`, `card`,`birthday`,`address`,`isActivated`) 
+        (`username`, `pwd`, `name`, `gender`, `userlogo`,`phoneNumber`,`card`,`birthday`,`address`,`isActivated`) 
         VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?,?)";
 
 if( $_FILES["userlogo"]["error"] === 0 ) {

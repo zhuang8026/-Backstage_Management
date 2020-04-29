@@ -23,9 +23,9 @@ if( $_FILES["itemImg"]["error"] === 0 ) {
 
     //若上傳失敗，則回報錯誤訊息
     if( move_uploaded_file($_FILES["itemImg"]["tmp_name"], "../asset/file_img/{$itemImg}") ) {
-        echo "<hr>";
-        echo "<pre>";
-        print_r($_FILES);
+        // echo "<hr>";
+        // echo "<pre>";
+        // print_r($_FILES);
     } else {
         $objResponse['success'] = false;
         $objResponse['code'] = 500;
@@ -33,13 +33,14 @@ if( $_FILES["itemImg"]["error"] === 0 ) {
         echo json_encode($objResponse, JSON_UNESCAPED_UNICODE);
         exit();
     }
+} else {
+    $itemImg = "";
 }
 // exit();
 
 //SQL 敘述
 $sql = "INSERT INTO `items` (`itemName`, `itemImg`, `colorid`, `itemsbrand`, `itemstype`, `itemPrice`, `itemQty`, `itemscontent`)
         VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
-
 //繫結用陣列
 $arrParam = [
     $_POST['itemName'],
@@ -51,11 +52,14 @@ $arrParam = [
     $_POST['itemQty'],
     $_POST['itemscontent']
 ];
-echo "<pre>";   
-print_r($arrParam);
+// echo "<pre>";   
+// print_r($arrParam);
 
 $stmt = $pdo->prepare($sql);
 $stmt->execute($arrParam);
+
+echo "<pre>";   
+print_r($stmt->rowCount());
 
 if($stmt->rowCount() > 0) {
     header("Refresh: 1; url=../page/wi/wi_items_index.php");

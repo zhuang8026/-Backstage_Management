@@ -50,11 +50,12 @@
                 </tr>
             </thead>
             <tbody>
+                <!-- 模板 start-->
                 <?php 
                     $sql = "SELECT `itemId`,`itemName`, `itemImg`, `colorid`,`itemsbrand`, `itemstype`, 
                             `itemPrice`, `itemQty`, `itemsstar`, `itemsales`, `itemCategoryId`, `itemscontent`, `created_at`, `updated_at`
                             FROM `items` 
-                            ORDER BY `itemId` ASC";
+                            ORDER BY `itemId` DESC";
                     $stmt = $pdo->prepare($sql);
                     $stmt->execute(); 
 
@@ -66,11 +67,10 @@
                         $arr = $stmt->fetchAll(PDO::FETCH_ASSOC); 
                         for($i = 0; $i < count($arr); $i++):
                 ?>
-                <!-- 模板 start-->
                 <tr>
                     <td>
                         <span class="custom-checkbox">
-                            <input type="checkbox" id="checkbox1" name="options[]" value="1">
+                            <input type="checkbox" id="checkbox1" name="options[]" value="<?= $arr[$i]['itemId']; ?>">
                             <label for="checkbox1"></label>
                         </span>
                     </td>
@@ -78,16 +78,17 @@
                     <td class="itemName<?= $arr[$i]['itemId']; ?>"><?= $arr[$i]['itemName']; ?></td>
                     <!-- 图片 -->
                     <td>
-                        <?php if($arr[$i]['itemImg'] !== NULL): ?>
+                        <?php if($arr[$i]['itemImg'] !== ""): ?>
                             <img src="../../asset/file_img/<?= $arr[$i]['itemImg'];?>">
-                            <?/*= $arr[$i]['studentImg']; */?>
+                        <?php else: ?>
+                            <img src="../../asset/img/404.png">
                         <?php endif; ?>
                     </td>
-                    <td><?= $arr[$i]['colorid']; ?></td>
-                    <td><?= $arr[$i]['itemsbrand']; ?></td>
-                    <td><?= $arr[$i]['itemstype']; ?></td>
-                    <td><?= $arr[$i]['itemPrice']; ?></td>
-                    <td><?= $arr[$i]['itemQty']; ?></td>
+                    <td class="colorid<?= $arr[$i]['itemId']; ?>"><?= $arr[$i]['colorid']; ?></td>
+                    <td class="itemsbrand<?= $arr[$i]['itemId']; ?>"><?= $arr[$i]['itemsbrand']; ?></td>
+                    <td class="itemstype<?= $arr[$i]['itemId']; ?>"><?= $arr[$i]['itemstype']; ?></td>
+                    <td class="itemPrice<?= $arr[$i]['itemId']; ?>"><?= $arr[$i]['itemPrice']; ?></td>
+                    <td class="itemQty<?= $arr[$i]['itemId']; ?>"><?= $arr[$i]['itemQty']; ?></td>
                     <td><?= $arr[$i]['itemsstar']; ?></td>
                     <td><?= $arr[$i]['itemsales']; ?></td>
                     <!-- <td><?/*= $arr[$i]['itemCategoryId']; */?></td> -->
@@ -96,19 +97,16 @@
                     <td><?= $arr[$i]['updated_at']; ?></td>
                     <td>
                         <a href="#editEmployeeModal" class="edit" data-toggle="modal">
-                        <i class="material-icons" data-toggle="tooltip" title="Edit" onClick="data_text(<?= $arr[$i]['itemId']; ?>)">&#xE254;</i>
-                            <script>
-                                
-                            </script>
+                            <i class="material-icons" data-toggle="tooltip" title="Edit" onClick="data_text(<?= $arr[$i]['itemId']; ?>)">&#xE254;</i>
                         </a>
                         <a href="#deleteEmployeeModal" class="delete" data-toggle="modal">
                             <i class="material-icons" data-toggle="tooltip" title="Delete">&#xE872;</i>
                         </a>
                     </td>
                 </tr>
-                <!-- 模板 end-->
                 <?php endfor;?>
                 <?php endif;?>
+                <!-- 模板 end-->
             </tbody>
         </table>
     </div>
