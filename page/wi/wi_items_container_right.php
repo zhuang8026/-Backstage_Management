@@ -84,11 +84,11 @@
                             <img src="../../asset/img/404.png">
                         <?php endif; ?>
                     </td>
-                    <td><?= $arr[$i]['colorid']; ?></td>
-                    <td><?= $arr[$i]['itemsbrand']; ?></td>
-                    <td><?= $arr[$i]['itemstype']; ?></td>
-                    <td><?= $arr[$i]['itemPrice']; ?></td>
-                    <td><?= $arr[$i]['itemQty']; ?></td>
+                    <td class="colorid<?= $arr[$i]['itemId']; ?>"><?= $arr[$i]['colorid']; ?></td>
+                    <td class="itemsbrand<?= $arr[$i]['itemId']; ?>"><?= $arr[$i]['itemsbrand']; ?></td>
+                    <td class="itemstype<?= $arr[$i]['itemId']; ?>"><?= $arr[$i]['itemstype']; ?></td>
+                    <td class="itemPrice<?= $arr[$i]['itemId']; ?>"><?= $arr[$i]['itemPrice']; ?></td>
+                    <td class="itemQty<?= $arr[$i]['itemId']; ?>"><?= $arr[$i]['itemQty']; ?></td>
                     <td><?= $arr[$i]['itemsstar']; ?></td>
                     <td><?= $arr[$i]['itemsales']; ?></td>
                     <!-- <td><?/*= $arr[$i]['itemCategoryId']; */?></td> -->
