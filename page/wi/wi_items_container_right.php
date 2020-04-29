@@ -55,7 +55,7 @@
                     $sql = "SELECT `itemId`,`itemName`, `itemImg`, `colorid`,`itemsbrand`, `itemstype`, 
                             `itemPrice`, `itemQty`, `itemsstar`, `itemsales`, `itemCategoryId`, `itemscontent`, `created_at`, `updated_at`
                             FROM `items` 
-                            ORDER BY `itemId` DESC";
+                            ORDER BY `itemId` ASC";
                     $stmt = $pdo->prepare($sql);
                     $stmt->execute(); 
 
@@ -70,7 +70,7 @@
                 <tr>
                     <td>
                         <span class="custom-checkbox">
-                            <input type="checkbox" id="checkbox<?= $arr[$i]['itemId']; ?>" name="options[]" value="<?= $arr[$i]['itemId']; ?>">
+                            <input type="checkbox" class="checkboxValue" id="checkbox<?= $arr[$i]['itemId']; ?>" name="options[]" value="<?= $arr[$i]['itemId']; ?>">
                             <label for="checkbox1"></label>
                         </span>
                     </td>
@@ -100,7 +100,7 @@
                             <i class="material-icons" data-toggle="tooltip" title="Edit" onClick="Edit_click(<?= $arr[$i]['itemId']; ?>)">&#xE254;</i>
                         </a>
                         <a href="#deleteEmployeeModal" class="delete" data-toggle="modal">
-                            <i class="material-icons" data-toggle="tooltip" title="Delete" onClick="Delete_click(<?= $arr[$i]['itemId']; ?>)">&#xE872;</i>
+                            <i class="material-icons" data-toggle="tooltip" title="Delete">&#xE872;</i>
                         </a>
                     </td>
                 </tr>

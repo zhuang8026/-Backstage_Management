@@ -145,7 +145,15 @@ function setTableEvents(table) {
 let draw = false;
 function init() {
     // initialize DataTables
-    const table = $("#dt-table").DataTable();
+    const table = $("#dt-table").DataTable({
+        "columnDefs": [ {
+            // "searchable": false,
+            "orderable": false,
+            "targets": 0
+        } ],
+        "order": [[1]]
+    } );
+    // const table = $("#dt-table").DataTable();
     // get table data
     const tableData = getTableData(table);
     // create Highcharts

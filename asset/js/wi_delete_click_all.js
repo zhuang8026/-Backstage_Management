@@ -1,4 +1,5 @@
 var checkAllInputValue = [];
+var checkOneInputValue =[];
 var i;
 // 全選功能
 $(document).ready(function(){
@@ -13,9 +14,7 @@ $(document).ready(function(){
                 this.checked = true;
                 // console.log(this.value); 
                 // jq->push === js->pop 
-                // checkAllInputValue.push(this.value);
                 checkAllInputValue.push(this.value);
-               
             });
         } else{
             checkbox.each(function(){
@@ -32,6 +31,19 @@ $(document).ready(function(){
         if(!this.checked){
             $("#selectAll").prop("checked", false);
         }
+    });
+
+    $(".checkboxValue").click(function(){
+        console.log(this.value)
+        if(this.checked){
+            checkOneInputValue.push(this.value);
+        } else{
+            this.checked = false;   
+            checkOneInputValue =[];                     
+        }
+        console.log(checkOneInputValue);
+        console.log(checkOneInputValue.length);
+        $('#input_delete_all_id').val(checkOneInputValue);
     });
 });
 

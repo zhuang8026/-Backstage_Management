@@ -67,10 +67,10 @@ for($i = 0; $i < count($str_sec_2); $i++){
 // echo $count;
 // exit();
 if($count > 0) {
-    // header("Refresh: 3; url=./admin.php");
+    header("Refresh: 1; url=../page/wi/wi_items_index.php");
     echo "刪除成功";
 } else {
-    // header("Refresh: 3; url=./admin.php");
+    header("Refresh: 1; url=../page/wi/wi_items_index.php");
     echo "刪除失敗";
 }
 
