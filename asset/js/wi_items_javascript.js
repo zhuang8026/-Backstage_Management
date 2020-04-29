@@ -1,29 +1,3 @@
- // 全選功能
-$(document).ready(function(){
-    // Activate tooltip
-    $('[data-toggle="tooltip"]').tooltip();
-    
-    // Select/Deselect checkboxes
-    var checkbox = $('table tbody input[type="checkbox"]');
-    $("#selectAll").click(function(){
-        if(this.checked){
-            checkbox.each(function(){
-                this.checked = true;                        
-            });
-        } else{
-            checkbox.each(function(){
-                this.checked = false;                        
-            });
-        } 
-    });
-    checkbox.click(function(){
-        if(!this.checked){
-            $("#selectAll").prop("checked", false);
-        }
-    });
-
-});
-
 // chart.js
 function getTableData(table) {
     // 這邊 增加 陣列
@@ -64,7 +38,7 @@ function getTableData(table) {
 }
 // chart.js
 function createHighcharts(data) {
-    console.log(data)
+    // console.log(data)
     Highcharts.setOptions({
         lang: {
             thousandsSep: ","

@@ -11,5 +11,6 @@
     <script src="../../asset/js/wi_items_javascript.js"></script>
     <script src="../../asset/js/wi_deit_click.js"></script>
     <script src="../../asset/js/wi_delete_click.js"></script>
+    <script src="../../asset/js/wi_delete_click_all.js"></script>
 </body>
 </html>
