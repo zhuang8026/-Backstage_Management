@@ -76,12 +76,11 @@ if( $_FILES["itemImg_d"]["error"] === 0 ) {
         if($stmtGetImg->rowCount() > 0) {
             //取得指定 id 的資料 (1筆)
             $arrImg = $stmtGetImg->fetchAll(PDO::FETCH_ASSOC)[0];
-
             //若是 studentImg 裡面不為空值，代表過去有上傳過
             if($arrImg['itemImg'] !== NULL){
                 // 刪除實體檔案
                 // "@" 不管此栏位是不是 NULL,删除就对了!
-                @unlink("./files/".$arrImg['itemImg']);
+                @unlink("../asset/file_img/".$arrImg['itemImg']);
             } 
 
             $sql.= ",";
@@ -91,32 +90,33 @@ if( $_FILES["itemImg_d"]["error"] === 0 ) {
             $arrParam[] = $studentImg;
         }
     }
-} else {
-    echo "<hr>";
-    print_r($_FILES);
 }
 
 //SQL 結尾
-$sql.= "WHERE `itemId` = ? ";
+$sql.= " WHERE `itemId` = ? ";
 $arrParam[] = (int)$_POST['itemId_input'];
 
 // echo "<pre>";
 // print_r($_POST['itemId_input']);
+// echo "<hr>";
 // print_r($arrParam);
+// echo "<hr>";
+// print_r($sql);
 // exit();
 
 $stmt = $pdo->prepare($sql);
 $stmt->execute($arrParam);
 
-echo "<pre>";
-print_r($_POST['itemId_input']);
-echo "<hr>";
-print_r($arrParam);
-echo "<hr>";
-print_r($stmt);
-echo "<hr>";
-print_r($stmt->rowCount());
+// echo "<pre>";
+// print_r($_POST['itemId_input']);
+// echo "<hr>";
+// print_r($arrParam);
+// echo "<hr>";
+// print_r($stmt);
+// echo "<hr>";
+// print_r($stmt->rowCount());
 // exit();
+
 
 if( $stmt->rowCount() > 0 ){
     header("Refresh: 1; url=../page/wi/wi_items_index.php");

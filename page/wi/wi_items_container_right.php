@@ -97,10 +97,10 @@
                     <td><?= $arr[$i]['updated_at']; ?></td>
                     <td>
                         <a href="#editEmployeeModal" class="edit" data-toggle="modal">
-                            <i class="material-icons" data-toggle="tooltip" title="Edit" onClick="data_text(<?= $arr[$i]['itemId']; ?>)">&#xE254;</i>
+                            <i class="material-icons" data-toggle="tooltip" title="Edit" onClick="Edit_click(<?= $arr[$i]['itemId']; ?>)">&#xE254;</i>
                         </a>
                         <a href="#deleteEmployeeModal" class="delete" data-toggle="modal">
-                            <i class="material-icons" data-toggle="tooltip" title="Delete">&#xE872;</i>
+                            <i class="material-icons" data-toggle="tooltip" title="Delete" onClick="Delete_click(<?= $arr[$i]['itemId']; ?>)">&#xE872;</i>
                         </a>
                     </td>
                 </tr>
