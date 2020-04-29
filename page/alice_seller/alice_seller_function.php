@@ -71,89 +71,79 @@
     <div id="editEmployeeModal" class="modal fade">
         <div class="modal-dialog">
             <div class="modal-content">
-            <?php
-            //SQL 敘述
-                $sql = "SELECT `id`, `username`, `pwd`, `name`, `gender`,`userlogo`,
-                                `phoneNumber`, `card`, `birthday`,`address`,`isActivated`
-                    FROM `users` 
-                    WHERE `id` = ?";
-            //設定繫結值
-            $arrParam = [(int)$_GET['id']];
-            // print_r($arrParam);
-            // exit();
-            //查詢
-            $stmt = $pdo->prepare($sql);
-            $stmt->execute($arrParam);
-                if($stmt->rowCount() > 0){
-                    $arr = $stmt->fetchAll(PDO::FETCH_ASSOC)[0];
-                }
-            ?>
-                <form method="POST" action="./alice_seller_updateEdit.php" enctype="multipart/form-data">
-                        <div class="modal-header">
-                            <h4 class="modal-title">Edit ?</h4>
-                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <form name="updateForm" enctype="multipart/form-data" method="POST" action="./updateEdit.php">
+                    <div class="modal-header">
+                        <h4 class="modal-title">編輯</h4>
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    </div>
+
+                    <div class="modal-body">
+                        <div class="form-group">
+                            <label>Username</label>
+                            <input type="text" class="form-control" required name="username_e" id="username_e" value="" placeholder="使用者名稱">
                         </div>
-                        <div class="modal-body">
-                            <div class="form-group">
-                                <label>使用者名稱</label>
-                                <input type="text" class="form-control" name="username" value="<?php echo $arr['username']; ?>" maxlength="20" />
-                            </div>
-                            <div class="form-group">
-                                <label>使用者密碼</label>
-                                <input type="text" class="form-control" name="pwd" value="<?php echo $arr['pwd']; ?>" maxlength="20" />
-                            </div>
-                            <div class="form-group">
-                                <label>姓名</label>
-                                <input type="text" class="form-control" name="name" value="<?php echo $arr['name']; ?>" maxlength="20" />
-                            </div>
-                            <div class="form-group">
-                                <label>性別</label>
-                                <select name="gender" class="form-control">
-                                    <option value="<?php echo $arr['gender']; ?>" selected><?php echo $arr['gender']; ?></option>
-                                    <option value="男">男</option>
-                                    <option value="女">女</option>
-                                </select>
-                            <div class="form-group">
-                                <label>手機號碼</label>
-                                <input type="text" class="form-control" name="phoneNumber" value="<?php echo $arr['phoneNumber']; ?>" maxlength="10" />
-                            </div>
-                            <div class="form-group">
-                                <label>信用卡號碼</label>
-                                <input type="text" class="form-control" name="card" value="<?php echo $arr['card']; ?>" maxlength="" />
-                            </div>
-                            <div class="form-group">
-                                <label>出生年月日</label>
-                                <input type="datetime-local" class="form-control" name="birthday" value="<?php echo $arr['birthday']; ?>" maxlength="10" />
-                            </div>
-                            <div class="form-group">
-                                <label>地址</label>
-                                <input type="text" class="form-control" name="address" value="<?php echo $arr['address']; ?>" maxlength="10" />
-                            </div>
-                            <div class="form-group">
-                                <label>開通狀況</label>
-                                <select name="isActivated" class="form-control">
-                                    <option value="<?php echo $arr['isActivated']; ?>" selected><?php echo $arr['isActivated']; ?></option>
-                                    <option value="0">0</option>
-                                    <option value="1">1</option>
-                                </select>
-                            </div>
-                            <div class="form-group">
-                                <label>使用者頭像</label>
-                                <?php if($arr['userlogo'] !== NULL) { ?>
-                                    <img class="w200px" src="./files/<?php echo $arr['userlogo']; ?>" />
-                                <?php } ?>
-                                <input class="form-control-file" type="file" name="userlogo" />
-                            </div>
+                        <div class="form-group">
+                            <label>password</label>
+                            <input type="text" class="form-control" required name="pwd_e" id="pwd_e" value="" placeholder="使用者密碼">
                         </div>
+                        <div class="form-group">
+                            <label>Name</label>
+                            <input type="text" class="form-control" required name="name_e" id="name_e" value="" placeholder="姓名">
+                        </div>
+                        <!-- <div class="form-group">
+                            <label>gender</label>
+                            <select name="gender_e" id="gender_e" class="form-control">
+                            <option value="男" class="form-control" selected>男</option>
+                            <option value="女" class="form-control">女</option>
+                            </select>
+                        </div> -->
+                        <div class="form-group">
+                            <label>性別</label>
+                            <select name="gender_e" class="form-control">
+                                    <option value="1" class="gender_e">男</option>
+                                    <option value="2" class="gender_e">女</option>
+                                    <option value="" selected class="gender_ee"></option>
+                                </select>
+                        </div> 
+                        <div class="form-group">
+                            <label>Image</label>
+                            <img id="sellerImg_d_img" src=""/>
+                            <input type="file" class="form-control" name="userlogo_e" value="" placeholder="會員圖片" id="userlogo_e">
+                        </div>
+                        <div class="form-group">
+                            <label>Phon</label>
+                            <input type="text" class="form-control" required name="phoneNumber_e" id="phoneNumber_e" value="" placeholder="電話">
+                        </div>
+                        <div class="form-group">
+                            <label>Card</label>
+                            <input type="text" class="form-control" required name="card_e" id="card_e" value="" placeholder="信用卡">
+                        </div>
+                        <div class="form-group">
+                            <label>Birthday</label>
+                            <input type="date" class="form-control" required name="birthday_e" id="birthday_e" value="" placeholder="出生年月日">
+                        </div>
+                        <div class="form-group">
+                            <label>address</label>
+                            <input type="text" class="form-control" required name="address_e" id="address_e" value="" placeholder="地址">
+                        </div>
+                        <div class="form-group">
+                            <label>賣家開通狀態</label>
+                            <select name="isActivated_e" class="form-control">
+                            <option value="0" class="form-control isActivated" selected>未開通</option>
+                            <option value="1" class="form-control isActivated">開通</option>
+                            </select>
+                        </div>
+
                     </div>
                     <div class="modal-footer">
                         <input type="button" class="btn btn-default" data-dismiss="modal" value="Cancel">
-                        <input type="submit" class="btn btn-info" value="Save">
+                        <input type="submit" class="btn btn-info" id="btn_submit" value="Save">
                     </div>
+                    <!-- <input type="hidden" name="itemId" value="<?/*= (int)$_GET['itemId']; */?>"> -->
+                    <input type="text" name="sellerId_input" id="sellerId_input" value="">
                 </form>
             </div>
         </div>
-        <input type="hidden" name="id" value="<?php echo $_GET['id']; ?>">
     </div>
 
     <!-- 刪除 -->

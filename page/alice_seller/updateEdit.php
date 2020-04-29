@@ -14,7 +14,8 @@ $sql = "UPDATE `users`
         `phoneNumber` = ?,
         `card` = ?,
         `birthday` = ?,
-        `address` = ? ";
+        `address` = ?,
+        `isActivated` = ? ";
 
 $arrParam = [
     $_POST['username_e'],
@@ -24,7 +25,8 @@ $arrParam = [
     $_POST['phoneNumber_e'],
     $_POST['card_e'],
     $_POST['birthday_e'],
-    $_POST['address_e']
+    $_POST['address_e'],
+    $_POST['isActivated_e']
 ];
 
 if( $_FILES["userlogo_e"]["error"] === 0 ){
@@ -35,7 +37,7 @@ if( $_FILES["userlogo_e"]["error"] === 0 ){
         $sqlGetImg = "SELECT `userlogo` FROM `users` WHERE `id` = ? ";
         $stmtGetImg = $pdo->prepare($sqlGetImg);
         $arrGetImgParam = [
-            (int)$_POST['memberId_input']
+            (int)$_POST['sellerId_input']
         ];
         $stmtGetImg->execute($arrGetImgParam);
         if($stmtGetImg->rowCount() > 0){
@@ -52,14 +54,14 @@ if( $_FILES["userlogo_e"]["error"] === 0 ){
 }
 
 $sql.= "WHERE `id` = ? ";
-$arrParam[] = (int)$_POST['memberId_input'];
+$arrParam[] = (int)$_POST['sellerId_input'];
 
 $stmt = $pdo->prepare($sql);
 $stmt->execute($arrParam);
 if( $stmt->rowCount() > 0 ){//彈回編輯頁
-    header('refresh: 3; url=k_member_index.php');
+    header('refresh: 3; url=alice_seller_index.php');
     echo "更新成功";
 } else {//彈回編輯頁
-    header("Refresh: 300000; url=k_member_index.php");
+    header("Refresh: 300000; url=alice_seller_index.php");
     echo "沒有任何更新";
 }

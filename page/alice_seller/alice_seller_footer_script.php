@@ -7,8 +7,9 @@
     <script src="https://code.highcharts.com/modules/no-data-to-display.js"></script>
     
     <!-- common -->
-    <script src="../../asset/js/wi_items_javascript.js"></script>
+    <script src="../../asset/js/alice_seller_javascript.js"></script>
     <script>
+    // delet
     function test(data) {
         console.log(data);
         // location.href="?id="+data;
@@ -16,6 +17,6 @@
         return false;
         // break;
     }
-</script>
+    </script>
 </body>
 </html>

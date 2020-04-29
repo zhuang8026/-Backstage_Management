@@ -18,15 +18,15 @@ $sql = "UPDATE `users`
         `isActivated` = ? ";
 
 $arrParam = [
-    $_POST['username'],
-    $_POST['pwd'],
-    $_POST['name'],
-    $_POST['gender'],
-    $_POST['phoneNumber'],
-    $_POST['card'],
-    $_POST['birthday'],
-    $_POST['address'],
-    $_POST['isActivated']
+    $_POST['username_e'],
+    $_POST['pwd_e'],
+    $_POST['name_e'],
+    $_POST['gender_e'],
+    $_POST['phoneNumber_e'],
+    $_POST['card_e'],
+    $_POST['birthday_e'],
+    $_POST['address_e'],
+    $_POST['isActivated_e']
 ];
 
 if( $_FILES["userlogo"]["error"] === 0 ){
@@ -37,7 +37,7 @@ if( $_FILES["userlogo"]["error"] === 0 ){
         $sqlGetImg = "SELECT `userlogo` FROM `users` WHERE `id` = ? ";
         $stmtGetImg = $pdo->prepare($sqlGetImg);
         $arrGetImgParam = [
-            (int)$_POST['editId']
+            (int)$_POST['sellerId_input']
         ];
         $stmtGetImg->execute($arrGetImgParam);
         if($stmtGetImg->rowCount() > 0){
@@ -54,7 +54,7 @@ if( $_FILES["userlogo"]["error"] === 0 ){
 }
 
 $sql.= "WHERE `id` = ? ";
-$arrParam[] = (int)$_POST['editId'];
+$arrParam[] = (int)$_POST['sellerId_input'];
 // print_r($sql);
 // exit();
 $stmt = $pdo->prepare($sql);

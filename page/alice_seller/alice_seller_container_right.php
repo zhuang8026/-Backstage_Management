@@ -41,9 +41,11 @@
             </tr>
         </thead>
         <tbody>
+        <!-- 模板 start-->
         <?php
-            $sql = "SELECT `id`, `username`, `pwd`, `name`, `gender`, 
-                            `userlogo`, `phoneNumber`,`card`,`birthday`,`address`,`isActivated`
+            $sql = "SELECT `id`, `username`, `pwd`, `name`, IF(`gender` = 1,'男','女') AS `gender`, 
+                            `userlogo`, `phoneNumber`,`card`,`birthday`,`address`,
+                    IF(`isActivated` = 1,'開通','未開通') AS `isActivated`
                     FROM `users`
                     -- WHERE `isActivated` = 1 
                     ORDER BY `id` ASC";
@@ -53,39 +55,53 @@
                 $arr = $stmt->fetchAll(PDO::FETCH_ASSOC);
                 for($i = 0; $i < count($arr); $i++) {
         ?>
-        <!-- 模板 start-->
+        
         <tr>
             <td>
-                <input type="checkbox" name="chk[]" value="<?php echo $arr[$i]['id']; ?>" />
+                <span class="custom-checkbox">
+                    <input type="checkbox" id="checkbox1" name="options[]" value="">
+                    <label for="checkbox1"></label>
+                </span>
             </td>
-            <td><?php echo $arr[$i]['username']; ?></td>
-            <td><?php echo $arr[$i]['pwd']; ?></td>
-            <td><?php echo $arr[$i]['name']; ?></td>
-            <td><?php echo $arr[$i]['gender']; ?></td>
-            <td>
+            <td class="username<?php echo $arr[$i]['id']?>"><?php echo $arr[$i]['username']; ?></td>
+            <td class="pwd<?php echo $arr[$i]['id']?>"><?php echo $arr[$i]['pwd']; ?></td>
+            <td class="name<?php echo $arr[$i]['id']?>"><?php echo $arr[$i]['name']; ?></td>
+            <td class="gender<?php echo $arr[$i]['id']?>"><?php echo $arr[$i]['gender']; ?></td>
+            
+            <!-- <td class="userlogo<?php echo $arr[$i]['id']?>">
                 <?php if($arr[$i]['userlogo'] !== NULL) { ?>
-                    <img class="w200px" src="./files/<?php echo $arr[$i]['userlogo']; ?>">
+                <img class="w200px" src="./files/<?php echo $arr[$i]['userlogo']; ?>">
                 <?php } ?>
+            </td> -->
+
+            <td class="userlogo<?= $arr[$i]['id']; ?>">
+                <?php if($arr[$i]['userlogo'] !== ""): ?>
+                    <img src="./files/<?= $arr[$i]['userlogo'];?>">
+                <?php else: ?>
+                    <img src="./files/404.png">
+                <?php endif; ?>
             </td>
-            <td><?php echo $arr[$i]['phoneNumber']; ?></td>
-            <td><?php echo $arr[$i]['card']; ?></td>
-            <td><?php echo $arr[$i]['birthday']; ?></td>
-            <td><?php echo $arr[$i]['address']; ?></td>
-            <td><?php echo $arr[$i]['isActivated']; ?></td>
+
+            <td class="phoneNumber<?php echo $arr[$i]['id']?>"><?php echo $arr[$i]['phoneNumber']; ?></td>
+            <td class="card<?php echo $arr[$i]['id']?>"><?php echo $arr[$i]['card']; ?></td>
+            <td class="birthday<?php echo $arr[$i]['id']?>"><?php echo $arr[$i]['birthday']; ?></td>
+            <td class="address<?php echo $arr[$i]['id']?>"><?php echo $arr[$i]['address']; ?></td>
+            <td class="isActivated<?php echo $arr[$i]['id']?>"><?php echo $arr[$i]['isActivated']; ?></td>
             <td>
-                <a href="#editEmployeeModal" class="edit" data-toggle="modal" data-id="<?= $arr[$i]['id']; ?>" onclick="test(this)">
-                    <i class="material-icons" data-toggle="tooltip" title="Edit">&#xE254;</i>
-                </a>
-                
-                <a href="./delete.php?deleteId=<?php echo $arr[$i]['id'];?>" class="delete" data-toggle="modal">
-                    <i class="material-icons" data-toggle="tooltip" title="Delete">&#xE872;</i>
-                </a>
-                
+            <a href="#editEmployeeModal" class="edit" data-toggle="modal" >
+                <i class="material-icons" data-toggle="tooltip" title="Edit" onClick="Edit_seller_alice(<?php echo $arr[$i]['id']?>)">&#xE254;</i>
+            </a>
+
+            <a href="＃deleteEmployeeModal" class="delete" data-toggle="modal" >
+                <i class="material-icons" data-toggle="tooltip" title="Delete" onClick="Delete_seller_alice(<?php echo $arr[$i]['id']?>">&#xE872;</i>
+            </a>
+
             </td>
         </tr>
+            
+            <?php } ?>
+            <?php } ?>
             <!-- end -->
-            <?php } ?>
-            <?php } ?>
         </tbody>
     </table>
 </div>
