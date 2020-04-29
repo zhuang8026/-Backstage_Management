@@ -182,7 +182,7 @@ function init() {
 init();
 
 
-// jq --- william
+// JQUERY --- william
 function data_text(id){
     console.log($('.itemName'+id).eq(0).html());
     console.log($('.colorid'+id).eq(0).html());
@@ -196,7 +196,7 @@ function data_text(id){
     
 };
 
-// js --- william
+// JAVASCRIPT --- william
 // function data_text(id){
 //     console.log(id);
 //     console.log(document.getElementsByClassName('itemName'+id)[0])
