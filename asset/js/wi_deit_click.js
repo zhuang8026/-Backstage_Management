@@ -6,6 +6,7 @@ function Edit_click(id){
     // console.log( $.trim($('.itemImg'+id).eq(0).eq(0).html()) );
     // console.log( $.trim($('.itemImg'+id).eq(0).eq(0).children('img').attr('src')) );
     // console.log( $.trim($('.itemImg'+id).eq(0).eq(0).children('img').attr('src').substr(21)) );
+    console.log(id);
     $img_name =  $.trim($('.itemImg'+id).eq(0).eq(0).children('img').attr('src'))
     console.log($img_name);
     console.log($('img#itemImg_d_img').attr('src', $img_name) );

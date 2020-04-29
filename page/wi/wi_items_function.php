@@ -103,7 +103,7 @@
                         <input type="submit" class="btn btn-info" id="btn_submit" value="Save">
                     </div>
                     <!-- <input type="hidden" name="itemId" value="<?/*= (int)$_GET['itemId']; */?>"> -->
-                    <input type="text" name="itemId_input" id="itemId_input" value="">
+                    <input type="hidden" name="itemId_input" id="itemId_input" value="">
                 </form>
             </div>
         </div>
@@ -126,7 +126,7 @@
                         <input type="button" class="btn btn-default" data-dismiss="modal" value="Cancel">
                         <input type="submit" class="btn btn-danger" value="Delete">
                     </div>
-                    <input type="text" name="input_delete_id" id="input_delete_id" value="">
+                    <input type="hidden" name="input_delete_id" id="input_delete_id" value="">
                 </form>
             </div>
         </div>
@@ -149,7 +149,7 @@
                         <input type="button" class="btn btn-default" data-dismiss="modal" value="Cancel">
                         <input type="submit" class="btn btn-danger" value="Delete">
                     </div>
-                    <input type="text" name="input_delete_all_id[]" id="input_delete_all_id" value="">
+                    <input type="hidden" name="input_delete_all_id[]" id="input_delete_all_id" value="">
                 </form>
             </div>
         </div>
