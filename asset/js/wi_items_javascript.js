@@ -182,27 +182,3 @@ function init() {
 init();
 
 
-// JQUERY --- william
-function data_text(id){
-    console.log($('.itemName'+id).eq(0).html());
-    console.log($('.colorid'+id).eq(0).html());
-    $('#itemId_input').val(id); // hiiden id
-    $('input#itemName_d').val( $('.itemName'+id).eq(0).html() ); // name
-    $('input#colorid_d').val( $('.colorid'+id).eq(0).html() ); // name
-    $('input#itemsbrand_d').val( $('.itemsbrand'+id).eq(0).html() ); // name
-    $('input#itemstype_d').val( $('.itemstype'+id).eq(0).html() ); // name
-    $('input#itemPrice_d').val( $('.itemPrice'+id).eq(0).html() ); // name
-    $('input#itemQty_d').val( $('.itemQty'+id).eq(0).html() ); // name
-    
-};
-
-// JAVASCRIPT --- william
-// function data_text(id){
-//     console.log(id);
-//     console.log(document.getElementsByClassName('itemName'+id)[0])
-//     console.log(document.getElementsByClassName('itemName'+id))
-//     // console.log(document.getElementsByClassName('itemName'+id)[0].innerHTML);
-//     // console.log(document.querySelectorAll("input#itemName_d")[0]);
-//     let a = document.getElementsByClassName('itemName'+id)[0].innerHTML;
-//     document.querySelectorAll("input#itemName_d")[0].value = a;
-// }

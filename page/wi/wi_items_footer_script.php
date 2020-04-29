@@ -7,7 +7,9 @@
     <script src="https://code.highcharts.com/highcharts.js"></script>
     <script src="https://code.highcharts.com/modules/no-data-to-display.js"></script>
     
-    <!-- common -->
+    <!-- wi-common -->
     <script src="../../asset/js/wi_items_javascript.js"></script>
+    <script src="../../asset/js/wi_deit_click.js"></script>
+    <script src="../../asset/js/wi_delete_click.js"></script>
 </body>
 </html>
