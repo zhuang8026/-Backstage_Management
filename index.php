@@ -7,10 +7,13 @@
     <link rel="stylesheet" href="./asset/css/_react.css">
     <link rel="stylesheet" href="./asset/css/_login.css">
     <link rel="stylesheet" href="./asset/css/_login_animate.css">
-    
+    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.0/dist/aos.css"/>
 </head>
 <body>
-    <div class="login-wrap" >
+    <div 
+    class="login-wrap"
+    data-aos="fade-down"
+    >
         <div class="login-html">
             <!-- 轉換按鈕 -->
             <input id="tab-1" type="radio" name="tab" class="sign-in" checked><label for="tab-1" class="tab">Sign In</label>
@@ -82,5 +85,15 @@
             </div>
         </div>
     </div>
+    
+    <script src="https://unpkg.com/aos@2.3.0/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            offset: 100,
+            duration: 600,
+            easing: 'ease-in-out',
+            // delay: 100,
+        });
+    </script>
 </body>
 </html>
