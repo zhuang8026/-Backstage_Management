@@ -56,12 +56,19 @@
         ?>
         
         <tr>
-            <td>
+            <!-- <td>
                 <span class="custom-checkbox">
                     <input type="checkbox" id="checkbox1" name="options[]" value="">
                     <label for="checkbox1"></label>
                 </span>
+            </td> -->
+            <td>
+                <span class="custom-checkbox">
+                    <input type="checkbox" class="checkboxValue" id="checkbox<?= $arr[$i]['id']; ?>" name="options[]" value="<?= $arr[$i]['id']; ?>">
+                    <label for="checkbox1"></label>
+                </span>
             </td>
+            
             <td class="username<?php echo $arr[$i]['id']?>"><?php echo $arr[$i]['username']; ?></td>
             <td class="pwd<?php echo $arr[$i]['id']?>"><?php echo $arr[$i]['pwd']; ?></td>
             <td class="name<?php echo $arr[$i]['id']?>"><?php echo $arr[$i]['name']; ?></td>

@@ -12,9 +12,9 @@ $count = 0;
 $sqlGetImg = "SELECT `userlogo` FROM `users` WHERE `id` = ? ";
 $stmtGetImg = $pdo->prepare($sqlGetImg);
 
-print_r(count($_POST['sellerinput_delete_all_id']));
-print_r($_POST['sellerinput_delete_all_id']);
-echo "<pre>";
+// print_r(count($_POST['sellerinput_delete_all_id']));
+// print_r($_POST['sellerinput_delete_all_id']);
+// echo "<pre>";
 $str_sec_2 = explode(",", $_POST['sellerinput_delete_all_id'][0]);
 // print_r($str_sec_2);
 // exit();
@@ -66,10 +66,10 @@ for($i = 0; $i < count($str_sec_2); $i++){
 // echo $count;
 // exit();
 if($count > 0) {
-    header("Refresh: 30; url=./alice_seller_index.php");
+    header("Refresh: 1; url=./alice_seller_index.php");
     echo "刪除成功";
 } else {
-    header("Refresh: 30; url=./alice_seller_index.php");
+    header("Refresh: 1000; url=./alice_seller_index.php");
     echo "刪除失敗";
 }
 

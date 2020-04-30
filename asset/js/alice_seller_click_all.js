@@ -1,6 +1,6 @@
 var checkAllSellerInputValue = [];
 var checkOneSellerInputValue =[];
-var i;
+
 // 全選功能
 $(document).ready(function(){
     // Activate tooltip

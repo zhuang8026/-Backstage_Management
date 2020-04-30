@@ -29,9 +29,9 @@ $stmt = $pdo->prepare($sql);
 $stmt->execute($arrParam);
 
 if($stmt->rowCount() > 0) {
-    header("Refresh: 3000; url=./alice_seller_index.php");
+    header("Refresh: 1; url=./alice_seller_index.php");
     echo "刪除成功";
 } else {
-    header("Refresh: 3000; url=./alice_seller_index.php");
+    header("Refresh: 1; url=./alice_seller_index.php");
     echo "刪除失敗";
 }
