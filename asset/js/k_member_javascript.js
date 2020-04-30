@@ -38,7 +38,7 @@ function getTableData(table) {
 }
 // chart.js
 function createHighcharts(data) {
-    // console.log(data)
+    console.log(data)
     Highcharts.setOptions({
         lang: {
             thousandsSep: ","
@@ -145,15 +145,7 @@ function setTableEvents(table) {
 let draw = false;
 function init() {
     // initialize DataTables
-    const table = $("#dt-table").DataTable({
-        "columnDefs": [ {
-            // "searchable": false,
-            "orderable": false,
-            "targets": 0
-        } ],
-        "order": [[1]]
-    } );
-    // const table = $("#dt-table").DataTable();
+    const table = $("#dt-table").DataTable();
     // get table data
     const tableData = getTableData(table);
     // create Highcharts
@@ -163,4 +155,70 @@ function init() {
 }
 init();
 
+// 全選功能
+$(document).ready(function(){
+    // Activate tooltip
+    $('[data-toggle="tooltip"]').tooltip();
+    
+    // Select/Deselect checkboxes
+    var checkbox = $('table tbody input[type="checkbox"]');
+    $("#selectAll").click(function(){
+        if(this.checked){
+            checkbox.each(function(){
+                this.checked = true;                        
+            });
+        } else{
+            checkbox.each(function(){
+                this.checked = false;                        
+            });
+        } 
+    });
+    checkbox.click(function(){
+        if(!this.checked){
+            $("#selectAll").prop("checked", false);
+        }
+    });
+
+});
+
+
+
+function Edit_k_member(id){
+    console.log($('.username'+id).eq(0).html());
+    console.log($('.pwd'+id).eq(0).html());
+    $('#memberId_input').val(id); // hiiden id
+    $('input#username_e').val( $('.username'+id).eq(0).html() ); // name
+    $('input#pwd_e').val( $('.pwd'+id).eq(0).html() ); // name
+    $('input#name_e').val( $('.name'+id).eq(0).html() ); // name
+   
+
+
+
+    // $('input#gender_e').val( $('.gender'+id).eq(0).html() ); // name
+
+    let gender = document.getElementsByClassName('gender'+id)[0].innerHTML; // ok 
+    document.querySelectorAll("option.gender_ee")[0].value = gender;
+    document.querySelectorAll("option.gender_ee")[0].innerHTML = gender;
+    // girl or man ?
+    console.log(gender);
+    if(document.querySelectorAll("option.gender_e")[0].value === 1){
+        document.querySelectorAll("option.gender_e")[0].style.display="none";
+    }else{
+        document.querySelectorAll("option.gender_e")[1].style.display="none";
+    }
+   
+
+
+    
+    $img_name =  $.trim($('.userlogo'+id).eq(0).eq(0).children('img').attr('src'))
+    console.log($img_name);
+    console.log($('img#memberImg_d_img').attr('src', $img_name) );
+    $('#memberId_input').val(id); // hidden id
+    $('img#memberImg_d_img').attr('src', $img_name);
+    $('input#phoneNumber_e').val( $('.phoneNumber'+id).eq(0).html() ); // name
+    $('input#card_e').val( $('.card'+id).eq(0).html() );
+    $('input#birthday_e').val( $('.birthday'+id).eq(0).html() ); // name
+    $('input#address_e').val( $('.address'+id).eq(0).html() );
+    $('input#isActivated_e').val( $('.isActivated'+id).eq(0).html() );
+};
 

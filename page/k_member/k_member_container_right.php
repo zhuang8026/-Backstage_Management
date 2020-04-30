@@ -1,9 +1,16 @@
 <div class="table-wrapper">
             <div class="table-title">
                 <div class="row">
-                    <div class="col-sm-6">
-                        <h2><b>歡迎回來！<?= $_SESSION['username'] ?></b></h2>
-                    </div>
+                <div class="col-sm-6 user_btn">
+                    <img style="width: 47px; margin-right: 10px; border-radius: 2px;" src="../../asset/img/manangeicon.png" alt="管理者頭像">
+                    <h2>
+                        <b>平台管理者 : <?= $_SESSION['username'] ?></b>
+                    </h2>
+                    <button>
+                        <i class="fas fa-sign-out-alt"></i>
+                        <a href="../../api/logout_api.php?logout=1">logout</a>
+                    </button>
+                </div>
                     
                     <!-- 刪除 與 新增 -->
                     <div class="col-sm-6">
@@ -54,28 +61,40 @@
                         $arr = $stmt->fetchAll(PDO::FETCH_ASSOC);
                         for($i = 0; $i < count($arr); $i++) {
                     ?>
+
                     <tr>
-                        <?php require_once('./k_member_function.php'); ?>
                         <td>
-                            <input type="checkbox" name="chk[]" value="<?php echo $arr[$i]['id']; ?>" />
+                            <span class="custom-checkbox">
+                                <input type="checkbox" id="checkbox1" name="options[]" value="">
+                                <label for="checkbox1"></label>
+                            </span>
                         </td>
-                        <td><?php echo $arr[$i]['username']; ?></td>
-                        <td><?php echo $arr[$i]['pwd']; ?></td>
-                        <td><?php echo $arr[$i]['name']; ?></td>
-                        <td><?php echo $arr[$i]['gender']; ?></td>
-                        <td>
-                        <?php if($arr[$i]['userlogo'] !== NULL) { ?>
+                        <td class="username<?php echo $arr[$i]['id']?>"><?php echo $arr[$i]['username']; ?></td>
+                        <td class="pwd<?php echo $arr[$i]['id']?>"><?php echo $arr[$i]['pwd']; ?></td>
+                        <td class="name<?php echo $arr[$i]['id']?>"><?php echo $arr[$i]['name']; ?></td>
+                        <td class="gender<?php echo $arr[$i]['id']?>"><?php echo $arr[$i]['gender']; ?></td>
+                        <!-- <td class="userlogo<?php echo $arr[$i]['id']?>">
+                            <?php if($arr[$i]['userlogo'] !== NULL) { ?>
                             <img class="w200px" src="./files/<?php echo $arr[$i]['userlogo']; ?>">
-                        <?php } ?>
+                            <?php } ?>
+                        </td> -->
+
+                        <td class="userlogo<?= $arr[$i]['id']; ?>">
+                            <?php if($arr[$i]['userlogo'] !== ""): ?>
+                                <img src="./files/<?= $arr[$i]['userlogo'];?>">
+                            <?php else: ?>
+                                <img src="./files/404.png">
+                            <?php endif; ?>
                         </td>
-                        <td><?php echo $arr[$i]['phoneNumber']; ?></td>
-                        <td><?php echo $arr[$i]['card']; ?></td>
-                        <td><?php echo $arr[$i]['birthday']; ?></td>
-                        <td><?php echo $arr[$i]['address']; ?></td>
-                        <td><?php echo $arr[$i]['isActivated']; ?></td>
+
+                        <td class="phoneNumber<?php echo $arr[$i]['id']?>"><?php echo $arr[$i]['phoneNumber']; ?></td>
+                        <td class="card<?php echo $arr[$i]['id']?>"><?php echo $arr[$i]['card']; ?></td>
+                        <td class="birthday<?php echo $arr[$i]['id']?>"><?php echo $arr[$i]['birthday']; ?></td>
+                        <td class="address<?php echo $arr[$i]['id']?>"><?php echo $arr[$i]['address']; ?></td>
+                        <td class="isActivated<?php echo $arr[$i]['id']?>"><?php echo $arr[$i]['isActivated']; ?></td>
                         <td>
                             <a href="#editEmployeeModal" class="edit" data-toggle="modal">
-                                <i class="material-icons" data-toggle="tooltip" title="Edit">&#xE254;</i>
+                            <i class="material-icons" data-toggle="tooltip" title="Edit" onClick="Edit_k_member(<?php echo $arr[$i]['id']?>)">&#xE254;</i>
                             </a>
                             <a href="#deleteEmployeeModal" class="delete" data-toggle="modal">
                                 <i class="material-icons" data-toggle="tooltip" title="Delete">&#xE872;</i>

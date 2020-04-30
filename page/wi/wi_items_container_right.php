@@ -2,7 +2,10 @@
         <div class="table-title">
             <div class="row">
                 <div class="col-sm-6 user_btn">
-                    <h2><b>歡迎回來！<?= $_SESSION['username'] ?></b></h2>
+                    <img style="width: 47px; margin-right: 10px; border-radius: 2px;" src="../../asset/img/manangeicon.png" alt="管理者頭像">
+                    <h2>
+                        <b>平台管理者 : <?= $_SESSION['username'] ?></b>
+                    </h2>
                     <button>
                         <i class="fas fa-sign-out-alt"></i>
                         <a href="../../api/logout_api.php?logout=1">logout</a>
@@ -14,8 +17,8 @@
                     <a href="#addEmployeeModal" class="btn btn-success" data-toggle="modal">
                         <i class="material-icons">&#xE147;</i> <span>Add New Employee</span>
                     </a>
-                    <a href="#deleteEmployeeModal" class="btn btn-danger" data-toggle="modal">
-                        <i class="material-icons">&#xE15C;</i> <span>Delete</span>
+                    <a href="#deleteEmployeeModal_all" class="btn btn-danger" data-toggle="modal">
+                        <i class="material-icons" onClick="Delete_click_all()">&#xE15C;</i> <span>Delete</span>
                     </a>
                 </div>
             </div>
@@ -55,7 +58,7 @@
                     $sql = "SELECT `itemId`,`itemName`, `itemImg`, `colorid`,`itemsbrand`, `itemstype`, 
                             `itemPrice`, `itemQty`, `itemsstar`, `itemsales`, `itemCategoryId`, `itemscontent`, `created_at`, `updated_at`
                             FROM `items` 
-                            ORDER BY `itemId` DESC";
+                            ORDER BY `itemId` ASC";
                     $stmt = $pdo->prepare($sql);
                     $stmt->execute(); 
 
@@ -70,7 +73,7 @@
                 <tr>
                     <td>
                         <span class="custom-checkbox">
-                            <input type="checkbox" id="checkbox1" name="options[]" value="<?= $arr[$i]['itemId']; ?>">
+                            <input type="checkbox" class="checkboxValue" id="checkbox<?= $arr[$i]['itemId']; ?>" name="options[]" value="<?= $arr[$i]['itemId']; ?>">
                             <label for="checkbox1"></label>
                         </span>
                     </td>

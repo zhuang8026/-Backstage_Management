@@ -6,6 +6,8 @@
     <title>login</title>
     <link rel="stylesheet" href="./asset/css/_react.css">
     <link rel="stylesheet" href="./asset/css/_login.css">
+    <link rel="stylesheet" href="./asset/css/_login_animate.css">
+    
 </head>
 <body>
     <div class="login-wrap" >
@@ -38,7 +40,11 @@
                             <span class="icon"></span> Keep me Signed in
                         </label>
                     </div>
-                    <div class="group">
+                    <div class="group" id="login-box">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
                         <input type="submit" class="button" value="Sign In">
                     </div>
                     <div class="hr"></div>
@@ -48,7 +54,7 @@
                 </form>
 
                 <!-- 註冊 -->
-                <!-- <form class="sign-up-htm" name="managerForm" method="POST" action="#">
+                <form class="sign-up-htm" name="managerForm" method="POST" action="#">
                     <div class="group">
                         <label for="user" class="label">Username</label>
                         <input id="user" type="text" class="input">
@@ -72,7 +78,7 @@
                         <div class="foot-lnk">
                             <label for="tab-1">Already Member?</a>
                     </div>
-                </form> -->
+                </form>
             </div>
         </div>
     </div>

@@ -1,8 +1,8 @@
 // JQUERY --- william --- 修改
-function Delete_click(id){
-    console.log(id);
-    $('#itemId_input').val(id); // hiiden id
-};
+// function Delete_click(id){
+//     console.log(id);
+//     $('#itemId_input').val(id); // hiiden id
+// };
 
 // JAVASCRIPT --- william --- 修改
 function Delete_click(id){
