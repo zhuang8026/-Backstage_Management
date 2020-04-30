@@ -56,8 +56,11 @@
                 <!-- 模板 start-->
                 <?php 
                     $sql = "SELECT `itemId`,`itemName`, `itemImg`, `colorid`,`itemsbrand`, `itemstype`, 
-                            `itemPrice`, `itemQty`, `itemsstar`, `itemsales`, `itemCategoryId`, `itemscontent`, `created_at`, `updated_at`
-                            FROM `items` 
+                            `itemPrice`, `itemQty`, `itemsstar`, `itemsales`, `itemCategoryId`, `itemscontent`, `created_at`, `updated_at`,
+                            `items_color`.`coid`, `items_color`.`colorname`, `items_color`.`colorunicode`
+                            FROM `items`
+                            INNER JOIN `items_color`
+                            ON `items`.`colorid` = `items_color`.`coid`
                             ORDER BY `itemId` ASC";
                     $stmt = $pdo->prepare($sql);
                     $stmt->execute(); 
@@ -87,7 +90,7 @@
                             <img src="../../asset/img/404.png">
                         <?php endif; ?>
                     </td>
-                    <td class="colorid<?= $arr[$i]['itemId']; ?>"><?= $arr[$i]['colorid']; ?></td>
+                    <td class="colorid<?= $arr[$i]['itemId']; ?>"><div style="background-color:<?= $arr[$i]['colorunicode']; ?>;height: 10px; "></div></td>
                     <td class="itemsbrand<?= $arr[$i]['itemId']; ?>"><?= $arr[$i]['itemsbrand']; ?></td>
                     <td class="itemstype<?= $arr[$i]['itemId']; ?>"><?= $arr[$i]['itemstype']; ?></td>
                     <td class="itemPrice<?= $arr[$i]['itemId']; ?>"><?= $arr[$i]['itemPrice']; ?></td>
