@@ -37,6 +37,7 @@
                 <th>出生年月日</th>
                 <th>地址</th>
                 <th>開通狀況</th>
+                <th>賣場開通</th>
                 <th>編輯刪除</th>
             </tr>
         </thead>
@@ -44,9 +45,10 @@
         <!-- 模板 start-->
         <?php
             $sql = "SELECT `id`, `username`, `pwd`, `name`, `gender`, IF(`gender` = 1,'男','女') AS `genderdata`, `userlogo`, `phoneNumber`,`card`,`birthday`,`address`,
-                    IF(`isActivated` = 1,'開通','未開通') AS `isActivated`
-                    FROM `users`
-                    -- WHERE `isActivated` = 1 
+                    IF(`isActivated` = 1,'開通','未開通') AS `isActivated`,IF(`shopopen` = 1,'開通','未開通') AS `shopopen`
+                    FROM `users` INNER JOIN `store`
+                    ON `users`.`id` = `store`.`sellerId`
+                    WHERE `isActivated` = 1 
                     ORDER BY `id` ASC";
             $stmt = $pdo->prepare($sql);
             $stmt->execute();
@@ -97,6 +99,7 @@
             <td class="birthday<?php echo $arr[$i]['id']?>"><?php echo $arr[$i]['birthday']; ?></td>
             <td class="address<?php echo $arr[$i]['id']?>"><?php echo $arr[$i]['address']; ?></td>
             <td class="isActivated<?php echo $arr[$i]['id']?>"><?php echo $arr[$i]['isActivated']; ?></td>
+            <td class="shopopen<?php echo $arr[$i]['id']?>"><?php echo $arr[$i]['shopopen']; ?></td>
             <td>
             <a href="#editEmployeeModal" class="edit" data-toggle="modal" >
                 <i class="material-icons" data-toggle="tooltip" title="Edit" onClick="Edit_seller_alice(<?php echo $arr[$i]['id']?>)">&#xE254;</i>

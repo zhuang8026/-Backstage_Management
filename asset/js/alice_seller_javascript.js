@@ -268,7 +268,8 @@ function Edit_seller_alice(id){
     document.querySelectorAll("input#address_e")[0].value = address;
     let isActivated = document.getElementsByClassName('isActivated'+id)[0].innerHTML;
     document.querySelectorAll("input#isActivated_e").value = isActivated;
-
+    let shopopen = document.getElementsByClassName('shopopen'+id)[0].innerHTML;
+    document.querySelectorAll("input#shopopen_e").value = shopopen;
     document.querySelectorAll("input#sellerId_input")[0].value = id;
 
 }

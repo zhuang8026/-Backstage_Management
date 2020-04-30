@@ -14,14 +14,26 @@ $count = 0;
 $sqlGetImg = "SELECT `userlogo` FROM `users` WHERE `id` = ? ";
 $stmtGetImg = $pdo->prepare($sqlGetImg);
 
-for($i = 0; $i < count($_POST['chk']); $i++){
+$str_sec_2 = explode(",", $_POST['memberinput_delete_all_id'][0]);
+// print_r($str_sec_2);
+// exit();
+
+// print_r(count($str_sec_2));
+// exit();
+
+for($i = 0; $i < count($str_sec_2); $i++){
     //加入繫結陣列
-    $arrGetImgParam = [
-        (int)$_POST['chk'][$i]
+    $arrParam = [
+        $str_sec_2[$i]
     ];
 
-    //執行 SQL 語法
-    $stmtGetImg->execute($arrGetImgParam);
+    // exit();
+    $stmtGetImg->execute($arrParam);
+    // echo "<pre>";
+    // print_r($stmtGetImg);
+    // echo "<hr>";
+    // print_r($stmtGetImg->rowCount());
+    // exit();
 
     //若有找到 studentImg 的資料
     if($stmtGetImg->rowCount() > 0) {
@@ -35,19 +47,26 @@ for($i = 0; $i < count($_POST['chk']); $i++){
         }     
     }
 
-    $arrParam = [
-        $_POST['chk'][$i]
+     $arrParamtable = [
+        $str_sec_2[$i]
     ];
+    // $str_sec_2 = explode(",", $arrParamtable[0]);
+
+    // echo "<pre>";
+    // print_r($str_sec_2);
+    // exit();
 
     $stmt = $pdo->prepare($sql);
-    $stmt->execute($arrParam);
+    $stmt->execute($arrParamtable);
     $count += $stmt->rowCount();
 }
 
+// echo $count;
+// exit();
 if($count > 0) {
-    header("Refresh: 3; url=./member.php");
+    header("Refresh: 1; url=./k_member_index.php");
     echo "刪除成功";
 } else {
-    header("Refresh: 10000; url=./member.php");
+    header("Refresh: 1; url=./k_member_index.php");
     echo "刪除失敗";
 }

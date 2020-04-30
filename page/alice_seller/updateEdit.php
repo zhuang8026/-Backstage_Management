@@ -15,7 +15,8 @@ $sql = "UPDATE `users`
         `card` = ?,
         `birthday` = ?,
         `address` = ?,
-        `isActivated` = ? ";
+        `isActivated` = ?,
+        `shopopen` = ? ";
 
 $arrParam = [
     $_POST['username_e'],
@@ -26,7 +27,8 @@ $arrParam = [
     $_POST['card_e'],
     $_POST['birthday_e'],
     $_POST['address_e'],
-    $_POST['isActivated_e']
+    $_POST['isActivated_e'],
+    $_POST['shopopen_e']
 ];
 
 // echo "<pre>";

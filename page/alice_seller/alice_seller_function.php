@@ -57,6 +57,13 @@
                             <option value="1"class="form-control">1</option>
                         </select>
                         </div>
+                        <div class="form-group">
+                        <label>shopopen</label>
+                        <select name="shopopen" class="form-control">
+                            <option value="0" class="form-control" selected>0</option>
+                            <option value="1"class="form-control">1</option>
+                        </select>
+                        </div>
                     </div>
                     <div class="modal-footer">
                         <input type="button" class="btn btn-default" data-dismiss="modal" value="Cancel">
@@ -132,7 +139,13 @@
                             <option value="1" class="form-control isActivated">開通</option>
                             </select>
                         </div>
-
+                        <div class="form-group">
+                            <label>賣場開通狀態</label>
+                            <select name="shopopen_e" class="form-control">
+                            <option value="0" class="form-control shopopen" selected>未開通</option>
+                            <option value="1" class="form-control shopopen">開通</option>
+                            </select>
+                        </div>
                     </div>
                     <div class="modal-footer">
                         <input type="button" class="btn btn-default" data-dismiss="modal" value="Cancel">

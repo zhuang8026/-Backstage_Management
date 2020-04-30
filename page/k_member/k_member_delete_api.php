@@ -6,7 +6,7 @@ $sqlGetImg = "SELECT `userlogo` FROM `users` WHERE `id` = ? ";
 $stmtGetImg = $pdo->prepare($sqlGetImg);
 
 $arrGetImgParam = [
-    (int)$_GET['deleteId']
+    (int)$_POST['input_delete_member']
 ];
 $stmtGetImg->execute($arrGetImgParam);
 
@@ -23,7 +23,7 @@ if($stmtGetImg->rowCount() > 0) {
 
 $sql = "DELETE FROM `users` WHERE `id` = ? ";
 $arrParam = [
-    (int)$_GET['deleteId']
+    (int)$_POST['input_delete_member']
 ];
 $stmt = $pdo->prepare($sql);
 $stmt->execute($arrParam);

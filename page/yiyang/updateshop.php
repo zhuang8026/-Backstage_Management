@@ -1,4 +1,4 @@
-<?php
+<!-- <?php
 require_once('../../db.inc.php');
 require_once("./shopheader.php");
 ?>
@@ -67,4 +67,4 @@ require_once("./shopheader.php");
 </div>
 <?php
 require_once("./shopfooter.php");
-?>
+?> -->

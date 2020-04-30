@@ -14,7 +14,8 @@ $sql = "UPDATE `users`
         `phoneNumber` = ?,
         `card` = ?,
         `birthday` = ?,
-        `address` = ? ";
+        `address` = ? ,
+        `isActivated` = ? ";
 
 $arrParam = [
     $_POST['username_e'],
@@ -24,7 +25,8 @@ $arrParam = [
     $_POST['phoneNumber_e'],
     $_POST['card_e'],
     $_POST['birthday_e'],
-    $_POST['address_e']
+    $_POST['address_e'],
+    $_POST['isActivated_e']
 ];
 
 if( $_FILES["userlogo_e"]["error"] === 0 ){
@@ -60,6 +62,6 @@ if( $stmt->rowCount() > 0 ){//彈回編輯頁
     header('refresh: 3; url=k_member_index.php');
     echo "更新成功";
 } else {//彈回編輯頁
-    header("Refresh: 300000; url=k_member_index.php");
+    header("Refresh: 3; url=k_member_index.php");
     echo "沒有任何更新";
 }

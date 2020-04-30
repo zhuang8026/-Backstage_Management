@@ -196,17 +196,17 @@ function Edit_k_member(id){
 
     // $('input#gender_e').val( $('.gender'+id).eq(0).html() ); // name
 
-    let gender = document.getElementsByClassName('gender'+id)[0].innerHTML; // ok 
-    document.querySelectorAll("option.gender_ee")[0].value = gender;
-    document.querySelectorAll("option.gender_ee")[0].innerHTML = gender;
+    let gender = document.getElementsByClassName('genderdata'+id)[0].value; // ok 
     // girl or man ?
     console.log(gender);
-    if(document.querySelectorAll("option.gender_e")[0].value === 1){
-        document.querySelectorAll("option.gender_e")[0].style.display="none";
+    if(gender == 1){
+        console.log("man");
+        document.querySelectorAll("option.gender_e")[0].selected = true;
     }else{
-        document.querySelectorAll("option.gender_e")[1].style.display="none";
+        console.log("girl");
+        document.querySelectorAll("option.gender_e")[1].selected = true;
+
     }
-   
 
 
     

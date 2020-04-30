@@ -20,7 +20,7 @@
                 </div>
             </div>
           
-            <table id="myTable" class="table table-striped table-hover">
+            <table id="dt-table" class="table table-striped table-hover">
                 <thead>
                     <!-- 標頭 -->
                     <tr>
