@@ -43,8 +43,7 @@
         <tbody>
         <!-- 模板 start-->
         <?php
-            $sql = "SELECT `id`, `username`, `pwd`, `name`, IF(`gender` = 1,'男','女') AS `chargender`, 
-                            `userlogo`, `phoneNumber`,`card`,`birthday`,`address`,
+            $sql = "SELECT `id`, `username`, `pwd`, `name`, `gender`, IF(`gender` = 1,'男','女') AS `genderdata`, `userlogo`, `phoneNumber`,`card`,`birthday`,`address`,
                     IF(`isActivated` = 1,'開通','未開通') AS `isActivated`
                     FROM `users`
                     -- WHERE `isActivated` = 1 
@@ -66,7 +65,11 @@
             <td class="username<?php echo $arr[$i]['id']?>"><?php echo $arr[$i]['username']; ?></td>
             <td class="pwd<?php echo $arr[$i]['id']?>"><?php echo $arr[$i]['pwd']; ?></td>
             <td class="name<?php echo $arr[$i]['id']?>"><?php echo $arr[$i]['name']; ?></td>
-            <td class="chargender<?php echo $arr[$i]['id']?>"><?php echo $arr[$i]['chargender']; ?></td>
+
+            <td >
+                <input class="genderdata<?php echo $arr[$i]['id']?>" type="hidden" value="<?= $arr[$i]['gender']?>">
+                <?php echo $arr[$i]['genderdata']; ?>
+            </td>
             
             <!-- <td class="userlogo<?php echo $arr[$i]['id']?>">
                 <?php if($arr[$i]['userlogo'] !== NULL) { ?>

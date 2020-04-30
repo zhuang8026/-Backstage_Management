@@ -191,9 +191,6 @@ $(document).ready(function(){
 //     $('input#pwd_e').val( $('.pwd'+id).eq(0).html() ); // name
 //     $('input#name_e').val( $('.name'+id).eq(0).html() ); // name
    
-
-
-
 //     $('option.gender_ee').val( $('.gender'+id).eq(0).html() ); // name
 //     //male or female?
 //    if($('option.gender_e').val( $('.gender'+id).eq(0).html() ) == 1 ){
@@ -201,9 +198,6 @@ $(document).ready(function(){
 //    }else{
 //     $('option.gender_e').val( $('.gender'+id).eq(1).html() ).style.display = 'none'; 
 //    }
-
-
-
 
 //     $img_name =  $.trim($('.userlogo'+id).eq(0).eq(0).children('img').attr('src'))
 //     console.log($img_name);
@@ -218,12 +212,6 @@ $(document).ready(function(){
 // };
 
 
-
-
-
-
-
-
 //js
 function Edit_seller_alice(id){
     // console.log(id);
@@ -235,38 +223,38 @@ function Edit_seller_alice(id){
     // document.querySelectorAll("input#name_e")[0].value = name;
 
 
-    let chargender = document.getElementsByClassName('chargender'+id)[0].innerHTML; // ok 
+    // let chargender = document.getElementsByClassName('chargender'+id)[0].innerHTML; // ok 
 
-    // document.querySelectorAll("option.chargender_ee")[0].value = chargender;
-    // console.log(chargender);
-    // document.querySelectorAll("option.chargender_ee")[0].innerHTML = chargender;
 
+    let gender = document.getElementsByClassName('genderdata'+id)[0].value; // ok 
     // girl or man ?
-    // console.log(gender);
-    // if(document.querySelectorAll("option.gender_ee")[0].value == "1"){
-    //     document.querySelectorAll("option.gender_e")[0].style.display="none";
-    // }else{
-    //     document.querySelectorAll("option.gender_e")[1].style.display="none";
-    // }
+    console.log(gender);
+    if(gender == 1){
+        console.log("man");
+        document.querySelectorAll("option.gender_e")[0].selected = true;
+    }else{
+        console.log("girl");
+        document.querySelectorAll("option.gender_e")[1].selected = true;
 
-    
-    switch(document.querySelectorAll("option.chargender_ee")[0].value){
-        case '男':
-            document.querySelectorAll("option.chargender_e")[0].style.display="none";
-            document.querySelectorAll("option.chargender_e")[1].style.display="";
-        break;
-        case '女':
-            document.querySelectorAll("option.chargender_e")[0].style.display="";
-            document.querySelectorAll("option.chargender_e")[1].style.display="none";
-        break;
     }
+
+    // switch(document.querySelectorAll("option.gender_ee")[0].value){
+    //     case '男':
+    //         document.querySelectorAll("option.gender_e")[0].style.display="none";
+    //         document.querySelectorAll("option.gender_e")[1].style.display="";
+    //     break;
+    //     case '女':
+    //         document.querySelectorAll("option.gender_e")[0].style.display="";
+    //         document.querySelectorAll("option.gender_e")[1].style.display="none";
+    //     break;
+    // }
 
     // let userlogo = document.getElementsByClassName('userlogo'+id)[0];
     // document.querySelectorAll("img#sellerImg_d_img")[0].setAttribute("src","./files/");
 
     $img_name =  $.trim($('.userlogo'+id).eq(0).eq(0).children('img').attr('src'))
-     console.log($img_name);
-     console.log($('img#sellerImg_d_img').attr('src', $img_name) );
+    //  console.log($img_name);
+    //  console.log($('img#sellerImg_d_img').attr('src', $img_name) );
      $('#sellerId_input').val(id); // hidden id
      $('img#sellerImg_d_img').attr('src', $img_name);
 
@@ -283,6 +271,4 @@ function Edit_seller_alice(id){
 
     document.querySelectorAll("input#sellerId_input")[0].value = id;
 
-
 }
-
