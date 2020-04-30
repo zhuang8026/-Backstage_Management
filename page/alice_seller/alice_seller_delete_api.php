@@ -5,10 +5,10 @@ require_once('../../db.inc.php');
 $sqlGetImg = "SELECT `userlogo` FROM `users` WHERE `id` = ? ";
 $stmtGetImg = $pdo->prepare($sqlGetImg);
 
-$arrGetImgParam = [
-    (int)$_GET['deleteId']
+$inputDeleteSellerId = [
+    (int)$_POST['input_delete_sellerid']
 ];
-$stmtGetImg->execute($arrGetImgParam);
+$stmtGetImg->execute($inputDeleteSellerId);
 
 if($stmtGetImg->rowCount() > 0) {
     //取得指定 id 的學生資料 (1筆)
@@ -23,15 +23,15 @@ if($stmtGetImg->rowCount() > 0) {
 
 $sql = "DELETE FROM `users` WHERE `id` = ? ";
 $arrParam = [
-    (int)$_GET['deleteId']
+    (int)$_POST['input_delete_sellerid']
 ];
 $stmt = $pdo->prepare($sql);
 $stmt->execute($arrParam);
 
 if($stmt->rowCount() > 0) {
-    header("Refresh: 3000; url=./alice_seller_index.php");
+    header("Refresh: 1; url=./alice_seller_index.php");
     echo "刪除成功";
 } else {
-    header("Refresh: 3000; url=./alice_seller_index.php");
+    header("Refresh: 1; url=./alice_seller_index.php");
     echo "刪除失敗";
 }
