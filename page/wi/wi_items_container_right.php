@@ -57,10 +57,13 @@
                 <?php 
                     $sql = "SELECT `itemId`,`itemName`, `itemImg`, `colorid`,`itemsbrand`, `itemstype`, 
                             `itemPrice`, `itemQty`, `itemsstar`, `itemsales`, `itemCategoryId`, `itemscontent`, `created_at`, `updated_at`,
-                            `items_color`.`coid`, `items_color`.`colorname`, `items_color`.`colorunicode`
+                            `items_color`.`coid`, `items_color`.`colorname`, `items_color`.`colorunicode`,
+                            `items_type`.`typename`
                             FROM `items`
                             INNER JOIN `items_color`
                             ON `items`.`colorid` = `items_color`.`coid`
+                            INNER JOIN `items_type`
+                            ON `items`.`itemstype` = `items_type`.`typeid`
                             ORDER BY `itemId` ASC";
                     $stmt = $pdo->prepare($sql);
                     $stmt->execute(); 
@@ -92,7 +95,7 @@
                     </td>
                     <td class="colorid<?= $arr[$i]['itemId']; ?>"><div style="background-color:<?= $arr[$i]['colorunicode']; ?>;height: 34px; border-radius: 4px;"></div></td>
                     <td class="itemsbrand<?= $arr[$i]['itemId']; ?>"><?= $arr[$i]['itemsbrand']; ?></td>
-                    <td class="itemstype<?= $arr[$i]['itemId']; ?>"><?= $arr[$i]['itemstype']; ?></td>
+                    <td class="itemstype<?= $arr[$i]['itemId']; ?>"><?= $arr[$i]['typename']; ?></td>
                     <td class="itemPrice<?= $arr[$i]['itemId']; ?>"><?= $arr[$i]['itemPrice']; ?></td>
                     <td class="itemQty<?= $arr[$i]['itemId']; ?>"><?= $arr[$i]['itemQty']; ?></td>
                     <td><?= $arr[$i]['itemsstar']; ?></td>

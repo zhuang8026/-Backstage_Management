@@ -69,7 +69,19 @@
                         </div>
                         <div class="form-group">
                             <label>Type</label>
-                            <input type="text" class="form-control" required name="itemstype" value="" placeholder="商品類型">
+                            <select name="itemstype" required class="form-control" id="itemstype">
+                                    <option value="1" class="form-control" selected>有線耳罩式</option>
+                                    <option value="2" class="form-control">無線耳罩式</option>
+                                    <option value="3" class="form-control">有線入耳式</option>
+                                    <option value="4" class="form-control">無線入耳式</option>
+                                    <option value="5" class="form-control">有線耳道式</option>
+                                    <option value="6" class="form-control">無線耳道式</option>
+                                    <option value="7" class="form-control">有線耳塞式</option>
+                                    <option value="8" class="form-control">無線耳塞式</option>
+                                    <option value="9" class="form-control">有線耳掛式</option>
+                                    <option value="10" class="form-control">無線耳掛式</option>
+                            </select>
+                            <!-- <input type="text" class="form-control" required name="itemstype" value="" placeholder="商品類型"> -->
                         </div>
                         <div class="form-group">
                             <label>Price</label>
@@ -107,7 +119,7 @@
                         <h4 class="modal-title">Edit ?</h4>
                         <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
                     </div>
- 
+
                     <div class="modal-body">
                         <div class="form-group">
                             <label>Name</label>
@@ -170,6 +182,18 @@
                         </div>
                         <div class="form-group">
                             <label>Type</label>
+                            <select name="itemstype_d" id="itemstype_d" class="form-control">
+                                    <option value="1" class="form-control" selected>有線耳罩式</option>
+                                    <option value="2" class="form-control">無線耳罩式</option>
+                                    <option value="3" class="form-control">有線入耳式</option>
+                                    <option value="4" class="form-control">無線入耳式</option>
+                                    <option value="5" class="form-control">有線耳道式</option>
+                                    <option value="6" class="form-control">無線耳道式</option>
+                                    <option value="7" class="form-control">有線耳塞式</option>
+                                    <option value="8" class="form-control">無線耳塞式</option>
+                                    <option value="9" class="form-control">有線耳掛式</option>
+                                    <option value="10" class="form-control">無線耳掛式</option>
+                            </select>
                             <!-- <input type="text" class="form-control" name="itemstype_d" value="" placeholder="商品類型" id="itemstype_d"> -->
                         </div>
                         <div class="form-group">

@@ -50,7 +50,7 @@ for($i = 0; $i < count($str_sec_2); $i++){
         }     
     }
 
-     $arrParamtable = [
+    $arrParamtable = [
         $str_sec_2[$i]
     ];
     // $str_sec_2 = explode(",", $arrParamtable[0]);
