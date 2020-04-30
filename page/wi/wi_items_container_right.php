@@ -105,6 +105,9 @@
                     <td><?= $arr[$i]['created_at']; ?></td>
                     <td><?= $arr[$i]['updated_at']; ?></td>
                     <td>
+                        <a href="#" class="AddImages" data-toggle="modal">
+                            <i class="fas fa-file-alt" data-toggle="tooltip" title="AddImages"></i>
+                        </a>
                         <a href="#editEmployeeModal" class="edit" data-toggle="modal">
                             <i class="material-icons" data-toggle="tooltip" title="Edit" onClick="Edit_click(<?= $arr[$i]['itemId']; ?>)">&#xE254;</i>
                         </a>
