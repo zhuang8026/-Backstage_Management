@@ -23,8 +23,8 @@
                         </div>
                         <div class="form-group">
                         <select name="gender" id="gender" class="form-control">
-                                <option value="男" class="form-control" selected>男</option>
-                                <option value="女" class="form-control">女</option>
+                                <option value="1" class="form-control" selected>男</option>
+                                <option value="2" class="form-control">女</option>
                         </div>
                         <div class="form-group">
                         <label>Image</label>
@@ -99,10 +99,10 @@
                         </div> -->
                         <div class="form-group">
                             <label>性別</label>
-                            <select name="gender_e" class="form-control">
-                                    <option value="1" class="gender_e">男</option>
-                                    <option value="2" class="gender_e">女</option>
-                                    <option value="" selected class="gender_ee"></option>
+                            <select name="chargender_e" class="form-control">
+                                    <option value="1" class="chargender_e">男</option>
+                                    <option value="2" class="chargender_e">女</option>
+                                    <option value="" selected class="chargender_ee"></option>
                                 </select>
                         </div> 
                         <div class="form-group">
@@ -150,7 +150,7 @@
     <div id="deleteEmployeeModal" class="modal fade">
         <div class="modal-dialog">
             <div class="modal-content">
-                <form>
+                <form name="deleteForm" method="POST" action="./alice_seller_delete_api.php" enctype="multipart/form-data">
                     <div class="modal-header">
                         <h4 class="modal-title">Delete ？</h4>
                         <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
@@ -163,6 +163,30 @@
                         <input type="button" class="btn btn-default" data-dismiss="modal" value="Cancel">
                         <input type="submit" class="btn btn-danger" value="Delete">
                     </div>
+                    <input type="test" name="input_delete_sellerid" id="input_delete_sellerid" value="">
+                </form>
+            </div>
+        </div>
+    </div>
+
+     <!-- 刪除 全部 -->
+     <div id="deleteEmployeeModal_all" class="modal fade">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <form name="deleteAllForm" method="POST" action="./alice_seller_delete_all_api.php" enctype="multipart/form-data">
+                    <div class="modal-header">
+                        <h4 class="modal-title">Delete all choose?</h4>
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    </div>
+                    <div class="modal-body">
+                        <p>Are you sure you want to delete these Records ?</p>
+                        <p class="text-warning"><small>This action cannot be undone.</small></p>
+                    </div>
+                    <div class="modal-footer">
+                        <input type="button" class="btn btn-default" data-dismiss="modal" value="Cancel">
+                        <input type="submit" class="btn btn-danger" value="Delete">
+                    </div>
+                    <input type="test" name="sellerinput_delete_all_id[]" id="sellerinput_delete_all_id" value="">
                 </form>
             </div>
         </div>

@@ -10,7 +10,7 @@ $sql = "UPDATE `users`
         `username` = ?,
         `pwd` = ?,
         `name` = ?,
-        `gender` = ?,
+        `chargender` = ?,
         `phoneNumber` = ?,
         `card` = ?,
         `birthday` = ?,
@@ -21,7 +21,7 @@ $arrParam = [
     $_POST['username_e'],
     $_POST['pwd_e'],
     $_POST['name_e'],
-    $_POST['gender_e'],
+    $_POST['chargender_e'],
     $_POST['phoneNumber_e'],
     $_POST['card_e'],
     $_POST['birthday_e'],
@@ -62,6 +62,6 @@ if( $stmt->rowCount() > 0 ){//彈回編輯頁
     header('refresh: 3; url=alice_seller_index.php');
     echo "更新成功";
 } else {//彈回編輯頁
-    header("Refresh: 300000; url=alice_seller_index.php");
+    header("Refresh: 3; url=alice_seller_index.php");
     echo "沒有任何更新";
 }

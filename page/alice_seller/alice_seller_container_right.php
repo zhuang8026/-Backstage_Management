@@ -10,8 +10,8 @@
                 <a href="#addEmployeeModal" class="btn btn-success" data-toggle="modal">
                     <i class="material-icons">&#xE147;</i> <span>Add New Employee</span>
                 </a>
-                <a href="#deleteEmployeeModal" class="btn btn-danger" data-toggle="modal">
-                    <i class="material-icons">&#xE15C;</i> <span>Delete</span>
+                <a href="#deleteEmployeeModal_all" class="btn btn-danger" data-toggle="modal">
+                    <i class="material-icons" onClick="seller_Delete_click_all()">&#xE15C;</i> <span>Delete</span>
                 </a>
             </div>
         </div>
@@ -43,11 +43,11 @@
         <tbody>
         <!-- 模板 start-->
         <?php
-            $sql = "SELECT `id`, `username`, `pwd`, `name`, IF(`gender` = 1,'男','女') AS `gender`, 
+            $sql = "SELECT `id`, `username`, `pwd`, `name`, IF(`gender` = 1,'男','女') AS `chargender`, 
                             `userlogo`, `phoneNumber`,`card`,`birthday`,`address`,
                     IF(`isActivated` = 1,'開通','未開通') AS `isActivated`
                     FROM `users`
-                    WHERE `isActivated` = 1 
+                    -- WHERE `isActivated` = 1 
                     ORDER BY `id` ASC";
             $stmt = $pdo->prepare($sql);
             $stmt->execute();
@@ -66,7 +66,7 @@
             <td class="username<?php echo $arr[$i]['id']?>"><?php echo $arr[$i]['username']; ?></td>
             <td class="pwd<?php echo $arr[$i]['id']?>"><?php echo $arr[$i]['pwd']; ?></td>
             <td class="name<?php echo $arr[$i]['id']?>"><?php echo $arr[$i]['name']; ?></td>
-            <td class="gender<?php echo $arr[$i]['id']?>"><?php echo $arr[$i]['gender']; ?></td>
+            <td class="chargender<?php echo $arr[$i]['id']?>"><?php echo $arr[$i]['chargender']; ?></td>
             
             <!-- <td class="userlogo<?php echo $arr[$i]['id']?>">
                 <?php if($arr[$i]['userlogo'] !== NULL) { ?>
@@ -91,9 +91,9 @@
             <a href="#editEmployeeModal" class="edit" data-toggle="modal" >
                 <i class="material-icons" data-toggle="tooltip" title="Edit" onClick="Edit_seller_alice(<?php echo $arr[$i]['id']?>)">&#xE254;</i>
             </a>
-
-            <a href="＃deleteEmployeeModal" class="delete" data-toggle="modal" >
-                <i class="material-icons" data-toggle="tooltip" title="Delete" onClick="Delete_seller_alice(<?php echo $arr[$i]['id']?>">&#xE872;</i>
+            
+            <a href="#deleteEmployeeModal" class="delete" data-toggle="modal" >
+                <i class="material-icons" data-toggle="tooltip" title="Delete" onClick="Delete_seller_alice(<?php echo $arr[$i]['id']?>)">&#xE872;</i>
             </a>
 
             </td>

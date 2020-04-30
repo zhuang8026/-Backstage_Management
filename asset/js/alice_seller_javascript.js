@@ -224,21 +224,22 @@ $(document).ready(function(){
 
 
 
-
 //js
 function Edit_seller_alice(id){
-    console.log(id);
-    let username = document.getElementsByClassName('username'+id)[0].innerHTML;
-    document.querySelectorAll("input#username_e")[0].value = username;
-    let password = document.getElementsByClassName('pwd'+id)[0].innerHTML;
-    document.querySelectorAll("input#pwd_e")[0].value = password;
-    let name = document.getElementsByClassName('name'+id)[0].innerHTML;
-    document.querySelectorAll("input#name_e")[0].value = name;
+    // console.log(id);
+    // let username = document.getElementsByClassName('username'+id)[0].innerHTML;
+    // document.querySelectorAll("input#username_e")[0].value = username;
+    // let password = document.getElementsByClassName('pwd'+id)[0].innerHTML;
+    // document.querySelectorAll("input#pwd_e")[0].value = password;
+    // let name = document.getElementsByClassName('name'+id)[0].innerHTML;
+    // document.querySelectorAll("input#name_e")[0].value = name;
 
 
-    let gender = document.getElementsByClassName('gender'+id)[0].innerHTML; // ok 
-    document.querySelectorAll("option.gender_ee")[0].value = gender;
-    document.querySelectorAll("option.gender_ee")[0].innerHTML = gender;
+    let chargender = document.getElementsByClassName('chargender'+id)[0].innerHTML; // ok 
+
+    // document.querySelectorAll("option.chargender_ee")[0].value = chargender;
+    // console.log(chargender);
+    // document.querySelectorAll("option.chargender_ee")[0].innerHTML = chargender;
 
     // girl or man ?
     // console.log(gender);
@@ -249,14 +250,14 @@ function Edit_seller_alice(id){
     // }
 
     
-    switch(document.querySelectorAll("option.gender_ee")[0].value){
+    switch(document.querySelectorAll("option.chargender_ee")[0].value){
         case '男':
-            document.querySelectorAll("option.gender_e")[0].style.display="none";
-            document.querySelectorAll("option.gender_e")[1].style.display="";
+            document.querySelectorAll("option.chargender_e")[0].style.display="none";
+            document.querySelectorAll("option.chargender_e")[1].style.display="";
         break;
         case '女':
-            document.querySelectorAll("option.gender_e")[0].style.display="";
-            document.querySelectorAll("option.gender_e")[1].style.display="none";
+            document.querySelectorAll("option.chargender_e")[0].style.display="";
+            document.querySelectorAll("option.chargender_e")[1].style.display="none";
         break;
     }
 
@@ -284,3 +285,4 @@ function Edit_seller_alice(id){
 
 
 }
+
