@@ -40,7 +40,7 @@
                     <th>Color</th>
                     <th>Brand</th>
                     <th>Type</th>
-                    <th>Price</th>
+                    <th>Price/.NT</th>
                     <th>Quantity</th>
                     <th>Star</th>
                     <th>sales</th>
@@ -90,7 +90,7 @@
                             <img src="../../asset/img/404.png">
                         <?php endif; ?>
                     </td>
-                    <td class="colorid<?= $arr[$i]['itemId']; ?>"><div style="background-color:<?= $arr[$i]['colorunicode']; ?>;height: 10px; "></div></td>
+                    <td class="colorid<?= $arr[$i]['itemId']; ?>"><div style="background-color:<?= $arr[$i]['colorunicode']; ?>;height: 34px; border-radius: 4px;"></div></td>
                     <td class="itemsbrand<?= $arr[$i]['itemId']; ?>"><?= $arr[$i]['itemsbrand']; ?></td>
                     <td class="itemstype<?= $arr[$i]['itemId']; ?>"><?= $arr[$i]['itemstype']; ?></td>
                     <td class="itemPrice<?= $arr[$i]['itemId']; ?>"><?= $arr[$i]['itemPrice']; ?></td>

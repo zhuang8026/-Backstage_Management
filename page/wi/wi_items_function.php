@@ -10,15 +10,15 @@
                     </div>
                     <div class="modal-body">
                         <div class="form-group">
-                            <label>itemName</label>
+                            <label>Name</label>
                             <input type="text" class="form-control" required name="itemName" value="" placeholder="商品名稱">
                         </div>
                         <div class="form-group">
-                            <label>itemImg</label>
+                            <label>Image</label>
                             <input type="file" class="form-control" name="itemImg" value="" placeholder="商品圖片">
                         </div>
                         <div class="form-group">
-                            <label>colorid</label>
+                            <label>Color</label>
                             <ul id="colorAll">
                                 <li class="colorname">
                                     <input type="radio" name="colorid" value="1">
@@ -64,24 +64,24 @@
                             <!-- <input type="text" class="form-control" required name="colorid" value="" placeholder="商品顏色"> -->
                         </div>
                         <div class="form-group">
-                            <label>itemsbrand</label>
+                            <label>Brand</label>
                             <input type="text" class="form-control" required name="itemsbrand" value="" placeholder="商品品牌">
                         </div>
                         <div class="form-group">
-                            <label>itemstype</label>
+                            <label>Type</label>
                             <input type="text" class="form-control" required name="itemstype" value="" placeholder="商品類型">
                         </div>
                         <div class="form-group">
-                            <label>itemPrice</label>
+                            <label>Price</label>
                             <input type="text" class="form-control" required name="itemPrice" value="" placeholder="商品價格">
                         </div>
                         <div class="form-group">
-                            <label>itemQty</label>
+                            <label>Quantity</label>
                             <input type="text" class="form-control" required name="itemQty" value="" placeholder="商品數量">
                         </div>
                         
                         <div class="form-group">
-                            <label>itemscontent</label>
+                            <label>Content</label>
                             <textarea class="form-control" required name="itemscontent" value="" placeholder="商品備註"></textarea>
                         </div>
                         <!-- <div class="form-group">
@@ -110,16 +110,16 @@
  
                     <div class="modal-body">
                         <div class="form-group">
-                            <label>itemName</label>
+                            <label>Name</label>
                             <input type="text" class="form-control" name="itemName_d" value="" placeholder="商品名稱" id="itemName_d">
                         </div>
                         <div class="form-group">
-                            <label>itemImg</label>
+                            <label>Image</label>
                             <img id="itemImg_d_img" src=""/>
                             <input type="file" class="form-control" name="itemImg_d" value="" placeholder="商品圖片" id="itemImg_d">
                         </div>
                         <div class="form-group">
-                            <label>colorid</label>
+                            <label>Color</label>
                             <ul id="colorAll">
                                 <li class="colorname">
                                     <input type="radio" name="colorid" value="1">
@@ -165,19 +165,19 @@
                             <!-- <input type="text" class="form-control" name="colorid_d" value="" placeholder="商品顏色" id="colorid_d"> -->
                         </div>
                         <div class="form-group">
-                            <label>itemsbrand</label>
+                            <label>Brand</label>
                             <input type="text" class="form-control" name="itemsbrand_d" value="" placeholder="商品品牌" id="itemsbrand_d">
                         </div>
                         <div class="form-group">
-                            <label>itemstype</label>
-                            <input type="text" class="form-control" name="itemstype_d" value="" placeholder="商品類型" id="itemstype_d">
+                            <label>Type</label>
+                            <!-- <input type="text" class="form-control" name="itemstype_d" value="" placeholder="商品類型" id="itemstype_d"> -->
                         </div>
                         <div class="form-group">
-                            <label>itemPrice</label>
+                            <label>Price</label>
                             <input type="text" class="form-control" name="itemPrice_d" value="" placeholder="商品價格" id="itemPrice_d">
                         </div>
                         <div class="form-group">
-                            <label>itemQty</label>
+                            <label>Quantity</label>
                             <input type="text" class="form-control" name="itemQty_d" value="" placeholder="商品數量" id="itemQty_d">
                         </div>
                     </div>

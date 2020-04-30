@@ -10,21 +10,23 @@
                     </div>
                     <div class="modal-body">
                         <div class="form-group">
-                        <label>Username</label>
-                        <input type="text" name="username" id="username" class="form-control" required>
+                            <label>Username</label>
+                            <input type="text" name="username" id="username" class="form-control" required>
                         </div>
                         <div class="form-group">
-                        <label >password</label>
-                        <input type="text" name="pwd" id="pwd" class="form-control" required>
+                            <label >password</label>
+                            <input type="text" name="pwd" id="pwd" class="form-control" required>
                         </div>
                         <div class="form-group">
-                        <label>Name</label>
-                        <input type="text" name="name" id="name" class="form-control" required>
+                            <label>Name</label>
+                            <input type="text" name="name" id="name" class="form-control" required>
                         </div>
                         <div class="form-group">
-                        <select name="gender" id="gender" class="form-control">
-                                <option value="1" class="form-control" selected>男</option>
-                                <option value="2" class="form-control">女</option>
+                            <label>gender</label>
+                            <select name="gender" id="gender" class="form-control">
+                                    <option value="1" class="form-control" selected>男</option>
+                                    <option value="2" class="form-control">女</option>
+                            </select>
                         </div>
                         <div class="form-group">
                         <label>Image</label>

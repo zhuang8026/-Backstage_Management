@@ -1,10 +1,17 @@
 <div class="table-wrapper">
     <div class="table-title">
         <div class="row">
-            <div class="col-sm-6">
-                <h2><b>歡迎回來！<?= $_SESSION['username'] ?></b></h2>
+            <div class="col-sm-6 user_btn">
+                <img style="width: 47px; margin-right: 10px; border-radius: 2px;" src="../../asset/img/manangeicon.png" alt="管理者頭像">
+                <h2>
+                    <b>平台管理者 : <?= $_SESSION['username'] ?></b>
+                </h2>
+                <button>
+                    <i class="fas fa-sign-out-alt"></i>
+                    <a href="../../api/logout_api.php?logout=1">logout</a>
+                </button>
             </div>
-            
+        
             <!-- 刪除 與 新增 -->
             <div class="col-sm-6">
                 <a href="#addEmployeeModal" class="btn btn-success" data-toggle="modal">
