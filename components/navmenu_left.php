@@ -44,7 +44,7 @@
                         <a href="#"><i class="fas fa-store"></i> 訂單管理 <span class="arrow"></span></a>
                     </li>
                     <ul class="sub-menu collapse" id="order">
-                        <li><a href="../hong/hong_orders_index.php">訂單</a></li>                       
+                        <li><a href="../hong/h_orders_index.php">訂單</a></li>                       
                     </ul>
 
                     <li data-toggle="collapse" data-target="#market" class="collapsed">
