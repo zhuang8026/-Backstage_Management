@@ -214,13 +214,13 @@ $(document).ready(function(){
 
 //js
 function Edit_seller_alice(id){
-    // console.log(id);
-    // let username = document.getElementsByClassName('username'+id)[0].innerHTML;
-    // document.querySelectorAll("input#username_e")[0].value = username;
-    // let password = document.getElementsByClassName('pwd'+id)[0].innerHTML;
-    // document.querySelectorAll("input#pwd_e")[0].value = password;
-    // let name = document.getElementsByClassName('name'+id)[0].innerHTML;
-    // document.querySelectorAll("input#name_e")[0].value = name;
+    console.log(id);
+    let username = document.getElementsByClassName('username'+id)[0].innerHTML;
+    document.querySelectorAll("input#username_e")[0].value = username;
+    let password = document.getElementsByClassName('pwd'+id)[0].innerHTML;
+    document.querySelectorAll("input#pwd_e")[0].value = password;
+    let name = document.getElementsByClassName('name'+id)[0].innerHTML;
+    document.querySelectorAll("input#name_e")[0].value = name;
 
 
     // let chargender = document.getElementsByClassName('chargender'+id)[0].innerHTML; // ok 
