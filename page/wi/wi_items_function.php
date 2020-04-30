@@ -19,7 +19,49 @@
                         </div>
                         <div class="form-group">
                             <label>colorid</label>
-                            <input type="text" class="form-control" required name="colorid" value="" placeholder="商品顏色">
+                            <ul id="colorAll">
+                                <li class="colorname">
+                                    <input type="radio" name="colorid" value="1">
+                                    <span style="background-color: #AB3B3A;">真朱红</span>
+                                    <i class="fas fa-check"></i>
+                                </li>
+                                <li class="colorname">
+                                    <input type="radio" name="colorid" value="2">
+                                    <span style="background-color: #F05E1C;">黄丹橘</span>
+                                    <i class="fas fa-check"></i>
+                                </li>
+                                <li class="colorname">
+                                    <input type="radio" name="colorid" value="3">
+                                    <span style="background-color: #FFC408;">花葉黃</span>
+                                    <i class="fas fa-check"></i>
+                                </li>
+                                <li class="colorname">
+                                    <input type="radio" name="colorid" value="4">
+                                    <span style="background-color: #516E41;">青丹綠</span>
+                                    <i class="fas fa-check"></i>
+                                </li>
+                                <li class="colorname">
+                                    <input type="radio" name="colorid" value="5">
+                                    <span style="background-color: #255359;">千草藍</span>
+                                    <i class="fas fa-check"></i>
+                                </li>
+                                <li class="colorname">
+                                    <input type="radio" name="colorid" value="6">
+                                    <span style="background-color: #6A4C9C;">桔梗紫</span>
+                                    <i class="fas fa-check"></i>
+                                </li>
+                                <li class="colorname">
+                                    <input type="radio" name="colorid" value="7">
+                                    <span style="background-color: #BDC0BA;">胡粉白</span>
+                                    <i class="fas fa-check"></i>
+                                </li>
+                                <li class="colorname">
+                                    <input type="radio" name="colorid" value="8">
+                                    <span style="background-color: #0C0C0C;">碳呂黑</span>
+                                    <i class="fas fa-check"></i>
+                                </li>
+                            </ul>
+                            <!-- <input type="text" class="form-control" required name="colorid" value="" placeholder="商品顏色"> -->
                         </div>
                         <div class="form-group">
                             <label>itemsbrand</label>
@@ -65,7 +107,7 @@
                         <h4 class="modal-title">Edit ?</h4>
                         <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
                     </div>
-
+ 
                     <div class="modal-body">
                         <div class="form-group">
                             <label>itemName</label>
@@ -78,7 +120,49 @@
                         </div>
                         <div class="form-group">
                             <label>colorid</label>
-                            <input type="text" class="form-control" name="colorid_d" value="" placeholder="商品顏色" id="colorid_d">
+                            <ul id="colorAll">
+                                <li class="colorname">
+                                    <input type="radio" name="colorid" value="1">
+                                    <span style="background-color: #AB3B3A;">真朱红</span>
+                                    <i class="fas fa-check"></i>
+                                </li>
+                                <li class="colorname">
+                                    <input type="radio" name="colorid" value="2">
+                                    <span style="background-color: #F05E1C;">黄丹橘</span>
+                                    <i class="fas fa-check"></i>
+                                </li>
+                                <li class="colorname">
+                                    <input type="radio" name="colorid" value="3">
+                                    <span style="background-color: #FFC408;">花葉黃</span>
+                                    <i class="fas fa-check"></i>
+                                </li>
+                                <li class="colorname">
+                                    <input type="radio" name="colorid" value="4">
+                                    <span style="background-color: #516E41;">青丹綠</span>
+                                    <i class="fas fa-check"></i>
+                                </li>
+                                <li class="colorname">
+                                    <input type="radio" name="colorid" value="5">
+                                    <span style="background-color: #255359;">千草藍</span>
+                                    <i class="fas fa-check"></i>
+                                </li>
+                                <li class="colorname">
+                                    <input type="radio" name="colorid" value="6">
+                                    <span style="background-color: #6A4C9C;">桔梗紫</span>
+                                    <i class="fas fa-check"></i>
+                                </li>
+                                <li class="colorname">
+                                    <input type="radio" name="colorid" value="7">
+                                    <span style="background-color: #BDC0BA;">胡粉白</span>
+                                    <i class="fas fa-check"></i>
+                                </li>
+                                <li class="colorname">
+                                    <input type="radio" name="colorid" value="8">
+                                    <span style="background-color: #0C0C0C;">碳呂黑</span>
+                                    <i class="fas fa-check"></i>
+                                </li>
+                            </ul>
+                            <!-- <input type="text" class="form-control" name="colorid_d" value="" placeholder="商品顏色" id="colorid_d"> -->
                         </div>
                         <div class="form-group">
                             <label>itemsbrand</label>
