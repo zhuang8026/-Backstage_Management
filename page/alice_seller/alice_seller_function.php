@@ -100,10 +100,10 @@
                         <div class="form-group">
                             <label>性別</label>
                             <select name="gender_e" class="form-control">
-                                    <option value="1" class="gender_e">男</option>
-                                    <option value="2" class="gender_e">女</option>
-                                    <option value="" selected class="gender_ee"></option>
-                                </select>
+                                <option value="1" class="gender_e" id="gender_man">男</option>
+                                <option value="2" class="gender_e" id="gender_girl">女</option>
+                                <!-- <option value="" selected class="gender_ee"></option> -->
+                            </select>
                         </div> 
                         <div class="form-group">
                             <label>Image</label>
