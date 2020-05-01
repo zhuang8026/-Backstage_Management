@@ -108,14 +108,14 @@ $arrParam[] = (int)$_POST['itemId_input'];
 $stmt = $pdo->prepare($sql);
 $stmt->execute($arrParam);
 
-// echo "<pre>";
-// print_r($_POST['itemId_input']);
-// echo "<hr>";
-// print_r($arrParam);
-// echo "<hr>";
-// print_r($stmt);
-// echo "<hr>";
-// print_r($stmt->rowCount());
+echo "<pre>";
+print_r($_POST['itemId_input']);
+echo "<hr>";
+print_r($arrParam);
+echo "<hr>";
+print_r($stmt);
+echo "<hr>";
+print_r($stmt->rowCount());
 // exit();
 
 

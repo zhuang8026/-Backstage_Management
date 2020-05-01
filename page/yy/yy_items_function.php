@@ -132,12 +132,7 @@
                             <input type="file" class="form-control" name="itemImg_d" value="" placeholder="商品圖片" id="itemImg_d">
                         </div>
                         <div class="form-group">
-                            <label>Color / 原始</label>
-                                <div>
-                                    <input type="radio" name="colorid" id="colorid_d" value="" checked>
-                                    <span id="colorid_span"></span>
-                                </div>
-                            <label>Color / 修改</label>
+                            <label>Color</label>
                             <ul id="colorAll">
                                 <li class="colorname">
                                     <input type="radio" name="colorid" value="1">

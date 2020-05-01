@@ -56,7 +56,7 @@
             <!-- 模板 start-->
             <?php 
                 $sql = "SELECT `itemId`,`itemName`, `itemImg`, `colorid`,`itemsbrand`, `itemstype`, 
-                        `itemPrice`, `itemQty`, `itemsstar`, `itemsales`, `itemCategoryId`, `itemscontent`, `created_at`, `updated_at`,
+                        `itemPrice`, `itemQty`, `itemsstar`, `itemsales`, `itemscontent`, `created_at`, `updated_at`,
                         `items_color`.`coid`, `items_color`.`colorname`, `items_color`.`colorunicode`,
                         `items_type`.`typename`
                         FROM `items`
@@ -93,7 +93,7 @@
                         <img src="../../asset/img/404.png">
                     <?php endif; ?>
                 </td>
-                <td class="colorid<?= $arr[$i]['itemId']; ?>"><div style="background-color:<?= $arr[$i]['colorunicode']; ?>;width: 34px; height: 34px; border-radius: 4px;"></div></td>
+                <td class="colorid<?= $arr[$i]['itemId']; ?>" id="<?= $arr[$i]['colorid']; ?>" data-color="<?= $arr[$i]['colorunicode']; ?>"><div style="background-color:<?= $arr[$i]['colorunicode']; ?>;width: 34px; height: 34px; border-radius: 4px;"></div></td>
                 <td class="itemsbrand<?= $arr[$i]['itemId']; ?>"><?= $arr[$i]['itemsbrand']; ?></td>
                 <td class="itemstype<?= $arr[$i]['itemId']; ?>"><?= $arr[$i]['typename']; ?></td>
                 <td class="itemPrice<?= $arr[$i]['itemId']; ?>"><?= $arr[$i]['itemPrice']; ?></td>

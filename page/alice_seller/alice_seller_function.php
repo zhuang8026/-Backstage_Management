@@ -137,8 +137,8 @@
                         <div class="form-group">
                             <label>賣家開通狀態</label>
                             <select name="isActivated_e" class="form-control">
-                            <option value="0" class="form-control isActivated" selected>未開通</option>
-                            <option value="1" class="form-control isActivated">開通</option>
+                            <option value="0" class="form-control isActivated">未開通</option>
+                            <option value="1" class="form-control isActivated" selected>開通</option>
                             </select>
                         </div>
                         <div class="form-group">

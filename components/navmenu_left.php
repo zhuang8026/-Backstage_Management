@@ -24,6 +24,7 @@
                         </li>
                     </ul>
 
+                    <!-- 未修改 -->
                     <li data-toggle="collapse" data-target="#store" class="collapsed">
                         <a href="#"><i class="fas fa-store"></i> 賣場管理 <span class="arrow"></span></a>
                     </li>

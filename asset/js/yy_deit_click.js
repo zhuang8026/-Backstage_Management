@@ -10,13 +10,10 @@ function Edit_click(id){
     $img_name =  $.trim($('.itemImg'+id).eq(0).eq(0).children('img').attr('src'))
     console.log($img_name);
     console.log($('img#itemImg_d_img').attr('src', $img_name) );
-    console.log($('.colorid'+id).eq(0).attr('id'));
-    console.log($('.colorid'+id).eq(0).attr('data-color'));
     $('#itemId_input').val(id); // hiiden id
     $('input#itemName_d').val( $('.itemName'+id).eq(0).html() );        // itemName
     $('img#itemImg_d_img').attr('src', $img_name);                      // itemImg
-    $('input#colorid_d').val( $('.colorid'+id).eq(0).attr('id') );      // colorid_d
-    $('span#colorid_span').css("background-color", $('.colorid'+id).eq(0).attr('data-color')); // colorid_span
+    $('input#colorid_d').val( $('.colorid'+id).eq(0).html() );          // colorid
     $('input#itemsbrand_d').val( $('.itemsbrand'+id).eq(0).html() );    // itemsbrand
     $('input#itemstype_d').val( $('.itemstype'+id).eq(0).html() );      // itemstype
     $('input#itemPrice_d').val( $('.itemPrice'+id).eq(0).html() );      // itemPrice

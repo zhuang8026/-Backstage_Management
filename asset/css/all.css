@@ -48,13 +48,13 @@ body {
 }
 .table-title {        
     padding-bottom: 15px;
-    background: rgba(33, 30, 85, 0.95);
+    background: #211E55;
     color: #fff;
     padding: 16px 30px;
     margin: -20px -25px 10px;
     z-index: 100;
-    position: fixed;
-    width: 85%;
+    /* position: fixed; */
+    /* width: 85%; */
     /* border-radius: 3px 3px 0 0; */
 }
 .table-title h2 {
@@ -450,6 +450,18 @@ img {
     transition: 0.3s;
 }
 
-.chart {
+/* .chart {
     margin-top: 80px;
+} */
+
+#itemImg_d_img {
+    border: 3px dashed #211E55;
+    padding: 5px;
+    margin: 10px;
+    border-radius: 5px;
+}
+
+span#colorid_span {
+    padding: 0px 27px;
+    margin-left: 10px;
 }

@@ -24,12 +24,22 @@
                         </li>
                     </ul>
 
-                    <li data-toggle="collapse" data-target="#store" class="active"  aria-expanded="true">
+                    <!-- 未修改 -->
+                    <li data-toggle="collapse" data-target="#store" class="collapsed">
                         <a href="#"><i class="fas fa-store"></i> 賣場管理 <span class="arrow"></span></a>
+                    </li>
+                    <ul class="sub-menu collapse" id="store">
+                        <li>
+                            <a href="../yiyang/yi_shop_index.php">賣場管理</a>
+                        </li>
+                    </ul>
+
+                    <li data-toggle="collapse" data-target="#store" class="active"  aria-expanded="true">
+                        <a href="#"><i class="fas fa-store"></i> yy (測試) <span class="arrow"></span></a>
                     </li>
                     <ul class="sub-menu collapse show" id="store">
                         <li class="active">
-                            <a href="../yiyang/yi_shop_index.php">賣場管理</a>
+                            <a href="../yy/yy_items_index.php">yy (測試)</a>
                         </li>
                     </ul>
 
