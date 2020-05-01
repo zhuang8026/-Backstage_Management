@@ -9,6 +9,8 @@
     <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css'/>
     <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.16/css/jquery.dataTables.min.css">
     <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <!-- aos -->
+    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.0/dist/aos.css"/>
     <!-- common -->
     <link rel="stylesheet" type="text/css"  href="../../asset/css/all.css">
     <!-- _highcharts -->

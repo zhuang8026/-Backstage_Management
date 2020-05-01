@@ -14,6 +14,15 @@
     <script src="../../asset/js/wi_delete_click_all.js"></script>
     <script src="../../asset/js/wi_add_click.js"></script>
 
-
+    <!-- aos -->
+    <script src="https://unpkg.com/aos@2.3.0/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            offset: 100,
+            duration: 600,
+            easing: 'ease-in-out',
+            delay: 100,
+        });
+    </script>
 </body>
 </html>
