@@ -51,13 +51,11 @@
         <tbody>
         <!-- 模板 start-->
         <?php
-            $sql = "SELECT `id`, `username`, `pwd`, `name`, `gender`, 
-                    IF(`gender` = 1,'男','女') AS `genderdata`, 
-                    `userlogo`, `phoneNumber`,`card`,`birthday`,`address`,
-                    IF(`isActivated` = 1,'開通','未開通') AS `isActivated`,
-                    IF(`shopopen` = 1,'開通','未開通') AS `shopopen`
-                    FROM `users` INNER JOIN `store`
-                    ON `users`.`id` = `store`.`sellerId`
+            $sql = "SELECT `id`, `username`, `pwd`, `name`, `gender`, IF(`gender` = 1,'男','女') AS `genderdata`, `userlogo`, `phoneNumber`,`card`,`birthday`,`address`,
+                    IF(`isActivated` = 1,'開通','未開通') AS `isActivated`,IF(`shopopen` = 1,'開通','未開通') AS `shopopen`
+                    FROM `users` 
+                    INNER JOIN `stores`
+                    ON `users`.`id` = `stores`.`storeId`
                     WHERE `isActivated` = 1 
                     ORDER BY `id` ASC";
             $stmt = $pdo->prepare($sql);

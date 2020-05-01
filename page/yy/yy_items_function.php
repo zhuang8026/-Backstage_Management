@@ -18,70 +18,16 @@
                             <input type="file" class="form-control" name="itemImg" value="" placeholder="商品圖片">
                         </div>
                         <div class="form-group">
-                            <label>Color</label>
-                            <ul id="colorAll">
-                                <li class="colorname">
-                                    <input type="radio" name="colorid" value="1">
-                                    <span style="background-color: #AB3B3A;">真朱红</span>
-                                    <i class="fas fa-check"></i>
-                                </li>
-                                <li class="colorname">
-                                    <input type="radio" name="colorid" value="2">
-                                    <span style="background-color: #F05E1C;">黄丹橘</span>
-                                    <i class="fas fa-check"></i>
-                                </li>
-                                <li class="colorname">
-                                    <input type="radio" name="colorid" value="3">
-                                    <span style="background-color: #FFC408;">花葉黃</span>
-                                    <i class="fas fa-check"></i>
-                                </li>
-                                <li class="colorname">
-                                    <input type="radio" name="colorid" value="4">
-                                    <span style="background-color: #516E41;">青丹綠</span>
-                                    <i class="fas fa-check"></i>
-                                </li>
-                                <li class="colorname">
-                                    <input type="radio" name="colorid" value="5">
-                                    <span style="background-color: #255359;">千草藍</span>
-                                    <i class="fas fa-check"></i>
-                                </li>
-                                <li class="colorname">
-                                    <input type="radio" name="colorid" value="6">
-                                    <span style="background-color: #6A4C9C;">桔梗紫</span>
-                                    <i class="fas fa-check"></i>
-                                </li>
-                                <li class="colorname">
-                                    <input type="radio" name="colorid" value="7">
-                                    <span style="background-color: #BDC0BA;">胡粉白</span>
-                                    <i class="fas fa-check"></i>
-                                </li>
-                                <li class="colorname">
-                                    <input type="radio" name="colorid" value="8">
-                                    <span style="background-color: #0C0C0C;">碳呂黑</span>
-                                    <i class="fas fa-check"></i>
-                                </li>
-                            </ul>
-                            <!-- <input type="text" class="form-control" required name="colorid" value="" placeholder="商品顏色"> -->
-                        </div>
-                        <div class="form-group">
-                            <label>Brand</label>
+                            <label>Description</label>
                             <input type="text" class="form-control" required name="itemsbrand" value="" placeholder="商品品牌">
                         </div>
                         <div class="form-group">
-                            <label>Type</label>
+                            <label>Sellers</label>
                             <select name="itemstype" required class="form-control" id="itemstype">
-                                    <option value="1" class="form-control" selected>有線耳罩式</option>
-                                    <option value="2" class="form-control">無線耳罩式</option>
-                                    <option value="3" class="form-control">有線入耳式</option>
-                                    <option value="4" class="form-control">無線入耳式</option>
-                                    <option value="5" class="form-control">有線耳道式</option>
-                                    <option value="6" class="form-control">無線耳道式</option>
-                                    <option value="7" class="form-control">有線耳塞式</option>
-                                    <option value="8" class="form-control">無線耳塞式</option>
-                                    <option value="9" class="form-control">有線耳掛式</option>
-                                    <option value="10" class="form-control">無線耳掛式</option>
+                                <option value="1" class="form-control">Sellers1</option>
+                                <option value="2" class="form-control">Sellers2</option>
+                                <option value="3" class="form-control">Sellers3</option>
                             </select>
-                            <!-- <input type="text" class="form-control" required name="itemstype" value="" placeholder="商品類型"> -->
                         </div>
                         <div class="form-group">
                             <label>Price</label>
@@ -96,10 +42,6 @@
                             <label>Content</label>
                             <textarea class="form-control" required name="itemscontent" value="" placeholder="商品備註"></textarea>
                         </div>
-                        <!-- <div class="form-group">
-                            <label>itemsstar</label>
-                            <input type="text" class="form-control" required name="name3" value="" maxlength="10">
-                        </div> -->
                     </div>
                     <div class="modal-footer">
                         <input type="button" class="btn btn-default" data-dismiss="modal" value="Cancel">
