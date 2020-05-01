@@ -210,6 +210,7 @@
                     <div class="modal-footer">
                         <input type="button" class="btn btn-default" data-dismiss="modal" value="Cancel">
                         <input type="submit" class="btn btn-info" id="btn_submit" value="Save">
+                        <!-- <button onclick="window.print()">Print this page</button> -->
                     </div>
                     <!-- <input type="hidden" name="itemId" value="<?/*= (int)$_GET['itemId']; */?>"> -->
                     <input type="hidden" name="itemId_input" id="itemId_input" value="">
