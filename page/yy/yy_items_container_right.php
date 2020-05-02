@@ -62,6 +62,7 @@
                         LEFT JOIN `users`
                         ON `items`.`itemstoreNumber` = `users`.`id`
                         WHERE `users`.`isActivated` = 1
+                        AND `users`.`shopopen` = 1
                         GROUP BY `storeId`
                         ORDER BY `storeId` ASC";
                 $stmt = $pdo->prepare($sql);

@@ -54,7 +54,7 @@
             $sql = "SELECT `id`, `username`, `pwd`, `name`, `gender`, IF(`gender` = 1,'男','女') AS `genderdata`, `userlogo`, `phoneNumber`,`card`,`birthday`,`address`,
                     IF(`isActivated` = 1,'開通','未開通') AS `isActivated`,IF(`shopopen` = 1,'開通','未開通') AS `shopopen`
                     FROM `users` 
-                    INNER JOIN `stores`
+                    LEFT JOIN `stores`
                     ON `users`.`id` = `stores`.`storeId`
                     WHERE `isActivated` = 1 
                     ORDER BY `id` ASC";
@@ -66,12 +66,6 @@
         ?>
         
         <tr>
-            <!-- <td>
-                <span class="custom-checkbox">
-                    <input type="checkbox" id="checkbox1" name="options[]" value="">
-                    <label for="checkbox1"></label>
-                </span>
-            </td> -->
             <td>
                 <span class="custom-checkbox">
                     <input type="checkbox" class="checkboxValue" id="checkbox<?= $arr[$i]['id']; ?>" name="options[]" value="<?= $arr[$i]['id']; ?>">
@@ -88,12 +82,6 @@
                 <?php echo $arr[$i]['genderdata']; ?>
             </td>
             
-            <!-- <td class="userlogo<?php echo $arr[$i]['id']?>">
-                <?php if($arr[$i]['userlogo'] !== NULL) { ?>
-                <img class="w200px" src="./files/<?php echo $arr[$i]['userlogo']; ?>">
-                <?php } ?>
-            </td> -->
-
             <td class="userlogo<?= $arr[$i]['id']; ?>">
                 <?php if($arr[$i]['userlogo'] !== ""): ?>
                     <img src="./files/<?= $arr[$i]['userlogo'];?>">

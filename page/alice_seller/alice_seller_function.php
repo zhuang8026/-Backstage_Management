@@ -99,13 +99,6 @@
                             <label>Name</label>
                             <input type="text" class="form-control" required name="name_e" id="name_e" value="" placeholder="姓名">
                         </div>
-                        <!-- <div class="form-group">
-                            <label>gender</label>
-                            <select name="gender_e" id="gender_e" class="form-control">
-                            <option value="男" class="form-control" selected>男</option>
-                            <option value="女" class="form-control">女</option>
-                            </select>
-                        </div> -->
                         <div class="form-group">
                             <label>性別</label>
                             <select name="gender_e" class="form-control">

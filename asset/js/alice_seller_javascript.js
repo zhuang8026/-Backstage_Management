@@ -182,94 +182,48 @@ $(document).ready(function(){
 
 });
 
-//jq
-// function Edit_seller_alice(id){
-//     console.log($('.username'+id).eq(0).html());
-//     console.log($('.pwd'+id).eq(0).html());
-//     $('#sellerId_input').val(id); // hiiden id
-//     $('input#username_e').val( $('.username'+id).eq(0).html() ); // name
-//     $('input#pwd_e').val( $('.pwd'+id).eq(0).html() ); // name
-//     $('input#name_e').val( $('.name'+id).eq(0).html() ); // name
-   
-//     $('option.gender_ee').val( $('.gender'+id).eq(0).html() ); // name
-//     //male or female?
-//    if($('option.gender_e').val( $('.gender'+id).eq(0).html() ) == 1 ){
-//     $('option.gender_e').val( $('.gender'+id).eq(0).html() ).style.display = 'none'; 
-//    }else{
-//     $('option.gender_e').val( $('.gender'+id).eq(1).html() ).style.display = 'none'; 
-//    }
-
-//     $img_name =  $.trim($('.userlogo'+id).eq(0).eq(0).children('img').attr('src'))
-//     console.log($img_name);
-//     console.log($('img#sellerImg_d_img').attr('src', $img_name) );
-//     $('#sellerId_input').val(id); // hidden id
-//     $('img#sellerImg_d_img').attr('src', $img_name);
-//     $('input#phoneNumber_e').val( $('.phoneNumber'+id).eq(0).html() ); // name
-//     $('input#card_e').val( $('.card'+id).eq(0).html() );
-//     $('input#birthday_e').val( $('.birthday'+id).eq(0).html() ); // name
-//     $('input#address_e').val( $('.address'+id).eq(0).html() );
-//     $('input#isActivated_e').val( $('.isActivated'+id).eq(0).html() );
-// };
-
-
 //js
 function Edit_seller_alice(id){
-    console.log(id);
+    // console.log(id);
     let username = document.getElementsByClassName('username'+id)[0].innerHTML;
     document.querySelectorAll("input#username_e")[0].value = username;
+
     let password = document.getElementsByClassName('pwd'+id)[0].innerHTML;
     document.querySelectorAll("input#pwd_e")[0].value = password;
+
     let name = document.getElementsByClassName('name'+id)[0].innerHTML;
     document.querySelectorAll("input#name_e")[0].value = name;
 
-
-    // let chargender = document.getElementsByClassName('chargender'+id)[0].innerHTML; // ok 
-
-
     let gender = document.getElementsByClassName('genderdata'+id)[0].value; // ok 
-    // girl or man ?
-    console.log(gender);
     if(gender == 1){
         console.log("man");
         document.querySelectorAll("option.gender_e")[0].selected = true;
     }else{
         console.log("girl");
         document.querySelectorAll("option.gender_e")[1].selected = true;
-
     }
 
-    // switch(document.querySelectorAll("option.gender_ee")[0].value){
-    //     case '男':
-    //         document.querySelectorAll("option.gender_e")[0].style.display="none";
-    //         document.querySelectorAll("option.gender_e")[1].style.display="";
-    //     break;
-    //     case '女':
-    //         document.querySelectorAll("option.gender_e")[0].style.display="";
-    //         document.querySelectorAll("option.gender_e")[1].style.display="none";
-    //     break;
-    // }
-
-    // let userlogo = document.getElementsByClassName('userlogo'+id)[0];
-    // document.querySelectorAll("img#sellerImg_d_img")[0].setAttribute("src","./files/");
-
-    $img_name =  $.trim($('.userlogo'+id).eq(0).eq(0).children('img').attr('src'))
-    //  console.log($img_name);
-    //  console.log($('img#sellerImg_d_img').attr('src', $img_name) );
-     $('#sellerId_input').val(id); // hidden id
-     $('img#sellerImg_d_img').attr('src', $img_name);
+    let img_name =  $.trim($('.userlogo'+id).eq(0).eq(0).children('img').attr('src'))
+    $('#sellerId_input').val(id); // hidden id
+    $('img#sellerImg_d_img').attr('src', img_name);
 
     let phoneNumber = document.getElementsByClassName('phoneNumber'+id)[0].innerHTML;
     document.querySelectorAll("input#phoneNumber_e")[0].value = phoneNumber;
+
     let card = document.getElementsByClassName('card'+id)[0].innerHTML;
     document.querySelectorAll("input#card_e")[0].value = card;
+
     let birthday = document.getElementsByClassName('birthday'+id)[0].innerHTML;
     document.querySelectorAll("input#birthday_e")[0].value = birthday;
+
     let address = document.getElementsByClassName('address'+id)[0].innerHTML;
     document.querySelectorAll("input#address_e")[0].value = address;
+
     let isActivated = document.getElementsByClassName('isActivated'+id)[0].innerHTML;
     document.querySelectorAll("input#isActivated_e").value = isActivated;
+
     let shopopen = document.getElementsByClassName('shopopen'+id)[0].innerHTML;
     document.querySelectorAll("input#shopopen_e").value = shopopen;
+    
     document.querySelectorAll("input#sellerId_input")[0].value = id;
-
 }
