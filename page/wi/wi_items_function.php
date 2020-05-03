@@ -3,12 +3,36 @@
     <div id="addEmployeeModal" class="modal fade">
         <div class="modal-dialog">
             <div class="modal-content">
-                <form name="myForm" method="POST" action="../../api/add_api.php" enctype="multipart/form-data">
+                <form name="myForm" method="POST" action="../../api/wi_add_api.php" enctype="multipart/form-data">
                     <div class="modal-header">
                         <h4 class="modal-title">Add ?</h4>
                         <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
                     </div>
                     <div class="modal-body">
+                        <!-- 選擇賣家 -->
+                        <div class="form-group">
+                            <label>Sellers</label>
+                            <select name="sellersId" required class="form-control" id="sellersId">
+                            <option value="0" class="form-control" class="form-control">平台所有</option>
+                            <?php
+                                $sql = "SELECT `id`, `username`, `name`
+                                        FROM `users` 
+                                        LEFT JOIN `stores`
+                                        ON `users`.`id` = `stores`.`storeId`
+                                        WHERE `isActivated` = 1";
+                                $stmt = $pdo->prepare($sql);
+                                $stmt->execute();
+                                if($stmt->rowCount() > 0):
+                                    $arr = $stmt->fetchAll(PDO::FETCH_ASSOC);
+                                    for($i = 0; $i < count($arr); $i++):
+                            ?>
+                                <option value="<?= $arr[$i]['id']; ?>" class="form-control" class="form-control">ID: <?= $arr[$i]['username'] ?>｜名字: <?= $arr[$i]['name'] ?></option>
+                                <?php endfor; ?>
+                            <?php endif; ?>
+
+                            </select>
+                        </div>
+
                         <div class="form-group">
                             <label>Name</label>
                             <input type="text" class="form-control" required name="itemName" value="" placeholder="商品名稱">
@@ -17,6 +41,7 @@
                             <label>Image</label>
                             <input type="file" class="form-control" name="itemImg" value="" placeholder="商品圖片">
                         </div>
+                        <!-- 顏色 -->
                         <div class="form-group">
                             <label>Color</label>
                             <ul id="colorAll">
@@ -67,6 +92,7 @@
                             <label>Brand</label>
                             <input type="text" class="form-control" required name="itemsbrand" value="" placeholder="商品品牌">
                         </div>
+                        <!-- 類型 -->
                         <div class="form-group">
                             <label>Type</label>
                             <select name="itemstype" required class="form-control" id="itemstype">
@@ -114,7 +140,7 @@
     <div id="editEmployeeModal" class="modal fade">
         <div class="modal-dialog">
             <div class="modal-content">
-                <form name="updateForm" enctype="multipart/form-data" method="POST" action="../../api/updateEdit_api.php">
+                <form name="updateForm" enctype="multipart/form-data" method="POST" action="../../api/wi_updateEdit_api.php">
                     <div class="modal-header">
                         <h4 class="modal-title">Edit ?</h4>
                         <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
@@ -227,7 +253,7 @@
     <div id="deleteEmployeeModal" class="modal fade">
         <div class="modal-dialog">
             <div class="modal-content">
-                <form name="deleteForm" method="POST" action="../../api/delete_api.php" enctype="multipart/form-data">
+                <form name="deleteForm" method="POST" action="../../api/wi_delete_api.php" enctype="multipart/form-data">
                     <div class="modal-header">
                         <h4 class="modal-title">Delete ?</h4>
                         <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
@@ -250,7 +276,7 @@
     <div id="deleteEmployeeModal_all" class="modal fade">
         <div class="modal-dialog">
             <div class="modal-content">
-                <form name="deleteAllForm" method="POST" action="../../api/delete_all_api.php" enctype="multipart/form-data">
+                <form name="deleteAllForm" method="POST" action="../../api/wi_delete_all_api.php" enctype="multipart/form-data">
                     <div class="modal-header">
                         <h4 class="modal-title">Delete all choose?</h4>
                         <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>

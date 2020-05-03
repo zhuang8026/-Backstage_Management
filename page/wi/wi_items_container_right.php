@@ -44,10 +44,9 @@
                 <th>Quantity</th>
                 <th>Star</th>
                 <th>sales</th>
-                <!-- <th>CategoryId</th> -->
-                <!-- <th>Content</th> -->
+                <th>ownr_id</th>
+                <th>ownr_name</th>
                 <th>created_at</th>
-                <th>updated_at</th>
                 <th>Function</th>
                 
             </tr>
@@ -55,15 +54,18 @@
         <tbody>
             <!-- 模板 start-->
             <?php 
-                $sql = "SELECT `itemId`,`itemName`, `itemImg`, `colorid`,`itemsbrand`, `itemstype`, 
-                        `itemPrice`, `itemQty`, `itemsstar`, `itemsales`, `itemscontent`, `created_at`, `updated_at`,
+                $sql = "SELECT `itemId`,`itemName`, `itemImg`, `colorid`,`itemsbrand`, `itemstype`, `itemstoreNumber`,
+                        `itemPrice`, `itemQty`, `itemsstar`, `itemsales`, `itemscontent`, `items`.`created_at`,
                         `items_color`.`coid`, `items_color`.`colorname`, `items_color`.`colorunicode`,
-                        `items_type`.`typename`
+                        `items_type`.`typename`,
+                        `users`.`username`, `users`.`name`
                         FROM `items`
                         INNER JOIN `items_color`
                         ON `items`.`colorid` = `items_color`.`coid`
                         INNER JOIN `items_type`
                         ON `items`.`itemstype` = `items_type`.`typeid`
+                        LEFT JOIN `users`
+                        ON `items`.`itemstoreNumber` = `users`.`id`
                         ORDER BY `itemId` ASC";
                 $stmt = $pdo->prepare($sql);
                 $stmt->execute(); 
@@ -90,7 +92,7 @@
                     <?php if($arr[$i]['itemImg'] !== ""): ?>
                         <img src="../../asset/file_img/<?= $arr[$i]['itemImg'];?>">
                     <?php else: ?>
-                        <img src="../../asset/img/404.png">
+                        <img src="../../asset/img/404.jpg">
                     <?php endif; ?>
                 </td>
                 <td class="colorid<?= $arr[$i]['itemId']; ?>" id="<?= $arr[$i]['colorid']; ?>" data-color="<?= $arr[$i]['colorunicode']; ?>"><div style="background-color:<?= $arr[$i]['colorunicode']; ?>;width: 34px; height: 34px; border-radius: 4px;"></div></td>
@@ -100,10 +102,16 @@
                 <td class="itemQty<?= $arr[$i]['itemId']; ?>"><?= $arr[$i]['itemQty']; ?></td>
                 <td><?= $arr[$i]['itemsstar']; ?></td>
                 <td><?= $arr[$i]['itemsales']; ?></td>
-                <!-- <td><?/*= $arr[$i]['itemCategoryId']; */?></td> -->
-                <!-- <td><?/*= $arr[$i]['itemscontent']; */?></td> -->
+
+                <?php if($arr[$i]['itemstoreNumber'] !== NULL): ?>
+                    <td><?= $arr[$i]['username']; ?></td>
+                    <td><?= $arr[$i]['name']; ?></td>
+                <?php else: ?>
+                    <td>無</td>
+                    <td>平台所有</td>
+                <?php endif; ?>
+                
                 <td><?= $arr[$i]['created_at']; ?></td>
-                <td><?= $arr[$i]['updated_at']; ?></td>
                 <td>
                     <a href="#" class="AddImages" data-toggle="modal">
                         <i class="fas fa-file-alt" data-toggle="tooltip" title="AddImages"></i>

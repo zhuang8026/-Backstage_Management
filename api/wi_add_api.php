@@ -3,10 +3,9 @@ header("Content-Type: text/html; chartset=utf-8");
 require_once('../checkSession.php');
 require_once('../db.inc.php');
 
-// echo "<pre>";
-// print_r($_POST);
-// echo "</pre>";
-// exit();
+echo "<pre>";
+print_r($_POST);
+exit();
 
 //回傳狀態
 $objResponse = [];
@@ -43,8 +42,8 @@ if($_POST['colorid'] == NULL){
 };
 
 //SQL 敘述
-$sql = "INSERT INTO `items` (`itemName`, `itemImg`, `colorid`, `itemsbrand`, `itemstype`, `itemPrice`, `itemQty`, `itemscontent`)
-        VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
+$sql = "INSERT INTO `items` (`itemName`, `itemImg`, `colorid`, `itemsbrand`, `itemstype`, `itemPrice`, `itemQty`, `itemscontent`, `itemstoreNumber`)
+        VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)";
 //繫結用陣列
 $arrParam = [
     $_POST['itemName'],
@@ -54,7 +53,8 @@ $arrParam = [
     $_POST['itemstype'],
     $_POST['itemPrice'],
     $_POST['itemQty'],
-    $_POST['itemscontent']
+    $_POST['itemscontent'],
+    $_POST['sellersId']
 ];
 
 // echo "<pre>";   
@@ -64,8 +64,8 @@ $arrParam = [
 $stmt = $pdo->prepare($sql);
 $stmt->execute($arrParam);
 
-echo "<pre>";   
-print_r($stmt->rowCount());
+// echo "<pre>";   
+// print_r($stmt->rowCount());
 
 if($stmt->rowCount() > 0) {
     header("Refresh: 1; url=../page/wi/wi_items_index.php");

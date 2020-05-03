@@ -5,10 +5,10 @@ require_once('../checkSession.php');
 //引用資料庫連線
 require_once('../db.inc.php');
 
-echo "<pre>";
-print_r($_FILES);
-print_r($_POST);
-echo "</pre>";
+// echo "<pre>";
+// print_r($_FILES);
+// print_r($_POST);
+// echo "</pre>";
 // exit();
 
 // 先對其它欄位，進行 SQL 語法字串連接

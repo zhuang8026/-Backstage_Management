@@ -42,7 +42,7 @@
                 <th>賣場描述</th>
                 <th>擁有者ID</th>
                 <th>擁有者名稱</th>
-                <th>擁有者權限(測試)</th>
+                <th>擁有者權限</th>
                 <th>開通權限</th>
                 <th>加入時間</th>
                 <th>功能</th>
@@ -90,7 +90,7 @@
                     <?php if($arr[$i]['storeLogo'] !== ""): ?>
                         <img src="../../asset/file_img/<?= $arr[$i]['storeLogo'];?>">
                     <?php else: ?>
-                        <img src="../../asset/img/404.png">
+                        <img src="../../asset/img/404.jpg">
                     <?php endif; ?>
                 </td>
                 <td class="itemsbrand<?= $arr[$i]['storeId']; ?>"><?= round($arr[$i]["SUM(`items`.`itemsstar`)"] / $arr[$i]["COUNT(`storeId`)"], 2) ?></td>
