@@ -69,9 +69,9 @@
                 $stmt->execute(); 
 
                 // echo "<pre>";
-                // print_r( $stmt->fetchAll(PDO::FETCH_ASSOC));
+                // print_r( $stmt->fetchAll(PDO::FETCH_ASSOC) );
                 // exit();
-                
+
                 if($stmt->rowCount() > 0):
                     $arr = $stmt->fetchAll(PDO::FETCH_ASSOC); 
                     for($i = 0; $i < count($arr); $i++):

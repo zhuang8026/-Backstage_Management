@@ -176,8 +176,8 @@
         </div>
     </div>
 
-     <!-- 刪除 全部 -->
-     <div id="deleteEmployeeModal_all" class="modal fade">
+    <!-- 刪除 全部 -->
+    <div id="deleteEmployeeModal_all" class="modal fade">
         <div class="modal-dialog">
             <div class="modal-content">
                 <form name="deleteAllForm" method="POST" action="./alice_seller_delete_all_api.php" enctype="multipart/form-data">

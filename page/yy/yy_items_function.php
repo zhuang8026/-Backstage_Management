@@ -3,7 +3,7 @@
     <div id="addEmployeeModal" class="modal fade">
         <div class="modal-dialog">
             <div class="modal-content">
-                <form name="myForm" method="POST" action="../../api/add_api.php" enctype="multipart/form-data">
+                <form name="myForm" method="POST" action="../../api/yy_add_api.php" enctype="multipart/form-data">
                     <div class="modal-header">
                         <h4 class="modal-title">Add ?</h4>
                         <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
@@ -11,42 +11,44 @@
                     <div class="modal-body">
                         <div class="form-group">
                             <label>Name</label>
-                            <input type="text" class="form-control" required name="itemName" value="" placeholder="商品名稱">
+                            <input type="text" class="form-control" required name="storeName" value="" placeholder="賣場名稱">
                         </div>
                         <div class="form-group">
                             <label>Image</label>
-                            <input type="file" class="form-control" name="itemImg" value="" placeholder="商品圖片">
+                            <input type="file" class="form-control" name="storeImg" value="" placeholder="賣場頭像">
                         </div>
                         <div class="form-group">
                             <label>Description</label>
-                            <input type="text" class="form-control" required name="itemsbrand" value="" placeholder="商品品牌">
+                            <textarea class="form-control" required name="storeDescription" value="" placeholder="賣場描述"></textarea>
                         </div>
                         <div class="form-group">
                             <label>Sellers</label>
-                            <select name="itemstype" required class="form-control" id="itemstype">
-                                <option value="1" class="form-control">Sellers1</option>
-                                <option value="2" class="form-control">Sellers2</option>
-                                <option value="3" class="form-control">Sellers3</option>
+                            <select name="sellersId" required class="form-control" id="sellersId">
+                            <?php
+                                $sql = "SELECT `id`, `username`, `name`
+                                        FROM `users` 
+                                        LEFT JOIN `stores`
+                                        ON `users`.`id` = `stores`.`storeId`
+                                        WHERE `isActivated` = 1";
+                                $stmt = $pdo->prepare($sql);
+                                $stmt->execute();
+                                if($stmt->rowCount() > 0):
+                                    $arr = $stmt->fetchAll(PDO::FETCH_ASSOC);
+                                    for($i = 0; $i < count($arr); $i++):
+                            ?>
+                                <option value="<?= $arr[$i]['id']; ?>" class="form-control" class="form-control">ID: <?= $arr[$i]['username'] ?>｜名字: <?= $arr[$i]['name'] ?></option>
+                                <?php endfor; ?>
+                            <?php endif; ?>
+
                             </select>
                         </div>
-                        <div class="form-group">
-                            <label>Price</label>
-                            <input type="text" class="form-control" required name="itemPrice" value="" placeholder="商品價格">
-                        </div>
-                        <div class="form-group">
-                            <label>Quantity</label>
-                            <input type="text" class="form-control" required name="itemQty" value="" placeholder="商品數量">
-                        </div>
-                        
-                        <div class="form-group">
-                            <label>Content</label>
-                            <textarea class="form-control" required name="itemscontent" value="" placeholder="商品備註"></textarea>
-                        </div>
+
                     </div>
                     <div class="modal-footer">
                         <input type="button" class="btn btn-default" data-dismiss="modal" value="Cancel">
-                        <input type="submit" class="btn btn-success" value="Add">
+                        <input type="submit" class="btn btn-success" value="Add (開通權限)">
                     </div>
+                    <!-- <input type="text" name="storeInput" id="storeInput" value="1"> -->
                 </form>
             </div>
         </div>

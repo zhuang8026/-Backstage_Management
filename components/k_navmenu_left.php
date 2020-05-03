@@ -24,12 +24,13 @@
                         </li>
                     </ul>
 
-                    <!-- 未修改 -->
                     <li data-toggle="collapse" data-target="#store" class="collapsed">
-                        <a href="#"><i class="fas fa-store"></i> 賣場管理 <span class="arrow"></span></a>
+                        <a href="#"><i class="fas fa-store"></i> 賣場管理<span class="arrow"></span></a>
                     </li>
                     <ul class="sub-menu collapse" id="store">
-                        <li><a href="../yiyang/yi_shop_index.php">賣場管理</a></li>
+                        <li>
+                            <a href="../yy/yy_items_index.php">賣場查詢</a>
+                        </li>
                     </ul>
 
                     <li data-toggle="collapse" data-target="#items" class="collapsed">
