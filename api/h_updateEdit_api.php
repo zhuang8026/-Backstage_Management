@@ -5,21 +5,23 @@ require_once('../db.inc.php');
 // 先對其它欄位，進行 SQL 語法字串連接
 $sql = "UPDATE `orders` 
         SET 
-        `username` = ?,
-        `paymentTypeName` = ?,
+        `paymentTypeId` = ?,
+        `payment` = ?,
+        `delivery` = ?,
         `orderRemark` = ?";
 
 // 先對其它欄位進行資料繫結設定
 $arrParam = [
-    $_POST['username_h'],
-    $_POST['paymentTypeName_h'],
+    $_POST['paymentTypeId_h'],
+    $_POST['payment_h'],
+    $_POST['delivery_h'],
     $_POST['orderRemark_h'],
 ];
 
 
 //SQL 結尾
-$sql .= " WHERE `dssn` = ? ";
-$arrParam[] = (int) $_POST['dssn_input'];
+$sql .= " WHERE `orderId` = ? ";
+$arrParam[] = (int) $_POST['order_input'];
 $stmt = $pdo->prepare($sql);
 $stmt->execute($arrParam);
 

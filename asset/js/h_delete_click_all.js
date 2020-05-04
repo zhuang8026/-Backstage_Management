@@ -1,5 +1,5 @@
-var checkAllInputValueH = [];
-var checkOneInputValueH =[];
+var checkAllInputValue = [];
+var checkOneInputValue =[];
 var i;
 // 全選功能
 $(document).ready(function(){
@@ -14,17 +14,17 @@ $(document).ready(function(){
                 this.checked = true;
                 // console.log(this.value); 
                 // jq->push === js->pop 
-                checkAllInputValueH.push(this.value);
+                checkAllInputValue.push(this.value);
             });
         } else{
             checkbox.each(function(){
                 this.checked = false;   
-                checkAllInputValueH =[];                     
+                checkAllInputValue =[];                     
             });
         }
-        console.log(checkAllInputValueH);
-        console.log(checkAllInputValueH.length);
-        $('#h_input_delete_all_id').val(checkAllInputValueH);
+        console.log(checkAllInputValue);
+        console.log(checkAllInputValue.length);
+        $('#h_input_delete_all_id').val(checkAllInputValue);
     });
 
     checkbox.click(function(){
@@ -36,14 +36,14 @@ $(document).ready(function(){
     $(".checkboxValue").click(function(){
         console.log(this.value)
         if(this.checked){
-            checkOneInputValueH.push(this.value);
+            checkOneInputValue.push(this.value);
         } else{
             this.checked = false;   
-            checkOneInputValueH =[];                     
+            checkOneInputValue =[];                     
         }
-        console.log(checkOneInputValueH);
-        console.log(checkOneInputValueH.length);
-        $('#h_input_delete_all_id').val(checkOneInputValueH);
+        console.log(checkOneInputValue);
+        console.log(checkOneInputValue.length);
+        $('#h_input_delete_all_id').val(checkOneInputValue);
     });
 });
 
