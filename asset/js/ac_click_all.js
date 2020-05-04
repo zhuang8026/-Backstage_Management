@@ -1,6 +1,6 @@
-var checkAllInputValue = [];
-var checkOneInputValue =[];
-var i;
+var checkAllacInputValue = [];
+var checkOneacInputValue =[];
+
 // 全選功能
 $(document).ready(function(){
     // Activate tooltip
@@ -14,17 +14,17 @@ $(document).ready(function(){
                 this.checked = true;
                 // console.log(this.value); 
                 // jq->push === js->pop 
-                checkAllInputValue.push(this.value);
+                checkAllacInputValue.push(this.value);
             });
         } else{
             checkbox.each(function(){
                 this.checked = false;   
-                checkAllInputValue =[];                     
+                checkAllacInputValue =[];                     
             });
         }
-        console.log(checkAllInputValue);
-        console.log(checkAllInputValue.length);
-        $('#h_input_delete_all_id').val(checkAllInputValue);
+        console.log(checkAllacInputValue);
+        console.log(checkAllacInputValue.length);
+        $('#acinput_delete_all_id').val(checkAllacInputValue);
     });
 
     checkbox.click(function(){
@@ -36,24 +36,24 @@ $(document).ready(function(){
     $(".checkboxValue").click(function(){
         console.log(this.value)
         if(this.checked){
-            checkOneInputValue.push(this.value);
+            checkOneacInputValue.push(this.value);
         } else{
             this.checked = false;   
-            checkOneInputValue =[];                     
+            checkOneacInputValue =[];                     
         }
-        console.log(checkOneInputValue);
-        console.log(checkOneInputValue.length);
-        $('#h_input_delete_all_id').val(checkOneInputValue);
+        console.log(checkOneacInputValue);
+        console.log(checkOneacInputValue.length);
+        $('#acinput_delete_all_id').val(checkOneacInputValue);
     });
 });
 
-// JQUERY --- william --- 删除
+// JQUERY 
 // function Delete_click_all(id){
 //     console.log(id);
 //     $('#itemId_input').val(id); // hiiden id
 // };
 
-// JAVASCRIPT --- william --- 删除
+// JAVASCRIPT 
 // function Delete_click_all(){
 //     let de_data = document.getElementById("input_delete_all_id_2").value;
 //     let de_split = de_data.split(",");

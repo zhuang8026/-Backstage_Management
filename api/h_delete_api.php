@@ -3,7 +3,7 @@ require_once('../checkSession.php');
 require_once('../db.inc.php');
 
 // //SQL 語法
-$sql = "DELETE FROM `orders` WHERE `dssn` = ? ";
+$sql = "DELETE FROM `orders` WHERE `orderId` = ? ";
 
 $arrParam = [
     (int) $_POST['input_delete_id_h']
