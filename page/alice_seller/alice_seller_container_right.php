@@ -23,12 +23,13 @@
             </div>
         </div>
     </div>
+
     <!-- <div id="chart"></div> -->
-    <table class="table table-striped table-hover" id="dt-table">
+    <table class="table table-striped table-hover" id="dt-table" data-aos="fade-up">
         <thead>
             <!-- 標頭 -->
             <tr>
-                <th>選擇<br/>
+                <th>
                     <span class="custom-checkbox">
                         <input type="checkbox" id="selectAll">
                         <label for="selectAll"></label>

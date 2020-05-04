@@ -3,9 +3,9 @@ session_start();
 header("Content-Type: text/html; chartset=utf-8");
 require_once('../db.inc.php');
 
-echo "<pre>";
-print_r($_POST);
-echo "<hr>";
+// echo "<pre>";
+// print_r($_POST);
+// echo "<hr>";
 // exit(); // 检查密码使用
 
 if( isset($_POST['username']) && isset($_POST['pwd']) ){
@@ -38,11 +38,11 @@ if( isset($_POST['username']) && isset($_POST['pwd']) ){
         sha1($_POST['pwd'])
     ];
 
-    echo"<pre>";
-    print_r($arrParam);
-    echo "<hr>";
-    print_r($sql);
-    echo "<hr>";
+    // echo"<pre>";
+    // print_r($arrParam);
+    // echo "<hr>";
+    // print_r($sql);
+    // echo "<hr>";
 
     $pdo_stmt = $pdo->prepare($sql);   
     $pdo_stmt->execute($arrParam);     
@@ -53,8 +53,9 @@ if( isset($_POST['username']) && isset($_POST['pwd']) ){
     if( $pdo_stmt->rowCount() > 0 ){   
         $_SESSION['username'] = $_POST['username'];
         $_SESSION['password'] = $_POST['pwd'];
-        header("Refresh: 1; url=../page/k_member/k_member_index.php");
-        echo "<img src='../asset/img/sgin.gif'><span>{$_SESSION['username']} is \"{$_POST['identity']}\". Sign in suceesfully. Wait a moment 3s ...</span>";
+        header("Refresh: 3; url=../page/k_member/k_member_index.php");
+        // echo "<img src='../asset/img/logo_login.gif'><h1>welcome ! \"{$_POST['identity']}\". {$_SESSION['username']} </h1>";
+        echo "<div style='text-align: center;'><img src='../asset/img/logo_login.gif' style='height: 100%;'></div>";
     } else {
         header("Refresh: 1; url=../index.php");
         echo "<img src='../asset/img/fail.gif'><span>Login failed. Wait a moment 3s ...</span>";

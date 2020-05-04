@@ -46,17 +46,3 @@ $(document).ready(function(){
         $('#sellerinput_delete_all_id').val(checkOneSellerInputValue);
     });
 });
-
-// JQUERY 
-// function Delete_click_all(id){
-//     console.log(id);
-//     $('#itemId_input').val(id); // hiiden id
-// };
-
-// JAVASCRIPT 
-// function Delete_click_all(){
-//     let de_data = document.getElementById("input_delete_all_id_2").value;
-//     let de_split = de_data.split(",");
-//     for(let s; )
-//     document.getElementById("input_delete_all_id").value.pop;
-// }

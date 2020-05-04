@@ -7,6 +7,9 @@
     <!-- <script src="https://code.highcharts.com/highcharts.js"></script>
     <script src="https://code.highcharts.com/modules/no-data-to-display.js"></script> -->
     
+    <!-- aos -->
+    <script src="https://unpkg.com/aos@2.3.0/dist/aos.js"></script>
+        
     <!-- wi-common -->
     <script src="../../asset/js/yy_chart.js"></script>
     <script src="../../asset/js/yy_deit_click.js"></script>
@@ -14,8 +17,7 @@
     <script src="../../asset/js/yy_delete_click_all.js"></script>
     <script src="../../asset/js/yy_add_click.js"></script>
 
-    <!-- aos -->
-    <script src="https://unpkg.com/aos@2.3.0/dist/aos.js"></script>
+
     <script>
         AOS.init({
             offset: 100,
