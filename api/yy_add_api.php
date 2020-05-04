@@ -40,8 +40,8 @@ if( $_FILES["storeImg"]["error"] === 0 ) {
 
 // SQL 敘述
 // storeItemsId 是 賣場商品編號，讓他等於 storeId ,這樣在items 也可以取得 產品與賣場對應的id
-$sql = "INSERT INTO `stores` (`storeName`, `storeLogo`, `storeDescription`，`storeItemsId`)
-        VALUES (?, ?, ?, ？)";
+$sql = "INSERT INTO `stores` (`storeName`, `storeLogo`, `storeDescription`,`storeItemsId`)
+        VALUES (?, ?, ?, ?)";
 //繫結用陣列
 $arrParam = [
     $_POST['storeName'],
@@ -50,9 +50,9 @@ $arrParam = [
     $_POST['sellersId']
 ];
 
-echo "<pre>";   
-print_r($arrParam);
-exit();
+// echo "<pre>";   
+// print_r($arrParam);
+// exit();
 
 $stmt = $pdo->prepare($sql);
 $stmt->execute($arrParam);

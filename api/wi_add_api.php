@@ -3,9 +3,9 @@ header("Content-Type: text/html; chartset=utf-8");
 require_once('../checkSession.php');
 require_once('../db.inc.php');
 
-echo "<pre>";
-print_r($_POST);
-exit();
+// echo "<pre>";
+// print_r($_POST);
+// exit();
 
 //回傳狀態
 $objResponse = [];
