@@ -24,7 +24,7 @@ $(document).ready(function(){
         }
         console.log(checkAllInputValue);
         console.log(checkAllInputValue.length);
-        $('#input_delete_all_id').val(checkAllInputValue);
+        $('#yy_input_delete_all_id').val(checkAllInputValue);
     });
 
     checkbox.click(function(){
@@ -43,7 +43,7 @@ $(document).ready(function(){
         }
         console.log(checkOneInputValue);
         console.log(checkOneInputValue.length);
-        $('#input_delete_all_id').val(checkOneInputValue);
+        $('#yy_input_delete_all_id').val(checkOneInputValue);
     });
 });
 

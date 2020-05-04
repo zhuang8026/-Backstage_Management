@@ -59,9 +59,9 @@ $arrParam[] = (int)$_POST['memberId_input'];
 $stmt = $pdo->prepare($sql);
 $stmt->execute($arrParam);
 if( $stmt->rowCount() > 0 ){//彈回編輯頁
-    header('refresh: 3; url=k_member_index.php');
+    header('refresh: 1; url=k_member_index.php');
     echo "更新成功";
 } else {//彈回編輯頁
-    header("Refresh: 3; url=k_member_index.php");
+    header("Refresh: 1; url=k_member_index.php");
     echo "沒有任何更新";
 }

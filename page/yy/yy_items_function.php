@@ -58,96 +58,59 @@
     <div id="editEmployeeModal" class="modal fade">
         <div class="modal-dialog">
             <div class="modal-content">
-                <form name="updateForm" enctype="multipart/form-data" method="POST" action="../../api/updateEdit_api.php">
+                <form name="updateForm" enctype="multipart/form-data" method="POST" action="../../api/yy_updateEdit_api.php">
                     <div class="modal-header">
-                        <h4 class="modal-title">Edit ?</h4>
+                        <h4 class="modal-title">修改 ?</h4>
                         <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
                     </div>
 
                     <div class="modal-body">
                         <div class="form-group">
-                            <label>Name</label>
-                            <input type="text" class="form-control" name="itemName_d" value="" placeholder="商品名稱" id="itemName_d">
+                            <label>賣場名稱</label>
+                            <input type="text" class="form-control" name="yyeditName" value="" placeholder="商品名稱" id="yyeditName">
                         </div>
+                        <!-- 擁有者更改 ? -->
                         <div class="form-group">
-                            <label style="display: block;">Image / 原始</label>
-                            <img id="itemImg_d_img" src=""/>
-                            <label style="display: block;">Image / 修改</label>
-                            <input type="file" class="form-control" name="itemImg_d" value="" placeholder="商品圖片" id="itemImg_d">
-                        </div>
-                        <div class="form-group">
-                            <label>Color</label>
-                            <ul id="colorAll">
-                                <li class="colorname">
-                                    <input type="radio" name="colorid" value="1">
-                                    <span style="background-color: #AB3B3A;">真朱红</span>
-                                    <i class="fas fa-check"></i>
-                                </li>
-                                <li class="colorname">
-                                    <input type="radio" name="colorid" value="2">
-                                    <span style="background-color: #F05E1C;">黄丹橘</span>
-                                    <i class="fas fa-check"></i>
-                                </li>
-                                <li class="colorname">
-                                    <input type="radio" name="colorid" value="3">
-                                    <span style="background-color: #FFC408;">花葉黃</span>
-                                    <i class="fas fa-check"></i>
-                                </li>
-                                <li class="colorname">
-                                    <input type="radio" name="colorid" value="4">
-                                    <span style="background-color: #516E41;">青丹綠</span>
-                                    <i class="fas fa-check"></i>
-                                </li>
-                                <li class="colorname">
-                                    <input type="radio" name="colorid" value="5">
-                                    <span style="background-color: #255359;">千草藍</span>
-                                    <i class="fas fa-check"></i>
-                                </li>
-                                <li class="colorname">
-                                    <input type="radio" name="colorid" value="6">
-                                    <span style="background-color: #6A4C9C;">桔梗紫</span>
-                                    <i class="fas fa-check"></i>
-                                </li>
-                                <li class="colorname">
-                                    <input type="radio" name="colorid" value="7">
-                                    <span style="background-color: #BDC0BA;">胡粉白</span>
-                                    <i class="fas fa-check"></i>
-                                </li>
-                                <li class="colorname">
-                                    <input type="radio" name="colorid" value="8">
-                                    <span style="background-color: #0C0C0C;">碳呂黑</span>
-                                    <i class="fas fa-check"></i>
-                                </li>
-                            </ul>
-                            <!-- <input type="text" class="form-control" name="colorid_d" value="" placeholder="商品顏色" id="colorid_d"> -->
-                        </div>
-                        <div class="form-group">
-                            <label>Brand</label>
-                            <input type="text" class="form-control" name="itemsbrand_d" value="" placeholder="商品品牌" id="itemsbrand_d">
-                        </div>
-                        <div class="form-group">
-                            <label>Type</label>
-                            <select name="itemstype_d" id="itemstype_d" class="form-control">
-                                    <option value="1" class="form-control" selected>有線耳罩式</option>
-                                    <option value="2" class="form-control">無線耳罩式</option>
-                                    <option value="3" class="form-control">有線入耳式</option>
-                                    <option value="4" class="form-control">無線入耳式</option>
-                                    <option value="5" class="form-control">有線耳道式</option>
-                                    <option value="6" class="form-control">無線耳道式</option>
-                                    <option value="7" class="form-control">有線耳塞式</option>
-                                    <option value="8" class="form-control">無線耳塞式</option>
-                                    <option value="9" class="form-control">有線耳掛式</option>
-                                    <option value="10" class="form-control">無線耳掛式</option>
+                            <label>擁有者編輯</label>
+                            <select name="yyeditIdSelect" required class="form-control" id="yyeditIdSelect">
+                                <option value="0" class="form-control" class="form-control">平台所有</option>
+                                <?php
+                                    $sql = "SELECT `id`, `username`, `name`
+                                            FROM `users` 
+                                            LEFT JOIN `stores`
+                                            ON `users`.`id` = `stores`.`storeId`
+                                            WHERE `isActivated` = 1";
+                                    $stmt = $pdo->prepare($sql);
+                                    $stmt->execute();
+                                    if($stmt->rowCount() > 0):
+                                        $arr = $stmt->fetchAll(PDO::FETCH_ASSOC);
+                                        for($i = 0; $i < count($arr); $i++):
+                                ?>
+                                    <option value="<?= $arr[$i]['id']; ?>" class="form-control" class="form-control">ID: <?= $arr[$i]['username'] ?>｜名字: <?= $arr[$i]['name'] ?></option>
+                                    <?php endfor; ?>
+                                <?php endif; ?>
+
                             </select>
-                            <!-- <input type="text" class="form-control" name="itemstype_d" value="" placeholder="商品類型" id="itemstype_d"> -->
                         </div>
+                        <!-- 權限 -->
                         <div class="form-group">
-                            <label>Price</label>
-                            <input type="text" class="form-control" name="itemPrice_d" value="" placeholder="商品價格" id="itemPrice_d">
+                            <label>賣場開通狀態</label>
+                            <select name="isActivated" id="isActivated" class="form-control">
+                                <option value="0" class="form-control" >未開通</option>
+                                <option value="1" class="form-control" selected>開通</option>
+                            </select>
                         </div>
+                        <!-- 圖片 -->
                         <div class="form-group">
-                            <label>Quantity</label>
-                            <input type="text" class="form-control" name="itemQty_d" value="" placeholder="商品數量" id="itemQty_d">
+                            <label style="display: block;">logo / 原始</label>
+                            <img id="itemImg_d_img" src=""/>
+                            <label style="display: block;">logo / 修改</label>
+                            <input type="file" class="form-control" name="storeImg_d" value="" id="storeImg_d">
+                        </div>
+                        <!-- 介紹 -->
+                        <div class="form-group">
+                            <label>賣場描述</label>
+                            <textarea class="form-control" required id="yyeditIdcontent" name="yyeditIdcontent" value="" placeholder="賣場描述"></textarea>
                         </div>
                     </div>
 
@@ -157,7 +120,7 @@
                         <!-- <button onclick="window.print()">Print this page</button> -->
                     </div>
                     <!-- <input type="hidden" name="itemId" value="<?/*= (int)$_GET['itemId']; */?>"> -->
-                    <input type="hidden" name="itemId_input" id="itemId_input" value="">
+                    <input type="test" name="itemId_input" id="itemId_input" value="">
                 </form>
             </div>
         </div>
@@ -167,7 +130,7 @@
     <div id="deleteEmployeeModal" class="modal fade">
         <div class="modal-dialog">
             <div class="modal-content">
-                <form name="deleteForm" method="POST" action="../../api/delete_api.php" enctype="multipart/form-data">
+                <form name="deleteForm" method="POST" action="../../api/yy_delete_api.php" enctype="multipart/form-data">
                     <div class="modal-header">
                         <h4 class="modal-title">Delete ?</h4>
                         <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
@@ -180,7 +143,7 @@
                         <input type="button" class="btn btn-default" data-dismiss="modal" value="Cancel">
                         <input type="submit" class="btn btn-danger" value="Delete">
                     </div>
-                    <input type="hidden" name="input_delete_id" id="input_delete_id" value="">
+                    <input type="test" name="yy_input_delete_id" id="yy_input_delete_id" value="">
                 </form>
             </div>
         </div>
@@ -190,7 +153,7 @@
     <div id="deleteEmployeeModal_all" class="modal fade">
         <div class="modal-dialog">
             <div class="modal-content">
-                <form name="deleteAllForm" method="POST" action="../../api/delete_all_api.php" enctype="multipart/form-data">
+                <form name="deleteAllForm" method="POST" action="../../api/yy_delete_all_api.php" enctype="multipart/form-data">
                     <div class="modal-header">
                         <h4 class="modal-title">Delete all choose?</h4>
                         <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
@@ -203,7 +166,7 @@
                         <input type="button" class="btn btn-default" data-dismiss="modal" value="Cancel">
                         <input type="submit" class="btn btn-danger" value="Delete">
                     </div>
-                    <input type="hidden" name="input_delete_all_id[]" id="input_delete_all_id" value="">
+                    <input type="test" name="yy_input_delete_all_id[]" id="yy_input_delete_all_id" value="">
                 </form>
             </div>
         </div>
