@@ -4,14 +4,14 @@
     <!-- <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script> -->
     <script src="../../asset/js/bootstrap.min.js"></script>
     <script src="https://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script>
-    <!-- <script src="https://code.highcharts.com/highcharts.js"></script>
-    <script src="https://code.highcharts.com/modules/no-data-to-display.js"></script> -->
+    <script src="https://code.highcharts.com/highcharts.js"></script>
+    <script src="https://code.highcharts.com/modules/no-data-to-display.js"></script>
     
     <!-- aos -->
     <script src="https://unpkg.com/aos@2.3.0/dist/aos.js"></script>
         
     <!-- wi-common -->
-    <script src="../../asset/js/yy_chart.js"></script>
+    <script src="../../asset/js/yy_chart_table.js"></script>
     <script src="../../asset/js/yy_deit_click.js"></script>
     <script src="../../asset/js/yy_delete_click.js"></script>
     <script src="../../asset/js/yy_delete_click_all.js"></script>
