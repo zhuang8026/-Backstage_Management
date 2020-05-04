@@ -50,20 +50,20 @@
                         </div>
                         <div class="form-group">
                         <label>Address</label>
-                        <textarea  name="address" id="address" value="" maxlength="50" class="form-control" required></textarea>
+                        <input type="text" name="address" id="address" value="" maxlength="50" class="form-control" required></ㄛ>
                         </div>
                         <div class="form-group">
                         <label>isActivated</label>
                         <select name="isActivated" class="form-control">
-                            <option value="0" class="form-control" selected>0</option>
-                            <option value="1"class="form-control">1</option>
+                            <option value="0" class="form-control" selected>未開通</option>
+                            <option value="1"class="form-control">開通</option>
                         </select>
                         </div>
                         <div class="form-group">
                         <label>shopopen</label>
                         <select name="shopopen" class="form-control">
-                            <option value="0" class="form-control" selected>0</option>
-                            <option value="1"class="form-control">1</option>
+                            <option value="0" class="form-control" selected>未開通</option>
+                            <option value="1"class="form-control">開通</option>
                         </select>
                         </div>
                     </div>
@@ -146,8 +146,7 @@
                         <input type="button" class="btn btn-default" data-dismiss="modal" value="Cancel">
                         <input type="submit" class="btn btn-info" id="btn_submit" value="Save">
                     </div>
-                    <!-- <input type="hidden" name="itemId" value="<?/*= (int)$_GET['itemId']; */?>"> -->
-                    <input type="text" name="sellerId_input" id="sellerId_input" value="">
+                    <input type="hidden" name="sellerId_input" id="sellerId_input" value="">
                 </form>
             </div>
         </div>
@@ -170,7 +169,7 @@
                         <input type="button" class="btn btn-default" data-dismiss="modal" value="Cancel">
                         <input type="submit" class="btn btn-danger" value="Delete">
                     </div>
-                    <input type="test" name="input_delete_sellerid" id="input_delete_sellerid" value="">
+                    <input type="hidden" name="input_delete_sellerid" id="input_delete_sellerid" value="">
                 </form>
             </div>
         </div>
@@ -193,7 +192,7 @@
                         <input type="button" class="btn btn-default" data-dismiss="modal" value="Cancel">
                         <input type="submit" class="btn btn-danger" value="Delete">
                     </div>
-                    <input type="test" name="sellerinput_delete_all_id[]" id="sellerinput_delete_all_id" value="">
+                    <input type="hidden" name="sellerinput_delete_all_id[]" id="sellerinput_delete_all_id" value="">
                 </form>
             </div>
         </div>
