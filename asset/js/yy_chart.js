@@ -143,8 +143,8 @@ function init() {
             "orderable": false,
             "targets": 0
         } ],
-        // "order": [[1, "desc"]]
-        "order": [[ 3, "asc" ]]
+        "order": [[1, "desc"]]
+        // "order": [[ 3, "asc" ]]
     } );
 
     // 分析圖 

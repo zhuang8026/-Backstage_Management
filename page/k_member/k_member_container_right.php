@@ -108,7 +108,6 @@
                     </a>
                 </td>
             </tr>
-            <!-- william -  -->
             <?php } ?>
             <?php } else { ?>
                 <tr>

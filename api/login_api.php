@@ -55,7 +55,7 @@ if( isset($_POST['username']) && isset($_POST['pwd']) ){
         $_SESSION['password'] = $_POST['pwd'];
         header("Refresh: 3; url=../page/k_member/k_member_index.php");
         // echo "<img src='../asset/img/logo_login.gif'><h1>welcome ! \"{$_POST['identity']}\". {$_SESSION['username']} </h1>";
-        echo "<div style='text-align: center;'><img src='../asset/img/logo_login.gif' style='height: 100%;'></div>";
+        echo "<div style='text-align: center;'><img src='../asset/img/logo_login.gif' style='height: 90%;'></div>";
     } else {
         header("Refresh: 1; url=../index.php");
         echo "<img src='../asset/img/fail.gif'><span>Login failed. Wait a moment 3s ...</span>";
