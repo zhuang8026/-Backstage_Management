@@ -65,9 +65,9 @@ $arrParam[] = (int)$_POST['sellerId_input'];
 $stmt = $pdo->prepare($sql);
 $stmt->execute($arrParam);
 if( $stmt->rowCount() > 0 ){//彈回編輯頁
-    header('refresh: 1; url=alice_seller_index.php');
+    header('refresh: 1; url=./alice_seller_index.php');
     echo "更新成功";
 } else {//彈回編輯頁
-    header("Refresh: 1000; url=alice_seller_index.php");
+    header("Refresh: 1; url=./alice_seller_index.php");
     echo "沒有任何更新";
 }

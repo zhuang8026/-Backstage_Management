@@ -3,7 +3,7 @@
     <div id="addEmployeeModal" class="modal fade">
         <div class="modal-dialog">
             <div class="modal-content">
-                <form method="POST" action="./alice_seller_insert.php" enctype="multipart/form-data">
+                <form method="POST" action="./alice_seller_insert_api.php" enctype="multipart/form-data">
                     <div class="modal-header">
                         <h4 class="modal-title">新增會員</h4>
                         <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
@@ -80,7 +80,7 @@
     <div id="editEmployeeModal" class="modal fade">
         <div class="modal-dialog">
             <div class="modal-content">
-                <form name="updateForm" enctype="multipart/form-data" method="POST" action="./updateEdit.php">
+                <form name="updateForm" enctype="multipart/form-data" method="POST" action="./alice_seller_updateEdit_api.php">
                     <div class="modal-header">
                         <h4 class="modal-title">編輯</h4>
                         <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
