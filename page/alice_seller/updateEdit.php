@@ -39,7 +39,7 @@ if( $_FILES["userlogo_e"]["error"] === 0 ){
     $strDatetime = date("YmdHis");
     $extension = pathinfo($_FILES["userlogo_e"]["name"], PATHINFO_EXTENSION);
     $studentImg = $strDatetime.".".$extension;
-    if( move_uploaded_file($_FILES["userlogo_e"]["tmp_name"], "./files/".$studentImg) ){
+    if( move_uploaded_file($_FILES["userlogo_e"]["tmp_name"], "../k_member/files/".$studentImg) ){
         $sqlGetImg = "SELECT `userlogo` FROM `users` WHERE `id` = ? ";
         $stmtGetImg = $pdo->prepare($sqlGetImg);
         $arrGetImgParam = [
@@ -49,7 +49,7 @@ if( $_FILES["userlogo_e"]["error"] === 0 ){
         if($stmtGetImg->rowCount() > 0){
             $arrImg = $stmtGetImg->fetchAll(PDO::FETCH_ASSOC)[0];
             if( $arrImg["userlogo"] !== NULL){
-                @unlink("./files/".$arrImg["userlogo"]);
+                @unlink("../k_member/files/".$arrImg["userlogo"]);
             }
 
             $sql.= ",";
@@ -68,6 +68,6 @@ if( $stmt->rowCount() > 0 ){//彈回編輯頁
     header('refresh: 1; url=alice_seller_index.php');
     echo "更新成功";
 } else {//彈回編輯頁
-    header("Refresh: 1; url=alice_seller_index.php");
+    header("Refresh: 1000; url=alice_seller_index.php");
     echo "沒有任何更新";
 }

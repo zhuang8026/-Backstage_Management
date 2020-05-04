@@ -84,7 +84,7 @@
             
             <td class="userlogo<?= $arr[$i]['id']; ?>">
                 <?php if($arr[$i]['userlogo'] !== ""): ?>
-                    <img src="./files/<?= $arr[$i]['userlogo'];?>">
+                    <img src="../k_member/files/<?= $arr[$i]['userlogo'];?>">
                 <?php else: ?>
                     <img src="./files/404.png">
                 <?php endif; ?>
