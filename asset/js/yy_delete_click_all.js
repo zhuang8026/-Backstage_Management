@@ -25,6 +25,7 @@ $(document).ready(function(){
         console.log(checkAllInputValue);
         console.log(checkAllInputValue.length);
         $('#yy_input_delete_all_id').val(checkAllInputValue);
+        $('#yy_input_delete_all_username').val();
     });
 
     checkbox.click(function(){
@@ -34,7 +35,9 @@ $(document).ready(function(){
     });
 
     $(".checkboxValue").click(function(){
-        console.log(this.value)
+        console.log(this); // 20200504 - william
+        console.log($(this).parent('.custom-checkbox').parents('td').nextAll('.storeusername'+this.value).html()); // 20200504 - william
+        // console.log(this.value)
         if(this.checked){
             checkOneInputValue.push(this.value);
         } else{

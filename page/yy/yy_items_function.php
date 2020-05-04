@@ -167,6 +167,7 @@
                         <input type="submit" class="btn btn-danger" value="Delete">
                     </div>
                     <input type="test" name="yy_input_delete_all_id[]" id="yy_input_delete_all_id" value="">
+                    <input type="test" name="yy_input_delete_all_username[]" id="yy_input_delete_all_username" value="">
                 </form>
             </div>
         </div>

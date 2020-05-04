@@ -7,7 +7,7 @@ require_once('../db.inc.php');
 $sql = "DELETE FROM `stores` WHERE `storeId` = ? ";
 
 $count = 0;
-
+$opencount = 0;
 //先查詢出特定 id (editId) 資料欄位中的大頭貼檔案名稱
 $sqlGetImg = "SELECT `storeLogo` FROM `stores` WHERE `storeId` = ? ";
 $stmtGetImg = $pdo->prepare($sqlGetImg);
@@ -49,6 +49,21 @@ for($i = 0; $i < count($str_sec_2); $i++){
         }     
     }
 
+    $sqlOwnr = "UPDATE `users`
+        SET
+        `users`.`shopopen` = 0
+        WHERE
+        `users`.`username` = ?";
+    $arrOwnr = [
+        $str_sec_2[$i]
+    ];
+    $stmtOwnr = $pdo->prepare($sqlOwnr);
+    $stmtOwnr->execute($arrOwnr);
+    $opencount += $stmtOwnr->rowCount();
+    // print_r($arrOwnr);
+    // print_r($stmtOwnr->rowCount());
+    // exit();
+
     $arrParamtable = [
         $str_sec_2[$i]
     ];
@@ -65,13 +80,17 @@ for($i = 0; $i < count($str_sec_2); $i++){
     // exit();
 }
 
+// print_r($stmtOwnr->rowCount());
 // echo $count;
+// echo "<hr>";
+// echo $opencount;
 // exit();
+
 if($count > 0) {
-    header("Refresh: 1; url=../page/yy/yy_items_index.php");
+    // header("Refresh: 1; url=../page/yy/yy_items_index.php");
     echo "刪除成功";
 } else {
-    header("Refresh: 1; url=../page/yy/yy_items_index.php");
+    // header("Refresh: 1; url=../page/yy/yy_items_index.php");
     echo "刪除失敗";
 }
 
