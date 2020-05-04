@@ -93,14 +93,14 @@
                         <img src="../../asset/img/404.jpg">
                     <?php endif; ?>
                 </td>
-                <td class="itemsbrand<?= $arr[$i]['storeId']; ?>"><?= round($arr[$i]["SUM(`items`.`itemsstar`)"] / $arr[$i]["COUNT(`storeId`)"], 2) ?></td>
-                <td class="itemsbrand<?= $arr[$i]['storeId']; ?>"><?= $arr[$i]["COUNT(`storeId`)"]; ?></td>
-                <td class="itemsbrand<?= $arr[$i]['storeId']; ?>"><?= $arr[$i]['storeDescription']; ?></td>
-                <td class="itemsbrand<?= $arr[$i]['storeId']; ?>"><?= $arr[$i]["username"]; ?></td>
-                <td class="itemsbrand<?= $arr[$i]['storeId']; ?>"><?= $arr[$i]['name']; ?></td>
-                <td class="itemstype<?= $arr[$i]['storeId']; ?>"><?= $arr[$i]['isActivated']; ?></td>
-                <td class="itemPrice<?= $arr[$i]['storeId']; ?>"><?= $arr[$i]['shopopen']; ?></td>
-                <td class="itemQty<?= $arr[$i]['storeId']; ?>"><?= $arr[$i]['createTime']; ?></td>
+                <td class="storefraction<?= $arr[$i]['storeId']; ?>"><?= round($arr[$i]["SUM(`items`.`itemsstar`)"] / $arr[$i]["COUNT(`storeId`)"], 2) ?></td>
+                <td class="storeQty<?= $arr[$i]['storeId']; ?>"><?= $arr[$i]["COUNT(`storeId`)"]; ?></td>
+                <td class="storeDes<?= $arr[$i]['storeId']; ?>"><?= $arr[$i]['storeDescription']; ?></td>
+                <td class="storeusername<?= $arr[$i]['storeId']; ?>"><?= $arr[$i]["username"]; ?></td>
+                <td class="storename<?= $arr[$i]['storeId']; ?>"><?= $arr[$i]['name']; ?></td>
+                <td class="storeActivated<?= $arr[$i]['storeId']; ?>"><?= $arr[$i]['isActivated']; ?></td>
+                <td class="storeshopopen<?= $arr[$i]['storeId']; ?>"><?= $arr[$i]['shopopen']; ?></td>
+                <td class="storeTime<?= $arr[$i]['storeId']; ?>"><?= $arr[$i]['createTime']; ?></td>
                 <td>
                     <a href="#" class="AddImages" data-toggle="modal">
                         <i class="fas fa-file-alt" data-toggle="tooltip" title="AddImages"></i>
