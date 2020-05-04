@@ -75,7 +75,7 @@ if($stmt->rowCount() > 0) {
     echo json_encode($objResponse, JSON_UNESCAPED_UNICODE);
     exit();
 } else {
-    // header("Refresh: 3; url=./admin.php");
+    header("Refresh: 1; url=../page/wi/wi_items_index.php");
     $objResponse['success'] = false;
     $objResponse['code'] = 500;
     $objResponse['info'] = "沒有新增資料";

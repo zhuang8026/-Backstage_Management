@@ -1,5 +1,6 @@
 var checkAllInputValue = [];
 var checkOneInputValue =[];
+var checkOneUserName =[];
 var i;
 // 全選功能
 $(document).ready(function(){
@@ -10,22 +11,26 @@ $(document).ready(function(){
     var checkbox = $('table tbody input[type="checkbox"]');
     $("#selectAll").click(function(){
         if(this.checked){
+            
             checkbox.each(function(){
                 this.checked = true;
                 // console.log(this.value); 
-                // jq->push === js->pop 
+                let delete_username = $(this).parent('.custom-checkbox').parents('td').nextAll('.storeusername'+this.value).html();
                 checkAllInputValue.push(this.value);
+                checkOneUserName.push(delete_username)
             });
         } else{
             checkbox.each(function(){
                 this.checked = false;   
-                checkAllInputValue =[];                     
+                checkAllInputValue =[];  
+                checkOneUserName = [];                          
             });
         }
-        console.log(checkAllInputValue);
-        console.log(checkAllInputValue.length);
-        $('#yy_input_delete_all_id').val(checkAllInputValue);
-        $('#yy_input_delete_all_username').val();
+        // console.log(checkAllInputValue);
+        // console.log(checkAllInputValue.length);
+        $('#yy_input_delete_all_id').val(checkAllInputValue);       // checkbox ID  送入 api 
+        $('#yy_input_delete_all_username').val(checkOneUserName);   // username 送入 api 
+
     });
 
     checkbox.click(function(){
@@ -35,31 +40,18 @@ $(document).ready(function(){
     });
 
     $(".checkboxValue").click(function(){
-        console.log(this); // 20200504 - william
-        console.log($(this).parent('.custom-checkbox').parents('td').nextAll('.storeusername'+this.value).html()); // 20200504 - william
-        // console.log(this.value)
+        // console.log(this); // 20200504 - william
+        // console.log($(this).parent('.custom-checkbox').parents('td').nextAll('.storeusername'+this.value).html()); // 20200504 - william
+        let delete_username = $(this).parent('.custom-checkbox').parents('td').nextAll('.storeusername'+this.value).html();
         if(this.checked){
             checkOneInputValue.push(this.value);
+            checkOneUserName.push(delete_username)
         } else{
             this.checked = false;   
-            checkOneInputValue =[];                     
+            checkOneInputValue =[];   
+            checkOneUserName = [];                  
         }
-        console.log(checkOneInputValue);
-        console.log(checkOneInputValue.length);
-        $('#yy_input_delete_all_id').val(checkOneInputValue);
+        $('#yy_input_delete_all_id').val(checkOneInputValue);       // checkbox ID  送入 api 
+        $('#yy_input_delete_all_username').val(checkOneUserName);   // username 送入 api 
     });
 });
-
-// JQUERY --- william --- 删除
-// function Delete_click_all(id){
-//     console.log(id);
-//     $('#itemId_input').val(id); // hiiden id
-// };
-
-// JAVASCRIPT --- william --- 删除
-// function Delete_click_all(){
-//     let de_data = document.getElementById("input_delete_all_id_2").value;
-//     let de_split = de_data.split(",");
-//     for(let s; )
-//     document.getElementById("input_delete_all_id").value.pop;
-// }

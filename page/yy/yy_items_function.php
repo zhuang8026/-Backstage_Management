@@ -10,19 +10,19 @@
                     </div>
                     <div class="modal-body">
                         <div class="form-group">
-                            <label>Name</label>
+                            <label>Name / 賣場名稱</label>
                             <input type="text" class="form-control" required name="storeName" value="" placeholder="賣場名稱">
                         </div>
                         <div class="form-group">
-                            <label>Image</label>
+                            <label>Image / 賣場logo</label>
                             <input type="file" class="form-control" name="storeImg" value="" placeholder="賣場頭像">
                         </div>
                         <div class="form-group">
-                            <label>Description</label>
+                            <label>Description / 賣場描述</label>
                             <textarea class="form-control" required name="storeDescription" value="" placeholder="賣場描述"></textarea>
                         </div>
                         <div class="form-group">
-                            <label>Sellers</label>
+                            <label>Sellers / 賣家</label>
                             <select name="sellersId" required class="form-control" id="sellersId">
                             <?php
                                 $sql = "SELECT `id`, `username`, `name`
@@ -46,9 +46,8 @@
                     </div>
                     <div class="modal-footer">
                         <input type="button" class="btn btn-default" data-dismiss="modal" value="Cancel">
-                        <input type="submit" class="btn btn-success" value="Add (開通權限)">
+                        <input type="submit" class="btn btn-success" value="Add">
                     </div>
-                    <!-- <input type="text" name="storeInput" id="storeInput" value="1"> -->
                 </form>
             </div>
         </div>
@@ -60,18 +59,18 @@
             <div class="modal-content">
                 <form name="updateForm" enctype="multipart/form-data" method="POST" action="../../api/yy_updateEdit_api.php">
                     <div class="modal-header">
-                        <h4 class="modal-title">修改 ?</h4>
+                        <h4 class="modal-title">Edit ?</h4>
                         <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
                     </div>
 
                     <div class="modal-body">
                         <div class="form-group">
-                            <label>賣場名稱</label>
+                            <label>Name / 賣場名稱</label>
                             <input type="text" class="form-control" name="yyeditName" value="" placeholder="商品名稱" id="yyeditName">
                         </div>
                         <!-- 擁有者更改 ? -->
                         <div class="form-group">
-                            <label>擁有者編輯</label>
+                            <label>sllers / 擁有者編輯</label>
                             <select name="yyeditIdSelect" required class="form-control" id="yyeditIdSelect">
                                 <option value="0" class="form-control" class="form-control">平台所有</option>
                                 <?php
@@ -94,7 +93,7 @@
                         </div>
                         <!-- 權限 -->
                         <div class="form-group">
-                            <label>賣場開通狀態</label>
+                            <label> opened / 賣場開通狀態</label>
                             <select name="isActivated" id="isActivated" class="form-control">
                                 <option value="0" class="form-control" >未開通</option>
                                 <option value="1" class="form-control" selected>開通</option>
@@ -102,14 +101,14 @@
                         </div>
                         <!-- 圖片 -->
                         <div class="form-group">
-                            <label style="display: block;">logo / 原始</label>
+                            <label style="display: block;">Image / 原始</label>
                             <img id="itemImg_d_img" src=""/>
-                            <label style="display: block;">logo / 修改</label>
+                            <label style="display: block;">Image / 修改</label>
                             <input type="file" class="form-control" name="storeImg_d" value="" id="storeImg_d">
                         </div>
                         <!-- 介紹 -->
                         <div class="form-group">
-                            <label>賣場描述</label>
+                            <label>Description / 賣場描述</label>
                             <textarea class="form-control" required id="yyeditIdcontent" name="yyeditIdcontent" value="" placeholder="賣場描述"></textarea>
                         </div>
                     </div>
@@ -117,9 +116,7 @@
                     <div class="modal-footer">
                         <input type="button" class="btn btn-default" data-dismiss="modal" value="Cancel">
                         <input type="submit" class="btn btn-info" id="btn_submit" value="Save">
-                        <!-- <button onclick="window.print()">Print this page</button> -->
                     </div>
-                    <!-- <input type="hidden" name="itemId" value="<?/*= (int)$_GET['itemId']; */?>"> -->
                     <input type="test" name="itemId_input" id="itemId_input" value="">
                 </form>
             </div>
@@ -143,7 +140,7 @@
                         <input type="button" class="btn btn-default" data-dismiss="modal" value="Cancel">
                         <input type="submit" class="btn btn-danger" value="Delete">
                     </div>
-                    <input type="test" name="yy_input_delete_id" id="yy_input_delete_id" value="">
+                    <input type="hidden" name="yy_input_delete_id" id="yy_input_delete_id" value="">
                 </form>
             </div>
         </div>
@@ -166,8 +163,8 @@
                         <input type="button" class="btn btn-default" data-dismiss="modal" value="Cancel">
                         <input type="submit" class="btn btn-danger" value="Delete">
                     </div>
-                    <input type="test" name="yy_input_delete_all_id[]" id="yy_input_delete_all_id" value="">
-                    <input type="test" name="yy_input_delete_all_username[]" id="yy_input_delete_all_username" value="">
+                    <input type="hidden" name="yy_input_delete_all_id[]" id="yy_input_delete_all_id" value="" placeholder="傳輸刪除ID">
+                    <input type="hidden" name="yy_input_delete_all_username[]" id="yy_input_delete_all_username" value="" placeholder="傳輸刪除username">
                 </form>
             </div>
         </div>

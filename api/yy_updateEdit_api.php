@@ -28,9 +28,7 @@ $arrParam = [
 ];
 
 // echo "<pre>";
-// print_r($_FILES);
-// print_r($_POST);
-// echo "</pre>";
+// print_r($arrParam);
 // exit();
 
 //判斷檔案上傳是否正常，error = 0 為正常
@@ -98,7 +96,7 @@ if( $_FILES["storeImg_d"]["error"] === 0 ) {
 //SQL 結尾
 $sql.= " WHERE `stores`.`storeId` = ? AND `users`.`id` = ?";
 $arrParam[] = (int)$_POST['itemId_input'];  // 第二個問號答案
-$arrParam[] = (int)$_POST['itemId_input'];  // 第二個問號答案
+$arrParam[] = (int)$_POST['yyeditIdSelect'];  // 第二個問號答案
 // https://segmentfault.com/q/1010000006883251 更新 雙表格
 
 // echo "<pre>";

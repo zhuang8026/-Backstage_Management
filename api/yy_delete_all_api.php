@@ -7,25 +7,22 @@ require_once('../db.inc.php');
 $sql = "DELETE FROM `stores` WHERE `storeId` = ? ";
 
 $count = 0;
-$opencount = 0;
 //先查詢出特定 id (editId) 資料欄位中的大頭貼檔案名稱
 $sqlGetImg = "SELECT `storeLogo` FROM `stores` WHERE `storeId` = ? ";
 $stmtGetImg = $pdo->prepare($sqlGetImg);
 
-// print_r(count($_POST['input_delete_all_id']));
-// print_r($_POST['input_delete_all_id']);
+$str_checkbox_id = explode(",", $_POST['yy_input_delete_all_id'][0]);
+$str_username = explode(",", $_POST['yy_input_delete_all_username'][0]);
+
 // echo "<pre>";
-$str_sec_2 = explode(",", $_POST['yy_input_delete_all_id'][0]);
-// print_r($str_sec_2);
+// print_r($str_checkbox_id);
+// print_r($str_username);
 // exit();
 
-// print_r(count($str_sec_2));
-// exit();
-
-for($i = 0; $i < count($str_sec_2); $i++){
+for($i = 0; $i < count($str_checkbox_id); $i++){
     //加入繫結陣列
     $arrParam = [
-        $str_sec_2[$i]
+        $str_checkbox_id[$i]
     ];
     // echo "<pre>";
     // print_r($arrParam);
@@ -49,25 +46,25 @@ for($i = 0; $i < count($str_sec_2); $i++){
         }     
     }
 
+    // 刪除後，users 的權限需關閉 shopopen = 0
     $sqlOwnr = "UPDATE `users`
         SET
         `users`.`shopopen` = 0
         WHERE
         `users`.`username` = ?";
     $arrOwnr = [
-        $str_sec_2[$i]
+        $str_username[$i]
     ];
     $stmtOwnr = $pdo->prepare($sqlOwnr);
     $stmtOwnr->execute($arrOwnr);
-    $opencount += $stmtOwnr->rowCount();
+    // echo "<pre>";
     // print_r($arrOwnr);
     // print_r($stmtOwnr->rowCount());
     // exit();
 
     $arrParamtable = [
-        $str_sec_2[$i]
+        $str_checkbox_id[$i]
     ];
-    // $str_sec_2 = explode(",", $arrParamtable[0]);
 
     // echo "<pre>";
     // print_r($arrParamtable);
@@ -76,21 +73,18 @@ for($i = 0; $i < count($str_sec_2); $i++){
     $stmt = $pdo->prepare($sql);
     $stmt->execute($arrParamtable);
     $count += $stmt->rowCount();
-    // echo $count;
-    // exit();
 }
 
 // print_r($stmtOwnr->rowCount());
 // echo $count;
 // echo "<hr>";
-// echo $opencount;
 // exit();
 
 if($count > 0) {
-    // header("Refresh: 1; url=../page/yy/yy_items_index.php");
+    header("Refresh: 1; url=../page/yy/yy_items_index.php");
     echo "刪除成功";
 } else {
-    // header("Refresh: 1; url=../page/yy/yy_items_index.php");
+    header("Refresh: 1; url=../page/yy/yy_items_index.php");
     echo "刪除失敗";
 }
 
