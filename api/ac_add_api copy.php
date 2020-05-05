@@ -1,11 +1,16 @@
 <?php
 header("Content-Type: text/html; chartset=utf-8");
+
+//引入判斷是否登入機制
 require_once('../checkSession.php');
+
+//引用資料庫連線
 require_once('../db.inc.php');
 
 //SQL 敘述
-$sql = "INSERT INTO `marketing` (`acName`, `acDescription`, `acImg`, `strId`)
+$sql = "INSERT INTO`marketing`(`acName`, `acDescription`, `acImg`,`strId`)
         VALUES ( ?, ?, ?, ?)";
+
 
 if( $_FILES["acImg"]["error"] === 0 ) {
     //為上傳檔案命名
@@ -23,31 +28,27 @@ if( $_FILES["acImg"]["error"] === 0 ) {
         echo "圖片上傳失敗";
         exit();
     }
-} else {
-    $acImg = 0;
+    //繫結用陣列
+    $arr = [
+        $_POST['acName'],
+        $_POST['acDescription'],
+        $acImg,
+        $_POST['storeId']
+    ];
+    
+    $pdo_stmt = $pdo->prepare($sql);
+    $pdo_stmt->execute($arr);
+    // print_r($sql);
+    // exit();
+    if($pdo_stmt->rowCount() === 1) {
+        header("Refresh: 1; url=../page/activity/ac_index.php");
+        echo "新增成功";
+    } else {
+        header("Refresh: 1; url=../page/activity/ac_index.php");
+        echo "新增失敗";
+    }
+}else{
+    header("Refresh: 1; url=../page/activity/ac_index.php");
+    echo "請夾帶圖片";
 }
 
-//繫結用陣列
-$arr = [
-    $_POST['acName'],
-    $_POST['acDescription'],
-    $acImg,
-    $_POST['storeId']
-];
-
-// echo "<pre>";
-// print_r($arr);
-// exit();
-
-$pdo_stmt = $pdo->prepare($sql);
-$pdo_stmt->execute($arr);
-// print_r($sql);
-// exit();
-
-if($pdo_stmt->rowCount() === 1) {
-    header("Refresh: 1; url=../page/activity/ac_index.php");
-    echo "新增成功";
-} else {
-    header("Refresh: 1; url=../page/activity/ac_index.php");
-    echo "新增失敗";
-}

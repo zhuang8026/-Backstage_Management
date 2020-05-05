@@ -4,7 +4,7 @@
             <div class="col-sm-6 user_btn">
                 <!-- <img style="width: 47px; margin-right: 10px; border-radius: 2px;" src="../../asset/img/manangeicon.png" alt="管理者頭像"> -->
                 <h2>
-                    <b>管理者 : <?= $_SESSION['username'] ?></b>
+                    <b>Admin : <?= $_SESSION['username'] ?></b>
                 </h2>
                 <!-- <button>
                     <i class="fas fa-sign-out-alt"></i>
@@ -41,18 +41,18 @@
                 <th>活動名稱</th>
                 <th>活動文案</th>
                 <th>新增時間</th>
-                <th>更新時間</th>
+                <!-- <th>更新時間</th> -->
                 <th>編輯/刪除</th>
             </tr>
         </thead>
         <tbody>
             <!-- 模板 start-->
             <?php 
-                $sql = "SELECT `acId`,  `stores`.`storeId`, `stores`.`storeName`,`stores`.`storeLogo`,`acName`, `acDescription`, `acImg`,`newTime`, `updTime` 
+                $sql = "SELECT `acId`, `stores`. `storeId`, `stores`.`storeName`,`stores`.`storeLogo`,`acName`, `acDescription`, `acImg`, `newTime`, `updTime` ,`strId`
                 FROM `marketing` 
                 LEFT JOIN `stores` 
                 ON `marketing`.`strId` = `stores`.`storeId` 
-                ORDER BY `acId` ASC";
+                ORDER BY `acId` DESC";
                 $stmt = $pdo->prepare($sql);
                 $stmt->execute(); 
 
@@ -71,26 +71,38 @@
                         <label for="checkbox1"></label>
                     </span>
                 </td>
+
                 <td class="storeLogo<?= $arr[$i]['acId']; ?>">
-                    <?php if($arr[$i]['storeLogo'] !== ""): ?>
-                        <img src="../../asset/file_img/<?= $arr[$i]['storeLogo'];?>">
-                    <?php else: ?>
+                    <?php if($arr[$i]['strId'] < 1): ?>
+                        <img src="../../asset/img/logo.png">
+                    <?php elseif($arr[$i]['storeLogo'] == ""): ?>
                         <img src="../../asset/img/404.jpg">
+                    <?php else: ?>
+                        <img src="../../asset/file_img/<?= $arr[$i]['storeLogo'];?>">
                     <?php endif; ?>
                 </td>
-                <td class= "storeName<?= $arr[$i]['acId']; ?>"><?= $arr[$i]['storeName']; ?></td>
-                <td class= "acId<?= $arr[$i]['acId']; ?>"><?= $arr[$i]['acId']; ?></td>
-                <td class="acImg<?= $arr[$i]['acId']; ?>">
-                <?php if($arr[$i]['acImg'] !== ""): ?>
-                    <img src="../../asset/file_img/<?= $arr[$i]['acImg'];?>">
+
+                <?php if($arr[$i]['strId'] < 1): ?>
+                    <td class= "storeName0">OTIS 平台所有</td>
                 <?php else: ?>
-                    <img src="../../asset/img/404.jpg">
+                    <td class= "storeName<?= $arr[$i]['acId']; ?>"><?= $arr[$i]['storeName']; ?></td>
                 <?php endif; ?>
+
+                <td class= "acId<?= $arr[$i]['acId']; ?>"><?= $arr[$i]['acId']; ?></td>
+
+                <td class="acImg<?= $arr[$i]['acId']; ?>">
+                    <?php if($arr[$i]['acImg'] == ""): ?>
+                        <img src="../../asset/img/404.jpg">
+                    <?php elseif($arr[$i]['acImg'] == 0): ?>
+                        <img src="../../asset/img/logo.png">
+                    <?php else: ?>
+                        <img src="../../asset/file_img/<?= $arr[$i]['acImg'];?>">
+                    <?php endif; ?>
                 </td>
                 <td class= "acName<?= $arr[$i]['acId']; ?> style_acName"><?= $arr[$i]['acName']; ?></td>
                 <td class= "acDescription<?= $arr[$i]['acId']; ?> style"><?= $arr[$i]['acDescription']; ?></td>
                 <td><?= $arr[$i]['newTime']; ?></td>
-                <td><?= $arr[$i]['updTime']; ?></td>
+                <!-- <td><?/*= $arr[$i]['updTime']; */?></td> -->
                 <td>
                     <a href="#editEmployeeModal" class="edit" data-toggle="modal">
                         <i class="material-icons" data-toggle="tooltip" title="Edit" onClick="ac_edit(<?= $arr[$i]['acId']; ?>)">&#xE254;</i>

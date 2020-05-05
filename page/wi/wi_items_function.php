@@ -5,13 +5,13 @@
             <div class="modal-content">
                 <form name="myForm" method="POST" action="../../api/wi_add_api.php" enctype="multipart/form-data">
                     <div class="modal-header">
-                        <h4 class="modal-title">Add ?</h4>
+                        <h4 class="modal-title">新增商品</h4>
                         <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
                     </div>
                     <div class="modal-body">
                         <!-- 選擇賣家 -->
                         <div class="form-group">
-                            <label>Sellers</label>
+                            <label>Sellers / 擁有者</label>
                             <select name="sellersId" required class="form-control" id="sellersId">
                             <option value="0" class="form-control" class="form-control">平台所有</option>
                             <?php
@@ -34,16 +34,16 @@
                         </div>
 
                         <div class="form-group">
-                            <label>Name</label>
+                            <label>Name / 商品名稱</label>
                             <input type="text" class="form-control" required name="itemName" value="" placeholder="商品名稱">
                         </div>
                         <div class="form-group">
-                            <label>Image</label>
+                            <label>Image / 商品圖片</label>
                             <input type="file" class="form-control" name="itemImg" value="" placeholder="商品圖片">
                         </div>
                         <!-- 顏色 -->
                         <div class="form-group">
-                            <label>Color</label>
+                            <label>Color / 商品顏色</label>
                             <ul id="colorAll">
                                 <li class="colorname">
                                     <input type="radio" name="colorid" value="1">
@@ -89,12 +89,12 @@
                             <!-- <input type="text" class="form-control" required name="colorid" value="" placeholder="商品顏色"> -->
                         </div>
                         <div class="form-group">
-                            <label>Brand</label>
+                            <label>Brand / 品牌</label>
                             <input type="text" class="form-control" required name="itemsbrand" value="" placeholder="商品品牌">
                         </div>
                         <!-- 類型 -->
                         <div class="form-group">
-                            <label>Type</label>
+                            <label>Type / 類型</label>
                             <select name="itemstype" required class="form-control" id="itemstype">
                                     <option value="1" class="form-control" selected>有線耳罩式</option>
                                     <option value="2" class="form-control">無線耳罩式</option>
@@ -110,16 +110,16 @@
                             <!-- <input type="text" class="form-control" required name="itemstype" value="" placeholder="商品類型"> -->
                         </div>
                         <div class="form-group">
-                            <label>Price</label>
+                            <label>Price / 價格</label>
                             <input type="text" class="form-control" required name="itemPrice" value="" placeholder="商品價格">
                         </div>
                         <div class="form-group">
-                            <label>Quantity</label>
+                            <label>Quantity / 數量</label>
                             <input type="text" class="form-control" required name="itemQty" value="" placeholder="商品數量">
                         </div>
                         
                         <div class="form-group">
-                            <label>Content</label>
+                            <label>Content / 內容</label>
                             <textarea class="form-control" required name="itemscontent" value="" placeholder="商品備註"></textarea>
                         </div>
                         <!-- <div class="form-group">
@@ -142,13 +142,13 @@
             <div class="modal-content">
                 <form name="updateForm" enctype="multipart/form-data" method="POST" action="../../api/wi_updateEdit_api.php">
                     <div class="modal-header">
-                        <h4 class="modal-title">Edit ?</h4>
+                        <h4 class="modal-title">編輯 ?</h4>
                         <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
                     </div>
 
                     <div class="modal-body">
                         <div class="form-group">
-                            <label>Name</label>
+                            <label>Name / 商品名稱</label>
                             <input type="text" class="form-control" name="itemName_d" value="" placeholder="商品名稱" id="itemName_d">
                         </div>
                         <div class="form-group">
@@ -209,11 +209,11 @@
                             <!-- <input type="text" class="form-control" name="colorid_d" value="" placeholder="商品顏色" id="colorid_d"> -->
                         </div>
                         <div class="form-group">
-                            <label>Brand</label>
+                            <label>Brand / 品牌</label>
                             <input type="text" class="form-control" name="itemsbrand_d" value="" placeholder="商品品牌" id="itemsbrand_d">
                         </div>
                         <div class="form-group">
-                            <label>Type</label>
+                            <label>Type / 類型</label>
                             <select name="itemstype_d" id="itemstype_d" class="form-control">
                                     <option value="1" class="form-control" selected>有線耳罩式</option>
                                     <option value="2" class="form-control">無線耳罩式</option>
@@ -229,11 +229,11 @@
                             <!-- <input type="text" class="form-control" name="itemstype_d" value="" placeholder="商品類型" id="itemstype_d"> -->
                         </div>
                         <div class="form-group">
-                            <label>Price</label>
+                            <label>Price / 價格</label>
                             <input type="text" class="form-control" name="itemPrice_d" value="" placeholder="商品價格" id="itemPrice_d">
                         </div>
                         <div class="form-group">
-                            <label>Quantity</label>
+                            <label>Quantity / 數量</label>
                             <input type="text" class="form-control" name="itemQty_d" value="" placeholder="商品數量" id="itemQty_d">
                         </div>
                     </div>
@@ -255,12 +255,12 @@
             <div class="modal-content">
                 <form name="deleteForm" method="POST" action="../../api/wi_delete_api.php" enctype="multipart/form-data">
                     <div class="modal-header">
-                        <h4 class="modal-title">Delete ?</h4>
+                        <h4 class="modal-title">刪除 ?</h4>
                         <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
                     </div>
                     <div class="modal-body">
-                        <p>Are you sure you want to delete these Records ?</p>
-                        <p class="text-warning"><small>This action cannot be undone.</small></p>
+                        <p>您確定要刪除這些記錄嗎 ？</p>
+                        <p class="text-warning"><small>此操作無法取消</small></p>
                     </div>
                     <div class="modal-footer">
                         <input type="button" class="btn btn-default" data-dismiss="modal" value="Cancel">
@@ -278,12 +278,12 @@
             <div class="modal-content">
                 <form name="deleteAllForm" method="POST" action="../../api/wi_delete_all_api.php" enctype="multipart/form-data">
                     <div class="modal-header">
-                        <h4 class="modal-title">Delete all choose?</h4>
+                        <h4 class="modal-title">刪除所有選擇 ?</h4>
                         <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
                     </div>
                     <div class="modal-body">
-                        <p>Are you sure you want to delete these Records ?</p>
-                        <p class="text-warning"><small>This action cannot be undone.</small></p>
+                        <p>您確定要刪除這些記錄嗎 ？</p>
+                        <p class="text-warning"><small>此操作無法取消</small></p>
                     </div>
                     <div class="modal-footer">
                         <input type="button" class="btn btn-default" data-dismiss="modal" value="Cancel">

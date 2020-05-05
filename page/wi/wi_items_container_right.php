@@ -15,10 +15,10 @@
             <!-- 刪除 與 新增 -->
             <div class="col-sm-6">
                 <a href="#addEmployeeModal" class="btn btn-success" data-toggle="modal">
-                    <i class="material-icons">&#xE147;</i> <span>Add New Employee</span>
+                    <i class="material-icons">&#xE147;</i> <span>新增商品</span>
                 </a>
                 <a href="#deleteEmployeeModal_all" class="btn btn-danger" data-toggle="modal">
-                    <i class="material-icons">&#xE15C;</i> <span>Delete</span>
+                    <i class="material-icons">&#xE15C;</i> <span>刪除</span>
                 </a>
             </div>
         </div>
@@ -34,20 +34,20 @@
                         <label for="selectAll"></label>
                     </span>
                 </th>
-                <th>Id</th>
-                <th>Name</th>
-                <th>Image</th>
-                <th>Color</th>
-                <th>Brand</th>
-                <th>Type</th>
-                <th>Price/.NT</th>
-                <th>Quantity</th>
-                <th>Star</th>
-                <th>sales</th>
-                <th>ownr_id</th>
-                <th>ownr_name</th>
-                <th>created_at</th>
-                <th>Function</th>
+                <th>編號</th>
+                <th>名稱</th>
+                <th>圖片</th>
+                <th>顏色</th>
+                <th>品牌</th>
+                <th>類型</th>
+                <th>P價錢/.NT</th>
+                <th>數量</th>
+                <th>評分</th>
+                <th>銷售數量</th>
+                <th>擁有者編號</th>
+                <th>擁有者名字</th>
+                <th>創建時間</th>
+                <th>編輯/刪除</th>
                 
             </tr>
         </thead>

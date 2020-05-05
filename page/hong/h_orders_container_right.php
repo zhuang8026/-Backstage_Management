@@ -15,10 +15,10 @@
             <!-- 刪除 與 新增 -->
             <div class="col-sm-6">
                 <a href="#addEmployeeModal" class="btn btn-success" data-toggle="modal">
-                    <i class="material-icons">&#xE147;</i> <span>Add New Employee</span>
+                    <i class="material-icons">&#xE147;</i> <span>新增訂單</span>
                 </a>
                 <a href="#deleteEmployeeModal_all" class="btn btn-danger" data-toggle="modal">
-                    <i class="material-icons" onClick="Delete_click_all()">&#xE15C;</i> <span>Delete</span>
+                    <i class="material-icons" onClick="Delete_click_all()">&#xE15C;</i> <span>刪除</span>
                 </a>
             </div>
         </div>

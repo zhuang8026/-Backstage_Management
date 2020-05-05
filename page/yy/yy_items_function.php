@@ -5,7 +5,7 @@
             <div class="modal-content">
                 <form name="myForm" method="POST" action="../../api/yy_add_api.php" enctype="multipart/form-data">
                     <div class="modal-header">
-                        <h4 class="modal-title">Add ?</h4>
+                        <h4 class="modal-title">新增賣場</h4>
                         <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
                     </div>
                     <div class="modal-body">
@@ -14,7 +14,7 @@
                             <input type="text" class="form-control" required name="storeName" value="" placeholder="賣場名稱">
                         </div>
                         <div class="form-group">
-                            <label>Image / 賣場logo</label>
+                            <label>Image / 賣場圖片</label>
                             <input type="file" class="form-control" name="storeImg" value="" placeholder="賣場頭像">
                         </div>
                         <div class="form-group">
@@ -59,7 +59,7 @@
             <div class="modal-content">
                 <form name="updateForm" enctype="multipart/form-data" method="POST" action="../../api/yy_updateEdit_api.php">
                     <div class="modal-header">
-                        <h4 class="modal-title">Edit ?</h4>
+                        <h4 class="modal-title">編輯 ?</h4>
                         <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
                     </div>
 
@@ -129,12 +129,12 @@
             <div class="modal-content">
                 <form name="deleteForm" method="POST" action="../../api/yy_delete_api.php" enctype="multipart/form-data">
                     <div class="modal-header">
-                        <h4 class="modal-title">Delete ?</h4>
+                        <h4 class="modal-title">刪除 ?</h4>
                         <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
                     </div>
                     <div class="modal-body">
-                        <p>Are you sure you want to delete these Records ?</p>
-                        <p class="text-warning"><small>This action cannot be undone.</small></p>
+                        <p>您確定要刪除這些記錄嗎 ？</p>
+                        <p class="text-warning"><small>此操作無法取消</small></p>
                     </div>
                     <div class="modal-footer">
                         <input type="button" class="btn btn-default" data-dismiss="modal" value="Cancel">
@@ -152,12 +152,12 @@
             <div class="modal-content">
                 <form name="deleteAllForm" method="POST" action="../../api/yy_delete_all_api.php" enctype="multipart/form-data">
                     <div class="modal-header">
-                        <h4 class="modal-title">Delete all choose?</h4>
+                        <h4 class="modal-title">刪除所有選擇 ?</h4>
                         <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
                     </div>
                     <div class="modal-body">
-                        <p>Are you sure you want to delete these Records ?</p>
-                        <p class="text-warning"><small>This action cannot be undone.</small></p>
+                        <p>您確定要刪除這些記錄嗎 ？</p>
+                        <p class="text-warning"><small>此操作無法取消</small></p>
                     </div>
                     <div class="modal-footer">
                         <input type="button" class="btn btn-default" data-dismiss="modal" value="Cancel">
