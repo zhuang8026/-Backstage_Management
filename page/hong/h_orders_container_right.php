@@ -24,7 +24,7 @@
         </div>
     </div>
     <!-- <div id="chart"></div> -->
-    <table class="table table-striped table-hover" id="dt-table">
+    <table class="table table-striped table-hover" id="dt-table" data-aos="fade-up">
         <thead>
             <!-- 標頭 -->
             <tr>

@@ -7,11 +7,22 @@
         <script src="https://code.highcharts.com/highcharts.js"></script>
         <script src="https://code.highcharts.com/modules/no-data-to-display.js"></script>
 
+        <!-- aos -->
+        <script src="https://unpkg.com/aos@2.3.0/dist/aos.js"></script>
+
         <!-- common ~ 修改路徑_雅芳 --> 
         <script src="../../asset/js/h_orders_javascript.js"></script>
         <script src="../../asset/js/h_deit_click.js"></script>
         <script src="../../asset/js/h_delete_click.js"></script>
         <script src="../../asset/js/h_delete_click_all.js"></script>
         <script src="../../asset/js/0_allUse_function.js"></script>
+        <script>
+        AOS.init({
+            offset: 100,
+            duration: 600,
+            easing: 'ease-in-out',
+            delay: 100,
+        });
+    </script>
     </body>
 </html>
