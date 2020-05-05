@@ -69,12 +69,12 @@ $(function () {
     var myChart = new Chart(chart, {
       type: 'bar',
       data: {
-        labels: ["January", "February", "March", "April", "May", 'Jul'],
+        labels: ["January", "February", "March", "April", "May"],
         datasets: [{
           label: "Lost",
           fill: false,
           lineTension: 0,
-          data: [45, 25, 40, 20, 45, 20],
+          data: [5, 11, 6, 11, 9],
           pointBorderColor: "#4bc0c0",
           borderColor: '#4bc0c0',
           borderWidth: 2,
@@ -84,8 +84,7 @@ $(function () {
           fill: false,
           lineTension: 0,
           startAngle: 2,
-          data: [20, 40, 20, 45, 25, 60],
-          // , '#ff6384', '#4bc0c0', '#ffcd56', '#457ba1'
+          data: [6, 17, 11, 2, 20],
           backgroundColor: "transparent",
           pointBorderColor: "#ff6384",
           borderColor: '#ff6384',
@@ -100,7 +99,7 @@ $(function () {
     var chart = new Chart(Chart2, {
       type: 'line',
       data: {
-        labels: ["January", "February", "March", "April", 'test', 'test', 'test', 'test'],
+        labels: ["January", "February", "March", "April", "May"],
         datasets: [{
           label: "My First dataset",
           backgroundColor: 'rgb(255, 99, 132)',
@@ -127,7 +126,7 @@ $(function () {
           fill: false,
           lineTension: .4,
           startAngle: 2,
-          data: [40, 20, 5, 10, 30, 15, 15, 10],
+          data: [20, 10, 5, 10, 30, 15, 15, 10],
           // , '#ff6384', '#4bc0c0', '#ffcd56', '#457ba1'
           backgroundColor: "transparent",
           pointBorderColor: "#ffcd56",
