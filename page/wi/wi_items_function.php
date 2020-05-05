@@ -145,8 +145,32 @@
                         <h4 class="modal-title">編輯 ?</h4>
                         <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
                     </div>
-
+                    
                     <div class="modal-body">
+                        <!-- 選擇賣家 -->
+                        <div class="form-group">
+                            <label>Sellers / 擁有者</label>
+                            <select name="sellersId" required class="form-control" id="sellersId">
+                            <option value="0" class="form-control" class="form-control">平台所有</option>
+                            <?php
+                                $sql = "SELECT `id`, `username`, `name`
+                                        FROM `users` 
+                                        LEFT JOIN `stores`
+                                        ON `users`.`id` = `stores`.`storeId`
+                                        WHERE `isActivated` = 1";
+                                $stmt = $pdo->prepare($sql);
+                                $stmt->execute();
+                                if($stmt->rowCount() > 0):
+                                    $arr = $stmt->fetchAll(PDO::FETCH_ASSOC);
+                                    for($i = 0; $i < count($arr); $i++):
+                            ?>
+                                <option value="<?= $arr[$i]['id']; ?>" class="form-control" class="form-control">ID: <?= $arr[$i]['username'] ?>｜名字: <?= $arr[$i]['name'] ?></option>
+                                <?php endfor; ?>
+                            <?php endif; ?>
+
+                            </select>
+                        </div>
+                        
                         <div class="form-group">
                             <label>Name / 商品名稱</label>
                             <input type="text" class="form-control" name="itemName_d" value="" placeholder="商品名稱" id="itemName_d">
@@ -206,7 +230,6 @@
                                     <i class="fas fa-check"></i>
                                 </li>
                             </ul>
-                            <!-- <input type="text" class="form-control" name="colorid_d" value="" placeholder="商品顏色" id="colorid_d"> -->
                         </div>
                         <div class="form-group">
                             <label>Brand / 品牌</label>
@@ -226,7 +249,6 @@
                                     <option value="9" class="form-control">有線耳掛式</option>
                                     <option value="10" class="form-control">無線耳掛式</option>
                             </select>
-                            <!-- <input type="text" class="form-control" name="itemstype_d" value="" placeholder="商品類型" id="itemstype_d"> -->
                         </div>
                         <div class="form-group">
                             <label>Price / 價格</label>

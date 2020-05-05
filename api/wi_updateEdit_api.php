@@ -12,8 +12,9 @@ require_once('../db.inc.php');
 // exit();
 
 // 先對其它欄位，進行 SQL 語法字串連接
-$sql = "UPDATE `items` 
-        SET 
+$sql = "UPDATE `items`
+        SET
+        `itemstoreNumber` = ?, 
         `itemName` = ?,
         `colorid` = ?,
         `itemsbrand` = ?,
@@ -23,12 +24,13 @@ $sql = "UPDATE `items`
 
 // 先對其它欄位進行資料繫結設定
 $arrParam = [
+    $_POST['sellersId'],
     $_POST['itemName_d'],
     $_POST['colorid'],
     $_POST['itemsbrand_d'],
     $_POST['itemstype_d'],
     $_POST['itemPrice_d'],
-    $_POST['itemQty_d'],
+    $_POST['itemQty_d']
 ];
 
 //判斷檔案上傳是否正常，error = 0 為正常
@@ -108,19 +110,19 @@ $arrParam[] = (int)$_POST['itemId_input'];
 $stmt = $pdo->prepare($sql);
 $stmt->execute($arrParam);
 
-echo "<pre>";
-print_r($_POST['itemId_input']);
-echo "<hr>";
-print_r($arrParam);
-echo "<hr>";
-print_r($stmt);
-echo "<hr>";
-print_r($stmt->rowCount());
+// echo "<pre>";
+// print_r($_POST['itemId_input']);
+// echo "<hr>";
+// print_r($arrParam);
+// echo "<hr>";
+// print_r($stmt);
+// echo "<hr>";
+// print_r($stmt->rowCount());
 // exit();
 
 
 if( $stmt->rowCount() > 0 ){
-    header("Refresh: 0; url=../page/wi/wi_items_index.php");
+    header("Refresh: 1; url=../page/wi/wi_items_index.php");
     echo "更新成功";
 } else {
     header("Refresh: 1; url=../page/wi/wi_items_index.php");
