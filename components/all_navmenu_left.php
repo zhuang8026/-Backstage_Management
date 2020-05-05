@@ -4,7 +4,7 @@
     <div class="heading">
         <img src="../../asset/img/logo.png" alt="LOGO">
         <div class="info">
-            <h3><a href="#"><span class="main-color"><?= $_SESSION['username'] ?></span> Manager</a></h3>
+            <h3><a href="../../page/wi_home/wi_items_index.php"><span class="main-color"><?= $_SESSION['username'] ?></span> Manager</a></h3>
             <p>Top authority manager</p>
             <p><a style="color: #EEE; border: 1px solid #eee; padding: 5px 10px;" href="../../api/logout_api.php?logout=1">logout</a></p>
         </div>

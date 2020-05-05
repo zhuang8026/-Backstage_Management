@@ -14,11 +14,11 @@
             
             <!-- 刪除 與 新增 -->
             <div class="col-sm-6">
-                <a href="#addEmployeeModal" class="btn btn-success" data-toggle="modal">
-                    <i class="material-icons">&#xE147;</i> <span>Add New Employee</span>
+                <a href="#addEmployeeModal" class="btn btn-success" data-toggle="modal" id="member_add">
+                    <i class="material-icons">&#xE147;</i> <span>新增會員</span>
                 </a>
                     <a href="#deleteEmployeeModal_all" class="btn btn-danger" data-toggle="modal">
-                    <i class="material-icons" onClick="seller_Delete_click_all()">&#xE15C;</i> <span>Delete</span>
+                    <i class="material-icons" onClick="seller_Delete_click_all()">&#xE15C;</i> <span>刪除</span>
                 </a>
             </div>
         </div>
@@ -64,12 +64,12 @@
             ?>
 
             <tr>
-            <td>
-                <span class="custom-checkbox">
-                    <input type="checkbox" class="checkboxValue" id="checkbox<?= $arr[$i]['id']; ?>" name="options[]" value="<?= $arr[$i]['id']; ?>">
-                    <label for="checkbox1"></label>
-                </span>
-            </td>
+                <td>
+                    <span class="custom-checkbox">
+                        <input type="checkbox" class="checkboxValue" id="checkbox<?= $arr[$i]['id']; ?>" name="options[]" value="<?= $arr[$i]['id']; ?>">
+                        <label for="checkbox1"></label>
+                    </span>
+                </td>
                 <td class="username<?php echo $arr[$i]['id']?>"><?php echo $arr[$i]['username']; ?></td>
                 <td class="pwd<?php echo $arr[$i]['id']?>"><?php echo $arr[$i]['pwd']; ?></td>
                 <td class="name<?php echo $arr[$i]['id']?>"><?php echo $arr[$i]['name']; ?></td>

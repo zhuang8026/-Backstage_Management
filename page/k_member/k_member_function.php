@@ -11,11 +11,11 @@
                     <div class="modal-body">
                         <div class="form-group">
                             <label>使用者名稱</label>
-                            <input type="text" name="username" id="username" class="form-control" required>
+                            <input type="text" name="username" id="username" class="form-control" maxlength="10" disabled="disabled" required>
                         </div>
                         <div class="form-group">
                             <label >使用者密碼</label>
-                            <input type="text" name="pwd" id="pwd" class="form-control" required>
+                            <input type="password" name="pwd" id="pwd" class="form-control" maxlength="10" required>
                         </div>
                         <div class="form-group">
                             <label>姓名</label>
@@ -46,7 +46,8 @@
                         </div>
                         <div class="form-group">
                             <label>地址</label>
-                            <textarea  name="address" id="address" value="" maxlength="50" class="form-control" required></textarea>
+                            <input type="text" name="address" id="address" value="" class="form-control" required>
+                            <!-- <textarea  name="address" id="address" value="" maxlength="50" class="form-control" required></textarea> -->
                         </div>
                         <div class="form-group">
                             <label>賣家開通狀態</label>

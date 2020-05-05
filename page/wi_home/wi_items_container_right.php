@@ -141,7 +141,7 @@
             </div>
         </section>
 
-         <!-- Admins & Moderators -->
+        <!-- Admins & Moderators -->
         <section class="admins">
             <div class="container-fluid">
                 <div class="row">
@@ -158,27 +158,9 @@
                                 <p>2. 登入功能講解</p>
                                 <p>3. 首頁管理界面講解</p>
                                 <p>4. 產品管理講解</p>
+                                <p>5. 其餘管理功能協助</p>
                             </div>
                         </div>
-                        <!-- <div class="admin">
-                            <div class="img">
-                            <img class="img-responsive" src="../../asset/img/manangeicon.png" alt="admin">
-                            </div>
-                            <div class="info">
-                            <h3>KJ Yang</h3>
-                                <p>1. 會員功能講解</p>
-                            </div>
-                        </div>
-                        <div class="admin">
-                            <div class="img">
-                            <img class="img-responsive" src="../../asset/img/manangeicon.png" alt="admin">
-                            </div>
-                            <div class="info">
-                            <h3>Alice Pai</h3>
-                                <p>1. 賣家功能講解</p>
-                                <p>2. 行銷功能講解</p>
-                            </div>
-                        </div> -->
                     </div>
                 </div>
                 <div class="col-md-6">
@@ -218,9 +200,9 @@
                         <img class="img-responsive" src="../../asset/img/manangeicon.png" alt="admin">
                         </div>
                         <div class="info">
-                            <h3>Hong Ya Fang</h3>
+                            <h3>Ya Fang Hong</h3>
                             <p>1. 訂單功能講解</p>
-                            <p>1. 行銷功能輔助</p>
+                            <p>1. 行銷功能協助</p>
                         </div>
                     </div>
 
@@ -264,20 +246,5 @@
             </div>
         </section>
 
-        <!-- <section class="chrt3">
-            <div class="container-fluid">
-                <div class="row">
-                <div class="col-md-9">
-                    <div class="chart-container">
-                    <canvas id="chart3" width="100%"></canvas>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="box">
-                    </div>
-                </div>
-                </div>
-            </div>
-        </section> -->
     </section>
 </div>
