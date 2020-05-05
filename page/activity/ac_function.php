@@ -102,7 +102,7 @@
                         <input type="button" class="btn btn-default" data-dismiss="modal" value="Cancel">
                         <input type="submit" class="btn btn-info" id="btn_submit" value="Save">
                     </div>
-                    <input type="test" name="acId_input" id="acId_input" value="">
+                    <input type="hidden" name="acId_input" id="acId_input" value="">
                 </form>
             </div>
         </div>
@@ -125,7 +125,7 @@
                         <input type="button" class="btn btn-default" data-dismiss="modal" value="Cancel">
                         <input type="submit" class="btn btn-danger" value="Delete">
                     </div>
-                    <input type="test" name="input_delete_acid" id="input_delete_acid" value="">
+                    <input type="hidden" name="input_delete_acid" id="input_delete_acid" value="">
                 </form>
             </div>
         </div>
@@ -148,7 +148,7 @@
                         <input type="button" class="btn btn-default" data-dismiss="modal" value="Cancel">
                         <input type="submit" class="btn btn-danger" value="Delete">
                     </div>
-                    <input type="test" name="acinput_delete_all_id[]" id="acinput_delete_all_id" value="">
+                    <input type="hidden" name="acinput_delete_all_id[]" id="acinput_delete_all_id" value="">
                 </form>
             </div>
         </div>
