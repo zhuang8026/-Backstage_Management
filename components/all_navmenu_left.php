@@ -16,7 +16,7 @@
         <li>
             <i class="fa fa-home fa-fw" aria-hidden="true"></i><a href="#"> Home / 首頁</a>
             <ul class="side-nav-dropdown">
-                <li><a href="https://treefonts.com/"> Home</a></li>
+                <li><a href="../wi_home/wi_items_index.php"> Home</a></li>
                 <li><a href="https://treefonts.com/"> TreeFonts</a></li>
             </ul>
         </li>
