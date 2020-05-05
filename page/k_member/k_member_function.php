@@ -11,7 +11,7 @@
                     <div class="modal-body">
                         <div class="form-group">
                             <label>使用者名稱</label>
-                            <input type="text" name="username" id="username" class="form-control" maxlength="10" disabled="disabled" required>
+                            <input type="text" name="username" id="username" class="form-control" maxlength="10" readonly="readonly" required value="">
                         </div>
                         <div class="form-group">
                             <label >使用者密碼</label>

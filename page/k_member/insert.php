@@ -42,6 +42,10 @@ if( $_FILES["userlogo"]["error"] === 0 ) {
         $_POST['isActivated']
     ];
     
+    echo "<pre>";
+    print_r($arr);
+    exit();
+
     $pdo_stmt = $pdo->prepare($sql);
     $pdo_stmt->execute($arr);
     if($pdo_stmt->rowCount() === 1) {
