@@ -41,12 +41,8 @@ if( $_FILES["acImg_e"]["error"] === 0 ){
             $arrParam[] = $studentImg;
         }
     }
-} else {
-    $sql.= ",";
-    $sql.= " `acImg` = ? ";
-    $studentImg = "NULL";
-    $arrParam[] = $studentImg;
-}
+} 
+
 
 $sql.= " WHERE `marketing`.`acId` = ? ";
 $arrParam[] = (int)$_POST['acId_input'];
