@@ -90,16 +90,16 @@
     width: 100%;
     background-color: transparent;
     border: none;
-    border-bottom: 1px solid #23262d;
+    border-bottom: 1px solid #DDD;
     padding: 7px 0 7px;
-    color: #DDD
+    color: #DDD;
   }
   .side-nav .search > input ~ i {
     position: absolute;
     top: 22px;
     right: 40px;
     display: block;
-    color: #2b2f3a;
+    color: #DDD;
     font-size: 19px;
   }
   /* End search */
@@ -284,15 +284,21 @@
     float: left;
   }
   .admins .box .admin .img img {
-    border-radius: 50%;
+    border-radius: 10px;
+    width: 100%;
   }
   .admins .box .info {
     width: 75%;
     color: #EEE;
     float: left;
   }
-  .admins .box .info h3 {font-size: 19px}
-  .admins .box .info p {color: #BBB}
+  .admins .box .info h3 {
+    font-size: 19px;
+  }
+  .admins .box .info p {
+    color: #BBB;
+    margin-bottom: 6px;
+  }
   
   /* End users */
   /* Start statis */

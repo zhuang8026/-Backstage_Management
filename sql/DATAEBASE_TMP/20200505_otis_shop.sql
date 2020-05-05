@@ -1,13 +1,14 @@
 -- phpMyAdmin SQL Dump
--- version 4.8.5
+-- version 5.0.2
 -- https://www.phpmyadmin.net/
 --
--- Host: localhost:8889
--- Generation Time: May 04, 2020 at 05:04 PM
--- Server version: 5.7.25
--- PHP Version: 7.3.1
+-- 主机： 127.0.0.1
+-- 生成日期： 2020-05-05 11:46:12
+-- 服务器版本： 10.4.11-MariaDB
+-- PHP 版本： 7.4.4
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+START TRANSACTION;
 SET time_zone = "+00:00";
 
 
@@ -17,13 +18,13 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `otis_shop`
+-- 数据库： `otis_shop`
 --
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `items`
+-- 表的结构 `items`
 --
 
 CREATE TABLE `items` (
@@ -35,43 +36,84 @@ CREATE TABLE `items` (
   `itemstype` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL COMMENT '產品類型',
   `itemPrice` int(11) NOT NULL COMMENT '商品價格',
   `itemQty` int(255) NOT NULL COMMENT '商品數量',
-  `itemsales` int(255) NOT NULL DEFAULT '1' COMMENT '銷售量',
-  `itemsstar` tinyint(10) NOT NULL DEFAULT '1' COMMENT '產品評分',
+  `itemsales` int(255) NOT NULL DEFAULT 1 COMMENT '銷售量',
+  `itemsstar` tinyint(10) NOT NULL DEFAULT 1 COMMENT '產品評分',
   `itemstoreNumber` int(10) DEFAULT NULL COMMENT '賣場與商品對應編號',
   `itemscontent` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL COMMENT '產品備註',
-  `created_at` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT '新增時間',
-  `updated_at` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT '更新時間'
+  `created_at` datetime NOT NULL DEFAULT current_timestamp() COMMENT '新增時間',
+  `updated_at` datetime NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp() COMMENT '更新時間'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='商品列表';
 
 --
--- Dumping data for table `items`
+-- 转存表中的数据 `items`
 --
 
 INSERT INTO `items` (`itemId`, `itemName`, `itemImg`, `colorid`, `itemsbrand`, `itemstype`, `itemPrice`, `itemQty`, `itemsales`, `itemsstar`, `itemstoreNumber`, `itemscontent`, `created_at`, `updated_at`) VALUES
-(5, 'Beoplay E6', 'beoplay5.jpg', 1, 'Bang & Olufsen', '4', 8000, 1121, 1204, 3, 1, '專為活躍生活型態設計的無線入耳式耳機。Bang & Olufsen 最具代表性的美妙聲音，長達 5 小時的播放時間與外出充電。', '2020-04-22 15:44:00', '2020-05-01 17:59:35'),
-(6, 'Beoplay E8 2.0 (2nd Gen)', 'beoplay6.jpg', 2, 'Bang & Olufsen', '4', 12000, 547, 168, 5, 2, '無線充電、優質音效、直覺式觸控和絕佳的舒適性，體驗真正的自由。', '2020-04-22 15:44:00', '2020-05-01 17:59:37'),
-(7, 'Beoplay E6 動感活力', 'beoplay7.jpg', 7, 'Bang &amp; Olufsen', '1', 8000, 102, 458, 5, 2, '輕量、耳內、無線入耳式耳機，專為活躍主動的生活風格所設計。提供數種耳塞和耳鰭的尺寸選擇，E6 Motion 有完整的客製化服務。', '2020-04-22 15:44:00', '2020-05-02 01:54:55'),
-(8, 'Beoplay E4', 'beoplay8.jpg', 8, 'Bang &amp; Olufsen', '1', 10000, 960, 945, 4, 2, '具先進主動式降噪功能的入耳式耳機，提供直接精準的音效、無與倫比的舒適感和簡便的控制方式。', '2020-04-22 15:44:00', '2020-05-02 01:14:52'),
-(9, 'Beoplay H3', 'beoplay9.jpg', 8, 'Bang &amp; Olufsen', '1', 6000, 601, 831, 5, 13, '傳遞自然真實音效的頂級入耳式耳機。堅固耐用又輕量，專為準確性和服貼的舒適性而設計。', '2020-04-22 15:44:00', '2020-05-03 23:57:03'),
-(10, 'DT 770 STUDIO', 'beyerdynamic_1.jpg', 7, 'beyerdynamic', '1', 4470, 230, 999, 2, NULL, '幾十年來，全世界的專業用戶一直對我們的經典產品系列DT 770/880/990 PRO表示信任。這些設置基準的錄音室耳機有三種不同的型號，具有極詳細的分辨率和非常透明的聲音。DT 770 PRO耳機是該系列的封閉式型號，可提供最大的靈活性和您可以信賴的細膩聲音。', '2020-04-22 15:44:00', '2020-05-01 11:38:52'),
-(11, 'DT 770 PRO', 'beyerdynamic_2.jpg', 7, 'beyerdynamic', '1', 4470, 415, 277, 4, NULL, '幾十年來，全世界的專業用戶一直對我們的經典產品系列DT 770/880/990 PRO表示信任。這些設置基準的錄音室耳機有三種不同的型號，具有極詳細的分辨率和非常透明的聲音。', '2020-04-22 15:44:00', '2020-05-01 02:15:35'),
-(12, 'DT 990 PRO', 'beyerdynamic_3.jpg', 7, 'beyerdynamic', '1', 4470, 2013, 361, 5, NULL, '幾十年來，全世界的專業用戶一直對我們的經典產品系列DT 770/880/990 PRO表示信任。這些設置基準的錄音室耳機有三種不同的型號，具有極詳細的分辨率和非常透明的聲音。', '2020-04-22 15:44:00', '2020-05-01 01:45:04'),
-(13, 'DT 240 PRO', 'beyerdynamic_4.jpg', 8, 'beyerdynamic', '1', 2970, 661, 621, 4, NULL, '緊湊的耳罩非常適合移動使用，並在任何環境下都能提供真實的錄音室性能：直接在現場檢查錄音並在回家時進行項目。', '2020-04-22 15:44:00', '2020-05-01 01:45:07'),
-(14, 'DT 1770 PRO', 'beyerdynamic_5.jpg', NULL, 'beyerdynamic', '1', 17970, 1170, 521, 5, NULL, '這些基准設定的封閉式錄音室耳機結合了數十年的耳機生產專業知識和最新的Tesla驅動技術。除了高分辨率和均衡的聲音外，beyerdynamic DT 1770 PRO耳機還樹立了新標準，尤其是在舒適性和工藝上。', '2020-04-22 15:44:00', '2020-05-01 01:45:10'),
-(15, 'apple耳機2', 'item_20200427140729.png', 0, 'william', '10', 1000, 12, 1, 0, NULL, 'asdadasdasdasdasda', '2020-04-27 20:07:29', '2020-05-01 01:45:15'),
-(21, 'Beoplay H4 2nd Gen1', 'item_20200430100532.png', 3, 'william', '1', 100, 10, 1, 1, NULL, 'q', '2020-04-30 16:05:32', '2020-05-01 02:16:11'),
-(22, 'apple耳機2', 'item_20200430101149.jpg', 2, 'qweqweqw', '1', 1000, 111, 1, 1, NULL, 'test', '2020-04-30 16:11:49', '2020-05-01 02:16:15'),
-(23, '旺嗝耳機', 'item_20200430174648.png', 2, '旺嗝牌', '1', 100, 1, 1, 1, NULL, '無', '2020-05-01 01:46:48', '2020-05-02 02:02:56'),
-(24, '兔子', 'item_20200430175354.png', NULL, 'william', '10', 100, 1, 1, 1, NULL, 'no', '2020-05-01 01:53:54', '2020-05-01 11:33:48'),
-(25, '旺嗝牌', 'item_20200430175615.png', NULL, 'william', '10', 1111, 1, 1, 1, NULL, 'nothing', '2020-05-01 01:56:15', '2020-05-01 01:59:18'),
-(26, '兔子耳機', '', 8, '兔子', '10', 990, 1, 1, 1, 13, 'nothing', '2020-05-04 00:40:06', '2020-05-04 00:40:06'),
-(27, 'apple耳機3', '', 6, 'apple耳機3', '1', 1000, 10, 1, 1, 4, 'apple耳機3', '2020-05-04 10:33:15', '2020-05-04 10:33:15'),
-(29, '測試2', '', 1, '測試2', '2', 100, 1, 1, 1, 3, '測試2', '2020-05-04 23:14:39', '2020-05-04 23:14:39');
+(1, 'HD 450BT\n', '1.png', 8, 'SENNHEISER', '2', 7000, 200, 10, 5, 0, '全新的 HD 450BT. 造就絕佳的無線音色表現。', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
+(2, 'HD 350BT', '2.png', 8, 'SENNHEISER', '2', 4000, 100, 5, 5, 0, '在旅途中或在家中，都能透過 HD 350BT. 享受絕佳的無線音頻。', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
+(3, 'PXC 550-II Wireless', '3.png', 8, 'SENNHEISER', '2', 11000, 150, 5, 5, 0, '新款PXC 550-II無線耳機，優美的聲音質量，更出色的出行體驗。', '0000-00-00 00:00:00', '2020-05-05 17:41:51'),
+(4, 'MOMENTUM Wireless', '4.png', 8, 'SENNHEISER', '2', 14000, 100, 10, 5, 0, '新款MOMENTUM Wireless無線耳機，人性化設計，優越聲音品質。', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
+(5, 'PXC 550 Wireless', '5.png', 8, 'SENNHEISER', '2', 8000, 50, 5, 5, 0, 'Sennheiser PXC 550 Wireless將每一次旅程變成一流的體驗', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
+(6, 'HD4.40BT', '6.png', 8, 'SENNHEISER', '2', 4000, 100, 50, 5, 0, '新推出的Sennheiser HD4.40BT無線耳機提供了高質量的無線聲音信號', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
+(7, 'MOMENTUM 2 Wireless Black', '7.png', 8, 'SENNHEISER', '2', 12500, 100, 20, 5, 0, '獨家主動降噪技術為你帶來頂尖的聲學表現。', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
+(8, 'MOMENTUM On-Ear Wireless\n', '8.png', 8, 'SENNHEISER', '2', 16000, 50, 10, 5, 0, '同時支援藍牙?無線科技 及混合式主動降噪技術', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
+(9, 'RS 195\n', '9.png', 8, 'SENNHEISER', '2', 19500, 50, 5, 5, 0, '有了RS 195，你可重新體驗音樂帶來的無窮樂趣', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
+(10, 'RS 185', '10.png', 8, 'SENNHEISER', '2', 15000, 50, 10, 5, 0, '能手動調節聲音精確度的耳筒系統，高要求用家的無線選擇。', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
+(11, 'RS 175-U\n', '11.png', 8, 'SENNHEISER', '2', 12000, 100, 30, 5, 0, '有著震撼低頻和環迴立體聲的耳筒系統，更有趣的家居影音體驗!', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
+(12, 'MM 450-X TRAVEL', '12.png', 8, 'SENNHEISER', '2', 17500, 50, 10, 5, 0, '由於封閉式耳罩設計加強了被動降噪功能，你可以安心地聽音樂，而不用擔心打擾周圍的乘客', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
+(13, 'HD 400S\n', '13.png', 8, 'SENNHEISER', '1', 3000, 1000, 150, 5, 0, '能方便地播放音樂和接聽電話，紮實的折疊設計讓這款耳機不僅堅固耐用', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
+(14, 'HD 300\n', '14.png', 8, 'SENNHEISER', '1', 2500, 500, 50, 5, 0, '換能器單元確保了聲音保持良好的平衡，以及強勁有力的動感低頻響應。', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
+(15, 'HD 660 S Apogee', '15.png', 8, 'SENNHEISER', '1', 13500, 100, 20, 5, 0, 'Apogee Groove提供的一款USB DAC（數位類比轉換器）及耳機放大器', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
+(16, 'HD 300 PRO\n', '16.png', 8, 'SENNHEISER', '1', 8900, 50, 10, 5, 0, 'HD 300 PRO監聽耳機最新研發的聲學系統，確保其能夠提供一個自然中性、細膩精確的聲音播放', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
+(17, 'HD 660S\n', '17.png', 8, 'SENNHEISER', '1', 14900, 50, 20, 5, 0, 'Sennheiser的新型HD 660S是充滿激情的發燒友的理想開放式動態耳機。', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
+(18, 'HD 820\n', '18.png', 8, 'SENNHEISER', '1', 75000, 20, 5, 5, 0, '能夠以Hi–Fi級的質量欣賞音樂節目。配置了獨特的玻璃材質換能器外殼，以實現小共振', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
+(19, 'HD 206\n', '19.png', 8, 'SENNHEISER', '1', 2000, 100, 60, 5, 0, ' 是一款封閉動圈式立體聲耳機，適合預算有限的音樂愛好者，具有聲音重放有力、環境噪聲衰減性能出色、佩戴舒適等特點。', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
+(20, 'HD4.50BTNC', '20.png', 8, 'SENNHEISER', '2', 5300, 100, 30, 5, 0, 'Sennheiser的NoiseGard主動降噪，夠保證你在任何環境中安靜也能夠聆聽和欣賞自己的音樂。', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
+(21, 'HD 4.40BT\n', '21.png', 8, 'SENNHEISER', '2', 3200, 100, 50, 5, 0, '這款後腔封閉式包耳設計的無線耳機採用了藍牙4.0技術和aptX兼容技術，能夠傳輸真正的高保真聲音信號', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
+(22, 'HD 598 Cs', '22.png', 8, 'SENNHEISER', '1', 5500, 80, 20, 5, 0, 'Sennheiser HD 5系列在各個方面都提供高質量和價值。採用Sennheiser專屬換能器技術', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
+(23, 'HD200PRO', '23.png', 8, 'SENNHEISER', '1', 4000, 200, 50, 5, 0, ' HD 200 PRO 能夠為每一種監聽需求和資金預算需求提供細膩強勁的聲音監聽', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
+(24, 'PXC480', '24.png', 8, 'SENNHEISER', '1', 7300, 100, 20, 5, 0, '具有完美設計的這款旅行系列頭戴耳麥凝聚了Sennheiser在聲音和音頻技術上的品質體現', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
+(25, 'HD 559', '25.png', 8, 'SENNHEISER', '1', 6100, 50, 10, 5, 0, '插入具有開放包耳式設計以及高級Sennheiser換能器系統的HD 559，它將為你帶來卓越的聲音體驗', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
+(26, 'HD 569', '26.png', 8, 'SENNHEISER', '1', 7300, 100, 20, 5, 0, '採用封閉包耳式設計的HD 569為家庭娛樂領域帶來靈活選項。它提供了一個細節豐富而清晰的低音，', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
+(27, 'HD 579', '27.png', 9, 'SENNHEISER', '1', 6000, 50, 10, 5, 0, 'HD 579提供高端性能，為家庭娛樂帶來近乎高保真的聲音水平', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
+(28, 'HD 599', '28.png', 3, 'SENNHEISER', '1', 6500, 50, 5, 5, 0, '當代設計既富有吸引力，也符合人體工學。對於那些帶著發現探索精神去聽音樂的人來說', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
+(29, 'HD 4.30', '29.png', 9, 'SENNHEISER', '1', 2900, 60, 10, 5, 0, '堅固的折疊設計讓這款耳機堅固緊湊，能夠隨身攜帶', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
+(30, 'HD 800 S', '30.png', 8, 'SENNHEISER', '1', 61000, 20, 5, 5, 0, 'HD 800 作為一代經典，它不但提供自然的聲音和真實的細節', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
+(31, 'ATH-PDG1a', 'ATH-PDG1a_.jpg', 1, 'audio-technica', '1', 5000, 137, 123, 3, 0, '遊戲專用耳機麥克風組 體驗廣闊空間感的開放音色 令人置身於遊戲世界中的開放式電競用耳機', '2020-05-04 23:14:00', '2020-05-04 23:14:00'),
+(32, 'ATH-G1', 'ATH-G1_b.jpg', 8, 'audio-technica', '1', 6000, 56, 395, 3, 0, '遊戲專用耳機麥克風組 承繼針對專業取向的耳機與麥克風的設計概念 出乎想像的深入遊戲體驗', '2020-05-05 23:14:00', '2020-05-05 23:14:00'),
+(33, 'ATH-G1WL', 'ATH-G1WL.jpg', 8, 'audio-technica', '2', 9900, 98, 279, 3, 0, '遊戲專用無線耳機麥克風組 承繼針對專業取向的耳機與麥克風的設計概念 出乎想像的深入遊戲體驗', '2020-05-06 23:14:00', '2020-05-06 23:14:00'),
+(34, 'ATH-AWKT', 'ATH-AWKT.jpg', 8, 'audio-technica', '1', 54700, 137, 395, 3, 0, '沉浸於黑檀演奏的優雅樂音 傳統的木製機殼耳機', '2020-05-07 23:14:00', '2020-05-07 23:14:00'),
+(35, 'ATH-AWAS', 'ATH-AWAS.jpg', 1, 'audio-technica', '1', 38900, 56, 123, 3, 0, '墜入淺田櫻的自然聲響之中 革新的木製機殼耳機', '2020-05-08 23:14:00', '2020-05-08 23:14:00'),
+(36, 'ATH-L5000', 'ATH-L5000_img01_550.jpg', 3, 'audio-technica', '1', 138500, 98, 279, 3, 0, '聲音與皮革， 匠人極致工藝的傳奇聯名再次降臨。', '2020-05-09 23:14:00', '2020-05-09 23:14:00'),
+(37, 'ATH-W5000', 'ATH-W5000_550.jpg', 8, 'audio-technica', '1', 39800, 137, 123, 3, 0, '機殼採用音響特性非常優越的天然條紋黑檀木材', '2020-05-10 23:14:00', '2020-05-10 23:14:00'),
+(38, 'ATH-A2000Z', 'ATH-A2000Z.jpg', 7, 'audio-technica', '1', 27500, 56, 395, 3, 0, '密閉式動圈型耳機 創造純淨至高音樂空間的一時之選', '2020-05-11 23:14:00', '2020-05-11 23:14:00'),
+(39, 'ATH-A1000Z', 'ATH-A1000Z.jpg', 1, 'audio-technica', '1', 17500, 98, 279, 3, 0, '密閉式動圈型耳機 前往未知的感動 精緻的聲音與重現力', '2020-05-12 23:14:00', '2020-05-12 23:14:00'),
+(40, 'ATH-A900Z', 'ATH-A900Z.jpg', 5, 'audio-technica', '1', 8750, 137, 395, 3, 0, '密閉式動圈型耳機 細微之處也毫無遺漏 呈現聲音的全貌', '2020-05-13 23:14:00', '2020-05-13 23:14:00'),
+(41, 'ATH-A500Z', 'ATH-A500Z.jpg', 8, 'audio-technica', '1', 4750, 56, 123, 3, 0, '密閉式動圈型耳機 纖細而豐富 傳統的監聽聲響', '2020-05-14 23:14:00', '2020-05-14 23:14:00'),
+(42, 'ATH-ANC500BT', 'ATH-ANC500BT_BK_03.jpg', 8, 'audio-technica', '2', 4000, 98, 279, 3, 0, '無線抗噪耳機 獨創主動式抗噪技術與藍牙無線技術，能有效隔絕環境噪音。', '2020-05-15 23:14:00', '2020-05-15 23:14:00'),
+(43, 'ATH-WS330BT', 'ATH-WS330BT_BK.jpg', 8, 'audio-technica', '2', 4200, 137, 123, 3, 0, '輕薄機身與厚實的低音 每天都想聆聽的 無線×耳罩式耳機', '2020-05-16 23:14:00', '2020-05-16 23:14:00'),
+(44, 'ATH-AP2000Ti', 'ATH-AP2000Ti_550.jpg', 8, 'audio-technica', '1', 46000, 56, 395, 3, 0, '連寂靜之處亦描繪於耳畔， 高精細度原音重現。', '2020-05-17 23:14:00', '2020-05-17 23:14:00'),
+(45, 'ATH-SR50', 'ATH-SR50_550.jpg', 8, 'audio-technica', '1', 6100, 98, 279, 3, 0, '讓你隨時隨處 體驗高解析音質的絕佳聽感', '2020-05-18 23:14:00', '2020-05-18 23:14:00'),
+(46, 'ATH-MSR7SE', 'ATH-MSR7SE_550.jpg', 5, 'audio-technica', '1', 9980, 137, 395, 3, 0, '承襲 MSR7 優異聲音表現，加以強化的限定版機種', '2020-05-19 23:14:00', '2020-05-19 23:14:00'),
+(47, 'ATH-MSR7', 'ATH-MSR7_BK.jpg', 8, 'audio-technica', '2', 10000, 56, 123, 3, 0, '集結獨創的音響技術 鉅細靡遺傳遞真實音色的高解析度', '2020-05-20 23:14:00', '2020-05-20 23:14:00'),
+(48, 'ATH-SR9', 'SR9_2_1.jpg', 7, 'audio-technica', '1', 20000, 98, 279, 3, 0, '繼往開來的獨家音響設計，實現純正的高解析音質播放', '2020-05-21 23:14:00', '2020-05-21 23:14:00'),
+(49, 'ATH-AR5_BK', 'AR5_BK.jpg', 8, 'audio-technica', '1', 5600, 137, 123, 3, 0, '高解析音質播放，忠實重現原音', '2020-05-22 23:14:00', '2020-05-22 23:14:00'),
+(50, 'ATH-AR5_RD', 'AR5_RD.jpg', 1, 'audio-technica', '1', 5600, 56, 395, 3, 0, '高解析音質播放，忠實重現原音', '2020-05-23 23:14:00', '2020-05-23 23:14:00'),
+(51, 'ATH-AR3_RD', 'ATH-AR3_RD_1.jpg', 1, 'audio-technica', '1', 2400, 98, 279, 3, 0, '播放鮮明聲響的高音質表現', '2020-05-24 23:14:00', '2020-05-24 23:14:00'),
+(52, 'ATH-AR3_BL', 'ATH-AR3_BL_1.jpg', 5, 'audio-technica', '1', 2400, 137, 395, 3, 0, '播放鮮明聲響的高音質表現', '2020-05-25 23:14:00', '2020-05-25 23:14:00'),
+(53, 'ATH-AR3_BK', 'ATH-AR3_BK_1.jpg', 8, 'audio-technica', '1', 2400, 56, 123, 3, 0, '播放鮮明聲響的高音質表現', '2020-05-26 23:14:00', '2020-05-26 23:14:00'),
+(54, 'ATH-AR3_WH', 'ATH-AR3_WH_1.jpg', 9, 'audio-technica', '1', 2400, 98, 279, 3, 0, '播放鮮明聲響的高音質表現', '2020-05-27 23:14:00', '2020-05-27 23:14:00'),
+(55, 'ATH-AR1_RD', 'AR1_RD_1_1.jpg', 1, 'audio-technica', '1', 1600, 137, 123, 3, 0, '輕量&小型化仍具備強而有力音效', '2020-05-28 23:14:00', '2020-05-28 23:14:00'),
+(56, 'ATH-AR1_BL', 'AR1_BL_1_1.jpg', 5, 'audio-technica', '1', 1600, 56, 395, 3, 0, '輕量&小型化仍具備強而有力音效', '2020-05-29 23:14:00', '2020-05-29 23:14:00'),
+(57, 'ATH-AR1_BK', 'AR1_BK_1_1.jpg', 8, 'audio-technica', '1', 1600, 98, 279, 3, 0, '輕量&小型化仍具備強而有力音效', '2020-05-30 23:14:00', '2020-05-30 23:14:00'),
+(58, 'ATH-AR1_WH', 'AR1_WH_1_1.jpg', 9, 'audio-technica', '1', 1600, 137, 395, 3, 0, '輕量&小型化仍具備強而有力音效', '2020-05-31 23:14:00', '2020-05-31 23:14:00'),
+(59, 'ATH-S100iS_BBL', 'ATH-S100iS_BBL_550.jpg', 5, 'audio-technica', '1', 1200, 56, 123, 3, 0, '最適合上街使用的單邊出線風格 可體驗通話與操作樂趣的智慧型手機支援機種', '2020-06-01 23:14:00', '2020-06-01 23:14:00'),
+(60, 'ATH-S100iS_BGR', 'ATH-S100iS_BGR_550.jpg', 3, 'audio-technica', '1', 1200, 98, 279, 3, 0, '最適合上街使用的單邊出線風格 可體驗通話與操作樂趣的智慧型手機支援機種', '2020-06-02 23:14:00', '2020-06-02 23:14:00');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `items_color`
+-- 表的结构 `items_color`
 --
 
 CREATE TABLE `items_color` (
@@ -81,7 +123,7 @@ CREATE TABLE `items_color` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='顏色區分表';
 
 --
--- Dumping data for table `items_color`
+-- 转存表中的数据 `items_color`
 --
 
 INSERT INTO `items_color` (`coid`, `colorname`, `colorunicode`) VALUES
@@ -98,7 +140,7 @@ INSERT INTO `items_color` (`coid`, `colorname`, `colorunicode`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `items_type`
+-- 表的结构 `items_type`
 --
 
 CREATE TABLE `items_type` (
@@ -107,7 +149,7 @@ CREATE TABLE `items_type` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='類型表';
 
 --
--- Dumping data for table `items_type`
+-- 转存表中的数据 `items_type`
 --
 
 INSERT INTO `items_type` (`typeid`, `typename`) VALUES
@@ -125,7 +167,7 @@ INSERT INTO `items_type` (`typeid`, `typename`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `manager`
+-- 表的结构 `manager`
 --
 
 CREATE TABLE `manager` (
@@ -134,12 +176,12 @@ CREATE TABLE `manager` (
   `pwd` char(40) COLLATE utf8mb4_unicode_ci NOT NULL COMMENT '管理者密碼',
   `name` varchar(50) COLLATE utf8mb4_unicode_ci DEFAULT NULL COMMENT '姓名',
   `managericon` varchar(30) COLLATE utf8mb4_unicode_ci NOT NULL COMMENT '管理者頭像',
-  `created_at` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT '新增時間',
-  `updated_at` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT '更新時間'
+  `created_at` datetime NOT NULL DEFAULT current_timestamp() COMMENT '新增時間',
+  `updated_at` datetime NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp() COMMENT '更新時間'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='使用者資料表';
 
 --
--- Dumping data for table `manager`
+-- 转存表中的数据 `manager`
 --
 
 INSERT INTO `manager` (`mid`, `managername`, `pwd`, `name`, `managericon`, `created_at`, `updated_at`) VALUES
@@ -148,21 +190,21 @@ INSERT INTO `manager` (`mid`, `managername`, `pwd`, `name`, `managericon`, `crea
 -- --------------------------------------------------------
 
 --
--- Table structure for table `multiple_images`
+-- 表的结构 `multiple_images`
 --
 
 CREATE TABLE `multiple_images` (
   `multipleImageId` int(11) NOT NULL COMMENT '流水號',
   `multipleImageImg` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL COMMENT '圖片名稱',
   `itemId` int(11) NOT NULL COMMENT '商品編號',
-  `created_at` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT '新增時間',
-  `updated_at` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT '更新時間'
+  `created_at` datetime NOT NULL DEFAULT current_timestamp() COMMENT '新增時間',
+  `updated_at` datetime NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp() COMMENT '更新時間'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='商品圖片';
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `orders`
+-- 表的结构 `orders`
 --
 
 CREATE TABLE `orders` (
@@ -173,12 +215,12 @@ CREATE TABLE `orders` (
   `payment` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '等待付款' COMMENT '付款狀態',
   `delivery` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '未出貨' COMMENT '配送狀態',
   `orderRemark` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL COMMENT '訂單備註',
-  `created_at` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT '新增時間',
-  `updated_at` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT '更新時間'
+  `created_at` datetime NOT NULL DEFAULT current_timestamp() COMMENT '新增時間',
+  `updated_at` datetime NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp() COMMENT '更新時間'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='結帳資料表';
 
 --
--- Dumping data for table `orders`
+-- 转存表中的数据 `orders`
 --
 
 INSERT INTO `orders` (`orderId`, `username`, `itemId`, `paymentTypeId`, `payment`, `delivery`, `orderRemark`, `created_at`, `updated_at`) VALUES
@@ -206,19 +248,19 @@ INSERT INTO `orders` (`orderId`, `username`, `itemId`, `paymentTypeId`, `payment
 -- --------------------------------------------------------
 
 --
--- Table structure for table `payment_types`
+-- 表的结构 `payment_types`
 --
 
 CREATE TABLE `payment_types` (
   `paymentTypeId` int(11) NOT NULL COMMENT '流水號',
   `paymentTypeName` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL COMMENT '付款方式名稱',
   `paymentTypeImg` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL COMMENT '付款方式圖片名稱',
-  `created_at` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT '新增時間',
-  `updated_at` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT '更新時間'
+  `created_at` datetime NOT NULL DEFAULT current_timestamp() COMMENT '新增時間',
+  `updated_at` datetime NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp() COMMENT '更新時間'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='付款方式';
 
 --
--- Dumping data for table `payment_types`
+-- 转存表中的数据 `payment_types`
 --
 
 INSERT INTO `payment_types` (`paymentTypeId`, `paymentTypeName`, `paymentTypeImg`, `created_at`, `updated_at`) VALUES
@@ -229,7 +271,7 @@ INSERT INTO `payment_types` (`paymentTypeId`, `paymentTypeName`, `paymentTypeImg
 -- --------------------------------------------------------
 
 --
--- Table structure for table `stores`
+-- 表的结构 `stores`
 --
 
 CREATE TABLE `stores` (
@@ -238,31 +280,32 @@ CREATE TABLE `stores` (
   `storeLogo` varchar(100) COLLATE utf8mb4_unicode_ci DEFAULT NULL COMMENT '商場圖片',
   `storeDescription` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL COMMENT '商場介紹',
   `storeItemsId` tinyint(10) DEFAULT NULL COMMENT '賣場商品編號',
-  `storeOpened` tinyint(10) NOT NULL DEFAULT '1' COMMENT '商場權限',
-  `createTime` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT '新增時間',
-  `updateTime` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT '更新時間'
+  `storeOpened` tinyint(10) NOT NULL DEFAULT 1 COMMENT '商場權限',
+  `createTime` datetime NOT NULL DEFAULT current_timestamp() COMMENT '新增時間',
+  `updateTime` datetime NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp() COMMENT '更新時間'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Dumping data for table `stores`
+-- 转存表中的数据 `stores`
 --
 
 INSERT INTO `stores` (`storeId`, `storeName`, `storeLogo`, `storeDescription`, `storeItemsId`, `storeOpened`, `createTime`, `updateTime`) VALUES
 (1, '小豬豬耳機專賣店', '', '小豬豬耳機專賣店,真誠歡迎你！', 1, 1, '2020-05-01 17:27:13', '2020-05-04 22:52:32'),
 (2, '鳳梨耳機專賣店', '', '鳳梨耳機專賣店,真誠歡迎你！', 2, 1, '2020-05-01 17:27:13', '2020-05-02 03:15:22'),
-(3, '小蘋果的耳機店', '', '小蘋果的耳機店，歡迎光臨', 13, 1, '2020-05-03 23:49:28', '2020-05-03 23:56:51'),
-(4, '小凤梨的耳機店', '', '小凤梨的耳機店', 3, 1, '2020-05-04 10:31:25', '2020-05-04 23:59:05'),
-(5, '測試', 'item_20200504150007.png', '測試', 3, 1, '2020-05-04 23:00:07', '2020-05-04 23:00:07');
+(3, '小蘋果的耳機店', '20200505064543_apple.png', '小蘋果的耳機店，歡迎光臨', 13, 1, '2020-05-03 23:49:28', '2020-05-05 12:45:43'),
+(4, '小凤梨的耳機店', '20200505064504_apple.png', '小凤梨的耳機店', 3, 1, '2020-05-04 10:31:25', '2020-05-05 12:45:04'),
+(5, '測試', 'item_20200504150007.png', '測試', 3, 1, '2020-05-04 23:00:07', '2020-05-05 15:26:13'),
+(7, '小猫耳机', 'item_20200505092947.png', '小猫耳机', 5, 1, '2020-05-05 15:29:47', '2020-05-05 15:29:47');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `users`
+-- 表的结构 `users`
 --
 
 CREATE TABLE `users` (
   `id` int(11) NOT NULL COMMENT '流水號',
-  `username` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL COMMENT '使用者名稱',
+  `username` varchar(50) COLLATE utf8mb4_unicode_ci DEFAULT NULL COMMENT '使用者名稱',
   `pwd` char(40) COLLATE utf8mb4_unicode_ci NOT NULL COMMENT '使用者密碼',
   `name` varchar(50) COLLATE utf8mb4_unicode_ci DEFAULT NULL COMMENT '姓名',
   `gender` varchar(1) COLLATE utf8mb4_unicode_ci NOT NULL COMMENT '性別',
@@ -271,22 +314,22 @@ CREATE TABLE `users` (
   `card` text COLLATE utf8mb4_unicode_ci NOT NULL COMMENT '信用卡號碼',
   `birthday` date NOT NULL COMMENT '出生年月日',
   `address` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL COMMENT '地址',
-  `created_at` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT '新增時間',
-  `updated_at` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT '更新時間',
-  `isActivated` int(5) NOT NULL DEFAULT '0' COMMENT '賣家開通狀況',
-  `shopopen` tinyint(1) NOT NULL DEFAULT '0' COMMENT '賣場開通狀況'
+  `created_at` datetime NOT NULL DEFAULT current_timestamp() COMMENT '新增時間',
+  `updated_at` datetime NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp() COMMENT '更新時間',
+  `isActivated` int(5) NOT NULL DEFAULT 0 COMMENT '賣家開通狀況',
+  `shopopen` tinyint(1) NOT NULL DEFAULT 0 COMMENT '賣場開通狀況'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='使用者資料表';
 
 --
--- Dumping data for table `users`
+-- 转存表中的数据 `users`
 --
 
 INSERT INTO `users` (`id`, `username`, `pwd`, `name`, `gender`, `userlogo`, `phoneNumber`, `card`, `birthday`, `address`, `created_at`, `updated_at`, `isActivated`, `shopopen`) VALUES
-(1, 's001', 'a0147258', '楊OO', '2', '20200504043557.jpg', '0955582026', '1234-5555-8448-8888', '2020-01-17', '台北市中山區林森北路1號', '2020-04-26 15:17:44', '2020-05-04 22:52:03', 1, 1),
+(1, 's001', 'a0147258', '楊OO', '2', '20200504043557.jpg', '0955582026', '1234-5555-8448-8888', '2020-01-17', '台北市中山區林森北路1號', '2020-04-26 15:17:44', '2020-05-05 15:08:43', 1, 1),
 (2, 's002', 'a0147258', '楊XX', '1', '20200501171139.jpg', '0956569420', '3334-4455-8888-8888', '2020-04-15', '台北市中山區林森北路2號', '2020-04-26 15:20:56', '2020-05-04 15:48:37', 1, 1),
-(3, 's003', 'a0147258', '楊OX', '1', '20200501171150.jpg', '0928251686', '5234-5555-8888-8888', '2020-04-01', '台北市中山區林森北路3號', '2020-04-26 15:24:18', '2020-05-04 23:59:32', 1, 1),
+(3, 's003', 'a0147258', '楊OX', '1', '20200501171150.jpg', '0928251686', '5234-5555-8888-8888', '2020-04-01', '台北市中山區林森北路3號', '2020-04-26 15:24:18', '2020-05-05 16:51:49', 1, 1),
 (4, 's004', 'a0147258', '楊XO', '1', '20200501171206.jpg', '0918427269', '8834-5985-8888-8888', '2020-04-15', '台北市中山區林森北路3號', '2020-04-26 15:24:18', '2020-05-04 15:45:32', 1, 1),
-(5, 's005', '0147258', '黃OO', '2', '20200504043557.jpg', '0926392143', '9934-5555-8888-8888', '2020-04-02', '台北市中山區林森北路5號', '2020-04-26 15:33:12', '2020-05-04 10:46:00', 0, 0),
+(5, 's005', '0147258', '黃OO', '2', '20200504043557.jpg', '0926392143', '9934-5555-8888-8888', '2020-04-02', '台北市中山區林森北路5號', '2020-04-26 15:33:12', '2020-05-05 15:30:20', 1, 1),
 (6, 's006', '0147258', '黃XX', '2', '20200501171229.jpg', '0952153427', '5534-5555-8888-8888', '2020-04-17', '台北市中山區林森北路6號', '2020-04-26 15:33:12', '2020-05-01 23:12:29', 0, 0),
 (7, 's007', '0147258', '黃XO', '2', '20200501171239.jpg', '0956754756', '4434-5555-8888-8888', '2020-04-18', '台北市中山區林森北路7號', '2020-04-26 15:33:12', '2020-05-01 23:12:39', 0, 0),
 (8, 's008', '0147258', '黃OX', '2', '20200501171256.jpg', '0920602202', '8834-5555-8888-8888', '2020-04-11', '台北市中山區林森北路8號', '2020-04-26 15:33:12', '2020-05-01 23:12:56', 0, 0),
@@ -304,122 +347,123 @@ INSERT INTO `users` (`id`, `username`, `pwd`, `name`, `gender`, `userlogo`, `pho
 (20, 's020', 'aa945', '林OO', '2', '12.jpg', '0955666888', '1234-5665-1788-2258', '2020-05-03', '台北市中山區林森北路20號', '2020-05-01 19:58:32', '2020-05-02 11:39:22', 0, 0);
 
 --
--- Indexes for dumped tables
+-- 转储表的索引
 --
 
 --
--- Indexes for table `items`
+-- 表的索引 `items`
 --
 ALTER TABLE `items`
   ADD PRIMARY KEY (`itemId`);
 
 --
--- Indexes for table `items_color`
+-- 表的索引 `items_color`
 --
 ALTER TABLE `items_color`
   ADD PRIMARY KEY (`coid`);
 
 --
--- Indexes for table `items_type`
+-- 表的索引 `items_type`
 --
 ALTER TABLE `items_type`
   ADD PRIMARY KEY (`typeid`);
 
 --
--- Indexes for table `manager`
+-- 表的索引 `manager`
 --
 ALTER TABLE `manager`
   ADD PRIMARY KEY (`mid`),
   ADD UNIQUE KEY `username` (`managername`);
 
 --
--- Indexes for table `multiple_images`
+-- 表的索引 `multiple_images`
 --
 ALTER TABLE `multiple_images`
   ADD PRIMARY KEY (`multipleImageId`);
 
 --
--- Indexes for table `orders`
+-- 表的索引 `orders`
 --
 ALTER TABLE `orders`
   ADD PRIMARY KEY (`orderId`);
 
 --
--- Indexes for table `payment_types`
+-- 表的索引 `payment_types`
 --
 ALTER TABLE `payment_types`
   ADD PRIMARY KEY (`paymentTypeId`);
 
 --
--- Indexes for table `stores`
+-- 表的索引 `stores`
 --
 ALTER TABLE `stores`
   ADD PRIMARY KEY (`storeId`);
 
 --
--- Indexes for table `users`
+-- 表的索引 `users`
 --
 ALTER TABLE `users`
   ADD PRIMARY KEY (`id`),
   ADD UNIQUE KEY `username` (`username`);
 
 --
--- AUTO_INCREMENT for dumped tables
+-- 在导出的表使用AUTO_INCREMENT
 --
 
 --
--- AUTO_INCREMENT for table `items`
+-- 使用表AUTO_INCREMENT `items`
 --
 ALTER TABLE `items`
-  MODIFY `itemId` int(11) NOT NULL AUTO_INCREMENT COMMENT '流水號', AUTO_INCREMENT=30;
+  MODIFY `itemId` int(11) NOT NULL AUTO_INCREMENT COMMENT '流水號', AUTO_INCREMENT=61;
 
 --
--- AUTO_INCREMENT for table `items_color`
+-- 使用表AUTO_INCREMENT `items_color`
 --
 ALTER TABLE `items_color`
   MODIFY `coid` tinyint(20) NOT NULL AUTO_INCREMENT COMMENT '顏色號碼', AUTO_INCREMENT=10;
 
 --
--- AUTO_INCREMENT for table `items_type`
+-- 使用表AUTO_INCREMENT `items_type`
 --
 ALTER TABLE `items_type`
   MODIFY `typeid` tinyint(10) NOT NULL AUTO_INCREMENT COMMENT '類型編號', AUTO_INCREMENT=11;
 
 --
--- AUTO_INCREMENT for table `manager`
+-- 使用表AUTO_INCREMENT `manager`
 --
 ALTER TABLE `manager`
   MODIFY `mid` int(11) NOT NULL AUTO_INCREMENT COMMENT '流水號', AUTO_INCREMENT=2;
 
 --
--- AUTO_INCREMENT for table `multiple_images`
+-- 使用表AUTO_INCREMENT `multiple_images`
 --
 ALTER TABLE `multiple_images`
   MODIFY `multipleImageId` int(11) NOT NULL AUTO_INCREMENT COMMENT '流水號';
 
 --
--- AUTO_INCREMENT for table `orders`
+-- 使用表AUTO_INCREMENT `orders`
 --
 ALTER TABLE `orders`
   MODIFY `orderId` int(11) NOT NULL AUTO_INCREMENT COMMENT '訂單編號', AUTO_INCREMENT=21;
 
 --
--- AUTO_INCREMENT for table `payment_types`
+-- 使用表AUTO_INCREMENT `payment_types`
 --
 ALTER TABLE `payment_types`
   MODIFY `paymentTypeId` int(11) NOT NULL AUTO_INCREMENT COMMENT '流水號', AUTO_INCREMENT=4;
 
 --
--- AUTO_INCREMENT for table `stores`
+-- 使用表AUTO_INCREMENT `stores`
 --
 ALTER TABLE `stores`
-  MODIFY `storeId` int(11) NOT NULL AUTO_INCREMENT COMMENT '商場編號', AUTO_INCREMENT=7;
+  MODIFY `storeId` int(11) NOT NULL AUTO_INCREMENT COMMENT '商場編號', AUTO_INCREMENT=8;
 
 --
--- AUTO_INCREMENT for table `users`
+-- 使用表AUTO_INCREMENT `users`
 --
 ALTER TABLE `users`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT COMMENT '流水號', AUTO_INCREMENT=21;
+COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;

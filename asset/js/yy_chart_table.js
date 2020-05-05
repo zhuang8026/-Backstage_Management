@@ -37,10 +37,10 @@ function createHighcharts(data) {
     
     Highcharts.chart("chart", {
         title: {
-            text: "產品分析圖"
+            text: "商場資料分析圖"
         },
         subtitle: {
-            text: "產品訊息顯示"
+            text: "商場訊息顯示"
         },
         xAxis: [
         {

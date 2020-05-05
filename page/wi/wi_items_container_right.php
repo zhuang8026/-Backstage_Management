@@ -103,7 +103,7 @@
                 <td><?= $arr[$i]['itemsstar']; ?></td>
                 <td><?= $arr[$i]['itemsales']; ?></td>
 
-                <?php if($arr[$i]['itemstoreNumber'] !== NULL): ?>
+                <?php if($arr[$i]['itemstoreNumber'] !== 0): ?>
                     <td><?= $arr[$i]['username']; ?></td>
                     <td><?= $arr[$i]['name']; ?></td>
                 <?php else: ?>
