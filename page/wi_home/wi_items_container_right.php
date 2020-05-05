@@ -158,7 +158,8 @@
                                 <p>2. 登入功能講解</p>
                                 <p>3. 首頁管理界面講解</p>
                                 <p>4. 產品管理講解</p>
-                                <p>5. 其餘管理功能協助</p>
+                                <p>5. 全部管理功能協助</p>
+                                <p>6. 後台整合 & API串接</p>
                             </div>
                         </div>
                     </div>
@@ -214,34 +215,97 @@
         <section class='statis text-center'>
             <div class="container-fluid">
                 <div class="row">
-                <div class="col-md-3">
-                    <div class="box bg-primary">
-                    <i class="fa fa-eye"></i>
-                    <h3>5,154</h3>
-                    <p class="lead">Page views</p>
+
+                    <div class="col-md-3">
+                        <div class="box bg-primary">
+                        <i class="fas fa-dollar-sign"></i>
+                        <?php
+                            $sql = "SELECT SUM(`itemPrice`) FROM `items`";
+                            $stmtpro = $pdo->prepare($sql);
+                            $stmtpro->execute();
+                            if($stmtpro->rowCount() > 0):
+                                $stmtAll = $stmtpro->fetchAll(PDO::FETCH_ASSOC)[0]; 
+                        ?>
+                        <h3><?= number_format($stmtAll["SUM(`itemPrice`)"]); ?> / NT</h3>
+
+                        <?php endif; ?>
+                        <p class="lead">Total cost / 總金額</p>
+                        </div>
                     </div>
-                </div>
-                <div class="col-md-3">
-                    <div class="box danger">
-                    <i class="fa fa-user-o"></i>
-                    <h3>245</h3>
-                    <p class="lead">User registered</p>
+
+                    <div class="col-md-3">
+                        <div class="box danger">
+                        <i class="fas fa-dollar-sign"></i>
+                        <?php
+                            $sql = "SELECT SUM(`items`.`itemPrice`)
+                            FROM `orders`
+                            LEFT JOIN `items`
+                            ON `orders`.`itemId` = `items`.`itemId`
+                            LEFT JOIN `stores`
+                            ON `stores`.`storeItemsId` = `items`.`itemstoreNumber`
+                            LEFT JOIN `payment_types`
+                            ON `orders`.`paymentTypeId` = `payment_types`.`paymentTypeId`
+                            WHERE `orders`.`payment` = '已付款'
+                            AND `orders`.`delivery` = '已送達'";
+                            $stmtpro = $pdo->prepare($sql);
+                            $stmtpro->execute();
+                            if($stmtpro->rowCount() > 0):
+                                $stmtAll = $stmtpro->fetchAll(PDO::FETCH_ASSOC)[0]; 
+                        ?>
+                        <h3><?= number_format($stmtAll["SUM(`items`.`itemPrice`)"]); ?> / NT</h3>
+                        <?php endif; ?>
+                        <p class="lead">OTIS Income / 今日收益</p>
+                        </div>
                     </div>
-                </div>
-                <div class="col-md-3">
-                    <div class="box warning">
-                    <i class="fa fa-shopping-cart"></i>
-                    <h3>5,154</h3>
-                    <p class="lead">Product sales</p>
+
+                    <div class="col-md-3">
+                        <div class="box warning">
+                        <i class="fa fa-shopping-cart"></i>
+                        <?php
+                            $sql = "SELECT COUNT(`orders`.`orderId`)
+                            FROM `orders`
+                            LEFT JOIN `items`
+                            ON `orders`.`itemId` = `items`.`itemId`
+                            LEFT JOIN `stores`
+                            ON `stores`.`storeItemsId` = `items`.`itemstoreNumber`
+                            LEFT JOIN `payment_types`
+                            ON `orders`.`paymentTypeId` = `payment_types`.`paymentTypeId`
+                            ORDER BY `orders`.`orderId` ASC";
+                            $stmtpro = $pdo->prepare($sql);
+                            $stmtpro->execute();
+                            if($stmtpro->rowCount() > 0):
+                                $stmtAll = $stmtpro->fetchAll(PDO::FETCH_ASSOC)[0]; 
+                        ?>
+                        <h3><?= number_format($stmtAll["COUNT(`orders`.`orderId`)"]); ?> / price</h3>
+                        <?php endif; ?>
+                        <p class="lead">Order quantity / 訂單數量</p>
+                        </div>
                     </div>
-                </div>
-                <div class="col-md-3">
-                    <div class="box success">
-                    <i class="fa fa-handshake-o"></i>
-                    <h3>5,154</h3>
-                    <p class="lead">Transactions</p>
+                    
+                    <div class="col-md-3">
+                        <div class="box success">
+                        <i class="fa fa-handshake-o"></i>
+                        <?php
+                            $sql = " SELECT COUNT(`orders`.`orderId`)
+                            FROM `orders`
+                            LEFT JOIN `items`
+                            ON `orders`.`itemId` = `items`.`itemId`
+                            LEFT JOIN `stores`
+                            ON `stores`.`storeItemsId` = `items`.`itemstoreNumber`
+                            LEFT JOIN `payment_types`
+                            ON `orders`.`paymentTypeId` = `payment_types`.`paymentTypeId`
+                            WHERE `orders`.`payment` = '已付款'
+                            AND `orders`.`delivery` = '已送達'";
+                            $stmtpro = $pdo->prepare($sql);
+                            $stmtpro->execute();
+                            if($stmtpro->rowCount() > 0):
+                                $stmtAll = $stmtpro->fetchAll(PDO::FETCH_ASSOC)[0]; 
+                        ?>
+                        <h3><?= number_format($stmtAll["COUNT(`orders`.`orderId`)"]); ?> / price</h3>
+                        <?php endif; ?>
+                        <p class="lead">paymented / 已結帳數量</p>
+                        </div>
                     </div>
-                </div>
                 </div>
             </div>
         </section>
