@@ -53,7 +53,7 @@
         <li>
             <i class="fas fa-bullhorn"></i><a href="#"> Marketing / 行銷</a>
             <ul class="side-nav-dropdown">
-                <li><a href="../hong/h_orders_index.php">Search / 查看</a></li>
+                <li><a href="../activity/ac_index.php">Search / 查看</a></li>
             </ul>
         </li>
         

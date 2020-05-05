@@ -9,15 +9,16 @@
                         <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
                     </div>
                     <div class="modal-body">
-                        <div class="form-group">
+                        <!-- <div class="form-group">
                             <label>賣家</label>
                             <select name="sellersId" required class="form-control" id="sellersId">
                             <?php
-                                $sql = "SELECT `id`, `username`, `name`
+                                $sql = "SELECT `id`, `username`, `name`,`stores`.`storeName`
                                         FROM `users` 
                                         LEFT JOIN `stores`
                                         ON `users`.`id` = `stores`.`storeId`
-                                        WHERE `isActivated` = 1";
+                                        WHERE `isActivated` = 1
+                                        AND `storeOpened` = 1";
                                 $stmt = $pdo->prepare($sql);
                                 $stmt->execute();
                                 if($stmt->rowCount() > 0):
@@ -28,15 +29,28 @@
                                 <?php endfor; ?>
                             <?php endif; ?>
                             </select>
-                        </div>
+                        </div> -->
                         <div class="form-group">
-                            <label>賣場</label>
-                            <input type="text" name="storeName" id="storeName" class="form-control" required>
+                            <label>賣場名稱</label>
+                            <select name="storeId" required class="form-control" id="storeId">
+                            <?php
+                            $sql = "SELECT  `storeId`,`storeName`
+                            FROM `stores` ";
+                    $stmt = $pdo->prepare($sql);
+                    $stmt->execute();
+                    if($stmt->rowCount() > 0):
+                        $arr = $stmt->fetchAll(PDO::FETCH_ASSOC);
+                                    for($i = 0; $i < count($arr); $i++):
+                            ?>
+                                <option value="<?= $arr[$i]['storeId']; ?>" class="form-control" class="form-control">賣場名稱: <?= $arr[$i]['storeName'] ?>|｜賣場ID: <?= $arr[$i]['storeId'] ?></option>
+                                <?php endfor; ?>
+                            <?php endif; ?>
+                            </select>
                         </div>
-                        <div class="form-group">
+                        <!-- <div class="form-group">
                             <label>活動ID</label>
                             <input type="text" name="acId" id="acId" class="form-control" required>
-                        </div>
+                        </div> -->
                         <div class="form-group">
                             <label >活動名稱</label>
                             <input type="text" name="acName" id="acName" class="form-control" required>
@@ -71,10 +85,6 @@
 
                     <div class="modal-body">
                         <div class="form-group">
-                            <label>活動ID</label>
-                            <input type="text" class="form-control" required name="acId_e" id="acId_e" value="">
-                        </div>
-                        <div class="form-group">
                             <label>活動名稱</label>
                             <input type="text" class="form-control" required name="acName_e" id="acName_e" value="" >
                         </div>
@@ -86,14 +96,6 @@
                             <label>活動圖片</label>
                             <img id="acImg_d_img" src=""/>
                             <input type="file" class="form-control" name="acImg_e" value="" id="acImg_e">
-                        </div>
-                        <div class="form-group">
-                            <label>賣家編號</label>
-                            <input type="text" class="form-control" required name="sellerId_e" id="sellerId_e" value="" >
-                        </div>
-                        <div class="form-group">
-                            <label>創建者</label>
-                            <input type="text" class="form-control" required name="founder_e" id="founder_e" value="" >
                         </div>
                     </div>
                     <div class="modal-footer">

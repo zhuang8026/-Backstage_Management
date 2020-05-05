@@ -8,9 +8,9 @@ require_once('../checkSession.php');
 require_once('../db.inc.php');
 
 //SQL 敘述
-$sql = "INSERT INTO `marketing` 
-        ( `acId`, `acName`, `acDescription`, `acImg`, `sellerId`, `founder`) 
-        VALUES (?, ?, ?, ?, ?, ?)";
+$sql = "INSERT INTO`marketing`(`acName`, `acDescription`, `acImg`,`strId`)
+        VALUES ( ?, ?, ?,?)";
+
 
 if( $_FILES["acImg"]["error"] === 0 ) {
     //為上傳檔案命名
@@ -30,12 +30,10 @@ if( $_FILES["acImg"]["error"] === 0 ) {
     }
     //繫結用陣列
     $arr = [
-        $_POST['acId'],
         $_POST['acName'],
         $_POST['acDescription'],
         $acImg,
-        $_POST['sellerId'],
-        $_POST['founder']
+        $_POST['storeId']
     ];
     
     $pdo_stmt = $pdo->prepare($sql);
@@ -43,14 +41,14 @@ if( $_FILES["acImg"]["error"] === 0 ) {
     // print_r($sql);
     // exit();
     if($pdo_stmt->rowCount() === 1) {
-        header("Refresh: 3; url=../page/activity/ac_index.php");
+        header("Refresh: 0; url=../page/activity/ac_index.php");
         echo "新增成功";
     } else {
         header("Refresh: 1000; url=../page/activity/ac_index.php");
         echo "新增失敗";
     }
 }else{
-    header("Refresh: 3; url=../page/activity/ac_index.php");
+    header("Refresh: 0; url=../page/activity/ac_index.php");
         echo "請夾帶圖片";
 }
 
