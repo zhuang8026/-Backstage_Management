@@ -4,7 +4,7 @@
             <div class="col-sm-6 user_btn">
                 <!-- <img style="width: 47px; margin-right: 10px; border-radius: 2px;" src="../../asset/img/manangeicon.png" alt="管理者頭像"> -->
                 <h2>
-                    <b>Admin : <?= $_SESSION['username'] ?></b>
+                    <b>管理者 : <?= $_SESSION['username'] ?></b>
                 </h2>
                 <!-- <button>
                     <i class="fas fa-sign-out-alt"></i>
@@ -15,10 +15,10 @@
             <!-- 刪除 與 新增 -->
             <div class="col-sm-6">
                 <a href="#addEmployeeModal" class="btn btn-success" data-toggle="modal">
-                    <i class="material-icons">&#xE147;</i> <span>Add New Employee</span>
+                    <i class="material-icons">&#xE147;</i> <span>新增活動</span>
                 </a>
                 <a href="#deleteEmployeeModal_all" class="btn btn-danger" data-toggle="modal">
-                    <i class="material-icons" onClick="Delete_click_all()">&#xE15C;</i> <span>Delete</span>
+                    <i class="material-icons" onClick="Delete_click_all()">&#xE15C;</i> <span>刪除</span>
                 </a>
             </div>
         </div>
@@ -34,15 +34,15 @@
                         <label for="selectAll"></label>
                     </span>
                 </th>
-                <th>storeLogo</th>
-                <th>storeName</th>
-                <th>acId</th>
-                <th>acImg</th>
-                <th>acName</th>
-                <th>acDescription</th>
-                <th>newTime</th>
-                <th>updTime</th>
-                <th>Edit/Delete</th>
+                <th>賣場圖示</th>
+                <th>賣場名稱</th>
+                <th>活動編號</th>
+                <th>活動圖示</th>
+                <th>活動名稱</th>
+                <th>活動文案</th>
+                <th>新增時間</th>
+                <th>更新時間</th>
+                <th>編輯/刪除</th>
             </tr>
         </thead>
         <tbody>
