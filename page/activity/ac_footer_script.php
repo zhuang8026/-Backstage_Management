@@ -11,6 +11,7 @@
     <script src="../../asset/js/ac_javascript.js"></script>
     <script src="../../asset/js/ac_click_all.js"></script>
     <script src="../../asset/js/ac_dl.js"></script>
+    <script src="../../asset/js/0_allUse_function.js"></script>
 
     <!-- aos -->
     <script src="https://unpkg.com/aos@2.3.0/dist/aos.js"></script>

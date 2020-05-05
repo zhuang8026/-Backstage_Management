@@ -64,7 +64,7 @@ for($i = 0; $i < count($str_sec_2); $i++){
 // echo $count;
 // exit();
 if($count > 0) {
-    header("Refresh: 1; url=./k_member_index.php");
+    header("Refresh: 0; url=./k_member_index.php");
     echo "刪除成功";
 } else {
     header("Refresh: 1; url=./k_member_index.php");

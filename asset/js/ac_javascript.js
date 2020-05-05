@@ -183,42 +183,44 @@ $(document).ready(function(){
 });
 
 //js
-// function ac_add(id){
-//     let sellerOption = document.getElementById('sellerId').value;
-//     document.getElementById('storeId').value = sellerOption;
-    
-// }
 
 // 20200504-william-select to other select value 
-document.getElementById('sellersId').getElementsByTagName('option').addEventListener("click", (this)=>{
-    console.log(this);
-})
+// document.getElementById('sellersId').getElementsByTagName('option').addEventListener("click", (this)=>{
+//     console.log(this);
+// })
 
 function ac_edit(id){
     // console.log(id);
-    let acId = document.getElementsByClassName('acId'+id)[0].innerHTML;
-    document.querySelectorAll("input#acId_e")[0].value = acId;
+    // let acId = document.getElementsByClassName('acId'+id)[0].innerHTML;
+    // document.querySelectorAll("input#acId_e")[0].value = acId;
 
     let acName = document.getElementsByClassName('acName'+id)[0].innerHTML;
     document.querySelectorAll("input#acName_e")[0].value = acName;
 
     let acDescription = document.getElementsByClassName('acDescription'+id)[0].innerHTML;
     document.querySelectorAll("input#acDescription_e")[0].value = acDescription;
+
     let img_name =  $.trim($('.acImg'+id).eq(0).eq(0).children('img').attr('src'))
     $('#acId_input').val(id); // hidden id
     $('img#acImg_d_img').attr('src', img_name);
 
-    let sellerId = document.getElementsByClassName('sellerId'+id)[0].innerHTML;
-    document.querySelectorAll("input#sellerId_e")[0].value = sellerId;
+    // let username = document.getElementsByClassName('username'+id)[0].innerHTML;
+    // document.querySelectorAll("input#username_e")[0].value = username;
 
-    let founder = document.getElementsByClassName('founder'+id)[0].innerHTML;
-    document.querySelectorAll("input#founder_e")[0].value = founder;
+    // let founder = document.getElementsByClassName('founder'+id)[0].innerHTML;
+    // document.querySelectorAll("input#founder_e")[0].value = founder;
 
-    let newTime = document.getElementsByClassName('newTime'+id)[0].innerHTML;
-    document.querySelectorAll("input#newTime_e")[0].value = newTime;
+    // let storeImg = document.getElementsByClassName('storeImg'+id)[0].innerHTML;
+    // document.querySelectorAll("input#storeImg_e")[0].value = storeImg;
 
-    let updTime = document.getElementsByClassName('updTime'+id)[0].innerHTML;
-    document.querySelectorAll("input#updTime_e")[0].value = updTime;
+    // let storename = document.getElementsByClassName('storeName'+id)[0].innerHTML;
+    // document.querySelectorAll("input#storeName_e")[0].value = storename;
+
+    // let newTime = document.getElementsByClassName('newTime'+id)[0].innerHTML;
+    // document.querySelectorAll("input#newTime_e")[0].value = newTime;
+
+    // let updTime = document.getElementsByClassName('updTime'+id)[0].innerHTML;
+    // document.querySelectorAll("input#updTime_e")[0].value = updTime;
     
     document.querySelectorAll("input#acId_input")[0].value = id;
 }

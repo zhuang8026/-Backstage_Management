@@ -2,23 +2,23 @@
     <div class="table-title">
         <div class="row">
             <div class="col-sm-6 user_btn">
-                <img style="width: 47px; margin-right: 10px; border-radius: 2px;" src="../../asset/img/manangeicon.png" alt="管理者頭像">
+                <!-- <img style="width: 47px; margin-right: 10px; border-radius: 2px;" src="../../asset/img/manangeicon.png" alt="管理者頭像"> -->
                 <h2>
-                    <b>平台管理者 : <?= $_SESSION['username'] ?></b>
+                    <b>管理者 : <?= $_SESSION['username'] ?></b>
                 </h2>
-                <button>
+                <!-- <button>
                     <i class="fas fa-sign-out-alt"></i>
                     <a href="../../api/logout_api.php?logout=1">logout</a>
-                </button>
+                </button> -->
             </div>
             
             <!-- 刪除 與 新增 -->
             <div class="col-sm-6">
                 <a href="#addEmployeeModal" class="btn btn-success" data-toggle="modal">
-                    <i class="material-icons">&#xE147;</i> <span>Add New Employee</span>
+                    <i class="material-icons">&#xE147;</i> <span>新增活動</span>
                 </a>
                 <a href="#deleteEmployeeModal_all" class="btn btn-danger" data-toggle="modal">
-                    <i class="material-icons" onClick="Delete_click_all()">&#xE15C;</i> <span>Delete</span>
+                    <i class="material-icons" onClick="Delete_click_all()">&#xE15C;</i> <span>刪除</span>
                 </a>
             </div>
         </div>
@@ -34,33 +34,25 @@
                         <label for="selectAll"></label>
                     </span>
                 </th>
-                <th>acId</th>
-                <th>acName</th>
-                <th>acDescription</th>
-                <th>acImg</th>
-                <th>username</th>
-                <th>founder</th>
-                <th>storeId</th>
-                <th>storeName</th>
-                <th>newTime</th>
-                <th>updTime</th>
-                <th>Edit/Delete</th>
+                <th>賣場圖示</th>
+                <th>賣場名稱</th>
+                <th>活動編號</th>
+                <th>活動圖示</th>
+                <th>活動名稱</th>
+                <th>活動文案</th>
+                <th>新增時間</th>
+                <th>更新時間</th>
+                <th>編輯/刪除</th>
             </tr>
         </thead>
         <tbody>
             <!-- 模板 start-->
             <?php 
-                $sql = "SELECT `acId`, `acName`, `acDescription`, `acImg`,`sellerId`,`newTime`, `updTime`,
-                                `users`.`username`, `users`.`name`, 
-                                `stores`.`storeId`, `stores`.`storeName`,`stores`.`storeLogo`
-                        FROM `marketing`
-                        LEFT JOIN `users`
-                        ON `marketing`.`sellerId` = `users`.`id`
-                        LEFT JOIN `stores`
-                        ON `marketing`.`strId` = `stores`.`storeId`
-                        WHERE `users`.`isActivated` = 1
-                        AND `users`.`shopopen` = 1
-                        ORDER BY `acId` ASC";
+                $sql = "SELECT `acId`,  `stores`.`storeId`, `stores`.`storeName`,`stores`.`storeLogo`,`acName`, `acDescription`, `acImg`,`newTime`, `updTime` 
+                FROM `marketing` 
+                LEFT JOIN `stores` 
+                ON `marketing`.`strId` = `stores`.`storeId` 
+                ORDER BY `acId` ASC";
                 $stmt = $pdo->prepare($sql);
                 $stmt->execute(); 
 
@@ -79,26 +71,24 @@
                         <label for="checkbox1"></label>
                     </span>
                 </td>
-                <td class= "acId<?= $arr[$i]['acId']; ?>"><?= $arr[$i]['acId']; ?></td>
-                <td class= "acName<?= $arr[$i]['acId']; ?> style_acName"><?= $arr[$i]['acName']; ?></td>
-                <td class= "acDescription<?= $arr[$i]['acId']; ?> style"><?= $arr[$i]['acDescription']; ?></td>
-                <td class="acImg<?= $arr[$i]['acId']; ?>">
-                <?php if($arr[$i]['acImg'] !== ""): ?>
-                    <img src="../../asset/file_img/<?= $arr[$i]['acImg'];?>">
-                <?php else: ?>
-                    <img src="../../asset/img/404.jpg">
-                <?php endif; ?>
-            </td>
-                <td class= "username<?= $arr[$i]['acId']; ?>"><?= $arr[$i]['username']; ?></td>
-                <td class= "founder<?= $arr[$i]['acId']; ?>"><?= $arr[$i]['name']; ?></td>
                 <td class="storeLogo<?= $arr[$i]['acId']; ?>">
                     <?php if($arr[$i]['storeLogo'] !== ""): ?>
                         <img src="../../asset/file_img/<?= $arr[$i]['storeLogo'];?>">
                     <?php else: ?>
                         <img src="../../asset/img/404.jpg">
                     <?php endif; ?>
-                </td>>
+                </td>
                 <td class= "storeName<?= $arr[$i]['acId']; ?>"><?= $arr[$i]['storeName']; ?></td>
+                <td class= "acId<?= $arr[$i]['acId']; ?>"><?= $arr[$i]['acId']; ?></td>
+                <td class="acImg<?= $arr[$i]['acId']; ?>">
+                <?php if($arr[$i]['acImg'] !== ""): ?>
+                    <img src="../../asset/file_img/<?= $arr[$i]['acImg'];?>">
+                <?php else: ?>
+                    <img src="../../asset/img/404.jpg">
+                <?php endif; ?>
+                </td>
+                <td class= "acName<?= $arr[$i]['acId']; ?> style_acName"><?= $arr[$i]['acName']; ?></td>
+                <td class= "acDescription<?= $arr[$i]['acId']; ?> style"><?= $arr[$i]['acDescription']; ?></td>
                 <td><?= $arr[$i]['newTime']; ?></td>
                 <td><?= $arr[$i]['updTime']; ?></td>
                 <td>
