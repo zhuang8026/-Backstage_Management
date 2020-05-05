@@ -18,7 +18,7 @@ if( $_FILES["userlogo"]["error"] === 0 ) {
 
     //找出副檔名
     $extension = pathinfo($_FILES["userlogo"]["name"], PATHINFO_EXTENSION);
-  
+
     //建立完整名稱
     $imgFileName = $studentImg.".".$extension;
 
@@ -42,9 +42,9 @@ if( $_FILES["userlogo"]["error"] === 0 ) {
         $_POST['isActivated']
     ];
     
-    echo "<pre>";
-    print_r($arr);
-    exit();
+    // echo "<pre>";
+    // print_r($arr);
+    // exit();
 
     $pdo_stmt = $pdo->prepare($sql);
     $pdo_stmt->execute($arr);
