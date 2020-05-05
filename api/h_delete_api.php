@@ -15,9 +15,9 @@ $stmt->execute($arrParam);
 // echo $_POST['input_delete_id_h'];
 
 if ($stmt->rowCount() > 0) {
-    header("Refresh: 3; url=../page/hong/h_orders_index.php");
+    header("Refresh: 1; url=../page/hong/h_orders_index.php");
     echo "刪除成功";
 } else {
-    header("Refresh: 3; url=../page/hong/h_orders_index.php");
+    header("Refresh: 1; url=../page/hong/h_orders_index.php");
     echo "刪除失敗";
 }

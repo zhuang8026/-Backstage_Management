@@ -17,9 +17,9 @@ $sql = "INSERT INTO `orders`
     $pdo_stmt = $pdo->prepare($sql);
     $pdo_stmt->execute($arr);
  if ($pdo_stmt->rowCount() === 1) {
-     header("Refresh: 3; url=../page/hong/h_orders_index.php");
+     header("Refresh: 1; url=../page/hong/h_orders_index.php");
      echo "新增成功";
  } else {
-     header("Refresh: 3; url=../page/hong/h_orders_index.php");
+     header("Refresh: 1; url=../page/hong/h_orders_index.php");
      echo "新增失敗";
  }

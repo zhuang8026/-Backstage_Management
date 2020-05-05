@@ -1,16 +1,16 @@
 <div class="table-wrapper">
-        <div class="table-title">
-            <div class="row">
-                <div class="col-sm-6 user_btn">
-                    <img style="width: 47px; margin-right: 10px; border-radius: 2px;" src="../../asset/img/manangeicon.png" alt="管理者頭像">
-                    <h2>
-                        <b>平台管理者 : <?= $_SESSION['username'] ?></b>
-                    </h2>
-                    <button>
-                        <i class="fas fa-sign-out-alt"></i>
-                        <a href="../../api/logout_api.php?logout=1">logout</a>
-                    </button>
-                </div>
+    <div class="table-title">
+        <div class="row">
+            <div class="col-sm-6 user_btn">
+                <img style="width: 47px; margin-right: 10px; border-radius: 2px;" src="../../asset/img/manangeicon.png" alt="管理者頭像">
+                <h2>
+                    <b>平台管理者 : <?= $_SESSION['username'] ?></b>
+                </h2>
+                <button>
+                    <i class="fas fa-sign-out-alt"></i>
+                    <a href="../../api/logout_api.php?logout=1">logout</a>
+                </button>
+            </div>
 
             <!-- 刪除 與 新增 -->
             <div class="col-sm-6">
@@ -20,7 +20,7 @@
                 <a href="#deleteEmployeeModal_all" class="btn btn-danger" data-toggle="modal">
                     <i class="material-icons" onClick="Delete_click_all()">&#xE15C;</i> <span>Delete</span>
                 </a>
-            </div>s
+            </div>
         </div>
     </div>
     <!-- <div id="chart"></div> -->
@@ -79,20 +79,20 @@
                 for ($i = 0; $i < count($arr); $i++) {
             ?>
                     <tr>
-                    <td>
-                    <span class="custom-checkbox">
-                        <input type="checkbox" class="checkboxValue" id="checkbox<?= $arr[$i]['orderId']; ?>" name="options[]" value="<?= $arr[$i]['orderId']; ?>">
-                        <label for="checkbox1"></label>
-                    </span>
-                </td>
+                        <td>
+                            <span class="custom-checkbox">
+                                <input type="checkbox" class="checkboxValue" id="checkbox<?= $arr[$i]['orderId']; ?>" name="options[]" value="<?= $arr[$i]['orderId']; ?>">
+                                <label for="checkbox1"></label>
+                            </span>
+                        </td>
                         <!-- 雅芳:修改class名稱 & td顯示內容 -->
                         <td><?= $arr[$i]["orderId"]; ?></td>
                         <td><?= $arr[$i]['storeName']; ?></td>
                         <!-- 圖片 -->
                         <td>
-                            <?php if($arr[$i]['storeLogo'] !== ""): ?>
-                                <img src="../../asset/file_img/<?= $arr[$i]['storeLogo'];?>">
-                            <?php else: ?>
+                            <?php if ($arr[$i]['storeLogo'] !== "") : ?>
+                                <img src="../../asset/file_img/<?= $arr[$i]['storeLogo']; ?>">
+                            <?php else : ?>
                                 <img src="../../asset/img/404.jpg">
                             <?php endif; ?>
                         </td>
@@ -104,7 +104,7 @@
                         <td class="delivery<?= $arr[$i]['orderId']; ?>"><?= $arr[$i]["delivery"] ?></td>
                         <td class="orderRemark<?= $arr[$i]['orderId']; ?>"><?= $arr[$i]["orderRemark"] ?></td>
                         <td><?= $arr[$i]["updated_at"] ?></td>
-                      
+
                         <td>
                             <a href="#editEmployeeModal" class="edit" data-toggle="modal">
                                 <i class="material-icons" data-toggle="tooltip" title="Edit" onClick="h_Edit_click(<?= $arr[$i]['orderId']; ?>)">&#xE254;</i>
