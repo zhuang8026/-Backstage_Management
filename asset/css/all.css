@@ -48,7 +48,7 @@ body {
 }
 .table-title {        
     padding-bottom: 15px;
-    background: #211E55;
+    background: #6f6486;
     color: #fff;
     padding: 16px 30px;
     margin: -20px -25px 10px;
@@ -65,15 +65,19 @@ body {
     float: right;
 }
 .table-title .btn {
+    background-color: transparent;
+    border: 1px solid #fff;
     color: #fff;
     float: right;
     font-size: 13px;
-    border: none;
     min-width: 50px;
     border-radius: 2px;
-    border: none;
     outline: none !important;
     margin-left: 10px;
+    transition: 0.3s;
+}
+.table-title .btn:hover {
+    background-color: teal;
 }
 .table-title .btn i {
     float: left;

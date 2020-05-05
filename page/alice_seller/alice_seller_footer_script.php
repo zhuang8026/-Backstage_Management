@@ -14,6 +14,7 @@
     <script src="../../asset/js/alice_seller_javascript.js"></script>
     <script src="../../asset/js/alice_seller_dl.js"></script>
     <script src="../../asset/js/alice_seller_click_all.js"></script>
+    <script src="../../asset/js/0_allUse_function.js"></script>
 
     <script>
         AOS.init({

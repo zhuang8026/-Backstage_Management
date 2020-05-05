@@ -12,5 +12,6 @@
         <script src="../../asset/js/h_deit_click.js"></script>
         <script src="../../asset/js/h_delete_click.js"></script>
         <script src="../../asset/js/h_delete_click_all.js"></script>
+        <script src="../../asset/js/0_allUse_function.js"></script>
     </body>
 </html>

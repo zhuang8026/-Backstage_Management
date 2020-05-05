@@ -12,6 +12,7 @@
 
     <!-- wi-common -->
     <script src="../../asset/js/k_member_javascript.js"></script>
+    <script src="../../asset/js/0_allUse_function.js"></script>
 
     <script src="../../asset/js/k_member_dl.js"></script>
     <script src="../../asset/js/k_member_click_all.js"></script>

@@ -16,7 +16,8 @@
     <script src="../../asset/js/yy_delete_click.js"></script>
     <script src="../../asset/js/yy_delete_click_all.js"></script>
     <script src="../../asset/js/yy_add_click.js"></script>
-
+    <script src="../../asset/js/0_allUse_function.js"></script>
+    
 
     <script>
         AOS.init({

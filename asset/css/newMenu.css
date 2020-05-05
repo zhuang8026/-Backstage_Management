@@ -1,10 +1,3 @@
-* {
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
-    font-family: 'Droid Sans', sans-serif;
-    outline: none;
-  }
   ::-webkit-scrollbar {
     background: transparent;
     width: 5px;
@@ -110,7 +103,10 @@
     font-size: 19px;
   }
   /* End search */
-  
+  .categories{
+    padding: 0;
+  }
+
   .side-nav .categories > li {
     padding: 17px 40px 17px 30px;
     overflow: hidden;
@@ -186,7 +182,7 @@
   
   
   /* Start media query */
-  @media (max-width: 767px) {
+  /* @media (max-width: 767px) {
     .side-nav .categories > li {
       padding-top: 12px;
       padding-bottom: 12px;
@@ -195,7 +191,7 @@
       padding: 10px 0 10px 30px
     }
   }
-  
+   */
   /* End side navigation bar  */
   /* Start welcome */
   
@@ -348,18 +344,6 @@
     padding: 15px;
   }
   
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
   .main-color {
     color: #ffc107
   }
@@ -368,8 +352,6 @@
   .success {background-color: #5cb85c}
   .inf {background-color: #5bc0de}
   
-  
-  /* كمية الإمبورتات دى علشان البوتستراب تبطل غتاته وتسيب العناصر اللى متعدله فى حالها طبعا الكلام ده فى كود بن بس */
   
   /* Start bootstrap */
   .navbar-right .dropdown-menu {
@@ -399,7 +381,8 @@
   .navbar-default .navbar-brand:focus,
   .navbar-default .navbar-brand:hover {color: #FFF !important}
   .navbar>.container .navbar-brand, .navbar>.container-fluid .navbar-brand {margin: 0 !important}
-  @media (max-width: 767px) {
+
+  /* @media (max-width: 767px) {
     .navbar>.container-fluid .navbar-brand {
       margin-left: 15px !important;
     }
@@ -414,7 +397,7 @@
       border: none !important;
     }
   
-  }
+  } */
   
   .navbar-default .navbar-nav>li>a {
     float: left !important;
@@ -442,7 +425,7 @@
   
   
   /* Start media query */
-  
+/*   
   @media (max-width: 767px) {
     #contents {
       margin: 0 !important
@@ -461,6 +444,8 @@
       color: #EEE !important;
       font-size: 18px !important;
     }
-    .navbar-default .navbar-toggle:focus, .navbar-default .navbar-toggle:hover {background-color: transparent !important}
-  }
+    .navbar-default .navbar-toggle:focus, .navbar-default .navbar-toggle:hover {
+      background-color: transparent !important
+    }
+  } */
   
