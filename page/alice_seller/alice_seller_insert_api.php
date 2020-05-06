@@ -47,14 +47,14 @@ if( $_FILES["userlogo"]["error"] === 0 ) {
     // print_r($sql);
     // exit();
     if($pdo_stmt->rowCount() === 1) {
-        header("Refresh: 3; url=./alice_seller_index.php");
+        header("Refresh: 1; url=./alice_seller_index.php");
         echo "新增成功";
     } else {
-        header("Refresh: 3; url=./alice_seller_index.php");
+        header("Refresh: 1; url=./alice_seller_index.php");
         echo "新增失敗";
     }
 }else{
-    header("Refresh: 3; url=./alice_seller_index.php");
+    header("Refresh: 1; url=./alice_seller_index.php");
         echo "請夾帶圖片";
 }
 

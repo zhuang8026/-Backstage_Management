@@ -49,7 +49,7 @@ if( $_FILES["userlogo"]["error"] === 0 ) {
     $pdo_stmt = $pdo->prepare($sql);
     $pdo_stmt->execute($arr);
     if($pdo_stmt->rowCount() === 1) {
-        header("Refresh: 0; url=./k_member_index.php");
+        header("Refresh: 1; url=./k_member_index.php");
         echo "新增成功";
     } else {
         header("Refresh: 1; url=./k_member_index.php");

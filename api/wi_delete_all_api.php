@@ -28,8 +28,8 @@ for($i = 0; $i < count($str_sec_2); $i++){
     $arrParam = [
         $str_sec_2[$i]
     ];
-    echo "<pre>";
-    print_r($arrParam);
+    // echo "<pre>";
+    // print_r($arrParam);
     // exit();
     $stmtGetImg->execute($arrParam);
     // echo "<pre>";
