@@ -117,7 +117,7 @@
                         <input type="button" class="btn btn-default" data-dismiss="modal" value="Cancel">
                         <input type="submit" class="btn btn-info" id="btn_submit" value="Save">
                     </div>
-                    <input type="test" name="itemId_input" id="itemId_input" value="">
+                    <input type="hidden" name="itemId_input" id="itemId_input" value="">
                 </form>
             </div>
         </div>

@@ -26,7 +26,7 @@ $stmt = $pdo->prepare($sql);
 $stmt->execute($arrParam);
 
 if ($stmt->rowCount() > 0) {
-    header("Refresh: 1; url=../page/hong/h_orders_index.php");
+    header("Refresh: 0; url=../page/hong/h_orders_index.php");
     echo "更新成功";
 } else {
     header("Refresh: 1; url=../page/hong/h_orders_index.php");

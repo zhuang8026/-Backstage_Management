@@ -101,7 +101,7 @@
                     <div class="form-group">
                         <label>Pay / 付款方式</label>
                         <select name="paymentTypeId_h" required class="form-control" id="paymentTypeId_h">
-                            <option value="0" class="form-control" class="form-control">選擇付款方式</option>
+                            <!-- <option value="0" class="form-control" class="form-control">選擇付款方式</option> -->
                             <?php
                             $sql = "SELECT `paymentTypeId`, `paymentTypeName`
                                         FROM `payment_types`
