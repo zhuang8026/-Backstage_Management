@@ -70,7 +70,7 @@
                         </div>
                         <!-- 擁有者更改 ? -->
                         <div class="form-group">
-                            <label>sllers / 擁有者編輯</label>
+                            <label>sellers / 擁有者編輯</label>
                             <select name="yyeditIdSelect" required class="form-control" id="yyeditIdSelect">
                                 <option value="0" class="form-control" class="form-control">平台所有</option>
                                 <?php

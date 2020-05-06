@@ -215,28 +215,13 @@
         <section class='statis text-center'>
             <div class="container-fluid">
                 <div class="row">
-
+                    
+                    <!-- 本月收益 -->
                     <div class="col-md-3">
                         <div class="box bg-primary">
                         <i class="fas fa-dollar-sign"></i>
                         <?php
-                            $sql = "SELECT SUM(`itemPrice`) FROM `items`";
-                            $stmtpro = $pdo->prepare($sql);
-                            $stmtpro->execute();
-                            if($stmtpro->rowCount() > 0):
-                                $stmtAll = $stmtpro->fetchAll(PDO::FETCH_ASSOC)[0]; 
-                        ?>
-                        <h3><?= number_format($stmtAll["SUM(`itemPrice`)"]); ?> / NT</h3>
-
-                        <?php endif; ?>
-                        <p class="lead">Total cost / 總金額</p>
-                        </div>
-                    </div>
-
-                    <div class="col-md-3">
-                        <div class="box danger">
-                        <i class="fas fa-dollar-sign"></i>
-                        <?php
+                            // $sql = "SELECT `created_at`, SUM(`itemPrice`) FROM `items`";
                             $sql = "SELECT SUM(`items`.`itemPrice`)
                             FROM `orders`
                             LEFT JOIN `items`
@@ -251,13 +236,61 @@
                             $stmtpro->execute();
                             if($stmtpro->rowCount() > 0):
                                 $stmtAll = $stmtpro->fetchAll(PDO::FETCH_ASSOC)[0]; 
+
+
+                            // if( !(strtotime($stmtAlll['created_at']) ==  $cur_date) ):
+
+                            //     $stmtAlll = $stmtpro->fetchAll(PDO::FETCH_ASSOC)[0]; 
                         ?>
-                        <h3><?= number_format($stmtAll["SUM(`items`.`itemPrice`)"]); ?> / NT</h3>
-                        <?php endif; ?>
+                       <h3><?= number_format($stmtAll["SUM(`items`.`itemPrice`)"]); ?> / NT</h3>
+                                
+                            <?php endif; ?>
+                        <p class="lead">Total cost / 本月收益</p>
+                        </div>
+                    </div>
+                    
+                    <!-- 今日收益 -->
+                    <div class="col-md-3">
+                        <div class="box danger">
+                        <i class="fas fa-dollar-sign"></i>
+                        <?php
+                            // $sql = "SELECT SUM(`items`.`itemPrice`), `orders`.`created_at`
+                            $sql = "SELECT `items`.`itemPrice`, `orders`.`created_at`
+                            FROM `orders`
+                            LEFT JOIN `items`
+                            ON `orders`.`itemId` = `items`.`itemId`
+                            LEFT JOIN `stores`
+                            ON `stores`.`storeItemsId` = `items`.`itemstoreNumber`
+                            LEFT JOIN `payment_types`
+                            ON `orders`.`paymentTypeId` = `payment_types`.`paymentTypeId`
+                            WHERE `orders`.`payment` = '已付款'
+                            AND `orders`.`delivery` = '已送達'";
+                            $stmtpro = $pdo->prepare($sql);
+                            $stmtpro->execute();
+                            if($stmtpro->rowCount() > 0):
+                                $cur_date = date("Y/m/d");
+                                $stmtAlls = $stmtpro->fetchAll(PDO::FETCH_ASSOC); 
+                                // echo "<pre>";
+                                // print_r ($cur_date);
+                                // echo "<hr>";
+                                // print_r( date("Y/m/d", strtotime($stmtAlls[0]['created_at'])) );
+                                // echo "<hr>";
+                                // print_r ($stmtAlls);
+                                for ($i = 0; $i < count($stmtAlls); $i++):
+                                    if( date("Y/m/d", strtotime($stmtAlls[$i]['created_at'])) ==  $cur_date ){
+                                        $priceAll[] = $stmtAlls[$i]['itemPrice'];
+                                    }else {
+                                        $priceAll[] = 0;
+                                    }
+                        ?>
+                                <?php endfor; ?>
+                                <h3><?= number_format(array_sum($priceAll)); ?> / NT</h3>
+                            <?php endif; ?>
                         <p class="lead">OTIS Income / 今日收益</p>
                         </div>
                     </div>
 
+                    <!-- 訂單數量 -->
                     <div class="col-md-3">
                         <div class="box warning">
                         <i class="fa fa-shopping-cart"></i>
@@ -282,6 +315,7 @@
                         </div>
                     </div>
                     
+                    <!-- 已結帳數量 -->
                     <div class="col-md-3">
                         <div class="box success">
                         <i class="fa fa-handshake-o"></i>

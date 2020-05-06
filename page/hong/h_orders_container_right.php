@@ -63,7 +63,9 @@
             `orders`.`payment`,
             `orders`.`delivery`,
             `orders`.`orderRemark`,
-            `orders`.`updated_at`
+            `orders`.`updated_at`,
+            `orders`.`created_at`,
+            `items`.`itemstoreNumber`
             FROM `orders`
             LEFT JOIN `items`
             ON `orders`.`itemId` = `items`.`itemId`
@@ -87,13 +89,24 @@
                         </td>
                         <!-- 雅芳:修改class名稱 & td顯示內容 -->
                         <td><?= $arr[$i]["orderId"]; ?></td>
-                        <td><?= $arr[$i]['storeName']; ?></td>
+                        <td>
+                            <?php if($arr[$i]['itemstoreNumber'] < 1): ?>
+                                平台所有
+                            <?php elseif($arr[$i]['storeName'] == ""): ?>
+                                404
+                            <?php else: ?>
+                                <?= $arr[$i]['storeName']; ?>
+                            <?php endif; ?>
+                            
+                        </td>
                         <!-- 圖片 -->
                         <td>
-                            <?php if ($arr[$i]['storeLogo'] !== "") : ?>
-                                <img src="../../asset/file_img/<?= $arr[$i]['storeLogo']; ?>">
-                            <?php else : ?>
+                            <?php if($arr[$i]['itemstoreNumber'] < 1): ?>
+                                <img src="../../asset/img/logo.png">
+                            <?php elseif($arr[$i]['storeLogo'] == ""): ?>
                                 <img src="../../asset/img/404.jpg">
+                            <?php else: ?>
+                                <img src="../../asset/file_img/<?= $arr[$i]['storeLogo'];?>">
                             <?php endif; ?>
                         </td>
                         <td><?= $arr[$i]["itemName"] ?></td>
@@ -103,7 +116,7 @@
                         <td class="payment<?= $arr[$i]['orderId']; ?>"><?= $arr[$i]["payment"] ?></td>
                         <td class="delivery<?= $arr[$i]['orderId']; ?>"><?= $arr[$i]["delivery"] ?></td>
                         <td class="orderRemark<?= $arr[$i]['orderId']; ?>"><?= $arr[$i]["orderRemark"] ?></td>
-                        <td><?= $arr[$i]["updated_at"] ?></td>
+                        <td><?= $arr[$i]["created_at"] ?></td>
 
                         <td>
                             <a href="#editEmployeeModal" class="edit" data-toggle="modal">
