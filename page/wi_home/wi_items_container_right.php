@@ -242,8 +242,8 @@
 
                             //     $stmtAlll = $stmtpro->fetchAll(PDO::FETCH_ASSOC)[0]; 
                         ?>
-                       <h3><?= number_format($stmtAll["SUM(`items`.`itemPrice`)"]); ?> / NT</h3>
-                                
+                        <h3><?= number_format($stmtAll["SUM(`items`.`itemPrice`)"]); ?> / NT</h3>
+
                             <?php endif; ?>
                         <p class="lead">Total cost / 本月收益</p>
                         </div>
@@ -276,15 +276,17 @@
                                 // print_r( date("Y/m/d", strtotime($stmtAlls[0]['created_at'])) );
                                 // echo "<hr>";
                                 // print_r ($stmtAlls);
-                                for ($i = 0; $i < count($stmtAlls); $i++):
+                                for ($i = 0; $i < count($stmtAlls); $i++){
                                     if( date("Y/m/d", strtotime($stmtAlls[$i]['created_at'])) ==  $cur_date ){
                                         $priceAll[] = $stmtAlls[$i]['itemPrice'];
                                     }else {
                                         $priceAll[] = 0;
                                     }
+                                };
                         ?>
-                                <?php endfor; ?>
                                 <h3><?= number_format(array_sum($priceAll)); ?> / NT</h3>
+                                <?php else: ?>
+                                    <h3>0 / NT</h3>
                             <?php endif; ?>
                         <p class="lead">OTIS Income / 今日收益</p>
                         </div>
