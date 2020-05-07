@@ -33,6 +33,7 @@ body {
     font-family: 'Varela Round', sans-serif;
     font-size: 13px;
 }
+
 .menu_slider {
     display: flex;
 }
@@ -419,7 +420,7 @@ img {
 
 .form-group #colorAll li {
    /* margin: 0 5px; */
-   position: relative;
+    position: relative;
 }
 
 .form-group #colorAll li span{
