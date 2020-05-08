@@ -23,6 +23,7 @@
             </div>
         </div>
     </div>
+    <div id="app"></div>
     <div id="chart" class="chart" data-aos="fade-down"></div>
     <table class="table table-striped table-hover" id="dt-table" data-aos="fade-up">
         <thead>

@@ -7,6 +7,11 @@
     <script src="https://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script>
     <script src="https://code.highcharts.com/highcharts.js"></script>
     <script src="https://code.highcharts.com/modules/no-data-to-display.js"></script>
+
+    <!-- axios -->
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <!-- axios items test -->
+    <!-- <script src="../../asset/js/wi_axios_items_add.js"></script> -->
     
     <!-- wi-common -->
     <script src="../../asset/js/wi_items_javascript.js"></script>
@@ -14,7 +19,7 @@
     <script src="../../asset/js/wi_delete_click.js"></script>
     <script src="../../asset/js/wi_delete_click_all.js"></script>
     <script src="../../asset/js/wi_add_click.js"></script>
-    <script src="../../asset/js/0_allUse_function.js"></script>
+    <!-- <script src="../../asset/js/0_allUse_function.js"></script> -->
     <!-- aos -->
     <script src="https://unpkg.com/aos@2.3.0/dist/aos.js"></script>
     <script>

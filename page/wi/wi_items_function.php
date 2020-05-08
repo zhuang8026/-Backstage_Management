@@ -4,6 +4,7 @@
         <div class="modal-dialog">
             <div class="modal-content">
                 <form name="myForm" method="POST" action="../../api/wi_add_api.php" enctype="multipart/form-data">
+                <!-- <form name="myForm" method="POST" action="../../api/wi_add_api.php" enctype="multipart/form-data"> -->
                     <div class="modal-header">
                         <h4 class="modal-title">新增商品</h4>
                         <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
@@ -13,22 +14,22 @@
                         <div class="form-group">
                             <label>Sellers / 擁有者</label>
                             <select name="sellersId" required class="form-control" id="sellersId">
-                            <option value="0" class="form-control" class="form-control">平台所有</option>
-                            <?php
-                                $sql = "SELECT `id`, `username`, `name`
-                                        FROM `users` 
-                                        LEFT JOIN `stores`
-                                        ON `users`.`id` = `stores`.`storeId`
-                                        WHERE `isActivated` = 1";
-                                $stmt = $pdo->prepare($sql);
-                                $stmt->execute();
-                                if($stmt->rowCount() > 0):
-                                    $arr = $stmt->fetchAll(PDO::FETCH_ASSOC);
-                                    for($i = 0; $i < count($arr); $i++):
-                            ?>
-                                <option value="<?= $arr[$i]['id']; ?>" class="form-control" class="form-control">ID: <?= $arr[$i]['username'] ?>｜名字: <?= $arr[$i]['name'] ?></option>
-                                <?php endfor; ?>
-                            <?php endif; ?>
+                                <option value="0" class="form-control" class="form-control">平台所有</option>
+                                <?php
+                                    $sql = "SELECT `id`, `username`, `name`
+                                            FROM `users` 
+                                            LEFT JOIN `stores`
+                                            ON `users`.`id` = `stores`.`storeId`
+                                            WHERE `isActivated` = 1";
+                                    $stmt = $pdo->prepare($sql);
+                                    $stmt->execute();
+                                    if($stmt->rowCount() > 0):
+                                        $arr = $stmt->fetchAll(PDO::FETCH_ASSOC);
+                                        for($i = 0; $i < count($arr); $i++):
+                                ?>
+                                    <option value="<?= $arr[$i]['id']; ?>" class="form-control" class="form-control">ID: <?= $arr[$i]['username'] ?>｜名字: <?= $arr[$i]['name'] ?></option>
+                                    <?php endfor; ?>
+                                <?php endif; ?>
 
                             </select>
                         </div>
@@ -129,7 +130,8 @@
                     </div>
                     <div class="modal-footer">
                         <input type="button" class="btn btn-default" data-dismiss="modal" value="Cancel">
-                        <input type="submit" class="btn btn-success" value="Add">
+                        <input type="submit" class="btn btn-success" id="axiosItemsClick" value="Add">
+                        <!-- <input type="button" class="btn btn-success" id="axiosItemsClick" value="Add"> -->
                     </div>
                 </form>
             </div>
