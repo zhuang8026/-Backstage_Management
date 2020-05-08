@@ -14,7 +14,7 @@
     <!-- aos -->
     <link rel="stylesheet" href="https://unpkg.com/aos@2.3.0/dist/aos.css"/>
     <!-- common -->
-    <link rel="stylesheet" type="text/css"  href="../../asset/css/all.css">
+    <link rel="stylesheet" type="text/css"  href="../../asset/css/header.css">
     <link rel="stylesheet" type="text/css"  href="../../asset/css/newMenu.css">
     <!-- _highcharts -->
     <link rel="stylesheet" type="text/css"  href="../../asset/css/_highcharts.css">

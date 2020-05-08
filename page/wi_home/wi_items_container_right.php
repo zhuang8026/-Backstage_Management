@@ -14,10 +14,12 @@
             
             <!-- 刪除 與 新增 -->
             <div class="col-sm-6">
-                <a href="#addEmployeeModal" class="btn btn-success" data-toggle="modal">
+                <a href="#" class="btn btn-success" data-toggle="modal">
+                <!-- <a href="#addEmployeeModal" class="btn btn-success" data-toggle="modal"> -->
                     <i class="material-icons">&#xE147;</i> <span>Add New Employee</span>
                 </a>
-                <a href="#deleteEmployeeModal_all" class="btn btn-danger" data-toggle="modal">
+                <a href="#" class="btn btn-danger" data-toggle="modal">
+                <!-- <a href="#deleteEmployeeModal_all" class="btn btn-danger" data-toggle="modal"> -->
                     <i class="material-icons">&#xE15C;</i> <span>Delete</span>
                 </a>
             </div>
@@ -26,6 +28,7 @@
     
     <!-- right body -->
     <section id="contents">
+        <!-- welcome -->
         <div class="welcome">
             <div class="container-fluid">
                 <div class="row">
