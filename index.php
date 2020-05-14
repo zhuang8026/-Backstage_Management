@@ -1,3 +1,6 @@
+<?php
+   
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,6 +11,8 @@
     <link rel="stylesheet" href="./asset/css/_login.css">
     <link rel="stylesheet" href="./asset/css/_login_animate.css">
     <link rel="stylesheet" href="https://unpkg.com/aos@2.3.0/dist/aos.css"/>
+
+    
 </head>
 <body>
     <div 
@@ -43,6 +48,9 @@
                             <span class="icon"></span> Keep me Signed in
                         </label>
                     </div>
+
+                    <div class="g-recaptcha" data-sitekey="6LdxNfcUAAAAAI7Dt9FURuUlQyOH0e6RdnwXfDXQ"></div>
+
                     <div class="group" id="login-box">
                         <span></span>
                         <span></span>
@@ -59,20 +67,20 @@
                 <!-- 註冊 -->
                 <form class="sign-up-htm" name="managerForm" method="POST" action="#">
                     <div class="group">
-                        <label for="user" class="label">Username</label>
-                        <input id="user" type="text" class="input">
+                        <label for="user1" class="label">Username</label>
+                        <input id="user1" type="text" class="input">
                     </div>
                     <div class="group">
-                            <label for="pass" class="label">Password</label>
-                        <input id="pass" type="password" class="input" data-type="password">
+                            <label for="1" class="label">Password</label>
+                        <input id="pass1" type="password" class="input" data-type="password">
                         </div>
                         <div class="group">
-                            <label for="pass" class="label">Repeat Password</label>
-                            <input id="pass" type="password" class="input" data-type="password">
+                            <label for="pass2" class="label">Repeat Password</label>
+                            <input id="pass2" type="password" class="input" data-type="password">
                         </div>
                         <div class="group">
-                            <label for="pass" class="label">Email Address</label>
-                            <input id="pass" type="text" class="input">
+                            <label for="pass3" class="label">Email Address</label>
+                            <input id="pass4" type="text" class="input">
                         </div>
                         <div class="group">
                             <input type="submit" class="button" value="Sign Up">
@@ -83,9 +91,13 @@
                     </div>
                 </form>
             </div>
+
+            
         </div>
     </div>
 
+    <script src='https://www.google.com/recaptcha/api.js'></script>
+    
     <script src="https://unpkg.com/aos@2.3.0/dist/aos.js"></script>
     <script>
         AOS.init({
