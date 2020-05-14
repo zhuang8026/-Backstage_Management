@@ -9,9 +9,12 @@
     <script src="https://code.highcharts.com/modules/no-data-to-display.js"></script>
 
     <!-- axios -->
-    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <!-- <script src="https://unpkg.com/axios/dist/axios.min.js"></script> -->
     <!-- axios items test -->
     <!-- <script src="../../asset/js/wi_axios_items_add.js"></script> -->
+
+    <!-- ajax items test -->
+    <script src="../../asset/js/wi_ajax_items_add.js"></script>
     
     <!-- wi-common -->
     <script src="../../asset/js/wi_items_javascript.js"></script>

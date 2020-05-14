@@ -68,14 +68,44 @@ $stmt->execute($arrParam);
 // print_r($stmt->rowCount());
 
 if($stmt->rowCount() > 0) {
-    header("Refresh: 1; url=../page/wi/wi_items_index.php");
+    // header("Refresh: 1; url=../page/wi/wi_items_index.php");
     $objResponse['success'] = true;
     $objResponse['code'] = 200;
     $objResponse['info'] = "新增成功";
-    echo json_encode($objResponse, JSON_UNESCAPED_UNICODE);
-    exit();
+
+    //取得最後新增的流水號
+    $newId = $pdo->lastInsertId();
+    // print_r($newId);
+    // exit();
+    try{
+        $pdo->beginTransaction();
+        //取得最後一次新增的資料
+        $sqlComments = "SELECT *
+                        FROM `items`
+                        WHERE `itemId` = ?
+                        ORDER BY `created_at` ASC ";
+        $stmtComments = $pdo->prepare($sqlComments);
+        $arrCommentsParam = [$newId];
+        $stmtComments->execute($arrCommentsParam);
+
+        if($stmtComments->rowCount() > 0){
+            $objResponse['data'] = $stmtComments->fetchAll(PDO::FETCH_ASSOC)[0];
+        }
+
+        $pdo->commit();
+
+        echo json_encode($objResponse, JSON_UNESCAPED_UNICODE);
+        exit();
+    } catch(PDOException $e){
+        $pdo->rollBack();
+        echo "Failed: " . $e->getMessage();
+    }
+
+    // $objResponse['data'] = '';
+    // echo json_encode($objResponse, JSON_UNESCAPED_UNICODE);
+    // exit();
 } else {
-    header("Refresh: 1; url=../page/wi/wi_items_index.php");
+    // header("Refresh: 1; url=../page/wi/wi_items_index.php");
     $objResponse['success'] = false;
     $objResponse['code'] = 500;
     $objResponse['info'] = "沒有新增資料";

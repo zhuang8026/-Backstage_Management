@@ -3,7 +3,7 @@
     <div id="addEmployeeModal" class="modal fade">
         <div class="modal-dialog">
             <div class="modal-content">
-                <form name="myForm" method="POST" action="../../api/wi_add_api.php" enctype="multipart/form-data">
+                <form name="myForm" id="uploadForm" method="POST" enctype="multipart/form-data">
                 <!-- <form name="myForm" method="POST" action="../../api/wi_add_api.php" enctype="multipart/form-data"> -->
                     <div class="modal-header">
                         <h4 class="modal-title">新增商品</h4>
@@ -131,7 +131,6 @@
                     <div class="modal-footer">
                         <input type="button" class="btn btn-default" data-dismiss="modal" value="Cancel">
                         <input type="submit" class="btn btn-success" id="axiosItemsClick" value="Add">
-                        <!-- <input type="button" class="btn btn-success" id="axiosItemsClick" value="Add"> -->
                     </div>
                 </form>
             </div>
