@@ -23,11 +23,12 @@ if ($_POST["g-recaptcha-response"]) {
         $_POST["g-recaptcha-response"]
     );
 } else {
-    echo "404";
+    echo "請進行人機身分驗證，謝謝";
     exit();
 }
 
 // ------ Google 驗證 ------ end
+
 
 // echo "<pre>";
 // print_r($_POST);

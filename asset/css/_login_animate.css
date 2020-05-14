@@ -3,7 +3,7 @@
         position: relative;
         overflow: hidden;
         transition: .5s;
-        
+        margin: 15px auto;
     }
 
     #login-box span {
