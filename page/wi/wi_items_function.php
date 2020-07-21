@@ -40,7 +40,7 @@
                         </div>
                         <div class="form-group">
                             <label>Image / 商品圖片</label>
-                            <input type="file" class="form-control" name="itemImg" value="" placeholder="商品圖片">
+                            <input type="file" class="form-control" name="itemImg[]" value="" placeholder="商品圖片" multiple>
                         </div>
                         <!-- 顏色 -->
                         <div class="form-group">
