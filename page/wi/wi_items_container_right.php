@@ -23,7 +23,7 @@
             </div>
         </div>
     </div>
-    <div id="chart" class="chart" data-aos="fade-down"></div>
+    <!-- <div id="chart" class="chart" data-aos="fade-down"></div> -->
 
     <div id="app"></div>
 
