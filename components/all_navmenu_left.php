@@ -13,7 +13,7 @@
         <input type="text" placeholder="Type here"><i class="fa fa-search"></i>
     </div>
     <ul class="categories">
-        <li>
+        <!-- <li>
             <i class="fa fa-home fa-fw" aria-hidden="true"></i><a href="javascript: void(0);"> Home / 首頁</a>
             <ul class="side-nav-dropdown">
                 <li><a href="../wi_home/wi_items_index.php"> Home</a></li>
@@ -37,14 +37,14 @@
             <ul class="side-nav-dropdown">
                 <li><a href="../yy/yy_items_index.php">Search / 查看</a></li>
             </ul>
-        </li>
+        </li> -->
         <li>
             <i class="fas fa-store"></i><a href="javascript: void(0);"> Products / 產品</a>
             <ul class="side-nav-dropdown">
                 <li><a href="../wi/wi_items_index.php">Search / 查看</a></li>
             </ul>
         </li>
-        <li>
+        <!-- <li>
             <i class="fas fa-paste"></i><a href="javascript: void(0);"> Orders / 訂單</a>
             <ul class="side-nav-dropdown">
                 <li><a href="../hong/h_orders_index.php">Search / 查看</a></li>
@@ -55,10 +55,10 @@
             <ul class="side-nav-dropdown">
                 <li><a href="../activity/ac_index.php">Search / 查看</a></li>
             </ul>
-        </li>
+        </li> -->
         
         <p>Other:</p>
-        <li><i class="fa fa-envelope-open-o fa-fw"></i><a href="#"> Messages <span class="num dang">6</span></a></li>
+        <li><i class="fa fa-envelope-open-o fa-fw"></i><a href="#"> Messages <span class="num dang">0</span></a></li>
         <!-- <li>
             <i class="fa fa-wrench fa-fw"></i><a href="#"> Settings <span class="num prim">6</span></a>
             <ul class="side-nav-dropdown">
@@ -66,7 +66,7 @@
             </ul>
         </li> -->
         <!-- <li><i class="fa fa-laptop fa-fw"></i><a href="#"> About UI &amp; UX <span class="num succ">3</span></a></li> -->
-        <li><i class="fa fa-laptop fa-fw"></i><a href="#"> About F2E <span class="num succ">3</span></a></li>
+        <!-- <li><i class="fa fa-laptop fa-fw"></i><a href="#"> About F2E <span class="num succ">3</span></a></li> -->
         <!-- <li><i class="fa fa-comments-o fa-fw"></i><a href="#"> Something else</a></li> -->
     </ul>
 </aside>
