@@ -81,7 +81,7 @@ if( isset($_POST['username']) && isset($_POST['pwd']) ){
     if( $pdo_stmt->rowCount() > 0 ){   
         $_SESSION['username'] = $_POST['username'];
         $_SESSION['password'] = $_POST['pwd'];
-        header("Refresh: 3; url=../page/wi_home/wi_items_index.php");
+        header("Refresh: 3; url=../page/wi/wi_items_index.php");
         // echo "<img src='../asset/img/logo_login.gif'><h1>welcome ! \"{$_POST['identity']}\". {$_SESSION['username']} </h1>";
         echo "<div style='height: 100%; display: flex; justify-content: center; align-items: center;'><img src='../asset/img/logo_login.gif' style='width: 50%;'></div>";
     } else {

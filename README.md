@@ -1,4 +1,4 @@
-# 後台管理 CRUD - php
+# 後台管理 CRUD 專案
 ## 後台管理平台
 - 基礎技術支持: html5 + sass 
 - 後端技術支持: mysql + php 
