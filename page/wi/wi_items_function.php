@@ -40,7 +40,7 @@
                         </div>
                         <div class="form-group">
                             <label>Image / 商品圖片</label>
-                            <input type="file" class="form-control" name="itemImg[]" value="" placeholder="商品圖片" multiple>
+                            <input type="file" class="form-control" name="itemImg" value="" placeholder="商品圖片">
                         </div>
                         <!-- 顏色 -->
                         <div class="form-group">
@@ -179,8 +179,10 @@
                         <div class="form-group">
                             <label style="display: block;">Image / 原始</label>
                             <img id="itemImg_d_img" src=""/>
-                            <label style="display: block;">Image / 修改</label>
-                            <input type="file" class="form-control" name="itemImg_d" value="" placeholder="商品圖片" id="itemImg_d">
+                            <label style="display: block;" for="itemImg_d">Image / 修改</label>
+                            <input type="file" class="form-control" name="itemImg_d" value="" id="itemImg_d">
+                            <label style="display: block;" for="itemImg_more">Image / 細節圖上傳</label>
+                            <input type="file" class="form-control" name="itemImg_more" value="" id="itemImg_more" multiple>
                         </div>
                         <div class="form-group">
                             <label>Color / 原始</label>

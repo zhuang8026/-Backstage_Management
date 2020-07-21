@@ -57,7 +57,7 @@
         <tbody>
             <!-- 模板 start-->
             <?php 
-                $sql = "SELECT `itemId`,`itemName`, `itemImg`, `colorid`,`itemsbrand`, `itemstype`, `itemstoreNumber`,
+                $sql = "SELECT `itemId`,`itemName`, `itemImg`, `colorid`,`itemsNumber`, `itemstype`, `itemstoreNumber`,
                         `itemPrice`, `itemQty`, `itemsstar`, `itemsales`, `itemscontent`, `items`.`created_at`,
                         `items_color`.`coid`, `items_color`.`colorname`, `items_color`.`colorunicode`,
                         `items_type`.`typename`,
@@ -99,7 +99,7 @@
                     <?php endif; ?>
                 </td>
                 <td class="colorid<?= $arr[$i]['itemId']; ?>" id="<?= $arr[$i]['colorid']; ?>" data-color="<?= $arr[$i]['colorunicode']; ?>"><div style="background-color:<?= $arr[$i]['colorunicode']; ?>;width: 34px; height: 34px; border-radius: 4px;"></div></td>
-                <td class="itemsbrand<?= $arr[$i]['itemId']; ?>"><?= $arr[$i]['itemsbrand']; ?></td>
+                <td class="itemsbrand<?= $arr[$i]['itemId']; ?>"><?= $arr[$i]['itemsNumber']; ?></td>
                 <td class="itemstype<?= $arr[$i]['itemId']; ?>"><?= $arr[$i]['typename']; ?></td>
                 <td class="itemPrice<?= $arr[$i]['itemId']; ?>"><?= $arr[$i]['itemPrice']; ?></td>
                 <td class="itemQty<?= $arr[$i]['itemId']; ?>"><?= $arr[$i]['itemQty']; ?></td>
