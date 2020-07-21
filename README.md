@@ -1,5 +1,5 @@
-# 資策會 MFEE07 大專題
-## 第六組 耳機購物平台
+# 後台管理 CRUD - php
+## 後台管理平台
 - 基礎技術支持: html5 + sass 
 - 後端技術支持: mysql + php 
 - 前端套件支持: [bootstrap](https://getbootstrap.com/)

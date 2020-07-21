@@ -1,9 +1,9 @@
 <?php
 //資料庫主機設定
 $db_host = "localhost";
-$db_username = "otis";
-$db_password = "otis";
-$db_name = "otis_shop";
+$db_username = "bm";
+$db_password = "bm";
+$db_name = "Backstage_Management";
 $db_charset = "utf8mb4";
 $db_collate = "utf8mb4_unicode_ci";
 
