@@ -7,7 +7,7 @@ function getTableData(table) {
         ImageArray = [],
         ColorArray = [],
         NumberArray = [],
-        TypeArray = [],
+        TypeArray = []
         // PriceArray = [],
         // QuantityArray = [],
         // StarArray = [],
