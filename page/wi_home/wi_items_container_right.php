@@ -96,8 +96,7 @@
                     <i class="fas fa-store fa-fw success"></i>
                     <div class="info">
                         <?php
-                        $sql = "SELECT `itemId`,`itemName`, `itemImg`, `colorid`,`itemsbrand`, `itemstype`, `itemstoreNumber`,
-                                `itemPrice`, `itemQty`, `itemsstar`, `itemsales`, `itemscontent`, `items`.`created_at`,
+                        $sql = "SELECT `itemId`,`itemName`, `itemImg`, `colorid`,`itemsNumber`, `itemstype`, `items`.`created_at`,
                                 `items_color`.`coid`, `items_color`.`colorname`, `items_color`.`colorunicode`,
                                 `items_type`.`typename`,
                                 `users`.`username`, `users`.`name`
@@ -106,8 +105,8 @@
                                 ON `items`.`colorid` = `items_color`.`coid`
                                 INNER JOIN `items_type`
                                 ON `items`.`itemstype` = `items_type`.`typeid`
-                                LEFT JOIN `users`
-                                ON `items`.`itemstoreNumber` = `users`.`id`
+                                -- LEFT JOIN `users`
+                                -- ON `items`.`itemstoreNumber` = `users`.`id`
                                 ORDER BY `itemId` ASC";
                         $stmtpro = $pdo->prepare($sql);
                         $stmtpro->execute();

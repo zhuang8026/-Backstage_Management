@@ -14,23 +14,23 @@ require_once('../db.inc.php');
 // 先對其它欄位，進行 SQL 語法字串連接
 $sql = "UPDATE `items`
         SET
-        `itemstoreNumber` = ?, 
+        -- `itemstoreNumber` = ?, 
         `itemName` = ?,
         `colorid` = ?,
-        `itemsbrand` = ?,
-        `itemstype` = ?,
-        `itemPrice` = ?,
-        `itemQty` = ?";
+        `itemsNumber` = ?,
+        `itemstype` = ?
+        -- `itemPrice` = ?,
+        -- `itemQty` = ?";
 
 // 先對其它欄位進行資料繫結設定
 $arrParam = [
-    $_POST['sellersId'],
+    // $_POST['sellersId'],
     $_POST['itemName_d'],
     $_POST['colorid'],
-    $_POST['itemsbrand_d'],
+    $_POST['itemsNumber_d'],
     $_POST['itemstype_d'],
-    $_POST['itemPrice_d'],
-    $_POST['itemQty_d']
+    // $_POST['itemPrice_d'],
+    // $_POST['itemQty_d']
 ];
 
 //判斷檔案上傳是否正常，error = 0 為正常

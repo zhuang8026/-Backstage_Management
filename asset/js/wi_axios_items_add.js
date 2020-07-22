@@ -12,7 +12,7 @@ document.getElementById("axiosItemsClick").addEventListener("click", ()=>{
             "itemstype": document.querySelectorAll("select[name='itemstype']")[0].value,
             "itemPrice": document.querySelectorAll("input[name='itemPrice']")[0].value,
             "itemQty": document.querySelectorAll("input[name='itemQty']")[0].value,
-            "itemscontent": document.querySelectorAll("textarea[name='itemscontent']")[0].value,
+            // "itemscontent": document.querySelectorAll("textarea[name='itemscontent']")[0].value,
             "itemstoreNumber": document.querySelectorAll("select[name='sellersId']")[0].value
         }
     })

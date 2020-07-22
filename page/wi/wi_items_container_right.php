@@ -41,14 +41,14 @@
                 <th>名稱</th>
                 <th>圖片</th>
                 <th>顏色</th>
-                <th>品牌</th>
+                <th>型號</th>
                 <th>類型</th>
-                <th>P價錢/.NT</th>
+                <!-- <th>P價錢/.NT</th>
                 <th>數量</th>
                 <th>評分</th>
                 <th>銷售數量</th>
                 <th>擁有者編號</th>
-                <th>擁有者名字</th>
+                <th>擁有者名字</th> -->
                 <th>創建時間</th>
                 <th>編輯/刪除</th>
                 
@@ -57,18 +57,17 @@
         <tbody>
             <!-- 模板 start-->
             <?php 
-                $sql = "SELECT `itemId`,`itemName`, `itemImg`, `colorid`,`itemsNumber`, `itemstype`, `itemstoreNumber`,
-                        `itemPrice`, `itemQty`, `itemsstar`, `itemsales`, `itemscontent`, `items`.`created_at`,
+                $sql = "SELECT `itemId`,`itemsNumber`,`itemName`, `itemImg`, `colorid`, `itemstype`, `items`.`created_at`,
                         `items_color`.`coid`, `items_color`.`colorname`, `items_color`.`colorunicode`,
-                        `items_type`.`typename`,
-                        `users`.`username`, `users`.`name`
+                        `items_type`.`typename`
+                        -- `users`.`username`, `users`.`name`
                         FROM `items`
                         INNER JOIN `items_color`
                         ON `items`.`colorid` = `items_color`.`coid`
                         INNER JOIN `items_type`
                         ON `items`.`itemstype` = `items_type`.`typeid`
-                        LEFT JOIN `users`
-                        ON `items`.`itemstoreNumber` = `users`.`id`
+                        -- LEFT JOIN `users`
+                        -- ON `items`.`itemstoreNumber` = `users`.`id`
                         ORDER BY `itemId` ASC";
                 $stmt = $pdo->prepare($sql);
                 $stmt->execute(); 
@@ -99,20 +98,8 @@
                     <?php endif; ?>
                 </td>
                 <td class="colorid<?= $arr[$i]['itemId']; ?>" id="<?= $arr[$i]['colorid']; ?>" data-color="<?= $arr[$i]['colorunicode']; ?>"><div style="background-color:<?= $arr[$i]['colorunicode']; ?>;width: 34px; height: 34px; border-radius: 4px;"></div></td>
-                <td class="itemsbrand<?= $arr[$i]['itemId']; ?>"><?= $arr[$i]['itemsNumber']; ?></td>
+                <td class="itemsNumber<?= $arr[$i]['itemId']; ?>"><?= $arr[$i]['itemsNumber']; ?></td>
                 <td class="itemstype<?= $arr[$i]['itemId']; ?>"><?= $arr[$i]['typename']; ?></td>
-                <td class="itemPrice<?= $arr[$i]['itemId']; ?>"><?= $arr[$i]['itemPrice']; ?></td>
-                <td class="itemQty<?= $arr[$i]['itemId']; ?>"><?= $arr[$i]['itemQty']; ?></td>
-                <td><?= $arr[$i]['itemsstar']; ?></td>
-                <td><?= $arr[$i]['itemsales']; ?></td>
-
-                <?php if($arr[$i]['itemstoreNumber'] !== 0): ?>
-                    <td><?= $arr[$i]['username']; ?></td>
-                    <td><?= $arr[$i]['name']; ?></td>
-                <?php else: ?>
-                    <td>無</td>
-                    <td>平台所有</td>
-                <?php endif; ?>
                 
                 <td><?= $arr[$i]['created_at']; ?></td>
                 <td>

@@ -6,7 +6,7 @@ function Edit_click(id){
     // console.log( $.trim($('.itemImg'+id).eq(0).eq(0).html()) );
     // console.log( $.trim($('.itemImg'+id).eq(0).eq(0).children('img').attr('src')) );
     // console.log( $.trim($('.itemImg'+id).eq(0).eq(0).children('img').attr('src').substr(21)) );
-    console.log(id);
+    // console.log(id);
     $img_name =  $.trim($('.itemImg'+id).eq(0).eq(0).children('img').attr('src'))
     console.log($img_name);
     console.log($('img#itemImg_d_img').attr('src', $img_name) );
@@ -17,10 +17,10 @@ function Edit_click(id){
     $('img#itemImg_d_img').attr('src', $img_name);                      // itemImg
     $('input#colorid_d').val( $('.colorid'+id).eq(0).attr('id') );      // colorid_d
     $('span#colorid_span').css("background-color", $('.colorid'+id).eq(0).attr('data-color')); // colorid_span
-    $('input#itemsbrand_d').val( $('.itemsbrand'+id).eq(0).html() );    // itemsbrand
+    $('input#itemsNumber_d').val( $('.itemsNumber'+id).eq(0).html() );    // itemsNumber
     $('input#itemstype_d').val( $('.itemstype'+id).eq(0).html() );      // itemstype
-    $('input#itemPrice_d').val( $('.itemPrice'+id).eq(0).html() );      // itemPrice
-    $('input#itemQty_d').val( $('.itemQty'+id).eq(0).html() );          // itemQty
+    // $('input#itemPrice_d').val( $('.itemPrice'+id).eq(0).html() );      // itemPrice
+    // $('input#itemQty_d').val( $('.itemQty'+id).eq(0).html() );          // itemQty
 };
 
 // JAVASCRIPT --- william --- 修改

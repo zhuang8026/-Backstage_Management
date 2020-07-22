@@ -6,14 +6,14 @@ document.getElementById("axiosItemsClick").addEventListener("click", (e)=>{
         dataType: "json",
         data: { 
             itemName: $("input[name='itemName']").val(),
-            itemImg: $("input[name='itemImg']").val(),
+            itemImg: $("input[name='itemImg[]']").val(),
             colorid: $("input[name='colorid']").val(),
-            itemsbrand: $("input[name='itemsbrand']").val(),
+            itemsNumber: $("input[name='itemsNumber']").val(),
             itemstype: $("select[name='itemstype']").val(),
-            itemPrice: $("input[name='itemPrice']").val(),
-            itemQty: $("input[name='itemQty']").val(),
-            itemscontent: $("textarea[name='itemscontent']").val(),
-            sellersId: Number($("select[name='sellersId']").val())
+            // itemPrice: $("input[name='itemPrice']").val(),
+            // itemQty: $("input[name='itemQty']").val(),
+            // itemscontent: $("textarea[name='itemscontent']").val(),
+            // sellersId: Number($("select[name='sellersId']").val())
         }
     })
     .done(function( json ) {

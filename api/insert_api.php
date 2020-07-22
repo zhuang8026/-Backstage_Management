@@ -16,8 +16,8 @@ print_r($_FILES);
 echo "<hr>";
 //SQL 敘述
 $sql = "INSERT INTO `items` 
-        (`itemName`, `itemImg`, `colorid`, `itemsbrand`, `itemstype`, `itemPrice`, `itemQty`, `itemscontent`) 
-        VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
+        (`itemName`, `itemImg`, `colorid`, `itemsNumber`, `itemstype`) 
+        VALUES (?, ?, ?, ?, ?)";
 
 if( $_FILES["itemImg"]["error"] === 0 ) {
     echo "11111";
@@ -48,11 +48,8 @@ if( $_FILES["itemImg"]["error"] === 0 ) {
 $arr = [
     $_POST['itemName'],
     $_POST['colorid'],
-    $_POST['itemsbrand'],
+    $_POST['itemsNumber'],
     $_POST['itemstype'],
-    $_POST['itemPrice'],
-    $_POST['itemQty'],
-    $_POST['itemscontent'],
     $imgFileName
 ];
 

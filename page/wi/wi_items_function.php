@@ -11,7 +11,7 @@
                     </div>
                     <div class="modal-body">
                         <!-- 選擇賣家 -->
-                        <div class="form-group">
+                        <!-- <div class="form-group">
                             <label>Sellers / 擁有者</label>
                             <select name="sellersId" required class="form-control" id="sellersId">
                                 <option value="0" class="form-control" class="form-control">平台所有</option>
@@ -32,7 +32,7 @@
                                 <?php endif; ?>
 
                             </select>
-                        </div>
+                        </div> -->
 
                         <div class="form-group">
                             <label>Name / 商品名稱</label>
@@ -90,27 +90,24 @@
                             <!-- <input type="text" class="form-control" required name="colorid" value="" placeholder="商品顏色"> -->
                         </div>
                         <div class="form-group">
-                            <label>Brand / 品牌</label>
-                            <input type="text" class="form-control" required name="itemsbrand" value="" placeholder="商品品牌">
+                            <label>Number / 型號</label>
+                            <input type="text" class="form-control" required name="itemsNumber" value="" placeholder="商品型號">
                         </div>
                         <!-- 類型 -->
                         <div class="form-group">
                             <label>Type / 類型</label>
                             <select name="itemstype" required class="form-control" id="itemstype">
-                                    <option value="1" class="form-control" selected>有線耳罩式</option>
-                                    <option value="2" class="form-control">無線耳罩式</option>
-                                    <option value="3" class="form-control">有線入耳式</option>
-                                    <option value="4" class="form-control">無線入耳式</option>
-                                    <option value="5" class="form-control">有線耳道式</option>
-                                    <option value="6" class="form-control">無線耳道式</option>
-                                    <option value="7" class="form-control">有線耳塞式</option>
-                                    <option value="8" class="form-control">無線耳塞式</option>
-                                    <option value="9" class="form-control">有線耳掛式</option>
-                                    <option value="10" class="form-control">無線耳掛式</option>
+                                    <option value="1" class="form-control" selected>運動服</option>
+                                    <option value="2" class="form-control">校園制服</option>
+                                    <option value="3" class="form-control">書包</option>
+                                    <option value="4" class="form-control">帽子</option>
+                                    <option value="5" class="form-control">口罩</option>
+                                    <option value="6" class="form-control">圍兜</option>
+                                    <option value="7" class="form-control">圍裙</option>
                             </select>
                             <!-- <input type="text" class="form-control" required name="itemstype" value="" placeholder="商品類型"> -->
                         </div>
-                        <div class="form-group">
+                        <!-- <div class="form-group">
                             <label>Price / 價格</label>
                             <input type="text" class="form-control" required name="itemPrice" value="" placeholder="商品價格">
                         </div>
@@ -122,7 +119,7 @@
                         <div class="form-group">
                             <label>Content / 內容</label>
                             <textarea class="form-control" required name="itemscontent" value="" placeholder="商品備註"></textarea>
-                        </div>
+                        </div> -->
                         <!-- <div class="form-group">
                             <label>itemsstar</label>
                             <input type="text" class="form-control" required name="name3" value="" maxlength="10">
@@ -149,7 +146,7 @@
                     
                     <div class="modal-body">
                         <!-- 選擇賣家 -->
-                        <div class="form-group">
+                        <!-- <div class="form-group">
                             <label>Sellers / 擁有者</label>
                             <select name="sellersId" required class="form-control" id="sellersId">
                             <option value="0" class="form-control" class="form-control">平台所有</option>
@@ -170,7 +167,7 @@
                             <?php endif; ?>
 
                             </select>
-                        </div>
+                        </div> -->
                         
                         <div class="form-group">
                             <label>Name / 商品名稱</label>
@@ -235,32 +232,29 @@
                             </ul>
                         </div>
                         <div class="form-group">
-                            <label>Brand / 品牌</label>
-                            <input type="text" class="form-control" name="itemsbrand_d" value="" placeholder="商品品牌" id="itemsbrand_d">
+                            <label>Model / 型號</label>
+                            <input type="text" class="form-control" name="itemsNumber_d" value="" placeholder="商品品牌" id="itemsNumber_d">
                         </div>
                         <div class="form-group">
                             <label>Type / 類型</label>
                             <select name="itemstype_d" id="itemstype_d" class="form-control">
-                                    <option value="1" class="form-control" selected>有線耳罩式</option>
-                                    <option value="2" class="form-control">無線耳罩式</option>
-                                    <option value="3" class="form-control">有線入耳式</option>
-                                    <option value="4" class="form-control">無線入耳式</option>
-                                    <option value="5" class="form-control">有線耳道式</option>
-                                    <option value="6" class="form-control">無線耳道式</option>
-                                    <option value="7" class="form-control">有線耳塞式</option>
-                                    <option value="8" class="form-control">無線耳塞式</option>
-                                    <option value="9" class="form-control">有線耳掛式</option>
-                                    <option value="10" class="form-control">無線耳掛式</option>
+                                    <option value="1" class="form-control" selected>運動服</option>
+                                    <option value="2" class="form-control">校園制服</option>
+                                    <option value="3" class="form-control">書包</option>
+                                    <option value="4" class="form-control">帽子</option>
+                                    <option value="5" class="form-control">口罩</option>
+                                    <option value="6" class="form-control">圍兜</option>
+                                    <option value="7" class="form-control">圍裙</option>
                             </select>
                         </div>
-                        <div class="form-group">
+                        <!-- <div class="form-group">
                             <label>Price / 價格</label>
                             <input type="text" class="form-control" name="itemPrice_d" value="" placeholder="商品價格" id="itemPrice_d">
                         </div>
                         <div class="form-group">
                             <label>Quantity / 數量</label>
                             <input type="text" class="form-control" name="itemQty_d" value="" placeholder="商品數量" id="itemQty_d">
-                        </div>
+                        </div> -->
                     </div>
 
                     <div class="modal-footer">

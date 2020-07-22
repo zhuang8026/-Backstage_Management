@@ -109,7 +109,7 @@
                             </select>
                             <!-- <input type="text" class="form-control" required name="itemstype" value="" placeholder="商品類型"> -->
                         </div>
-                        <div class="form-group">
+                        <!-- <div class="form-group">
                             <label>Price</label>
                             <input type="text" class="form-control" required name="itemPrice" value="" placeholder="商品價格">
                         </div>
@@ -121,7 +121,7 @@
                         <div class="form-group">
                             <label>Content</label>
                             <textarea class="form-control" required name="itemscontent" value="" placeholder="商品備註"></textarea>
-                        </div>
+                        </div> -->
                         <!-- <div class="form-group">
                             <label>itemsstar</label>
                             <input type="text" class="form-control" required name="name3" value="" maxlength="10">

@@ -42,19 +42,18 @@ if($_POST['colorid'] == NULL){
 };
 
 //SQL 敘述
-$sql = "INSERT INTO `items` (`itemName`, `itemImg`, `colorid`, `itemsbrand`, `itemstype`, `itemPrice`, `itemQty`, `itemscontent`, `itemstoreNumber`)
-        VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)";
+$sql = "INSERT INTO `items` (`itemName`, `itemImg`, `colorid`, `itemsNumber`, `itemstype`)
+        VALUES (?, ?, ?, ?, ?)";
 //繫結用陣列
 $arrParam = [
     $_POST['itemName'],
     $itemImg,
     (int)$_POST['colorid'],
-    $_POST['itemsbrand'],
+    $_POST['itemsNumber'],
     $_POST['itemstype'],
-    $_POST['itemPrice'],
-    $_POST['itemQty'],
-    $_POST['itemscontent'],
-    $_POST['sellersId']
+    // $_POST['itemPrice'],
+    // $_POST['itemQty'],
+    // $_POST['sellersId']
 ];
 
 // echo "<pre>";   

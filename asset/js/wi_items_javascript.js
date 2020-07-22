@@ -6,12 +6,12 @@ function getTableData(table) {
         NameArray = [],
         ImageArray = [],
         ColorArray = [],
-        BrandArray = [],
+        NumberArray = [],
         TypeArray = [],
-        PriceArray = [],
-        QuantityArray = [],
-        StarArray = [],
-        SalesArray = [];
+        // PriceArray = [],
+        // QuantityArray = [],
+        // StarArray = [],
+        // SalesArray = [];
 
     // loop table rows
     // 將 陣列 放入 table 
@@ -21,18 +21,18 @@ function getTableData(table) {
         NameArray.push(data[2]);
         ImageArray.push(data[3]);
         ColorArray.push(parseInt(data[4].replace(/\,/g, "")));
-        BrandArray.push(data[5]);
+        NumberArray.push(data[5]);
         TypeArray.push(data[6]);
-        PriceArray.push(parseInt(data[7].replace(/\,/g, "")));
-        QuantityArray.push(parseInt(data[8].replace(/\,/g, "")));
-        StarArray.push(parseInt(data[9].replace(/\,/g, "")));
-        SalesArray.push(parseInt(data[10].replace(/\,/g, "")));
+        // PriceArray.push(parseInt(data[7].replace(/\,/g, "")));
+        // QuantityArray.push(parseInt(data[8].replace(/\,/g, "")));
+        // StarArray.push(parseInt(data[9].replace(/\,/g, "")));
+        // SalesArray.push(parseInt(data[10].replace(/\,/g, "")));
     });
 
 
     // store all data in dataArray
     // 將 table 的 陣列 push 到 dataArray 並 返回值 
-    dataArray.push(IdArray, NameArray, ImageArray, ColorArray, BrandArray, TypeArray, PriceArray, QuantityArray,StarArray,SalesArray);
+    dataArray.push(IdArray, NameArray, ImageArray, ColorArray, NumberArray, TypeArray);
 
     return dataArray;
 }
@@ -137,7 +137,7 @@ function setTableEvents(table) {
             draw = false;
         } else {
             const tableData = getTableData(table);
-            createHighcharts(tableData);
+            // createHighcharts(tableData);
         }
     });
 }
