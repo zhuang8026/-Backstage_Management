@@ -57,7 +57,7 @@
             </ul>
         </li> -->
         
-        <p>Other:</p>
+        <!-- <p>Other:</p> -->
         <li><i class="fa fa-envelope-open-o fa-fw"></i><a href="#"> Messages <span class="num dang">0</span></a></li>
         <!-- <li>
             <i class="fa fa-wrench fa-fw"></i><a href="#"> Settings <span class="num prim">6</span></a>
