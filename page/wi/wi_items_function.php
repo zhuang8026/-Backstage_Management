@@ -154,6 +154,10 @@
                             <img id="itemImg_d_img" src=""/>
                             <label style="display: block;" for="itemImg_d">Image / 修改</label>
                             <input type="file" class="form-control" name="itemImg_d" value="" id="itemImg_d">
+                        </div>
+                        <div class="form-group">
+                            <label style="display: block;">Image / 多圖上傳</label>
+                            <img id="itemImg_d_img" src=""/>
                             <label style="display: block;" for="itemImg_more">Image / 細節圖上傳</label>
                             <input type="file" class="form-control" name="itemImg_more" value="" id="itemImg_more" multiple>
                         </div>
