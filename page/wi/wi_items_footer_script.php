@@ -14,7 +14,7 @@
     <!-- <script src="../../asset/js/wi_axios_items_add.js"></script> -->
 
     <!-- ajax items test -->
-    <script src="../../asset/js/wi_ajax_items_add.js"></script>
+    <!-- <script src="../../asset/js/wi_ajax_items_add.js"></script> -->
     
     <!-- wi-common -->
     <script src="../../asset/js/wi_items_javascript.js"></script>

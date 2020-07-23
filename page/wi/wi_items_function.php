@@ -3,44 +3,20 @@
     <div id="addEmployeeModal" class="modal fade">
         <div class="modal-dialog">
             <div class="modal-content">
-                <form name="myForm" id="uploadForm" method="POST" enctype="multipart/form-data">
-                <!-- <form name="myForm" method="POST" action="../../api/wi_add_api.php" enctype="multipart/form-data"> -->
+                <!-- <form name="myForm" id="uploadForm" method="post" enctype="multipart/form-data"> -->
+                <form name="myForm" method="POST" action="../../api/wi_add_api.php" enctype="multipart/form-data">
                     <div class="modal-header">
                         <h4 class="modal-title">新增商品</h4>
                         <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
                     </div>
                     <div class="modal-body">
-                        <!-- 選擇賣家 -->
-                        <!-- <div class="form-group">
-                            <label>Sellers / 擁有者</label>
-                            <select name="sellersId" required class="form-control" id="sellersId">
-                                <option value="0" class="form-control" class="form-control">平台所有</option>
-                                <?php
-                                    $sql = "SELECT `id`, `username`, `name`
-                                            FROM `users` 
-                                            LEFT JOIN `stores`
-                                            ON `users`.`id` = `stores`.`storeId`
-                                            WHERE `isActivated` = 1";
-                                    $stmt = $pdo->prepare($sql);
-                                    $stmt->execute();
-                                    if($stmt->rowCount() > 0):
-                                        $arr = $stmt->fetchAll(PDO::FETCH_ASSOC);
-                                        for($i = 0; $i < count($arr); $i++):
-                                ?>
-                                    <option value="<?= $arr[$i]['id']; ?>" class="form-control" class="form-control">ID: <?= $arr[$i]['username'] ?>｜名字: <?= $arr[$i]['name'] ?></option>
-                                    <?php endfor; ?>
-                                <?php endif; ?>
-
-                            </select>
-                        </div> -->
-
                         <div class="form-group">
                             <label>Name / 商品名稱</label>
                             <input type="text" class="form-control" required name="itemName" value="" placeholder="商品名稱">
                         </div>
                         <div class="form-group">
                             <label>Image / 商品圖片</label>
-                            <input type="file" class="form-control" name="itemImg" value="" placeholder="商品圖片">
+                            <input type="file" class="form-control" id="itemImg" name="itemImg" value="" placeholder="商品圖片">
                         </div>
                         <!-- 顏色 -->
                         <div class="form-group">
@@ -238,13 +214,13 @@
                         <div class="form-group">
                             <label>Type / 類型</label>
                             <select name="itemstype_d" id="itemstype_d" class="form-control">
-                                    <option value="1" class="form-control" selected>運動服</option>
-                                    <option value="2" class="form-control">校園制服</option>
-                                    <option value="3" class="form-control">書包</option>
-                                    <option value="4" class="form-control">帽子</option>
-                                    <option value="5" class="form-control">口罩</option>
-                                    <option value="6" class="form-control">圍兜</option>
-                                    <option value="7" class="form-control">圍裙</option>
+                                <option value="1" class="form-control" selected>運動服</option>
+                                <option value="2" class="form-control">校園制服</option>
+                                <option value="3" class="form-control">書包</option>
+                                <option value="4" class="form-control">帽子</option>
+                                <option value="5" class="form-control">口罩</option>
+                                <option value="6" class="form-control">圍兜</option>
+                                <option value="7" class="form-control">圍裙</option>
                             </select>
                         </div>
                         <!-- <div class="form-group">

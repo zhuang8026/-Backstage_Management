@@ -39,9 +39,9 @@
                 </th>
                 <th>編號</th>
                 <th>名稱</th>
+                <th>型號</th>
                 <th>圖片</th>
                 <th>顏色</th>
-                <th>型號</th>
                 <th>類型</th>
                 <!-- <th>P價錢/.NT</th>
                 <th>數量</th>
@@ -89,6 +89,7 @@
                 </td>
                 <td><?= $arr[$i]['itemId']; ?></td>
                 <td class="itemName<?= $arr[$i]['itemId']; ?>"><?= $arr[$i]['itemName']; ?></td>
+                <td class="itemsNumber<?= $arr[$i]['itemId']; ?>"><?= $arr[$i]['itemsNumber']; ?></td>
                 <!-- 图片 -->
                 <td class="itemImg<?= $arr[$i]['itemId']; ?>">
                     <?php if($arr[$i]['itemImg'] !== ""): ?>
@@ -97,8 +98,9 @@
                         <img src="../../asset/img/404.jpg">
                     <?php endif; ?>
                 </td>
-                <td class="colorid<?= $arr[$i]['itemId']; ?>" id="<?= $arr[$i]['colorid']; ?>" data-color="<?= $arr[$i]['colorunicode']; ?>"><div style="background-color:<?= $arr[$i]['colorunicode']; ?>;width: 34px; height: 34px; border-radius: 4px;"></div></td>
-                <td class="itemsNumber<?= $arr[$i]['itemId']; ?>"><?= $arr[$i]['itemsNumber']; ?></td>
+                <td class="colorid<?= $arr[$i]['itemId']; ?>" id="<?= $arr[$i]['colorid']; ?>" data-color="<?= $arr[$i]['colorunicode']; ?>">
+                    <div style="background-color:<?= $arr[$i]['colorunicode']; ?>;width: 34px; height: 34px; border-radius: 4px;"></div>
+                </td>
                 <td class="itemstype<?= $arr[$i]['itemId']; ?>"><?= $arr[$i]['typename']; ?></td>
                 
                 <td><?= $arr[$i]['created_at']; ?></td>

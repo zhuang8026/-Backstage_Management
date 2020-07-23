@@ -3,9 +3,11 @@ header("Content-Type: text/html; chartset=utf-8");
 require_once('../checkSession.php');
 require_once('../db.inc.php');
 
-// echo "<pre>";
-// print_r($_POST);
-// exit();
+echo "<pre>";
+print_r($_POST);
+echo "<hr>";
+print_r($_FILES);
+exit();
 
 //回傳狀態
 $objResponse = [];
@@ -51,12 +53,12 @@ $arrParam = [
     (int)$_POST['colorid'],
     $_POST['itemsNumber'],
     $_POST['itemstype'],
-    $_POST['sellersId']
+    // $_POST['sellersId']
 ];
 
-// echo "<pre>";   
-// print_r($arrParam);
-// exit();
+echo "<pre>";   
+print_r($arrParam);
+exit();
 
 $stmt = $pdo->prepare($sql);
 $stmt->execute($arrParam);
