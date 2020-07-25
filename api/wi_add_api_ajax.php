@@ -3,11 +3,11 @@ header("Content-Type: text/html; chartset=utf-8");
 require_once('../checkSession.php');
 require_once('../db.inc.php');
 
-echo "<pre>";
-print_r($_POST);
-echo "<hr>";
-print_r($_FILES);
-exit();
+// echo "<pre>";
+// print_r($_POST);
+// echo "<hr>";
+// print_r($_FILES);
+// exit();
 
 //回傳狀態
 $objResponse = [];
@@ -111,3 +111,4 @@ if($stmt->rowCount() > 0) {
     echo json_encode($objResponse, JSON_UNESCAPED_UNICODE);
     exit();
 }
+

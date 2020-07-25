@@ -79,6 +79,9 @@
                 if($stmt->rowCount() > 0):
                     $arr = $stmt->fetchAll(PDO::FETCH_ASSOC); 
                     for($i = 0; $i < count($arr); $i++):
+                    // echo "<pre>";
+                    // print_r($arr[58]['itemId']);
+                    // exit();
             ?>
             <tr>
                 <td>

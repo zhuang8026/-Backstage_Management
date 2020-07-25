@@ -12,7 +12,8 @@ function Edit_click(id){
     // console.log($('img#itemImg_d_img').attr('src', $img_name) );
     // console.log($('.colorid'+id).eq(0).attr('id'));
     // console.log($('.colorid'+id).eq(0).attr('data-color'));
-    $('#itemId_input').val(id); // hiiden id
+    $('#itemlabel_d').attr('data-id', id);       
+    $('#itemId_input').val(id); // hiiden id               // itemImg
     $('input#itemName_d').val( $('.itemName'+id).eq(0).html() );        // itemName
     $('img#itemImg_d_img').attr('src', $img_name);                      // itemImg
     $('input#colorid_d').val( $('.colorid'+id).eq(0).attr('id') );      // colorid_d

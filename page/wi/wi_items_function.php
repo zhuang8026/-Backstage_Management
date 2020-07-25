@@ -156,10 +156,48 @@
                             <input type="file" class="form-control" name="itemImg_d" value="" id="itemImg_d">
                         </div>
                         <div class="form-group">
-                            <label style="display: block;">Image / 多圖上傳</label>
-                            <img id="itemImg_d_img" src=""/>
+                            <label style="display: block;" id="itemlabel_d" data-id="">Image / 多圖上傳</label>
+                            <script>
+                                // var itemid = document.getElementById('itemlabel_d').getAttribute("data-id");
+                                // var itemid = document.getElementById('itemId_input').value;
+                                // Edit_click(id)
+                                // alert(itemid);
+                            </script>                            
+                            <?php
+                            $sqlDetailImg= "SELECT `itemId`, `multipleImageImg`
+                                            FROM `multiple_images`
+                                            WHERE `itemId` = ?
+                                            ORDER BY `multipleImageId` ASC";
+                            $stmt = $pdo->prepare($sqlDetailImg);
+                            $arrDetailImg = [
+                                // (int)$_POST['itemId_input']
+                                // $arrParam[$i]['itemId']
+                            ];
+                            $stmt->execute($arrDetailImg);
+                            // echo "<pre>";
+                            // print_r($arrDetailImg);
+                            // echo "</pre>";
+                            // exit();
+                            if($stmt->rowCount() > 0) {
+                                $arr = $stmt->fetchAll(PDO::FETCH_ASSOC);
+                                for($i = 0; $i < count($arr); $i++) {
+                            ?>
+
+                                <img id="itemImg_d_img" src="../images/multiple_images/<?php echo $arr[$i]['multipleImageImg'] ?>"/>
+
+                            <?php
+                                }
+                            } else {
+                            ?>
+
+                            <div style="margin: 0.375rem 0.75rem;">尚未上傳圖檔</div>
+                            
+                            <?php
+                            }
+                            ?>
+
                             <label style="display: block;" for="itemImg_more">Image / 細節圖上傳</label>
-                            <input type="file" class="form-control" name="itemImg_more" value="" id="itemImg_more" multiple>
+                            <input type="file" class="form-control" name="itemImg_more[]" value="" id="itemImg_more" multiple>
                         </div>
                         <div class="form-group">
                             <label>Color / 原始</label>
