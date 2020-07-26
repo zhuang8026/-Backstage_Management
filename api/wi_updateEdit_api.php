@@ -108,10 +108,13 @@ $arrDelParam = [
 ];
 $stmt = $pdo->prepare($sqlDelete);
 $stmt->execute($arrDelParam);
+
 // echo "<pre>";
 // print_r($arrDelParam);
 // echo "<hr>";
 // print_r($arrParam);
+// echo "<hr>";
+// print_r($_FILES);
 // exit(); 
 
 for($i = 0; $i < count($_FILES["itemImg_more"]["name"]); $i++){
@@ -125,44 +128,60 @@ for($i = 0; $i < count($_FILES["itemImg_more"]["name"]); $i++){
         $extension = pathinfo($_FILES["itemImg_more"]["name"][$i], PATHINFO_EXTENSION);
         //建立完整名稱
         $multipleImageImg = $strDatetime.".".$extension;
+
         // echo "<pre>";
         // print_r($_FILES["itemImg_more"]);
+        // echo "<pre>";
+        // print_r($_FILES["itemImg_more"]["tmp_name"][$i]);
+        // echo "<pre>";
+        // print_r($multipleImageImg);
         // exit(); 
+
         //若上傳成功，則將上傳檔案從暫存資料夾，移動到指定的資料夾或路徑
-        if( move_uploaded_file($_FILES["itemImg_more"]["tmp_name"][$i], "../asset/detail_img/{$multipleImageImg}") ) {
-
-            //SQL 敘述
-            $sqlDetail = "INSERT INTO `multiple_images` (`multipleImageImg`,`itemId`) VALUES (?, ?)";
-            //繫結用陣列
-            $arrDetailParam = [
-                $multipleImageImg,
-                (int)$_POST['itemId_input']
-            ];
-            $stmtGetDail = $pdo->prepare($sqlDetail);
-            $count += $stmtGetDail->execute($arrDetailParam);
-            // echo "<pre>";
-            // print_r($arrDetailParam);
-            // echo "<hr>";
-            // print_r($count);
-            // exit(); 
-
-            //若有找到 multipleImageImg 的資料
-            if( $count > 0) {
-                //若是 multipleImageImg 裡面不為空值，代表過去有上傳過
-                if($arrDetailParam[0] !== NULL){
-                    // 刪除實體檔案
-                    // "@" 不管此栏位是不是 NULL,删除就对了!
-                    @unlink("../asset/detail_img/".$arrDetailParam[0]);
-                }
-                //僅對 multipleImageImg 進行資料繫結
-                $arrParam[4][] = $multipleImageImg;         
-            }     
+        if( !move_uploaded_file($_FILES["itemImg_more"]["tmp_name"][$i], "../asset/detail_img/{$multipleImageImg}") ) { 
+            // header("Refresh: 1; url=./multipleImages.php?itemId={$_POST["itemId"]}");
+            $objResponse['success'] = false;
+            $objResponse['code'] = 500;
+            $objResponse['info'] = "上傳圖片失敗";
+            echo json_encode($objResponse, JSON_UNESCAPED_UNICODE);
+            exit();
         }
+
+        //SQL 敘述
+        $sqlDetail = "INSERT INTO `multiple_images` (`multipleImageImg`,`itemId`) VALUES (?, ?)";
+        //繫結用陣列
+        $arrDetailParam = [
+            $multipleImageImg,
+            (int)$_POST['itemId_input']
+        ];
+        $stmtGetDail = $pdo->prepare($sqlDetail);
+        $count += $stmtGetDail->execute($arrDetailParam);
+
+        // echo "<pre>";
+        // print_r($arrDetailParam);
+        // echo "<hr>";
+        // print_r($count);
+        // exit(); 
+
+        //若有找到 multipleImageImg 的資料
+        // if( $count > 0) {
+        //     //若是 multipleImageImg 裡面不為空值，代表過去有上傳過
+        //     if($arrDetailParam[0] !== NULL){
+        //         // 刪除實體檔案
+        //         // "@" 不管此栏位是不是 NULL,删除就对了!
+        //         @unlink("../asset/detail_img/".$arrDetailParam[0]);
+        //     }
+        //     //僅對 multipleImageImg 進行資料繫結
+        //     $arrParam[4][] = $multipleImageImg;         
+        // }  
     }  
 } 
-echo "<pre>";
-print_r($arrParam);
-exit(); 
+
+// echo "<pre>";
+// print_r($arrParam);
+// echo "<hr>";
+// print_r($count);
+// exit(); 
 
 
 //SQL 結尾
@@ -191,7 +210,7 @@ $stmt->execute($arrParam);
 // exit();
 
 
-if( $stmt->rowCount() > 0 ){
+if( $stmt->rowCount() > 0 || $count > 0){
     header("Refresh: 1; url=../page/wi/wi_items_index.php");
     echo "更新成功";
 } else {

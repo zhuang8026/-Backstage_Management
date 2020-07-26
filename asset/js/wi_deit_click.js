@@ -22,6 +22,10 @@ function Edit_click(id){
     $('input#itemstype_d').val( $('.itemstype'+id).eq(0).html() );      // itemstype
     // $('input#itemPrice_d').val( $('.itemPrice'+id).eq(0).html() );      // itemPrice
     // $('input#itemQty_d').val( $('.itemQty'+id).eq(0).html() );          // itemQty
+
+    // 20200727 - william - 添加 url 但不跳轉
+    let state = {title:'',url:window.location.href};
+    history.pushState(state,'',`?itemId=${id}`);
 };
 
 // JAVASCRIPT --- william --- 修改
