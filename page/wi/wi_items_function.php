@@ -169,17 +169,20 @@
                                 $stmt->execute($arrDetailImg);
                                 // echo "<pre>";
                                 // print_r( $stmt );
-                                // if($stmt->rowCount() > 0) {
+                                // print_r( $stmt->rowCount() );
+                                if($stmt->rowCount() > 0):
                                     $arr = $stmt->fetchAll(PDO::FETCH_ASSOC);
                                     // echo "<pre>";
                                     // print_r( $arr );
                                     // print_r( $arr[0] );
-                                    for($i = 0; $i < count($arr); $i++) {
+                                    for($i = 0; $i < count($arr); $i++):
                                         
                             ?>
-                                <img id="itemImg_d_img" src="../asset/detail_img/<?= $arr[$i]['multipleImageImg'] ?>"/>
-
-                            <?php } ?>
+                                <img id="itemImg_more_img" src="../../asset/detail_img/<?= $arr[$i]['multipleImageImg'] ?>"/>
+                                <?php endfor; ?>    
+                            <?php else: ?>
+                                <p>沒圖片</p>
+                            <?php endif; ?>
 
                             <label style="display: block;" for="itemImg_more">Image / 細節圖上傳</label>
                             <input type="file" class="form-control" name="itemImg_more[]" value="" id="itemImg_more" multiple>
